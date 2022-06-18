@@ -1,75 +1,57 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
-
-    <!-- HTML Stuff-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- HTML Stuff End -->
-
-
-    
-    <!-- Discord Embed -->
-
-    <meta property="og:title" content="Bastian aka. Knuddel" />
-    <meta property="og:description" content="Hier seht ihr Informationen über mich (Bastian)
+    <meta property="og:title" content="Bastians Sklave" />
+    <meta property="og:description" content="Hier seht ihr allgemeine Informationen & Commands zu meinem Bot
     " />
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/962464793531404398/979092529234444348/bastian_profilbild.png?size=4096" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/962464793531404398/979092529549021184/bot_profilbild.png?size=4096" />
     <meta name="theme-color" content="#8BD2EC">
-
-    <!-- Discord Embed End-->
-
-
-
-
-    <!-- Java & Icon Scripts-->
+    
     <script src="main.js"></script>
     <script
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
     ></script>
-    <script
-    src="https://kit.fontawesome.com/8c89019b79.js" 
-    crossorigin="anonymous"
-   ></script>
-   <!-- Java & Icon Scripts End-->
-
-    <!-- Style, Icon & Title -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./assets/bastian_profilbild.png">
-    <title>Bastian</title
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/bot_profilbild.png">
+    <title>Bastians Sklave</title>
   </head>
   <body>
     <section id="about-bot">
       <nav>
-        <div class="bot__logo">Bastian</div>
+        <div class="bot__logo">Bastians Sklave</div>
         <ul class="nav__link--list">
           <li
             class="nav__link--anchor link__hover-effect link__hover-effect--purple"
           >
             About
             <ul class="nav__link-item--drop">
-              <li class="nav__item--drop" onclick="toggleModal()">Über mich</li>
+              <li class="nav__item--drop" onclick="toggleModal()">About Bot</li>
               <li class="nav__item--drop">
-                <a class="nav__item-drop--link" href="#commands">Discord</a>
+                <a class="nav__item-drop--link" href="#commands">Commands</a>
               </li>
-              <li class="nav__item--drop" onclick="toggleTeamModal()">Kontakt</li>
+              <li class="nav__item--drop" onclick="toggleTeamModal()">Team</li>
+              <li class="nav__item--drop">
+                <a class="nav__item-drop--link" href="Snake/snake.html" target="_blank">Snake</a>
+              </li>
             </ul>
           </li>
           <li>
             <a
               class="nav__link--anchor link__hover-effect link__hover-effect--purple"
               href="#features"
-              >Socials</a
+              >Features</a
             >
           </li>
           <li>
             <a
               target="_blank"
               class="nav__link--anchor nav__link--anchor-primary"
-              href="bastians-sklave.xyz"
-              >Bot</a
+              href="discord.html"
+              >Discord</a
             >
           </li>
           <li class="click">
@@ -87,22 +69,27 @@
           <div class="about-bot__info row">
             <div class="about-bot__info--container">
               <figure class="about-bot__picture--mask">
-                <img src="./assets/bastian_profilbild.png" alt="Bot Profilbild" />
+                <img src="./assets/bot_profilbild.png" alt="Bot Profilbild" />
               </figure>
               <h1 class="about-bot__info--title">
-                Hey! Ich bin <span class="text--pink">Bastian</span>&nbsp;<span
+                Hey! Ich bin <span class="text--pink">Bastians Sklave</span>&nbsp;<span
                   class="wave"
                   >👋</span
                 >
               </h1>
               <p class="about-bot__info--para">
-                Ich bin <strong class="text--pink">Bastian</strong> aka. <strong class="text--pink">Knuddel</strong> bin 16 Jahre alt und streame "regelmäßgig" auf Twitch.
+                Ich bin ein neuer <strong class="text--pink">Discord Bot</strong> und ich wurde gemacht von <a href="bastian.html">Bastian</a> ich bin hier, um deine Discord Erfahrung zu verbessern!
                 <br />
                 Hier ist
                 <b class="about-bot__info--more" onclick="toggleModal()"
                   >mehr über</b
                 >
-                mich.
+                den Bot
+              </p>
+              <p class="about-bot__info--para">
+                <a href="how-to-use.html" target="_blank">Hier</a> seht ihr, wie man den Bot für euren Server benutzen kann.
+              <br />
+              <a href="Snake/snake.html" target="_blank">& hier</a> könnt ihr ein kleines Snake spiel spielen :)
               </p>
             </div>
           </div>
@@ -113,27 +100,27 @@
       </header>
       <div class="modal">
         <div class="modal__half modal__about">
-          <h3 class="modal__title">Mehr über mich</h3>
-          <h4 class="modal__sub-title">Bastian</h4>
-          <p class="modal__para"> 
-            <b class="text--pink">Bastian</b>,  
-            <b class="text--pink">16 Jahre alt</b> 
-            und komme aus
-            <b class="text--pink">Österreich</b>. 
-            Ich progammiere derzeit einen <b class="text--pink">Discord Bot</b> & <b class="text--pink">diese Website</b>.
+          <h3 class="modal__title">Mehr über den Bot</h3>
+          <h4 class="modal__sub-title">Discord Bot.</h4>
+          <p class="modal__para">
+            Dieser Bot ist gemacht,
+            <b class="text--pink">um deine Discord Erfahrung zu verbessern</b>. Es hat
+            verschiedene Absichten wie
+            <b class="text--pink">Moderation, Fun, Utilities</b> und noch mehr.
             <br />
+            Der Bot wurde gemacht von
+            <b class="text--pink">professionelen Entwicklern</b> und ist
+            <b class="text--pink">Open Source</b>.
           </p>
         </div>
         <div class="modal__half modal__languages">
           <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
           <h3 class="modal__title modal__sub-title--languages">
-            <b class="text--pink">Programmiersprachen</b>, mit denen ich derzeit entwickle.
+            <b class="text--pink">Tech</b> benutzt für dieses Projekt.
           </h3>
           <h4 class="modal__sub-title modal__sub-title--languages">
-            Ich benutze derzeit <b class="text--pink">4 "Progammiersprachen"</b>.
-          </h4>
-          <h4 class="modal__sub-title modal__sub-title--languages" style="font-style: italic">
-            Ich weiß, dass HTML & CSS keine Progammiersprachen sind :) 
+            Wir haben sehr viel <b class="text--pink">Technologien</b> benutzt,
+            um das Projekt zu bauen. Sie sind alle unten aufgelistet.
           </h4>
           <div class="modal__technologies">
             <figure class="modal__tech">
@@ -147,31 +134,31 @@
             <figure class="modal__tech">
               <img
                 class="modal__tech--img"
-                src="assets/c.svg"
-                alt="JavaScript"
+                src="assets/mongodb.png"
+                alt="MongoDB"
               />
-              <span class="tech__name">C#</span>
+              <span class="tech__name">MongoDB</span>
             </figure>
             <figure class="modal__tech">
               <img
                 class="modal__tech--img"
-                src="assets/html.png"
-                alt="C#"
+                src="assets/typescript.png"
+                alt="TypeScript"
               />
-              <span class="tech__name">HTML</span>
+              <span class="tech__name">TypeScript</span>
             </figure>
             <figure class="modal__tech">
-              <img class="modal__tech--img" src="assets/css.png" alt="CSS" />
-              <span class="tech__name">CSS</span>
+              <img class="modal__tech--img" src="assets/npm.png" alt="NPM" />
+              <span class="tech__name">NPM</span>
             </figure>
           </div>
         </div>
       </div>
       <div class="modal__two">
         <div class="modal__half--two modal__devs">
-          <h3 class="modal__two--title">Discord DMs</h3>
+          <h3 class="modal__two--title">Developer Team</h3>
           <h4 class="modal__two-sub--title">
-            Du kannst mich entweder über meine DMs erreichen
+            Das sind die Developer, die den Bot programmiert haben.
           </h4>
           <p class="modal__two--para">
             <b class="text--pink">Bastian#3600</b>
@@ -183,12 +170,12 @@
             class="fas fa-times modal__exit click"
             onclick="toggleTeamModal()"
           ></i>
-          <h3 class="modal__two--title">Discord Server</h3>
+          <h3 class="modal__two--title">Designer Team</h3>
           <h4 class="modal__two-sub--title">
-            oder du schreibst eine Nachricht auf meinem Discord.
+            Das sind die Designer, die den Bot und die Website designed haben.
           </h4>
           <p class="modal__two--para">
-            <a href="https://discord.gg/DdcPKppHeb" target="_blank">.gg/DdcPKppHeb</a>
+            <b class="text--pink">Bastian#3600</b>
             <br />
           </p>
         </div>
@@ -197,28 +184,27 @@
 
     <section id="features">
       <div class="container">
-        <h2><strong class="text--pink">Socials</strong></h2>
+        <h2>Bot <strong class="text--pink">Features</strong></h2>
         <div class="features__row">
           <div class="features__col">
-            <i class="fa-brands fa-twitch icon"></i>
-            <h3>Twitch</h3>
+            <i class="fa fa-bolt icon"></i>
+            <h3>Schnell</h3>
             <p class="features__para">
-            Mein <a href="https://twitch.tv/probably_a_bastian1" style="color: #1a1a1d;">Twitch</a>  
+              Der Bot ist einer der schnellsten Bots. Stelle sicher, dass du ihn zu deinem Discord-Server hinzufügst.
             </p>
           </div>
           <div class="features__col">
-            <i class="fa-brands fa-youtube icon"></i>
-            <h3>YouTube</h3>
-            <a href="https://www.youtube.com/channel/UCmLCRIJWGPWwyjUGZlR4Wmw"></a>
+            <i class="fa fa-lock icon"></i>
+            <h3>Sicher</h3>
             <p class="features__para">
-              Mein <a href="https://www.youtube.com/channel/UCmLCRIJWGPWwyjUGZlR4Wmw" style="color: #1a1a1d;">YouTube</a>
+              Der Bot ist ist einer der sichersten Bots.
             </p>
           </div>
           <div class="features__col">
-            <i class="fa-brands fa-discord icon"></i>
-            <h3>Discord</h3>
+            <i class="fa fa-smile-o icon"></i>
+            <h3>Glückliche User</h3>
             <p class="features__para">
-                Mein <a href="https://discord.gg/DdcPKppHeb" style="color: #1a1a1d;">Discord</a>
+              Sehr viele Leute mögen den Bot. Lad den Bot zu deinem Server ein und teil uns deine Meinung mit!
             </p>
           </div>
         </div>
@@ -226,8 +212,10 @@
     </section>
 
     <section id="commands">
-      <h2><strong class="text--pink">Mein Discord</strong></h2>
-      <h3><strong class="text--pink">Community</strong> Discord</h3>
+      <h2>
+        <strong class="text--pink">Commands</strong> 
+      </h2>
+      <h3><strong class="text--pink">Prefix</strong> - /</h3>
       <div class="accordion">
         <div>
           <input
@@ -236,10 +224,22 @@
             id="Moderation"
             class="accordion__input"
           />
-          <label for="Moderation" class="accordion__label">INFORMATION</label>
+          <label for="Moderation" class="accordion__label">MODERATION</label>
           <div class="accordion__content">
             <p class="accordion__text">
-              <strong class="text--pink">Der Discord</strong> wurde für meine Community erstellt. Auf dem Discord gibt es sehr viele Möglichkeiten zu kommunizieren.
+              <strong class="text--pink">announce</strong> - Announcet eine Nachricht über den Bot
+              <br />
+              <strong class="text--pink">card welcome/leave</strong> - Sendet eine Nachricht wenn ein User den Server verlässt oder betritt
+              <br />
+              <strong class="text--pink">rpanel</strong> - Wähle bis zu 25 Rollen aus, die jeder User erhalten kann
+              <br />
+              <strong class="text--pink">mod/modlogsetup</strong> - Banne/Kicke oder Verwarne einen User/Setzt dein Mod-Aktionen auf
+              <br />
+              <strong class="text--pink">moderate</strong> - Zeigt dir verschiedene Informationen über einen User an - banne, kicke oder timeoute einen User mit Buttons & Modal-Menüs
+              <br />
+              <strong class="text--pink">poll</strong> - Erstelle eine Umfrage; Benutzer können nur ein mal abstimmen & Stimmen können nicht zurückgezogen werden
+              <br />
+              <strong class="text--pink">ticket/ticketsetup</strong> - Verschiedene Aktionen für Tickets/Setzt dein Ticket-System auf
               <br />
             </p>
           </div>
@@ -251,20 +251,30 @@
             id="Utility"
             class="accordion__input"
           />
-          <label for="Utility" class="accordion__label">FUNKTIONEN</label>
+          <label for="Utility" class="accordion__label">UTILITIES</label>
           <div class="accordion__content">
             <p class="accordion__text">
-              <strong class="text--pink">Eigener Bot</strong> - Ich habe für den Discord einen eigenen Bot programmiert, mehr dazu findet ihr auf der <a href="./index.html">vorherigen Seite</a>. 
+              <strong class="text--pink">8ball</strong> - Ein magischer 8-Ball
               <br />
-              <strong class="text--pink">Eigene Areas</strong> - Man kann sich Rollen abholen, für die man exkl. Kanäle freischaltet. 
+              <strong class="text--pink">8ballhelp</strong> - Hilfe für den 8-Ball Command 
               <br />
-              <strong class="text--pink">Vorteile für Subs</strong> - Eigene Sub Area mit einem Chat und Voice Channel.
+              <strong class="text--pink">animal</strong> - Zeigt dir verschiedene Tiere an (müssen auf Englisch sein - manche Tiere gibt es nicht) 
+              <br />
+              <strong class="text--pink">embed</strong> - Erstellt dein eigenes anpassbares Embed 
+              <br />
+              <strong class="text--pink">serveravatar</strong> - Zeigt das Avatar vom Server an 
+              <br />
+              <strong class="text--pink">serverinfo</strong> - Zeigt dir Informationen über den Server an 
+              <br />
+              <strong class="text--pink">twitchstats</strong> - Zeigt dir Stats von einem Twitch-User an 
+              <br />
+              <strong class="text--pink">userinfo</strong> - Zeigt dir Infos von einem User an 
               <br />
             </p>
           </div>
         </div>
+        
         <!-- Copy from here if you want to add more categories -->
-        <!-- 
         <div>
           <input
             type="radio"
@@ -272,30 +282,17 @@
             id="Systems"
             class="accordion__input"
           />
-          <label for="Systems" class="accordion__label">Systems</label>
+          <label for="Systems" class="accordion__label">SYSTEMS</label>
           <div class="accordion__content">
             <p class="accordion__text">
-              <strong class="text--pink">ticket</strong> - Fügt einen User zu einem Ticket hinzu
+              <strong class="text--pink">help</strong> - Zeigt dir alle Commands an
               <br />
-              <strong class="text--pink">ticket-setup</strong> - Setzt das Ticket System auf
-              <br />
-              <strong class="text--pink">afk</strong> - Setzt einen personalisierten AFK Status
-              <br />
-              <strong class="text--pink">announce</strong> - Kündigt eine Embed-Nachricht an
-              <br />
-              <strong class="text--pink">giveaway</strong> - Startet ein neues Giveaway
-              <br />
-              <strong class="text--pink">help</strong> - Zeigt dir alle Commands
-              <br />
-              <strong class="text--pink">status</strong> - Zeigt dir den Status des Bots an
-              <br />
-              <strong class="text--pink">suggest</strong> - Erstelle einen neuen personalisierten Wunsch
+              <strong class="text--pink">status</strong> - Zeigt dir den Status vom Bot an
               <br />
             </p>
           </div>
         </div>
       </div>
-      -->
       <!-- Till Here -->
     </section>
 
@@ -310,7 +307,7 @@
          </div>
          <div class="footer__list">
            <a href="#" class="footer__link link__hover-effect--purple">Home</a>
-           <a href="#features" class="footer__link link__hover-effect--purple">Mein Discord</a>
+           <a href="#features" class="footer__link link__hover-effect--purple">Features</a>
            <a href="#about" class="footer__link link__hover-effect--purple" onclick="toggleModal()">About</a>
          </div>
          <div class="footer__copyright">
