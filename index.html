@@ -1,329 +1,61 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en" dir="ltr">
   <head>
-
-    <!-- HTML Stuff-->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- HTML Stuff End -->
+    <title>Knuddel</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fontawestome/css/all.min.css" />
 
-
-    
-    <!-- Discord Embed -->
-
-    <meta property="og:title" content="Bastian aka. Knuddel" />
-    <meta property="og:description" content="Hier seht ihr Informationen über mich (Bastian)
-    " />
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/962464793531404398/979092529234444348/bastian_profilbild.png?size=4096" />
-    <meta name="theme-color" content="#8BD2EC">
-
-    <!-- Discord Embed End-->
-
-
-
-
-    <!-- Java & Icon Scripts-->
-    <script src="main.js"></script>
-    <script
-      src="https://kit.fontawesome.com/c8e4d183c2.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-    src="https://kit.fontawesome.com/8c89019b79.js" 
-    crossorigin="anonymous"
-   ></script>
-   <!-- Java & Icon Scripts End-->
-
-    <!-- Style, Icon & Title -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./assets/bastian_profilbild.png">
-    <title>Bastian</title
+    <link rel="icon" href="./assets/icon.png" />
   </head>
+
   <body>
-    <section id="about-bot">
-      <nav>
-        <div class="bot__logo">Bastian</div>
-        <ul class="nav__link--list">
-          <li
-            class="nav__link--anchor link__hover-effect link__hover-effect--purple"
-          >
-            About
-            <ul class="nav__link-item--drop">
-              <li class="nav__item--drop" onclick="toggleModal()">Über mich</li>
-              <li class="nav__item--drop">
-                <a class="nav__item-drop--link" href="#commands">Discord</a>
-              </li>
-              <li class="nav__item--drop" onclick="toggleTeamModal()">Kontakt</li>
-            </ul>
-          </li>
-          <li>
-            <a
-              class="nav__link--anchor link__hover-effect link__hover-effect--purple"
-              href="#features"
-              >Socials</a
+    <img class="profile_pic" src="./assets/pfp.png" alt="" />
+    <p class="header_paragraph">hey, i'm bastian :)</p>
+
+    <p class="links">
+      <a href="https://discord.gg/DdcPKppHeb" target="_blank">discord</a>
+      <a href="https://github.com/bastian-js" target="_blank">github</a>
+    </p>
+
+    <div class="container">
+      <h2 class="projects_header">my projects</h2>
+
+      <div class="features__row">
+        <div class="features__col">
+          <p class="pro_projects_paragraph">
+            <a href="https://github.com/bastian-js/giveaway-bot" target="_blank"
+              >open source giveaway bot</a
             >
-          </li>
-          <li>
+          </p>
+          <img
+            class="pro_projects_img"
+            src="./assets/giveaway_Bot.png"
+            alt=""
+          />
+        </div>
+
+        <div class="features__col2">
+          <p class="pro_projects_paragraph">
             <a
+              href="https://github.com/bastian-js/DiscordJS-V13-AntiCrash"
               target="_blank"
-              class="nav__link--anchor nav__link--anchor-primary"
-              href="https://bastians-sklave.xyz"
-              >Bot</a
+              >v13 & v14 anti crash</a
             >
-          </li>
-          <li class="click">
-            <a
-              class="nav__link--anchor"
-              href="#"
-              onclick="toggleContrast()"
-              ><i class="fas fa-adjust"></i></a
-            >
-          </li>
-        </ul>
-      </nav>
-      <header class="header">
-        <div class="flex flex-1">
-          <div class="about-bot__info row">
-            <div class="about-bot__info--container">
-              <figure class="about-bot__picture--mask">
-                <img src="./assets/bastian_profilbild.png" alt="Bot Profilbild" />
-              </figure>
-              <h1 class="about-bot__info--title">
-                Hey! Ich bin <span class="text--pink">Bastian</span>&nbsp;<span
-                  class="wave"
-                  >👋</span
-                >
-              </h1>
-              <p class="about-bot__info--para">
-                Ich bin <strong class="text--pink">Bastian</strong> aka. <strong class="text--pink">Knuddel</strong> bin 16 Jahre alt und streame "regelmäßgig" auf Twitch.
-                <br />
-                Hier ist
-                <b class="about-bot__info--more" onclick="toggleModal()"
-                  >mehr über</b
-                >
-                mich.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button id="btnScrollToTop">
-         <a class='button-scroll' href="#"><i class="fas fa-angle-double-up"></i></a></i>
-        </button>
-      </header>
-      <div class="modal">
-        <div class="modal__half modal__about">
-          <h3 class="modal__title">Mehr über mich</h3>
-          <h4 class="modal__sub-title">Bastian</h4>
-          <p class="modal__para"> 
-            <b class="text--pink">Bastian</b>,  
-            <b class="text--pink">16 Jahre alt</b> 
-            und komme aus
-            <b class="text--pink">Österreich</b>. 
-            Ich progammiere derzeit einen <b class="text--pink">Discord Bot</b> & <b class="text--pink">diese Website</b>.
-            <br />
           </p>
+          <img class="pro_projects_img" src="./assets/anti-crash.png" alt="" />
         </div>
-        <div class="modal__half modal__languages">
-          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
-          <h3 class="modal__title modal__sub-title--languages">
-            <b class="text--pink">Programmiersprachen</b>, mit denen ich derzeit entwickle.
-          </h3>
-          <h4 class="modal__sub-title modal__sub-title--languages">
-            Ich benutze derzeit <b class="text--pink">4 "Progammiersprachen"</b>.
-          </h4>
-          <h4 class="modal__sub-title modal__sub-title--languages" style="font-style: italic">
-            Ich weiß, dass HTML & CSS keine Progammiersprachen sind :) 
-          </h4>
-          <div class="modal__technologies">
-            <figure class="modal__tech">
-              <img
-                class="modal__tech--img"
-                src="assets/javascript.png"
-                alt="JavaScript"
-              />
-              <span class="tech__name">JavaScript</span>
-            </figure>
-            <figure class="modal__tech">
-              <img
-                class="modal__tech--img"
-                src="assets/c.svg"
-                alt="JavaScript"
-              />
-              <span class="tech__name">C#</span>
-            </figure>
-            <figure class="modal__tech">
-              <img
-                class="modal__tech--img"
-                src="assets/html.png"
-                alt="C#"
-              />
-              <span class="tech__name">HTML</span>
-            </figure>
-            <figure class="modal__tech">
-              <img class="modal__tech--img" src="assets/css.png" alt="CSS" />
-              <span class="tech__name">CSS</span>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="modal__two">
-        <div class="modal__half--two modal__devs">
-          <h3 class="modal__two--title">Discord DMs</h3>
-          <h4 class="modal__two-sub--title">
-            Du kannst mich entweder über meine DMs erreichen
-          </h4>
-          <p class="modal__two--para">
-            <b class="text--pink">Bastian#3600</b>
-            <br />
+
+        <div class="features__col3">
+          <p class="pro_projects_paragraph">
+            <a href="https://github.com/bastian-js">this website</a>
           </p>
-        </div>
-        <div class="modal__half--two modal__designers">
-          <i
-            class="fas fa-times modal__exit click"
-            onclick="toggleTeamModal()"
-          ></i>
-          <h3 class="modal__two--title">Discord Server</h3>
-          <h4 class="modal__two-sub--title">
-            oder du schreibst eine Nachricht auf meinem Discord.
-          </h4>
-          <p class="modal__two--para">
-            <a href="https://discord.gg/DdcPKppHeb" target="_blank">.gg/DdcPKppHeb</a>
-            <br />
-          </p>
+          <img class="pro_projects_img" src="./assets/website.png" alt="" />
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="features">
-      <div class="container">
-        <h2><strong class="text--pink">Socials</strong></h2>
-        <div class="features__row">
-          <div class="features__col">
-            <i class="fa-brands fa-twitch icon"></i>
-            <h3>Twitch</h3>
-            <p class="features__para">
-            Mein <a href="https://twitch.tv/probably_a_bastian1" style="color: #1a1a1d;">Twitch</a>  
-            </p>
-          </div>
-          <div class="features__col">
-            <i class="fa-brands fa-youtube icon"></i>
-            <h3>YouTube</h3>
-            <a href="https://www.youtube.com/channel/UCmLCRIJWGPWwyjUGZlR4Wmw"></a>
-            <p class="features__para">
-              Mein <a href="https://www.youtube.com/channel/UCmLCRIJWGPWwyjUGZlR4Wmw" style="color: #1a1a1d;">YouTube</a>
-            </p>
-          </div>
-          <div class="features__col">
-            <i class="fa-brands fa-discord icon"></i>
-            <h3>Discord</h3>
-            <p class="features__para">
-                Mein <a href="https://discord.gg/DdcPKppHeb" style="color: #1a1a1d;">Discord</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="commands">
-      <h2><strong class="text--pink">Mein Discord</strong></h2>
-      <h3><strong class="text--pink">Community</strong> Discord</h3>
-      <div class="accordion">
-        <div>
-          <input
-            type="radio"
-            name="example_accordion"
-            id="Moderation"
-            class="accordion__input"
-          />
-          <label for="Moderation" class="accordion__label">INFORMATION</label>
-          <div class="accordion__content">
-            <p class="accordion__text">
-              <strong class="text--pink">Der Discord</strong> wurde für meine Community erstellt. Auf dem Discord gibt es sehr viele Möglichkeiten zu kommunizieren.
-              <br />
-            </p>
-          </div>
-        </div>
-        <div>
-          <input
-            type="radio"
-            name="example_accordion"
-            id="Utility"
-            class="accordion__input"
-          />
-          <label for="Utility" class="accordion__label">FUNKTIONEN</label>
-          <div class="accordion__content">
-            <p class="accordion__text">
-              <strong class="text--pink">Eigener Bot</strong> - Ich habe für den Discord einen eigenen Bot programmiert, mehr dazu findet ihr auf der <a href="./index.html">vorherigen Seite</a>. 
-              <br />
-              <strong class="text--pink">Eigene Areas</strong> - Man kann sich Rollen abholen, für die man exkl. Kanäle freischaltet. 
-              <br />
-              <strong class="text--pink">Vorteile für Subs</strong> - Eigene Sub Area mit einem Chat und Voice Channel.
-              <br />
-            </p>
-          </div>
-        </div>
-        <!-- Copy from here if you want to add more categories -->
-        <!-- 
-        <div>
-          <input
-            type="radio"
-            name="example_accordion"
-            id="Systems"
-            class="accordion__input"
-          />
-          <label for="Systems" class="accordion__label">Systems</label>
-          <div class="accordion__content">
-            <p class="accordion__text">
-              <strong class="text--pink">ticket</strong> - Fügt einen User zu einem Ticket hinzu
-              <br />
-              <strong class="text--pink">ticket-setup</strong> - Setzt das Ticket System auf
-              <br />
-              <strong class="text--pink">afk</strong> - Setzt einen personalisierten AFK Status
-              <br />
-              <strong class="text--pink">announce</strong> - Kündigt eine Embed-Nachricht an
-              <br />
-              <strong class="text--pink">giveaway</strong> - Startet ein neues Giveaway
-              <br />
-              <strong class="text--pink">help</strong> - Zeigt dir alle Commands
-              <br />
-              <strong class="text--pink">status</strong> - Zeigt dir den Status des Bots an
-              <br />
-              <strong class="text--pink">suggest</strong> - Erstelle einen neuen personalisierten Wunsch
-              <br />
-            </p>
-          </div>
-        </div>
-      </div>
-      -->
-      <!-- Till Here -->
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__row">
-           <div class="footer__socials">
-             <a class="footer__socials-link" href="https://discord.com/invite/DdcPKppHeb" target="_blank"
-             ><i class="fab fa-discord"></i
-               ></a>
-           <a class="footer__socials-link" href="https://linktr.ee/probably_a_bastian1" target="_blank"><i class="fas fa-link"></i></a>
-         </div>
-         <div class="footer__list">
-           <a href="#" class="footer__link link__hover-effect--purple">Home</a>
-           <a href="#features" class="footer__link link__hover-effect--purple">Mein Discord</a>
-           <a href="#about" class="footer__link link__hover-effect--purple" onclick="toggleModal()">About</a>
-         </div>
-         <div class="footer__copyright">
-           Copyright &copy; Designed By
-           <a
-           target="_blank"
-             href="https://discord.com/users/310382316339855363"
-             ><span class="text--pink"
-             >Bastian#3600</span></a
-           >
-         </div>
-       </div>
-     </div>
-    </footer>
+    <p style="color: grey" class="copyright">2022 &copy; bastian#6969</p>
   </body>
 </html>
