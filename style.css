@@ -4,6 +4,7 @@
   padding: 0px;
   font-family: Roboto;
   color: white;
+  align-items: center;
 }
 
 body {
@@ -41,20 +42,15 @@ body {
 
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   color: #1a1a1d;
   font-size: 20px;
-  text-align: center;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 .features__row {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
   align-items: center;
 }
 
@@ -64,6 +60,9 @@ body {
 
 .pro_projects_paragraph a {
   color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .copyright {
@@ -72,4 +71,66 @@ body {
 
 .links {
   font-size: 22px;
+}
+
+.image {
+  position: relative;
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image__img {
+    width: 100%;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+.image__overlay--primary {
+    background: #009578;
+}
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image__title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.image__description {
+    font-size: 20px;
+    margin-top: 0.25em;
+    text-align: center;
 }
