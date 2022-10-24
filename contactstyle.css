@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)),
+  background: linear-gradient(rgba(0, 0, 25, 0.5), rgba(0, 0, 25, 0.5)),
     url(./assets/contact_background.jpg);
   background-size: cover;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -15,7 +15,7 @@ body {
   margin-top: 100px;
   color: #fff;
   text-transform: uppercase;
-  transition: all 4s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .contact-title h1 {
@@ -29,7 +29,7 @@ body {
 
 form {
   margin-top: 50px;
-  transition: all 4s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .form-control {
@@ -38,7 +38,7 @@ form {
   border: none;
   outline: none;
   border-bottom: 1px solid gray;
-  color: white;
+  color: #fff;
   font-size: 18px;
   margin-bottom: 16px;
 }
@@ -50,7 +50,7 @@ input {
 form .submit {
   background: #ff5722;
   border-color: transparent;
-  color: white;
+  color: #fff;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 2px;
