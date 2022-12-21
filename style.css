@@ -72,7 +72,12 @@ body {
 }
 
 .links {
-  font-size: 38px;
+  font-size: 36px;
+  fill: black;
+}
+
+.links::hover {
+  fill: white;
 }
 
 a {

@@ -1,2 +1,3 @@
-# Knuddel Website
-#### Shows projects & links from knuddel
+# Bastian Website
+
+#### Shows projects & links from Bastian
