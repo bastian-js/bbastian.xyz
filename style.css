@@ -84,44 +84,6 @@ a {
   text-decoration: none;
 }
 
-/* contact.html start */
-.contact-p {
-  margin: auto;
-  justify-content: center;
-  display: flex;
-  margin-top: -20px;
-  margin-bottom: 20px;
-}
-
-.btn {
-  border-radius: 20px;
-  width: 150px;
-  height: 35px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  background-color: #3e82d1;
-  border: none;
-}
-
-.btn:hover {
-  border-radius: 20px;
-  width: 150px;
-  height: 35px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  background-color: #35669f;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-a {
-  color: black;
-  font-weight: bold;
-}
-/* contact.html end */
-
 /* Images of index.html start */
 
 .image {
