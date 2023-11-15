@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+  padding: 0px;
+  font-family: Montserrat;
+  color: white;
+  align-items: center;
+}
+
+body {
+  background-color: #0d1117;
+}
+
+.profile_pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+  margin-bottom: 15px;
+  animation: animate-profile-picture 800ms 200ms backwards;
+  margin-top: 25px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header_paragraph {
+  margin-top: 0.1px;
+  color: white;
+  font-family: Montserrat;
+  font-size: 27px;
+  margin-bottom: 0%;
+}
+
+/**/
+
+.container {
+  width: 350px;
+  background-color: none;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  margin: auto;
+}
+
+.container input,
+.container textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: rgba(68, 134, 239, 0.205);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  background-color: rgb(68, 134, 239);
+  font-size: 16px;
+  width: 105%;
+  padding: 14px;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.btn:hover {
+  background-color: rgb(34, 111, 235);
+  color: white;
+}

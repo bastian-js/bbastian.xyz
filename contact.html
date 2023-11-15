@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles/contact-style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img class="profile_pic" src="./assets/pfp_neu_rund.png" alt="" />
+      <p class="header_paragraph">hey, i'm bastian :)</p>
+    </header>
+    <div class="container">
+      <form onsubmit="emailSend(); reset(); return false">
+        <input type="text" id="name" placeholder="name" name="name" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="email"
+          name="email"
+          required
+        />
+        <textarea
+          id="message"
+          placeholder="message"
+          name="message"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit" class="btn">submit</button>
+      </form>
+      <p id="check"></p>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./scripts/contact.js"></script>
+  </body>
+</html>
