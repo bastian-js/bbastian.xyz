@@ -1,15 +1,31 @@
-var text;
-var arrow;
+var textRight;
+var textLeft;
+var arrowLeft;
+var arrowRight;
 
-function changeColor() {
-  text = document.getElementById("button");
-  arrow = document.getElementById("arrow");
+function changeColor(arrow) {
+  textRight = document.getElementById("button-right");
+  textLeft = document.getElementById("button-left");
+  arrowLeft = document.getElementById("arrow-left");
+  arrowRight = document.getElementById("arrow-right");
 
-  text.style.color = "#4287ef";
-  arrow.style.color = "#4287ef";
+  if (arrow == "right") {
+    textRight.style.color = "#4287ef";
+    arrowRight.style.color = "#4287ef";
+  } else if (arrow == "left") {
+    textLeft.style.color = "#4287ef";
+    arrowLeft.style.color = "#4287ef";
+  }
 }
 
 function changeColorBack() {
-  text.style.color = "#ffffff";
-  arrow.style.color = "#ffffff";
+  textRight = document.getElementById("button-right");
+  textLeft = document.getElementById("button-left");
+  arrowLeft = document.getElementById("arrow-left");
+  arrowRight = document.getElementById("arrow-right");
+
+  textRight.style.color = "#ffffff";
+  arrowRight.style.color = "#ffffff";
+  textLeft.style.color = "#ffffff";
+  arrowLeft.style.color = "#ffffff";
 }

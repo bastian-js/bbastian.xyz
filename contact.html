@@ -2,8 +2,29 @@
 <html>
   <head>
     <link rel="stylesheet" href="./styles/contact-style.css" />
+
+    <!-- fontawesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/8c89019b79.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- fontawesome end -->
+
+    <script src="./scripts/index.js"></script>
   </head>
   <body>
+    <a href="./index.html">
+      <div
+        class="socials"
+        onmouseover="changeColor('right')"
+        onmouseout="changeColorBack()"
+      >
+        <button class="button-social-header" id="button-right">
+          home <i id="arrow-right" class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </a>
+
     <header class="header">
       <img class="profile_pic" src="./assets/pfp_neu_rund.png" alt="" />
       <p class="header_paragraph">hey, i'm bastian :)</p>
@@ -29,6 +50,11 @@
       </form>
       <p id="check"></p>
     </div>
+
+    <div class="copyright">
+      <p class="copyright-p">2023 &copy; bastian</p>
+    </div>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./scripts/contact.js"></script>

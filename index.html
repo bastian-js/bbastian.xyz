@@ -31,17 +31,31 @@
   </head>
 
   <body>
-    <a href="./socials.html">
-      <div
-        class="socials"
-        onmouseover="changeColor()"
-        onmouseout="changeColorBack()"
-      >
-        <button class="button-social-header" id="button">
-          Socials <i id="arrow" class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-    </a>
+    <div class="container-links">
+      <a href="./socials.html">
+        <div
+          class="socials"
+          onmouseover="changeColor('right')"
+          onmouseout="changeColorBack()"
+        >
+          <button class="button-social-header" id="button-right">
+            socials <i id="arrow-right" class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </a>
+
+      <a href="./contact.html">
+        <div
+          class="contact"
+          onmouseover="changeColor('left')"
+          onmouseout="changeColorBack()"
+        >
+          <button class="button-social-header" id="button-left">
+            <i id="arrow-left" class="fa-solid fa-arrow-left"></i> contact
+          </button>
+        </div>
+      </a>
+    </div>
 
     <header class="header">
       <img class="profile_pic" src="./assets/pfp_neu_rund.png" alt="" />
