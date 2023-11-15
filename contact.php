@@ -54,12 +54,12 @@ $mail_senden = mail($empfaenger,$betreff,$msg,$header);
  
  
 // Weiterleitung, hier konnte jetzt per echo auch Ausgaben stehen
-if($mail_senden){
+/*if($mail_senden){
   echo('ja') // Mail wurde gesendet
 
   exit();
 } else{
   echo("nein") // Fehler beim Senden
   exit();
-}
+}*/
 ?>
