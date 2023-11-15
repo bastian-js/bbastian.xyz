@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bastian | contact</title>
+  </head>
+  <body>
+    <form method="post" action="contact.php">
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          id="Name"
+          name="Name"
+          class="form-control"
+          placeholder="Name:"
+        />
+        <label for="Name" class="form-label">Name:</label>
+      </div>
+
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          id="Email"
+          name="Email"
+          class="form-control"
+          placeholder="E-Mail:"
+        />
+        <label for="Email" class="form-label">E-Mail:</label>
+      </div>
+
+      <div class="form-floating mb-3 mt-3">
+        <input
+          type="text"
+          id="Betreff"
+          name="Betreff"
+          class="form-control"
+          placeholder="Betreff"
+        />
+        <label for="Betreff" class="form-label">Betreff:</label>
+      </div>
+
+      <div class="form-floating mb-3 mt-3">
+        <textarea
+          id="Nachricht"
+          name="Nachricht"
+          class="form-control"
+          placeholder="Nachricht:"
+        ></textarea>
+        <label for="Nachricht" class="form-label">Nachricht:</label><br />
+      </div>
+
+      <input type="submit" name="submit" class="button" />
+    </form>
+  </body>
+</html>
