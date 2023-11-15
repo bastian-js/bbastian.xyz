@@ -55,11 +55,11 @@ $mail_senden = mail($empfaenger,$betreff,$msg,$header);
  
 // Weiterleitung, hier konnte jetzt per echo auch Ausgaben stehen
 if($mail_senden){
-  header("Location: ".$ok); // Mail wurde gesendet
+  echo('ja') // Mail wurde gesendet
 
   exit();
 } else{
-  header("Location: ".$fehler); // Fehler beim Senden
+  echo("nein") // Fehler beim Senden
   exit();
 }
 ?>
