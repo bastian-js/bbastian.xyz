@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bastian</title>
+    <title>bastian</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="fontawestome/css/all.min.css" />
 
@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="icon" href="./assets/pfp2_rund.png" />
+    <link rel="icon" href="./assets/pfp_neu_rund.png" />
 
     <!-- Discord Embed Start -->
     <meta property="og:title" content="Bastian" />
@@ -21,14 +21,30 @@
       content="A website for projects
     "
     />
-    <meta property="og:image" content="/assets/pfp2.png" />
+    <meta property="og:image" content="/assets/pfp_neu.png" />
     <meta name="theme-color" content="#8BD2EC" />
     <!-- Discord Embed End -->
+
+    <!-- javascript -->
+    <script src="index.js"></script>
+    <!-- javascript end-->
   </head>
 
   <body>
+    <a href="./socials.html">
+      <div
+        class="socials"
+        onmouseover="changeColor()"
+        onmouseout="changeColorBack()"
+      >
+        <button class="button-social-header" id="button">
+          Socials <i id="arrow" class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </a>
+
     <header class="header">
-      <img class="profile_pic" src="./assets/pfp2.png" alt="" />
+      <img class="profile_pic" src="./assets/pfp_neu_rund.png" alt="" />
       <p class="header_paragraph">hey, i'm bastian :)</p>
 
       <p class="links">
@@ -95,7 +111,7 @@
     </div>
 
     <a href="https://discord.com/users/310382316339855363"
-      ><p style="color: grey" class="copyright">2023 &copy; bastian#6969</p></a
+      ><p style="color: grey" class="copyright">2023 &copy; bastian</p></a
     >
   </body>
 </html>

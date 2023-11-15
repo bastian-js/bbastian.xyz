@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+  padding: 0px;
+  font-family: Montserrat;
+  color: white;
+  align-items: center;
+}
+
+body {
+  background-color: #0d1117;
+}
+
+/*
+    Back Buttn
+*/
+
+.socials {
+  margin-left: auto;
+}
+
+.button-social-header {
+  background-color: #0d1117;
+  border: 2px solid #0d1117;
+  border-color: #0d1117;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 125px;
+  height: 60px;
+}
+
+.button-social-header:hover {
+  cursor: pointer;
+  color: rgb(68, 134, 239);
+}
+
+/*
+    Header
+*/
+
+.profile_pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+  margin-bottom: 15px;
+  animation: animate-profile-picture 800ms 200ms backwards;
+  margin-top: 25px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header_paragraph {
+  margin-top: 0.1px;
+  color: white;
+  font-family: Montserrat;
+  font-size: 27px;
+  margin-bottom: 0%;
+}
+
+.projects_header {
+  color: white;
+  font-family: Montserrat;
+}
+
+/*
+    Socials
+*/
+
+.container-socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-links {
+  background-color: rgb(68, 134, 239);
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 20px;
+  border-color: rgb(68, 134, 239);
+  margin-top: 20px;
+  width: 600px;
+  height: 80px;
+}
+
+.button-links:hover {
+  background-color: rgb(34, 111, 235);
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyright-p {
+  color: gray;
+  font-size: 18px;
+}

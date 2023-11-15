@@ -12,8 +12,8 @@ body {
 }
 
 .profile_pic {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
@@ -47,6 +47,27 @@ body {
   font-size: 20px;
   width: 100%;
   align-items: center;
+}
+
+.socials {
+  margin-right: auto;
+}
+
+.button-social-header {
+  background-color: #0d1117;
+  border: 2px solid #0d1117;
+  border-color: #0d1117;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 125px;
+  height: 60px;
+}
+
+.button-social-header:hover {
+  cursor: pointer;
+  color: rgb(68, 134, 239);
 }
 
 .features__row {
