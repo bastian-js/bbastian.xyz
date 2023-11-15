@@ -4,53 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bastian | contact</title>
+
+    <script language="JavaScript">
+      var frmvalidator = new Validator("contactform");
+      frmvalidator.addValidation("name", "req", "Please provide your name");
+      frmvalidator.addValidation("email", "req", "Please provide your email");
+      frmvalidator.addValidation(
+        "email",
+        "email",
+        "Please enter a valid email address"
+      );
+    </script>
   </head>
   <body>
-    <form method="post" action="./contact.php">
-      <div class="form-floating mb-3 mt-3">
-        <input
-          type="text"
-          id="Name"
-          name="Name"
-          class="form-control"
-          placeholder="Name:"
-        />
-        <label for="Name" class="form-label">Name:</label>
-      </div>
+    <form method="post" name="contact_form" action="contact.php">
+      Your Name:
+      <input type="text" name="name" />
 
-      <div class="form-floating mb-3 mt-3">
-        <input
-          type="text"
-          id="Email"
-          name="Email"
-          class="form-control"
-          placeholder="E-Mail:"
-        />
-        <label for="Email" class="form-label">E-Mail:</label>
-      </div>
+      Email Address:
+      <input type="text" name="email" />
 
-      <div class="form-floating mb-3 mt-3">
-        <input
-          type="text"
-          id="Betreff"
-          name="Betreff"
-          class="form-control"
-          placeholder="Betreff"
-        />
-        <label for="Betreff" class="form-label">Betreff:</label>
-      </div>
+      Message:
+      <textarea name="message"></textarea>
 
-      <div class="form-floating mb-3 mt-3">
-        <textarea
-          id="Nachricht"
-          name="Nachricht"
-          class="form-control"
-          placeholder="Nachricht:"
-        ></textarea>
-        <label for="Nachricht" class="form-label">Nachricht:</label><br />
-      </div>
-
-      <input type="submit" name="submit" class="button" />
+      <input type="submit" value="Submit" />
     </form>
   </body>
 </html>
