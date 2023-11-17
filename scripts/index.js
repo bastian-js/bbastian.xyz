@@ -1,31 +1,57 @@
-var textRight;
-var textLeft;
-var arrowLeft;
-var arrowRight;
+var textRightTop;
+var textLeftTop;
+var arrowLeftTop;
+var arrowRightTop;
 
-function changeColor(arrow) {
-  textRight = document.getElementById("button-right");
-  textLeft = document.getElementById("button-left");
-  arrowLeft = document.getElementById("arrow-left");
-  arrowRight = document.getElementById("arrow-right");
+var textRightBottom;
+var textLeftBottom;
+var arrowLeftBottom;
+var arrowRightBottom;
 
-  if (arrow == "right") {
-    textRight.style.color = "#4287ef";
-    arrowRight.style.color = "#4287ef";
-  } else if (arrow == "left") {
-    textLeft.style.color = "#4287ef";
-    arrowLeft.style.color = "#4287ef";
+function changeColor(arrow, top) {
+  textRightTop = document.getElementById("button-right-top");
+  textLeftTop = document.getElementById("button-left-top");
+  arrowLeftTop = document.getElementById("arrow-left-top");
+  arrowRightTop = document.getElementById("arrow-right-top");
+
+  textRightBottom = document.getElementById("button-right-bottom");
+  textLeftBottom = document.getElementById("button-left-bottom");
+  arrowLeftBottom = document.getElementById("arrow-left-bottom");
+  arrowRightBottom = document.getElementById("arrow-right-bottom");
+
+  if (arrow == "right" && top == true) {
+    textRightTop.style.color = "#4287ef";
+    arrowRightTop.style.color = "#4287ef";
+  } else if (arrow == "left" && top == true) {
+    textLeftTop.style.color = "#4287ef";
+    arrowLeftTop.style.color = "#4287ef";
+  } else if (arrow == "right" && top == false) {
+    textRightBottom.style.color = "#4287ef";
+    arrowRightBottom.style.color = "#4287ef";
+  } else if (arrow == "left" && top == false) {
+    textLeftTop.style.color = "#4287ef";
+    arrowLeftTop.style.color = "#4287ef";
   }
 }
 
 function changeColorBack() {
-  textRight = document.getElementById("button-right");
-  textLeft = document.getElementById("button-left");
-  arrowLeft = document.getElementById("arrow-left");
-  arrowRight = document.getElementById("arrow-right");
+  textRightTop = document.getElementById("button-right-top");
+  textLeftTop = document.getElementById("button-left-top");
+  arrowLeftTop = document.getElementById("arrow-left-top");
+  arrowRightTop = document.getElementById("arrow-right-top");
 
-  textRight.style.color = "#ffffff";
-  arrowRight.style.color = "#ffffff";
-  textLeft.style.color = "#ffffff";
-  arrowLeft.style.color = "#ffffff";
+  textRightBottom = document.getElementById("button-right-bottom");
+  textLeftBottom = document.getElementById("button-left-bottom");
+  arrowLeftBottom = document.getElementById("arrow-left-bottom");
+  arrowRightBottom = document.getElementById("arrow-right-bottom");
+
+  textRightTop.style.color = "#ffffff";
+  arrowRightTop.style.color = "#ffffff";
+  textLeftTop.style.color = "#ffffff";
+  arrowLeftTop.style.color = "#ffffff";
+
+  textRightBottom.style.color = "#ffffff";
+  arrowRightBottom.style.color = "#ffffff";
+  textLeftBottom.style.color = "#ffffff";
+  arrowLeftBottom.style.color = "#ffffff";
 }

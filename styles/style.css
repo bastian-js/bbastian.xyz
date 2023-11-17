@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -75px;
 }
 
 .header_paragraph {
@@ -49,7 +50,8 @@ body {
   align-items: center;
 }
 
-.container-links {
+.container-links,
+.container-links2 {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
@@ -75,6 +77,11 @@ body {
 .button-social-header:hover {
   cursor: pointer;
   color: rgb(68, 134, 239);
+}
+
+.projects {
+  display: flex;
+  align-items: end;
 }
 
 .features__row {
