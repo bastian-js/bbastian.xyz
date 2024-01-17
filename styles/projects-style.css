@@ -32,16 +32,9 @@ body {
   color: rgb(68, 134, 239);
 }
 
-.projects {
-  text-align: left;
-  margin-right: 50px;
-  font-size: 20px;
-  text-decoration: none;
-}
-
 .container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -51,6 +44,15 @@ body {
   flex-direction: column;
 }
 
-#more {
-  display: none;
+.project-a {
+  text-decoration: none;
+}
+
+.project-a:hover h2 {
+  text-decoration: underline;
+  color: rgb(201, 201, 201);
+}
+
+.project-img {
+  width: 25rem;
 }
