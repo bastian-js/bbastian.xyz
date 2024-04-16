@@ -25,5 +25,9 @@ function getAll() {
 
   const fullName = firstname + " " + lastname;
 
+  const test = document.getElementById("name");
+
+  test.innerHTML = fullName;
+
   document.getElementById("name").innerHTML = fullName;
 }
