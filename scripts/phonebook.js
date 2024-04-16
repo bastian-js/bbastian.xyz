@@ -29,5 +29,5 @@ function getAll() {
 
   test.innerHTML = fullName;
 
-  document.getElementById("name").innerHTML = fullName;
+  document.getElementById("name").innerHTML = firstname;
 }
