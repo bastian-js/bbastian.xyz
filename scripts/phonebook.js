@@ -2,12 +2,11 @@
  Firstname
  Lastname
  Phone
- Number
  Adress
  Place
  PLZ
 
- https://www.bbastian.xyz/phonebook.html?firstname=Max&lastname=Mustermann&phone=123456789&number=123&adress=Musterstraße&place=Musterstadt&plz=12345
+ https://www.bbastian.xyz/phonebook.html?firstname=Max&lastname=Mustermann&number=123&adress=Musterstraße&place=Musterstadt&plz=12345
  */
 
 function getAll() {
@@ -17,17 +16,15 @@ function getAll() {
 
   const firstname = urlParams.get("firstname");
   const lastname = urlParams.get("lastname");
-  const phone = urlParams.get("phone");
   const number = urlParams.get("number");
   const adress = urlParams.get("adress");
   const place = urlParams.get("place");
   const plz = urlParams.get("plz");
 
-  const fullName = firstname + " " + lastname;
+  document.title = firstname + " " + lastname;
 
-  const test = document.getElementById("name");
-
-  test.innerHTML = fullName;
-
-  document.getElementById("name").innerHTML = firstname;
+  document.getElementById("name").innerHTML = firstname + " " + lastname;
+  document.getElementById("phone").innerHTML = number;
+  document.getElementById("adress").innerHTML = adress;
+  document.getElementById("placeplz").innerHTML = plz + " " + place;
 }

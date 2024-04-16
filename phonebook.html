@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
     <script src="./scripts/phonebook.js"></script>
-  </head>
-  <body>
-    <button onclick="getAll()">test</button>
 
-    <h2 id="name"></h2>
+    <link rel="stylesheet" href="./styles/phonebook.css" />
+  </head>
+  <body onload="getAll()">
+    <div class="container">
+      <h2 id="name"></h2>
+      <h3 id="phone"></h3>
+      <p id="adress"></p>
+      <p id="placeplz"></p>
+    </div>
   </body>
 </html>
