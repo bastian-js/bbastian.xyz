@@ -6,7 +6,7 @@
  Place
  PLZ
 
- https://www.bbastian.xyz/phonebook.html?firstname=Max&lastname=Mustermann&number=123&adress=Musterstraße&place=Musterstadt&plz=12345
+ https://bbastian.xyz/phonebook?firstname=Max&lastname=Mustermann&number=123&adress=Musterstraße&place=Musterstadt&plz=12345
  */
 
 function getAll() {
