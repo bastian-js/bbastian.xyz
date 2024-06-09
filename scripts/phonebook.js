@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+function getAll() {
+  const queryString = window.location.search;
+  console.log(queryString);
+=======
 /*
  Firstname
  Lastname
@@ -27,4 +32,5 @@ function getAll() {
   document.getElementById("phone").innerHTML = number;
   document.getElementById("adress").innerHTML = adress;
   document.getElementById("placeplz").innerHTML = plz + " " + place;
+>>>>>>> b99d92703968e73ec256591b9ece198bff94a62a
 }

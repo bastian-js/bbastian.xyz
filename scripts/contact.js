@@ -4,6 +4,54 @@ function emailSend() {
   var senderMessage = document.getElementById("message").value;
   var check = document.getElementById("check");
 
+  if (userName == "" || email == "" || senderMessage == "") {
+    check.innerHTML = "please fill out all fields";
+    return;
+  }
+
+  const specialChars = [
+    "!",
+    "#",
+    "$",
+    "%",
+    "^",
+    "&",
+    "*",
+    "(",
+    ")",
+    "-",
+    "_",
+    "+",
+    "=",
+    "{",
+    "}",
+    "[",
+    "]",
+    "|",
+    "\\",
+    ":",
+    ";",
+    "'",
+    '"',
+    ",",
+    "<",
+    ">",
+    "/",
+    "?",
+    "~",
+    "`",
+  ];
+
+  for (let i = 0; i < specialChars.length; i++) {
+    if (userName.indexOf(specialChars[i]) > -1) {
+      check.innerHTML = "name cannot contain special characters";
+      return;
+    } else if (email.indexOf(specialChars[i]) > -1) {
+      check.innerHTML = "email cannot contain special characters";
+      return;
+    }
+  }
+
   var messageBody =
     "Name " +
     userName +

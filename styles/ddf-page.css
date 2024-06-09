@@ -1,0 +1,81 @@
+body {
+  background-color: #0d1117;
+  color: white;
+  font-family: Montserrat;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.spieler.durchgestrichen {
+  text-decoration: line-through;
+}
+
+.herz {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.herz.verschwunden {
+  display: none;
+}
+
+.spieler {
+  margin: 10px;
+}
+
+#timer {
+  display: flex;
+  flex-direction: row;
+}
+
+#resetButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.questions {
+  margin-top: -65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#antwort {
+  margin-top: 200px;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+button,
+select {
+  border-radius: 15px;
+  border: 2px solid #0d1117;
+  padding: 15px;
+  box-shadow: none;
+  border-color: rgb(68, 134, 239);
+  background-color: rgb(68, 134, 239);
+  color: white;
+  font-size: 18px;
+}
+
+#start,
+#stop,
+#duration,
+#timer {
+  margin: 5px;
+}

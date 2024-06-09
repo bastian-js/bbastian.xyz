@@ -41,8 +41,6 @@ function changeColorBack() {
   arrowRightTop = document.getElementById("arrow-right-top");
 
   textRightBottom = document.getElementById("button-right-bottom");
-  textLeftBottom = document.getElementById("button-left-bottom");
-  arrowLeftBottom = document.getElementById("arrow-left-bottom");
   arrowRightBottom = document.getElementById("arrow-right-bottom");
 
   textRightTop.style.color = "#ffffff";
@@ -52,6 +50,4 @@ function changeColorBack() {
 
   textRightBottom.style.color = "#ffffff";
   arrowRightBottom.style.color = "#ffffff";
-  textLeftBottom.style.color = "#ffffff";
-  arrowLeftBottom.style.color = "#ffffff";
 }

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bastian</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="fontawestome/css/all.min.css" />
 
     <script
       src="https://kit.fontawesome.com/e0ab8e764a.js"
@@ -32,7 +31,7 @@
 
   <body>
     <div class="container-links">
-      <a href="./socials.html">
+      <a class="socials-link" href="./socials.html">
         <div
           class="socials"
           onmouseover="changeColor('right', true)"
@@ -59,11 +58,14 @@
 
     <header class="header">
       <img class="profile_pic" src="./assets/pfp_neu_rund.png" alt="" />
-      <p class="header_paragraph">hey, i'm bastian :)</p>
+      <p class="header_paragraph" id="header_p">hey, i'm bastian :)</p>
 
       <p class="links">
         <a href="https://github.com/bastian-js" target="_blank">
-          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-github" id="github-link"></i>
+        </a>
+        <a onclick="darkMode()" class="darkModeButton">
+          <i class="fa-solid fa-circle-half-stroke" id="toggleDarkMode"></i>
         </a>
       </p>
     </header>
