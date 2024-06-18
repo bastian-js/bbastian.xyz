@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Textinterpretation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="42b287f6-5de4-4e3b-a5f0-8db6626bf42c" class="page sans"><header><h1 class="page-title">Textinterpretation</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-blue">Deutsch</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Aufbau</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-blue">1. Semester</span><span class="selected-value select-value-color-purple">5CHK</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-green">Mitschrift</span></td></tr></tbody></table></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7ea9c6b6-ff47-49d2-be70-8009fa9d1af8"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Was will der Autor mit dem Text aussagen.</div></figure><p id="985be6f6-8767-4d51-af62-64ee8b67dbc4" class="">
+</p><p id="f0de0f91-74cf-4cc0-a6db-fe4d4496f3e3" class="">
+</p><p id="138ffedd-4cf4-41ca-9ddd-41c7a1025a51" class="">Sonett (Lyrik)<div class="indented"><ul id="45243888-ff99-456c-95c6-f8d9b713be2e" class="bulleted-list"><li style="list-style-type:disc">Terzett</li></ul></div></p><p id="ffc9285f-ce38-4b05-8ef5-69808a2cb6ec" class="">
+</p><h3 id="4a6072e6-361c-48bb-a9e4-b3be3ff1afd9" class="">„Vanitas”-Gedanken</h3><ul id="932b97b5-9575-4fe4-a1a1-d08e3b8d8757" class="bulleted-list"><li style="list-style-type:disc">alles ist vergänglich → negativ</li></ul><p id="9a58d1d0-3cbe-4148-aa06-0a7d2cd7acd3" class="">
+</p><h2 id="f7f14770-6f29-4821-ade1-0038854f8cca" class="">Vorarbeit</h2><p id="40b39585-d318-4ba4-8fa7-2a87b7127b25" class="">Allgemeinwissen </p><p id="abd65805-1ce8-40d9-9c1f-4b33e6deda7a" class="">Zusatzinformationen</p><h2 id="bdbdf611-e763-467d-9c2a-da7be7d15274" class="">Aufbau</h2><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2ff858fa-a1c8-46d7-8fec-69ed42e2f607"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/warning_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>Operatoren</strong></span> sind wichtig! → z.B.: nur sprachliche Besonderheiten (Sprachanalyse)</div></figure><h3 id="c90539b7-7e2b-4755-8e7c-d2efc806bba7" class="">Titel: </h3><p id="703c07c1-73bf-4885-9453-3d60c59b4bd8" class="">Textinterpretation: Orginale Überschrift</p><h3 id="fd89eea2-5779-4eb0-9f3a-9cede641810e" class="">Einleitung</h3><p id="d5c476e6-1010-4451-9d75-3bc9c7530552" class=""><strong>Basissatz</strong> (ausführlich) → Autor, Epoche, Titel, Wann und Wo entstanden/abgedruckt?</p><p id="6c87f8d7-fdc2-4f3d-a2a6-152477c55852" class=""><strong>Interpretationshypothese</strong> (in der Einleitung oder am Anfang des Hauptteils) → Die Autoren hat den Text geschrieben, weil er … verarbeiten möchte. (Mögliche Intention)</p><h3 id="e49f4a40-b183-49dc-b909-81a85fc7eab6" class="">Haupt- bzw. Analyse-Teil</h3><p id="4a45fa94-0e1e-45c0-9862-684095c12ff9" class="">Was meint der Autor damit?</p><p id="ad87bfe5-ed7d-45a7-900b-41195e4933f8" class="">Was will er damit ausdrücken?</p><ul id="da88c071-baa9-4b2f-a568-8f89015e4e26" class="toggle"><li><details open=""><summary><strong>Sprachliche Analyse</strong></summary><p id="2774ac84-5eee-4a80-b8db-db9e4981cd01" class="">Sprachliche Besonderheiten:</p><ul id="7d2331ae-e3fb-4e46-88c3-fbfb2c12ee1c" class="bulleted-list"><li style="list-style-type:disc">Rhetorische Stilmittel (Stilmittel, Zeile, Begründung, Beispiel → direktes Zitat)</li></ul><ul id="8dec3d72-88cc-45b4-80e9-450782fd4df1" class="bulleted-list"><li style="list-style-type:disc">Wortfelder (z.B.: Medizinische Fachwörter)<ul id="3fd7f9a2-2a3d-4954-bebf-1db22ed909db" class="bulleted-list"><li style="list-style-type:circle">parataxisch: Hauptsätze</li></ul><ul id="efe3c720-9f79-4c17-bda4-24761d4201fb" class="bulleted-list"><li style="list-style-type:circle">hypotaxisch: Nebensätze </li></ul></li></ul></details></li></ul><ul id="94fa9eb2-d720-4167-a756-9b6cc7214035" class="toggle"><li><details open=""><summary><strong>Formanalyse</strong></summary><p id="40545a9f-a7fd-4623-a08e-7b1d056ba1ff" class="">Wie ist der Text aufgebaut? → Bild dabei, …</p></details></li></ul><ul id="9f2cf4c2-4fc6-4694-a734-72322d66f1b6" class="toggle"><li><details open=""><summary><strong>Aufbauanalyse</strong></summary><ul id="925b6711-b114-4ba4-8cec-cd04030ec88a" class="bulleted-list"><li style="list-style-type:disc">Zeilenangabe</li></ul><ul id="ed30300f-696c-41b6-8bba-8d06bc83dd9f" class="bulleted-list"><li style="list-style-type:disc">In dem Absatz steht das …</li></ul></details></li></ul><ul id="40871bf7-94d3-4b4f-9d10-555a6dd9b500" class="toggle"><li><details open=""><summary><strong>Kommunikationsanalyse</strong></summary><p id="4bd6fbb3-877d-4afe-9f36-95b4053acab9" class="">Was will der Auto damit erreichen? Ist der Text informierend, unterhaltend, sarkastisch, ironisch, …?</p></details></li></ul><h3 id="bd677707-2ce6-492b-abb1-21c59fa6623d" class="">Schlussteil</h3><p id="7bdcfa21-2174-4efe-8f73-94b67268f565" class="">Verifizierung bzw. Falsifizierung in der Einleitung/Anfang aufgestellten Interpretationshypothese<div class="indented"><p id="383a983b-7e5e-4ac6-8032-fb17b7a98e7e" class="">→ Ich komme darauf, dass das gar nicht stimmt.</p><p id="d9300c1b-b926-4552-a81c-af571098a582" class="">→ Ich hatte mit meiner Annahme vollkommen recht.</p></div></p><p id="5c51a168-9425-484b-8523-eb881ac54a9d" class="">Wirkung des Textes → Wie hat er auf mich gewirkt.</p><p id="3aa1e374-c304-4310-a6d9-d3bb5f6683e4" class="">
+</p><p id="0e90d328-ca13-42b5-8d20-46ad385f63d8" class="">Kurzgeschichte</p><hr id="355af4d6-23f9-4028-8bff-9eb8abeb21d8"/><h2 id="80d20862-e351-4053-b72a-3fa6cc8e64c3" class="">Wenn die Haifische Menschen wären</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0329e678-a7e5-4280-ba05-d118c743158f"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/copy_gray.svg"/></div><div style="width:100%"><strong>Textinterpretation: </strong><figure id="0439a2bb-7eec-413e-8fe2-626531f3a92c"><div class="source"><a href="Textinterpretation%2042b287f65de44e3ba5f08db6626bf42c/Haifische.pdf">Haifische.pdf</a></div></figure></div></figure><p id="2dfa883f-83b8-4a83-a1dc-054463dae0e0" class="">Keunergeschichten: 1948</p><p id="593a4825-77a4-4db4-a433-eef88082454f" class="">Haifische sind die Diktatoren, usw</p><p id="d4cfb5f5-7ba6-41a2-9cc7-379df069ab4f" class="">Fische: Volk</p><ul id="bc674921-0ef3-4179-b163-f10aa5a16210" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background"><span style="border-bottom:0.05em solid"><strong>Dialog</strong></span></mark><mark class="highlight-teal_background"> zwischen dem kleinen Mädchen und dem Herrn K.</mark></li></ul><ul id="afa928bf-b3b8-4feb-8b83-814e4f524e71" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Herrn K.: Name wird nicht gesagt → Er will sich vlt. politisch nicht öffentlich äußern (gesellschaftskritisch).</mark></li></ul><ul id="2eff1da5-b364-4c6a-a46e-3d37d4a1fcbd" class="bulleted-list"><li style="list-style-type:disc">Gewaltige Käste bauen: Ländergrenzen, Bauwerken</li></ul><ul id="dfbf50a6-2ae3-44b8-8e82-0b305d39c5ab" class="bulleted-list"><li style="list-style-type:disc">Barockzeit Bauwerke: Kirche <ul id="febd8873-f070-490f-bf48-dbd5af56f8d5" class="bulleted-list"><li style="list-style-type:circle">Gegenreformation → Machtdemonstrationen (Wir haben Geld)</li></ul></li></ul><p id="f7271d1c-e51e-45a9-85a7-9b35db598ab0" class=""><mark class="highlight-teal_background">Nach dem zweiten Weltkrieg entstanden</mark></p><ul id="cfdee58f-6f4d-40ae-a317-52d0d4d5f2ed" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Er kritisiert die Nazis (bzw. Generell Regierungsformen, bei denen Menschen unterdrückt werden)</mark> → Welthauptstadt Germania; Autobahnen; Gebäude in Nürnberg</li></ul><ul id="e015cea0-a04e-4664-912d-d50b2a7084f8" class="bulleted-list"><li style="list-style-type:disc">Autokratie: </li></ul><ul id="5fa7682b-ee70-4343-a27f-df5cb85062de" class="bulleted-list"><li style="list-style-type:disc">Kommunismus/Planwirtschaft → Kästen für die Fischlein<ul id="680de160-8246-4acc-9c7c-b0460f1b2fdf" class="bulleted-list"><li style="list-style-type:circle">Kolchose: Massentierhaltung, riesige Landwirtschaftsbetriebe → Autotag sein, Subsistenzwirtschaft (Land kann sich selbst versorgen)</li></ul></li></ul><ul id="5d9b5c0f-e58d-4fd5-b6a3-dc12a50d9189" class="bulleted-list"><li style="list-style-type:disc">Iran, Nordkorea (Schurkenstaaten)</li></ul><p id="9d177472-9d20-4be5-b382-2178a4f2a98a" class="">Allerhand sanitäre Maßnahmen werden getroffen → Man kümmert sich um die Fischlein; sonst bringen sie nichts (für Krieg, Arbeit)</p><p id="1a2c2369-5311-4523-be2a-672b800a62e4" class="">Steinhof → Landesnervenheilanstalt in Wien Ottakring; Nazis haben Menschenversuche gemacht (Wie viel Schmerz kann ein Mensch vertragen; Was kann man einem Menschen ohne Narkose entnehmen)<div class="indented"><p id="44a6e937-0eff-4065-88e9-04b9d3a9f85a" class="">Dr. Joseph Mängele → Zwillingsforschung</p></div></p><p id="0a4ab02c-c69d-4417-a650-6753a822bd76" class="">Trübsinnig… → Es wird mit Sportveranstaltungen von der Politik abzulenken (Römer, Griechen); Das Volk braucht etwas zum Essen und Unterhaltung</p><p id="29d0fc75-463f-48fa-b5af-81ef246f1834" class=""><strong>Juche-System</strong>: Nordkorea → Militär steht an erster Stelle</p><ol type="1" id="c884378d-cd74-407e-9a0e-164900a4028d" class="numbered-list" start="2"><li>Konjunktiv → etwas Unmögliches</li></ol><p id="263f10c1-afd2-4f80-a76a-71b16a0df902" class="">Theokatrie: (Theos: Gott)</p><p id="af02bf18-6595-4c3a-9013-1da0a7293f37" class="">Panem et circenses: Volk braucht Brot und spiele → Römer</p><p id="3410c2ff-1528-4b75-961e-0fb49d0becf6" class="">Nürnberger Rassegesetze → Ahnennachweise</p><p id="9b3a66d3-4165-4638-bf01-61dc673a4b3b" class="">Shiitischer Halbmond: </p><p id="e312deab-de06-43d3-b133-9fba293126ac" class="">Seetang wird angehängt für Kriegstätigkeiten: Medaillen → Eisernes Kreuz; Tapferkeitsmedaillen<div class="indented"><p id="98ecef4a-b9a9-474c-abce-a18d1be8483a" class="">Frauen: Mutterkreuz (für die Anzahl Kinder)</p></div></p><p id="86d300a8-7850-4c4c-8c10-e5a45f9b10ac" class="">Kunst: wurde von den Nazis gestohlen</p><p id="52f890a3-d284-40fc-b87d-752cede72397" class="">Kunst für Propagandazwecke: im Bereich des Filmsektors → Deutsche Klassiker (Nibelungensage)</p><p id="247f88d2-cba7-4560-a41c-c9d0b3eb7ccd" class="">Hitlers Lieblingsfilm: King Kong</p><p id="8a98a332-a753-4c52-95ab-f1a462e215a4" class="">Leni Riefenstahl: Schauspielerin; Bekannte von Hitler</p><p id="7f5fc017-f7b2-4499-96a9-09ed76994e1a" class="">NS Religion: nicht sehr gerne gesehen</p><p id="12f2556a-37f6-419e-81aa-6713784509d9" class="">Kirchenbetrag wurde von den Nazis erfunden</p><p id="980081cc-ad93-4d75-b7ee-e52cb5bbdaa8" class="">Buchstabiertabelle: David und Nathan wurden entfernt, weil es jüdische Namen sind.</p><p id="69db8a00-68b2-4635-bee6-19973dac0841" class="">Fischen werden übereinandergesetzt: Hierachie</p><p id="e1065464-18bc-446c-9df9-7a7573f8a0ec" class="">BIFEB</p><p id="d1d214e0-c062-4401-beb0-16a9feff5b76" class="">Warum war die jüdische Bevölkerung wohlhabend? Sie dürfen <span style="border-bottom:0.05em solid">keine katholische Arbeit</span> ausführen → Denkarbeit (Finanz- und Immobiliensektor)</p><p id="b408cdbf-9578-46d0-9754-d7bc3c1c3536" class="">Verb an 1. Stelle → Hauptsatz</p><p id="5f08896d-9a41-4213-9aae-c5bf2904a8cf" class="">Verb am Ende → Gliedsatz</p><p id="85685b09-cb2e-4924-98a2-4a16752c13c9" class="">
+</p><p id="8fed3428-53de-44ea-bca5-790a7bd47771" class="">Parataxe: Hauptsatzreihe - parataktisch</p><p id="35b1a4e3-a31a-477d-9bba-3d8fe8070c9f" class="">Hypotaxe: Satzgefüge - hypotaktisch</p><p id="d571992d-54f4-479e-b253-d3c6b01f7625" class="">
+</p><p id="43fb326f-a9ea-425e-a75e-e2d17d153a1c" class="">bigott: fromm, scheinheilig</p><hr id="aa513f6b-c6b8-47ea-a0d0-d1c88d31319e"/><h2 id="c1200ff8-cf4a-4289-b28f-586c17b36374" class="">Nachhaltigkeit: in Verbindung mit Kleidung</h2><p id="76de3cdf-6c98-47b5-a91a-bee353db0376" class="">Schnelllebige … → Liedtext (erklärt die W-Fragen)</p><h3 id="47af42a9-0234-4a5a-bad3-b703e30d2f16" class="">Liedtext</h3><p id="404c08f1-58e3-4be6-9c96-087e0fe234ef" class="">Der Liedtext gibt Überblick über die aktuelle Situation am Kleidungsmarkt / über den Inhalt des Berichts.</p><h3 id="015a6109-c5c3-44d9-8524-31b201bc585c" class="">Einleitung</h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1df3fa35-b178-401f-87c1-823150bc1ee7"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Zeile 1-15 </div></figure><p id="b0bc54bc-b11e-44d9-8526-80d779cd1d51" class="">Ausgangsfrage zum nachhaltigen Umgang mit aussortierter Kleidung.</p><h3 id="c1f9f263-5474-44e0-a84a-bba21485c677" class="">Hauptteil</h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="53d81897-5335-453a-9c6e-6b722490657f"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Zeile 16-147</div></figure><p id="6480527f-a56b-494a-b405-539fd6d789a3" class="">Es werden Möglichkeiten beschrieben wie Kleidung weiterverwendet werden kann.</p><p id="5e809e36-57c5-4034-aae9-72c9919028e3" class="">16-61</p><p id="54dd2f62-9d58-4765-85d8-a19e0321af95" class="">62-102</p><p id="18a23005-efbf-4243-a900-b4a471b761ba" class="">103-147</p><p id="adc586e7-b64a-469b-8be4-d68f9756ded6" class="">
+</p><h3 id="f577308e-8426-4535-b4f4-a9d9d6f9cb01" class="">16-61</h3><p id="a9eedadb-a860-4828-b7d0-6095f7ef0077" class="">Eine Konsum-Expertin klärt über die Möglichkeiten der Weiterverwendung auf. </p><p id="ce8ff45d-cde5-4258-a6b8-4d262dabe7a6" class="">
+</p><h3 id="eda2e5f0-24d8-431a-9098-4262f41d853a" class="">62-102</h3><p id="1ce2eb16-0ffd-44d2-886f-b5fc8a7dead6" class="">Die Probleme des Onlinehandels werden geschildert. Es geht auch um billig Produktion.</p><h3 id="07a9e560-8547-4f03-bf91-2a5f1470b110" class="">103-147</h3><p id="865e73bb-56a4-4b26-bc32-8c881ad90634" class="">Was die caritas mit den Aussortierten Kleidungsstücken macht.</p><h3 id="649d8390-9710-4881-bbca-b1ff8c52777b" class="">Schlussteil</h3><p id="9dc2e3f2-121e-4e2c-9acc-8384ce5a35aa" class="">Das Kleidung die nicht verkauft werden kann, geht an Großhändler. Man hat Zahlen und Fakten genannt, die belegen, dass es notwendig ist dass man mit der Kleidung nachhaltig umgeht.</p><p id="e151235c-a371-4e2f-8ccc-254a2c13fad9" class="">
+</p><p id="b4818058-b835-4f36-a7fb-d57c8b06b7eb" class="">Doch wohin mit… - 13 → Rhetorische Frage</p><p id="5c131b83-9e51-427f-802f-9ea9ba853dff" class="">Textiler Teufelskreis, Fast Fashion → Alliteration</p><p id="781610f4-9251-4c22-9bb1-89706cd2c21c" class="">Upgrade - Zeile 31 → Anglizismus</p><p id="211a3e64-7243-4d81-b861-7010ae200fb2" class="">Tote Hosen → Metapher</p><p id="fd9ed084-42dc-4133-b136-b8280969c478" class="">tot und leben → Antithese</p><p id="3bf2abc5-51b5-4c0f-948e-ef4a503a802c" class="">
+</p><p id="6913388d-aac7-4012-8ef5-7a2768082a26" class="">
+</p><h3 id="f134c06e-1ce2-42b3-8a62-5a5a4b3a72aa" class="">Metapher</h3><p id="eb174412-ec3b-44ea-a69c-0c79f884e758" class="">Lustige Fischlein schmecken besser als trübsinnige → Z 12</p><p id="df8549c7-d296-4c50-83f3-62f3b5f10be0" class="">Wie man in den Rachen der Haifische schwimmt → Z 14</p><h3 id="b6fe62d0-27b1-4de2-a0bd-4cbfc5d84676" class="">Klimax</h3><p id="f041ab87-863a-48a9-8092-d694b443f58d" class="">niedrigen, materialistischen, egoistischen und marxistischen Neigungen → Z 23</p><h3 id="da1928ea-0b49-41d1-98d0-69b1910ed648" class="">Hyperbel</h3><p id="e57c0b7f-4985-4dcb-a4b7-ac1bc0435025" class="">Die ein wenig größeren dürften sogar die kleineren auffressen. → Z 51</p><h3 id="1cc964ac-4457-4458-8f57-2ad8e0799057" class="">Umgangssprachlich</h3><p id="723f0fa3-50b0-4302-9fb3-b4ee1957e3e4" class="">eingelullt - Z 45</p><p id="7e1c17e6-6290-4b35-bead-f407be1caca3" class="">
+</p><p id="00a796d1-6e0c-46a7-be7a-bd2cd12430a7" class="">
+</p><p id="be125a2f-d1f6-46a6-8d44-6df8248da58b" class="">und da sich viele der Erklärung die Ereignissen des Nationalsozialismus widerspiegeln.</p><p id="5eb4f0d7-531c-454c-97b6-ddf43189e22e" class="">und da sich die meisten Erklärung mit Ereignissen während des Nationalsozialismus überschneiden.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

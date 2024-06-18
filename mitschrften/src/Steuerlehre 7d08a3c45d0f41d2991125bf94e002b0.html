@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Steuerlehre</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7d08a3c4-5d0f-41d2-9911-25bf94e002b0" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏦</span></div><h1 class="page-title">Steuerlehre</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-orange">UNCO</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Einkommensteuer, Gewinnfreibetrag</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-pink">Matura</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><h2 id="6a85b0b4-2091-4e1c-b341-3a46dad33d55" class="">Gliederung</h2><ul id="77f012d0-5bcc-4805-a400-47e3763088f8" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Art der Einhebung</strong></span><ul id="26c12464-0555-4466-acae-8c616371545c" class="bulleted-list"><li style="list-style-type:circle">Direkte Steuern: Steuerträger und -zahler sind ident → EKS, KÖST</li></ul><ul id="ccdf94fb-67e5-4d6f-be59-745ffc41f292" class="bulleted-list"><li style="list-style-type:circle">Indirekte Steuern: … nicht ident</li></ul></li></ul><ul id="f2a8067d-3e90-4f6d-8a0c-de2734648df3" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Art der Bemessung</strong></span><ul id="d84deef6-94d6-48cc-b014-d7ee849baa66" class="bulleted-list"><li style="list-style-type:circle">Selbstbemessungssteuern: vom Steuerpflichtigen selbst berechnet → Lohnsteuer</li></ul><ul id="3b25b5fa-6a3b-4bab-90b5-63986e8f81a4" class="bulleted-list"><li style="list-style-type:circle">Veranlagungssteuern: mittels Bescheid → EKS, KÖST</li></ul></li></ul><ul id="bffa2c4c-5cb8-4b45-b505-287802c7a59b" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Wirtschaflichen Anknüpfung</strong></span><ul id="23f388e2-2c97-4879-afbc-8be1286c3b5e" class="bulleted-list"><li style="list-style-type:circle">Ertragssteuern: vom Gewinn</li></ul><ul id="b1233b11-469b-40ff-9fb4-3b82993ef8dd" class="bulleted-list"><li style="list-style-type:circle">Vermögenssteuern: vom Vermögen</li></ul><ul id="27a6c115-8d57-4ad6-aee6-75c8071431f9" class="bulleted-list"><li style="list-style-type:circle">Verkehrssteuern: bezogen auf bestimmtes Geschäft</li></ul><ul id="dd419e26-87f8-494b-a926-31fc293d812a" class="bulleted-list"><li style="list-style-type:circle">Verbrauchssteuern: Verbrauchsgüter</li></ul></li></ul><h3 id="b44dcad8-8e26-43ab-a822-83b5e16dce0f" class="">Unternehmen</h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="e0b873c1-e794-458e-a90b-c0690b306af0"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Nicht Unternehmen, sondern Gesellschafter, Unternehmer!</div></figure><p id="7fc375e4-11b2-4071-abe3-23706c3bb147" class=""><span style="border-bottom:0.05em solid"><strong>Einzelunternehmen</strong></span>: Einkommenssteuer vom Gewinn</p><p id="4c537bf4-9c52-4ed7-9e07-a2b38c46ebbe" class=""><span style="border-bottom:0.05em solid"><strong>Personengesellschaften</strong></span>: Einkommenssteuer vom Gewinnanteil</p><p id="ce9181c8-b203-47c1-ab68-4b2b529c5857" class=""><span style="border-bottom:0.05em solid"><strong>Kapitalgesellschaften</strong></span>: Kapitalertragssteuer vom ausgeschütteten Gewinn</p><h2 id="0009803b-3bd2-4461-b4e3-e0401be8a356" class="">Rechnungslegungspflicht</h2><figure id="fe06dd8c-c276-46f0-901e-151f0ac7d28c" class="image" style="text-align:left"><a href="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Untitled.png"><img style="width:480px" src="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Untitled.png"/></a><figcaption>Grafik: Rechnungslegungspflicht (<span style="border-bottom:0.05em solid">Seite 23, Steuerlehre</span>)</figcaption></figure><h2 id="47a98387-a1af-4aed-be0d-2f14d3390956" class="">Unterschiede: Einkommenssteuer und Körperschaftssteuer</h2><table id="77d49d3c-21aa-4514-8e26-5f14ddf6949f" class="simple-table"><thead class="simple-table-header"><tr id="7f129c93-e9fc-4b71-9c2f-1ddadd8cb39c"><th id="xtcf" class="simple-table-header-color simple-table-header">KÖSt, KESt</th><th id="t}`p" class="simple-table-header-color simple-table-header">Einkommensteuer</th></tr></thead><tbody><tr id="e9abe2f5-2dff-44fc-aa4c-e8e7308b2f3f"><td id="xtcf" class="">27,5%, 25% → fixe Steuersätze</td><td id="t}`p" class="">progressive Steuersätze</td></tr><tr id="873e3abb-5116-4ab7-9f39-a316aba85d5c"><td id="xtcf" class="">Mindestkörperschaftssteuer nach dem Gewinn</td><td id="t}`p" class="">bis ca. 700.000€ Gewinn weniger Steuern, weil sie progressiv sind</td></tr><tr id="1c3ce21c-9dec-4463-b008-4e6c1adfbd25"><td id="xtcf" class="">kein Gewinnfreibetrag</td><td id="t}`p" class="">Gewinnfreibetrag</td></tr></tbody></table><h1 id="cb0c6cae-c78b-40f2-9736-adeb320f042d" class="">Berechnung der Einkommenssteuer</h1><h2 id="08aa3337-d121-4473-af00-d64e60668bc6" class="">Einkunftsarten</h2><figure id="e425def2-14c8-4926-a78c-471be95c71ca" class="image" style="text-align:left"><a href="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Bildschirmfoto_2023-04-23_um_19.32.35.png"><img style="width:480px" src="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Bildschirmfoto_2023-04-23_um_19.32.35.png"/></a><figcaption>Grafik: Steuerbare Einkünfte (<span style="border-bottom:0.05em solid">Seite 49, Steuerlehre</span>)</figcaption></figure><p id="f6f95d2a-44ed-4f69-b001-81beaa7031d8" class="">Werbungskostenpauschale: 132€</p><p id="f5719074-f9a3-4cc1-8e7f-701f01aa12f1" class="">Steuerfrei: Erbe, Spenden</p><h2 id="f2884093-e8f1-4c4b-b25d-092fed9947c8" class="">Steuerpflichtiges Einkommen</h2><figure id="3c69a3a6-b10e-489d-8767-a75a81c32e78" class="image" style="text-align:left"><a href="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Untitled%201.png"><img style="width:480px" src="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Untitled%201.png"/></a><figcaption>Grafik: Steuerpflichtiges Einkommen (<span style="border-bottom:0.05em solid">Seite 59, Steuerlehre</span>)</figcaption></figure><h3 id="509692d3-3332-45f2-816d-cb5e2a8375c1" class="">Sonderausgaben</h3><ul id="4204ef9b-bae9-4f22-bee2-ea3c6e524a54" class="bulleted-list"><li style="list-style-type:disc">Renten → voll absetzbar</li></ul><ul id="91da7c32-94d2-44ac-8781-fa7751da092a" class="bulleted-list"><li style="list-style-type:disc">Freiwillige Weiterversicherung → voll absetzbar</li></ul><ul id="a0b1a596-c2f8-41e6-92bd-eb28d43536b1" class="bulleted-list"><li style="list-style-type:disc">Steuerberatungskosten → voll absetzbar</li></ul><ul id="12292fa2-7d9a-4b30-b26f-64d929c9dba9" class="bulleted-list"><li style="list-style-type:disc">Verluste aus betrieblichen Einkunftsarten (Land-/Forstwirtschaft, selbstständig, Gewerbebetrieb) → voll absetzbar</li></ul><ul id="9e0c7f15-7fb3-446f-a781-a02cd1c2133d" class="bulleted-list"><li style="list-style-type:disc">Kirchenbeträge → bis <span style="border-bottom:0.05em solid"><strong>400€</strong></span> absetzbar</li></ul><ul id="8c4f2ded-cfd2-4cc5-8f59-fe3fb3471a2f" class="bulleted-list"><li style="list-style-type:disc">Spenden → bis <span style="border-bottom:0.05em solid"><strong>500.000€ bzw. 10% der Einkünfte</strong></span> absetzbar</li></ul><h3 id="9e85bb5f-56b5-45f2-aca8-28202e447491" class="">Außergewöhnliche Belastungen</h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="dee98e90-3c05-4b62-abf5-44a2163e731f"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Ausgaben, die außergewöhnlich, zwangsläufig erwachsen oder die wirtschaftliche Leistungsfähigkeit beeinträchtigt.</div></figure><figure id="d893ca9d-1336-48bb-b473-b669ad0c8a8f" class="image" style="text-align:left"><a href="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Untitled%202.png"><img style="width:480px" src="Steuerlehre%207d08a3c45d0f41d2991125bf94e002b0/Untitled%202.png"/></a><figcaption>Grafik: Selbstbehalt (<span style="border-bottom:0.05em solid">Seite 61, Steuerlehre</span>)</figcaption></figure><p id="41e82082-ebb6-4507-be77-6b76ad860134" class="">Selbstbehalt ist vom Einkommen und Familienstand abhängig.</p><table id="0a278c53-9739-4464-82aa-8303f7bc940e" class="simple-table"><thead class="simple-table-header"><tr id="1e1b1054-5fdc-4bed-934d-27580c3c9cdf"><th id="I:QS" class="simple-table-header-color simple-table-header" style="width:493px">Gesamtbetrag der Einkünfte</th></tr></thead><tbody><tr id="684ddb62-173a-4b9c-ad50-492075ac628b"><td id="I:QS" class="" style="width:493px">+ Sonstige Bezüge aus Einkünften nichtselbständiger Arbeit</td></tr><tr id="7a39737a-4279-4876-b450-7fc5f721ed2c"><td id="I:QS" class="" style="width:493px">– Sozialversicherungsbeiträge</td></tr><tr id="01d3d040-66da-46c6-9a3d-0a8b9c78c323"><td id="I:QS" class="" style="width:493px">– Sonderausgaben</td></tr><tr id="fd600046-0d36-4b04-abf7-7564a0a0ce88"><td id="I:QS" class="" style="width:493px"><span style="border-bottom:0.05em solid"><strong>= Einkommen</strong></span></td></tr></tbody></table><p id="dcf9879c-7a59-48b0-a7ca-dc7604997471" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

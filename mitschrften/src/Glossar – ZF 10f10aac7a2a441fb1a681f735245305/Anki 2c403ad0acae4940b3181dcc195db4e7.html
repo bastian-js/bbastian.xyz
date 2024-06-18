@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Anki</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2c403ad0-acae-4940-b318-1dcc195db4e7" class="page sans"><header><h1 class="page-title">Anki</h1><p class="page-description"></p></header><div class="page-body"><p id="0009e968-cb09-4622-ae99-7acb5aa572f6" class="">
+</p><ul id="05f6f3c2-2da1-4cbe-a745-4da8616b276e" class="toggle"><li><details open=""><summary>In Prosa</summary><p id="7b721c8c-73dd-4312-a895-8f2adbaf23c2" class="">Es reimt sich nichts (<mark class="highlight-orange_background">ungebundene Sprache</mark>)</p></details></li></ul><ul id="180a360f-04a2-41bf-9879-54ff67b06fbc" class="toggle"><li><details open=""><summary>5. Akt Schema: Seit Aristoteles</summary><ol type="1" id="3c255d06-1f12-4f9d-a654-04bd2258a65a" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Expositur</strong></span>: Einleitung</li></ol><ol type="1" id="c9933778-7190-4a0c-970e-f9d23dcf7eab" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Aufsteigende Handlung</strong></span> (Steigerung)</li></ol><ol type="1" id="f65c1724-b343-40a4-86ca-e40ae8d90a5a" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid"><strong>Klimax</strong></span>: Höhepunkt</li></ol><ol type="1" id="351dd76b-5dda-48a6-8f3e-b6faaffc4722" class="numbered-list" start="4"><li><span style="border-bottom:0.05em solid"><strong>Absteigende Handlung</strong></span> (Verzögerung)</li></ol><ol type="1" id="918ec16c-f1d2-40b1-a091-f0eaa75bed00" class="numbered-list" start="5"><li><span style="border-bottom:0.05em solid"><strong>Ende</strong></span>: Katastrophe (Tragödie) oder Happy End/Lösung (Komödie)</li></ol></details></li></ul><ul id="1a97872b-204c-41a9-8e09-3d5dd1c2021d" class="toggle"><li><details open=""><summary>Zäsur</summary><p id="c14478c0-d30a-44b1-87aa-2a04d742190f" class="">In den <mark class="highlight-orange_background">Sonettgedichten</mark>; Pause im Versinneren </p></details></li></ul><ul id="4d8a981f-2fab-469f-8418-7043b515af03" class="toggle"><li><details open=""><summary>Ode</summary><p id="e8e558ae-42e7-4328-97e7-e45ae90495d3" class=""><mark class="highlight-orange_background">Lobgedicht</mark> → Ode an die Freude: Europäische Hymne (Text: Schiller, Melodie: Beethoven)</p></details></li></ul><ul id="2787eff0-8c8d-44f2-8484-c02768e161c6" class="toggle"><li><details open=""><summary>Unreiner Reim</summary><p id="dba8f297-0278-416e-bf9f-305f3318f815" class="">Etwas reimt sich <mark class="highlight-orange_background">nicht 100%</mark>, sondern Wörter <mark class="highlight-orange_background">ähnelt</mark> sich nur.</p><figure id="61466b98-a4c6-4a44-9163-ab4f3351adbd" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-23_um_10.09.40.png"><img style="width:288px" src="Bildschirmfoto_2023-02-23_um_10.09.40.png"/></a><figcaption>Beispiel: <span style="border-bottom:0.05em solid">unreiner Reim</span></figcaption></figure></details></li></ul><ul id="b3d6905c-3fbf-42e1-a330-f8c0b84ae6aa" class="toggle"><li><details open=""><summary>Schweifreim</summary><p id="8236b26d-cc9e-494f-8b9b-09152e194373" class="">Besteht aus 6 Versen: Auf einen <span style="border-bottom:0.05em solid">Paarreim</span> folgt ein <span style="border-bottom:0.05em solid">verschränkter Reim</span></p><figure id="54e223cd-b50f-4a13-9e35-63bd4c51a8f5" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-23_um_10.00.05.png"><img style="width:336px" src="Bildschirmfoto_2023-02-23_um_10.00.05.png"/></a><figcaption>Beispiel: <span style="border-bottom:0.05em solid">Schweifreim</span></figcaption></figure></details></li></ul><ul id="ae2b0366-44e1-4ba7-82d7-45d813879a45" class="toggle"><li><details open=""><summary>Ein „Waise”</summary><p id="4e2fc1b8-9e52-4de0-9463-a6adf3229221" class="">Kind, dass keine Eltern mehr hat (Vollwaise, Halbwaise)</p><p id="3f95e13a-e986-4bd3-8f38-a5048988d814" class=""><strong><span style="border-bottom:0.05em solid">In der Lyrik</span></strong>: Vers passt nicht zu den anderen</p><figure id="a1168fc9-a07b-413d-940a-fa106a2fb824" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-23_um_10.16.55.png"><img style="width:288px" src="Bildschirmfoto_2023-02-23_um_10.16.55.png"/></a><figcaption>Beispiel: Waise in der Lyrik → <span style="border-bottom:0.05em solid">tandaradei</span></figcaption></figure></details></li></ul><ul id="861834c3-7e4e-44da-be25-63a77db1427c" class="toggle"><li><details open=""><summary>Verslehre</summary><p id="9bbffb80-cf28-4fa4-b6c7-a33767a8571c" class=""><span style="border-bottom:0.05em solid"><strong>Metrik</strong></span></p></details></li></ul><ul id="19430226-9bc3-4166-87b2-061f9da2094d" class="toggle"><li><details open=""><summary>Alexandriner</summary><p id="9e11da19-dcb5-46b6-8e2d-db500f3f4653" class="">6-hebiger Jambus <mark class="highlight-orange_background">mit Zäsur</mark> </p></details></li></ul><ul id="c8b8b7ba-d54e-490a-8b5e-cc6c92e3a53c" class="toggle"><li><details open=""><summary>Sonett</summary><p id="ceac4261-804b-4b69-acde-f14e4bd101ad" class="">Gedichtsform → Typisch für die <mark class="highlight-orange_background">Barrockzeit</mark></p></details></li></ul><ul id="1a816f18-70b1-490e-8612-acbfbcd3fcf9" class="toggle"><li><details open=""><summary>Lyrisches Ich</summary><p id="18b7ced4-33f5-41f7-a651-ddbb76ae269e" class="">Ich-Erzähler in einem lyrischen Gedicht</p></details></li></ul><ul id="f065f677-93af-46d1-a029-3da274e8eebc" class="toggle"><li><details open=""><summary>Refrain</summary><p id="14c843a3-6048-4b5f-a904-98fe967dbda1" class="">Der sich wiederholende Teil eines Liedes</p></details></li></ul><ul id="4c180d10-a73d-4985-bcfe-6f951875a253" class="toggle"><li><details open=""><summary>Knittelvers</summary><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="20eb1e83-e617-47b8-9c36-df4e9f41355d"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Vierhebiger Vers mit <mark class="highlight-orange_background">Paarreim</mark> </div></figure><p id="aa267742-a4e8-40fb-a755-67466db1e6a8" class="">z.B.: Faust: „Da steh ich nun, ich armer Tor! Und bin so klug als wie zuvor.”</p></details></li></ul><ul id="a8ca5135-bfe0-4e95-922b-1b7b1fc2076d" class="toggle"><li><details open=""><summary>Komparation</summary><p id="e2fb86e2-9329-44f5-9fb0-7f2fa6dc5fe3" class="">Steigerung(Steigerungsstufen: Positiv, Komparativ, Superlativ)</p></details></li></ul><ul id="e59dc143-178d-44f2-bacb-7fa64086a69e" class="toggle"><li><details open=""><summary>Ständeklausel</summary><p id="2ff6d1ba-0259-49df-9a04-890b20dd2666" class=""><span style="border-bottom:0.05em solid"><strong>Tragöde</strong></span> → im <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">adeligen</span></mark> Milieu</p><p id="2fc5697f-98e6-4ab8-86d3-494600a5b26b" class=""><span style="border-bottom:0.05em solid"><strong>Komödie</strong></span> → im <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">bäuerlichen</span></mark> Milieu</p></details></li></ul><ul id="38432aeb-f9e0-4db4-8099-63bb26240de9" class="toggle"><li><details open=""><summary>erster Deutscher mit Lateinischem Endreim</summary><p id="2886f06d-2e5a-4cec-ae25-4c1d2a4fd989" class=""><em>Ottfried von Weißenburg</em></p></details></li></ul><ul id="c55b4a97-1c27-4a96-bb9d-632bcf100148" class="toggle"><li><details open=""><summary>Reimarten</summary><p id="7cfa7f68-c0ce-44c7-8dbe-336bbc40c160" class="">Endreim ist das <mark class="highlight-orange_background">Gegenteil vom Stabreim</mark></p><ul id="7406c3a6-a290-4b2c-8749-05f49f6d0e8d" class="bulleted-list"><li style="list-style-type:disc">Paarreim (a-a-b-b)</li></ul><ul id="6a8b505d-54c5-44d7-8014-fc3dbb27c3b8" class="bulleted-list"><li style="list-style-type:disc">Kreuzreim (a-b-a-b)</li></ul><ul id="73609678-d39f-455b-9b60-2d5938188a4b" class="bulleted-list"><li style="list-style-type:disc">verschränkte Reim (a-b-b-a) → <mark class="highlight-orange_background">Lateinischer Endreim</mark></li></ul></details></li></ul><ul id="0951eb69-3b2b-41e3-a918-24385476344f" class="toggle"><li><details open=""><summary>Versmaße</summary><ul id="44615951-1e29-47b0-b016-267511818e8d" class="bulleted-list"><li style="list-style-type:disc">Jambus: Senkung-Hebung</li></ul><ul id="421e1c88-16a7-4e37-98bb-8cfda050d9b8" class="bulleted-list"><li style="list-style-type:disc">Trochäus: Hebung-Senkung</li></ul><ul id="1ff273cf-b2ad-4ee0-873c-e622b43e0353" class="bulleted-list"><li style="list-style-type:disc">Daktylus: Hebung-Senkung-Senkung</li></ul><ul id="b7c85d7c-1df1-4865-ae6f-b9b1caa5ac52" class="bulleted-list"><li style="list-style-type:disc">Anapäst: Senkung-Senkung-Hebung</li></ul></details></li></ul><ul id="32e78457-b759-474b-8f41-435368b7ce61" class="toggle"><li><details open=""><summary>Lautmalerei</summary><p id="e60f5650-9514-4d49-bb87-84c2ec03f895" class="">Onomatopoesie</p></details></li></ul><ul id="ab6c53fb-eeb1-48a0-8d90-eaf3300f3f4a" class="toggle"><li><details open=""><summary>Lautgedicht</summary><p id="21e7164c-2160-41b8-967a-51ced0025fb8" class=""><em>Ernst Jandl</em> → Er schreibt, dass was er hört.</p></details></li></ul><ul id="f33372e6-c1d1-4359-91d0-01ac404601e7" class="toggle"><li><details open=""><summary>Anapher</summary><p id="b7a1e6b1-cbff-4281-a455-3556d6512a6f" class="">2 oder mehrere Sätze beginnen mit dem selben Wort → Pendant: Epipher</p></details></li></ul><ul id="caeb766b-930b-4563-b122-833ccf23794d" class="toggle"><li><details open=""><summary>Antagonist und Pendant</summary><p id="f6053cc7-2d4f-44e5-b8e8-ca565dc0fc05" class=""><mark class="highlight-orange_background">Bösewicht</mark> → Pendant: Protagonist</p></details></li></ul><ul id="d311174f-a698-4396-b7d3-9a9bdc131baf" class="toggle"><li><details open=""><summary>Antithese</summary><p id="f5fbb007-5c8e-4165-9bfb-9d91a92741ad" class="">Gegensatzpaare (Gut und Böse)</p></details></li></ul><ul id="c5dfab2d-1472-4236-8b1c-a766173aead7" class="toggle"><li><details open=""><summary>Elegie: Klagegedicht</summary><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="01500899-d46f-449c-81ee-4739f8d64532"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Herzschmerz (melancholische Inhalte) </div></figure></details></li></ul><ul id="bf5bd542-c47a-4334-a693-1fe545be4a82" class="toggle"><li><details open=""><summary>4 Temperamente</summary><ul id="a068d955-58e4-46c8-81c3-67cb29e89218" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Choleriker</strong></span>: Person, die schnell aus der Haut fährt; jähzornig </li></ul><ul id="66de0b07-61f1-4694-a941-bd2eceda0ff5" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Sanguiniker</strong></span>: Optimist, gut gelaunt</li></ul><ul id="b1db8389-0221-4152-ab0d-6c035b593ba2" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Phlegmatiker</strong></span>: Person, die nichts aus der Ruhe bringt</li></ul><ul id="3a16e880-dc7a-40e6-9d8b-087d3405bb01" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Melancholiker</strong></span>: depressive Grundeinstellung, introvertiert</li></ul></details></li></ul><ul id="978e16b3-8552-4a6f-9678-5caf430bc73b" class="toggle"><li><details open=""><summary>Ellipse</summary><p id="ea6f2413-3723-47d4-8194-c09c050bd962" class="">Das bewusstes <mark class="highlight-orange_background">Auslassen</mark> von Satzteilen</p></details></li></ul><ul id="63f4eebc-5ee6-47ff-9dbd-05f883a10a52" class="toggle"><li><details open=""><summary>Enjambement</summary><p id="ae13200b-d509-47f1-8672-0c4445344bff" class=""><mark class="highlight-orange_background">Verssprung</mark> eines Gedichts → <mark class="highlight-orange_background">Sinneinheit</mark> geht über die Verszeile hinaus</p><figure id="6dd6ec70-a4a5-4566-8404-8c18cf8cb38c" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-20_um_08.15.10.png"><img style="width:240px" src="Bildschirmfoto_2023-02-20_um_08.15.10.png"/></a><figcaption>Beispiel für ein <span style="border-bottom:0.05em solid">Enjambement</span></figcaption></figure></details></li></ul><ul id="e6deb8e4-83bd-4df8-9f33-bdbb25fad93d" class="toggle"><li><details open=""><summary>Enumeration</summary><p id="97798d41-b137-4630-9401-15a81d53d75e" class="">Aufzählung</p></details></li></ul><ul id="647e3bec-fd48-4692-8dc9-595d17b62243" class="toggle"><li><details open=""><summary>Epilog</summary><p id="ffedccc4-b921-48f2-99fa-33acb87d52fc" class="">Nachwort</p></details></li></ul><ul id="615d201d-016e-459f-ad06-27937454b7f2" class="toggle"><li><details open=""><summary>Prolog</summary><p id="477bdbe6-349a-43e4-be09-b1d08d2373e9" class="">Vorwort</p></details></li></ul><ul id="bc3112b4-8682-46c1-a3d0-9bce27095c65" class="toggle"><li><details open=""><summary>Epigramm</summary><p id="e9a3ea70-4f74-4864-bbff-201fb05068c0" class="">Kurze Gedicht, oft mit <mark class="highlight-orange_background">satirischen</mark> Texten → findet man oft an Gräbern</p></details></li></ul><ul id="68679bdd-7ab8-4f96-b731-725525946359" class="toggle"><li><details open=""><summary>Parallelismus</summary><p id="bafe0de3-7c0e-4891-9cb9-e4c3bb222b13" class="">Syntaktisch, <mark class="highlight-orange_background">paralleler Satzbau</mark> von mindestens 2 Versen oder Zeilen.</p><figure id="3199cd8c-e757-4ef3-ac3a-863f05634225" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-23_um_09.55.54.png"><img style="width:240px" src="Bildschirmfoto_2023-02-23_um_09.55.54.png"/></a><figcaption>Beispiel: <span style="border-bottom:0.05em solid">Parallelismus</span></figcaption></figure></details></li></ul><ul id="26c3bb24-931e-4b33-8f3e-34986a72050b" class="toggle"><li><details open=""><summary>Modus</summary><p id="77079ae0-0e43-4588-ac1b-cd7963e91e31" class="">Aussageart und Weise</p><ul id="d3852235-2840-4a85-87c0-a39f6303e93a" class="bulleted-list"><li style="list-style-type:disc">Imperativ</li></ul><ul id="bb609392-6fd4-4464-a46c-6023c3514498" class="bulleted-list"><li style="list-style-type:disc">Indikativ</li></ul><ul id="ade29070-3258-498e-b3ed-0b69694666a6" class="bulleted-list"><li style="list-style-type:disc">Konjunkativ 1 </li></ul><ul id="1aa0ae0e-318f-4e4e-b7f0-bb3673f3db12" class="bulleted-list"><li style="list-style-type:disc">Konjunkativ 2</li></ul></details></li></ul><ul id="eeff3dd1-ab1d-4c99-8b04-41c9a01c3bd8" class="toggle"><li><details open=""><summary>Fiktion</summary><p id="5962fe4e-2e62-4f2a-aa58-3a7a8b822155" class="">etwas <mark class="highlight-orange_background">Erfundenes</mark></p></details></li></ul><ul id="5ef2ef7a-d6b6-4aa7-98a4-78a77472994d" class="toggle"><li><details open=""><summary>Balladenjahr</summary><p id="250b82c8-69f4-483b-9922-328227661089" class=""><mark class="highlight-orange_background">1797</mark></p></details></li></ul><ul id="ef42e0a2-9d85-4041-ae0f-041a9ba951b6" class="toggle"><li><details open=""><summary>Erzählendes Gedicht</summary><p id="7cbd13a8-aeef-4dce-944c-1ab23a6952ac" class="">vereint <mark class="highlight-orange_background">Lyrik-Epik-Dramatik</mark> </p></details></li></ul><ul id="551cbde7-3d75-4a59-aac7-e2d65a647ac4" class="toggle"><li><details open=""><summary>Arten von Balladen </summary><p id="5bdba95e-5028-4acf-bd0a-948e22feafc2" class=""><span style="border-bottom:0.05em solid"><strong>Geisterballade</strong></span> (z.B.: Erlkönig)</p><p id="b6beac44-7501-4d57-9575-08638912f7b4" class=""><span style="border-bottom:0.05em solid"><strong>Ideenballade</strong></span> (z.B.: der Handschuh (negativ) → Ideal wird nicht erfüllt, die Bürgschaft → Ideal der Treue)</p></details></li></ul><ul id="206f1c4e-a084-443f-ab8e-3fb0f3b12197" class="toggle"><li><details open=""><summary>Erzählsituationen</summary><ul id="5cc72e16-4e5d-48b5-b18b-2dd4ad1b2f8a" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Ich-Erzähler</strong></span></li></ul><ul id="b90966ed-c577-404b-86c1-a3354ba15a34" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Personale Erzählsituation</strong></span></li></ul><ul id="2f3ed1cf-226d-45f2-b97b-7c3f1ee77194" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Auktoriale Erzählsituation</strong></span></li></ul><ul id="e924becb-4dbf-4f79-affe-4cac90d6b6f2" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Neutraler Erzähler</strong></span></li></ul></details></li></ul><ul id="5e97a399-58e3-494c-987d-95346a415c43" class="toggle"><li><details open=""><summary>Personale Erzählsituation</summary><p id="2f06ebe5-ac51-4ee7-87a6-2c4c2e2ee2e2" class="">Erzähler fehlt komplett; Geschichte wird durch die Augen der Romanfiguren erzählt.</p></details></li></ul><ul id="c7cfe909-b599-4c1c-bda1-6b43ee80ff1f" class="toggle"><li><details open=""><summary>Auktoriale Erzählsituation</summary><p id="6463091b-1e53-4464-a98d-a4b502a61c4d" class="">Erzähler selbst kommt im Roman als Figur nicht vor, sondern tritt nur mit Kommentaren zum Vorschein; Er ist allwissend (hat alle Infos).</p></details></li></ul><ul id="5394fcc5-4489-40a9-8507-94a9420e6d63" class="toggle"><li><details open=""><summary>Neutraler Erzähler</summary><p id="ddf8727a-c077-46b5-bed0-0caee20ff876" class="">Er kommentiert das Geschehen nicht, sondern <mark class="highlight-orange_background">beschreibt</mark> das, was von außen sichtbar ist.</p></details></li></ul><ul id="07c2f723-4641-4506-b2bf-eb8c283ec2b9" class="toggle"><li><details open=""><summary>Interjektion</summary><p id="b871e3b2-3cbb-44ac-a66a-b5061f73bdab" class="">Ausrufewort (z.B.: „Hurra!”)  → Ende mit <strong><mark class="highlight-orange_background">Rufezeichen</mark></strong> oder <strong><mark class="highlight-orange_background">Beistrich</mark></strong></p></details></li></ul><ul id="49a2d4f0-b8b2-4c2b-b3ae-dbbf22080bd3" class="toggle"><li><details open=""><summary>Interrobang</summary><p id="44d5c39d-cd2e-4681-84c4-109162ed577d" class="">!?-Kombination → Frage mit entsetzten </p></details></li></ul><ul id="af3e982a-b291-480c-99c3-1681ad451319" class="toggle"><li><details open=""><summary>Zeitdeckung</summary><p id="76804c8b-9e55-468d-a992-b45c55d6ca13" class=""><mark class="highlight-orange_background">Erzählzeit</mark> und die <mark class="highlight-orange_background">erzählte Zeit</mark> sind ziemlich gleich lang → Sekundenstil</p></details></li></ul><ul id="05daa135-89c6-406c-ac19-90950258ef76" class="toggle"><li><details open=""><summary>Zeitdehnung</summary><p id="8a069b1a-0ba1-428c-a77d-cc1c47f857bf" class="">Spielzeit dauert <mark class="highlight-orange_background">länger</mark> als die erzählte Zeit.</p></details></li></ul><ul id="4dbe2e72-d9af-42e0-a6d2-f8a6b03302a2" class="toggle"><li><details open=""><summary>Zeitraffun</summary><p id="e24fb037-7e01-4628-bb94-a6a14653d501" class="">Spielzeit dauert <mark class="highlight-orange_background">kürzer</mark> als die erzählte Zeit.</p></details></li></ul><ul id="8c9a7c2d-7995-468f-ba5b-79fccf650521" class="toggle"><li><details open=""><summary>Zeitsprung</summary><p id="4ae38c7c-15fe-451c-9b11-863cf08ebbc1" class="">Erzählte Zeit weicht von einem <mark class="highlight-orange_background">chronologischen Ablauf</mark> ab.</p></details></li></ul><ul id="2904d931-63bb-473f-aed3-bcb6815dac09" class="toggle"><li><details open=""><summary>Die erzählte Zeit</summary><p id="568ec0ec-981c-44ff-8c71-ffea46af6446" class="">die Zeit, in der die Geschichte spielt</p></details></li></ul><ul id="e53e9766-cb3d-430f-ba5d-662b3437d4b1" class="toggle"><li><details open=""><summary>Die Erzählzeit</summary><p id="e2e35221-6603-4966-8552-1f9a9e45812a" class="">Die Zeit, die real vergeht (Lesezeit)</p></details></li></ul><ul id="4d739a44-f41a-4e7a-bba0-c0d7bbb5247d" class="toggle"><li><details open=""><summary>Erzähltempo</summary><p id="c826d795-154d-415e-98f4-ec8b4bac5ec3" class="">Verhältnis zwischen Erzählzeit und erzählter Zeit</p></details></li></ul><ul id="da137fdc-50c0-404d-859b-af6c50af1e8c" class="toggle"><li><details open=""><summary>Direkte Rede</summary><p id="e1135adc-81f0-4cbc-97a5-391de05bef73" class="">Merkmal: Anführungszeichen </p></details></li></ul><ul id="a83fc8f8-311c-4fba-bd9a-4a9462702ddc" class="toggle"><li><details open=""><summary>Inquit-Formel</summary><p id="ad0a7798-fe92-4306-aeb5-0509f2c8d0a9" class="">Redeeinleitung → <mark class="highlight-orange_background">verbum dicendi</mark></p><p id="c63c6b0d-f8bf-4d48-a72c-9390451a0741" class="">
+</p></details></li></ul><ul id="30b272c6-5832-4cbc-b41d-74bf5ad50ce5" class="toggle"><li><details open=""><summary>Diminutivformen</summary><p id="23377284-9c2c-4865-923e-de2a543ad9c6" class="">Verniedlichungsform: …chen und …lein → z.B.: Märchen: kleine Geschichte (Mär), Mädchen: Magd</p><p id="f8eb8de3-6b04-45e8-b83a-2f5a8ed22711" class="">Verblasste Diminutivformen: Eigentliches Wort wird <mark class="highlight-orange_background">verkürzt</mark></p></details></li></ul><ul id="f354734f-c998-4aed-a945-1c833b0bdb48" class="toggle"><li><details open=""><summary>Zynismus</summary><p id="89637212-509c-48db-a72b-5b35730edbdd" class="">beißender <mark class="highlight-orange_background">Spott</mark>; gegen gesellschaftliche Normen gerichtet</p></details></li></ul><ul id="ee26d445-361d-49aa-9dfa-f7eedf9e6998" class="toggle"><li><details open=""><summary>Sarkasmus</summary><p id="9daac0f2-416f-4d6a-b08d-1c7d1929a4f9" class=""><mark class="highlight-orange_background">doppeldeutige</mark> Beleidigung an eine Person gerichtet</p></details></li></ul><ul id="398a246b-6bdd-4b31-b24c-e9bfb9b07b1d" class="toggle"><li><details open=""><summary>Homonyme</summary><p id="14c6dce0-443b-45d4-9a10-05c292741d46" class="">Ein Wort hat mehrere Bedeutung (z.B.: Mutter → Mutter und Schraubenmutter; Bank → Sitzbank, Bank für Geld)</p></details></li></ul><ul id="ca018a92-d55f-4889-bd5c-8f5b063118d7" class="toggle"><li><details open=""><summary>Litotes</summary><p id="ed2f6777-4c6e-490a-aea6-ed1392163b05" class="">Sachverhalte werden durch <mark class="highlight-orange_background">doppelte Verneinung</mark> genannt. z.B.: Er ist nicht schlecht → hebt sich auf</p></details></li></ul><ul id="f1858767-b8ef-44b4-a5d7-654b17ccbbd3" class="toggle"><li><details open=""><summary>Wortspiel</summary><p id="8b40dcae-3e82-4dfe-ae97-043610750ddd" class="">Doppeldeutigkeiten werden dargestellt</p></details></li></ul><ul id="337bb1d8-0a29-4f7a-b7ad-06ecc5e17018" class="toggle"><li><details open=""><summary>Medias in res</summary><p id="31f4306b-2f2d-4147-a897-79d82d9387ce" class="">Geschichte startet mitten im Geschehen; keine Zusatzinformationen → Kurzgeschichten</p></details></li></ul><ul id="73c17d14-7c26-4ef9-91b6-8b52f2c2485c" class="toggle"><li><details open=""><summary>Metapher</summary><p id="f76b92b9-6cca-4535-aa52-32ddd5743c75" class="">Bildhafter Ausdruck</p></details></li></ul><ul id="3c3fd51c-c3f3-4d2b-baa8-ba7856597709" class="toggle"><li><details open=""><summary>Verblasste Metapher</summary><p id="b352ff61-8b8b-4688-85f2-aa22639d33c8" class="">Metaphern hat die ursprüngliche Stärke verloren und wird im täglichen Lebens verwendet wie z.B.: Tischbein</p></details></li></ul><ul id="07dc95f6-6353-4b7b-b451-227b59ddacc0" class="toggle"><li><details open=""><summary>Akt</summary><p id="84a43a44-45be-4967-8410-78fe8f128f2f" class="">Hauptabschnitt der Handlung (in der Dramatik) → Ende: Vorhang geht zu</p></details></li></ul><ul id="373bb174-b4ac-447a-96bd-c09a90f98a24" class="toggle"><li><details open=""><summary>Klimax</summary><p id="14202346-6d96-4b8a-b040-74b538bea34c" class="">in der <mark class="highlight-orange_background">Dramatik</mark> → Höhepunkt; in der <mark class="highlight-orange_background">Rhetorik</mark>: Auflistung mit steigendem Charakter (meist 3-teilig)</p></details></li></ul><ul id="b733e954-3203-40b4-ae6f-f30a252907f8" class="toggle"><li><details open=""><summary>Wendepunkt</summary><p id="7c22150d-6568-4b92-8cec-7679754c5b4f" class="">bei der <mark class="highlight-orange_background">Novelle</mark></p></details></li></ul><ul id="97599999-3462-4f34-88d5-3427c344f410" class="toggle"><li><details open=""><summary>Teichoskopie/Mauerschau</summary><p id="78e30b24-c3b6-48a4-af59-f1c46538698b" class="">Kommentar von einer Figur auf der Bühne über einen anderen Ort, den man nicht sieht.</p></details></li></ul><ul id="a27cb2fd-0ad1-4e2e-8fb5-1b8f0da7ef4a" class="toggle"><li><details open=""><summary>Verfremdungseffekt</summary><p id="be85765a-1c33-42a5-aca4-c57356f01f9a" class="">„V-Effekt“</p><p id="a5768c17-a58f-4b62-a035-ad4648620c86" class="">„Bei Seite Sprechen” (Dramatik) → Schauspieler wendet sich direkt an das Publikum mit einem Kommentar über dieses Theaterstück</p></details></li></ul><ul id="4231bd29-18ee-463f-8cee-416684cd5c73" class="toggle"><li><details open=""><summary>Das Publikum wird desillusioniert</summary><p id="54a879b2-782e-44db-a64d-5d7b9346e901" class="">es wird eine andere Welt vorgetäuscht und die <mark class="highlight-orange_background">Illusion wird genommen</mark></p></details></li></ul><ul id="dd922142-88e8-4848-b247-5a6803d8a4ff" class="toggle"><li><details open=""><summary>Binnenhandlung</summary><p id="d42fa7d5-f1e7-48c2-8f5c-107f5abd4e1e" class="">Ein <mark class="highlight-orange_background">optionales Merkmal</mark> der <mark class="highlight-orange_background">Novelle</mark> → muss in nicht verwendet werden</p><p id="0dbf50fa-ab86-45d4-9328-4df91614d38a" class="">Beispiel: in der Schachnovelle</p></details></li></ul><ul id="940c9b18-8db7-4384-846a-ce34dae138a9" class="toggle"><li><details open=""><summary>Binnenreim</summary><p id="47556096-2183-4eac-818d-c65081bafba8" class="">Endreim → zwei oder mehrere Wörter reimen sich <mark class="highlight-orange_background">innerhalb einer Verszeile</mark></p></details></li></ul><ul id="0053da21-9119-4d57-97a6-8ac14ba69fbe" class="toggle"><li><details open=""><summary>Botenbericht </summary><p id="05cd4ef8-2960-4e43-aa8a-715fef6f11b5" class="">Begriff nur aus der Dramatik</p><p id="c0b39973-c61a-47ed-af92-e0b4f495195d" class="">Jemand gibt <mark class="highlight-orange_background">Informationen</mark> darüber, was vorher geschehen ist → vor der Haupthandlung</p></details></li></ul><ul id="b28b2266-cfcf-45a4-8e7f-6b607ac5e407" class="toggle"><li><details open=""><summary>Personifikation</summary><p id="b3abdd7c-98b4-4643-b824-5c4b28234df8" class="">Einer Sache werden <mark class="highlight-orange_background">menschliche Eigenschaften</mark> übertragen → die Sonne lacht</p></details></li></ul><ul id="f4c340e8-cbc8-4b7a-8b8f-8eac0a246c7a" class="toggle"><li><details open=""><summary>Depersonifikation </summary><p id="0aa4f612-1263-47fa-be8b-c1626bba6193" class="">(Gegenteil von Personifikation): der „Lehrkörper” → Lehrer einer ganzen Schule</p><p id="7be6d049-bd95-4ce2-ba8a-56982ff18e83" class="">De-Des-Dis (Vorsilbe): Präfix → das Gegenteil</p></details></li></ul><ul id="0c5f7208-5f43-443f-8f42-f37c02f58458" class="toggle"><li><details open=""><summary>innerer Monolog Merkmale </summary><p id="7f59a77f-f196-4850-8f71-6af80fa89f64" class="">Ellipse, Gedankensprünge, Dialekt → z.B.: Leutnant Gustl</p></details></li></ul><ul id="2bdc2fc1-1db0-4b81-9832-70255fb7ffcd" class="toggle"><li><details open=""><summary>Einheit von Handlung, Zeit und Ort</summary><p id="fb1e3448-4b70-4d42-b0d8-15f82a6cb955" class="">Aristoteles Regeln des Dramas:</p><ul id="46f50b68-8bc6-45a8-8b35-2138d72ab8fe" class="bulleted-list"><li style="list-style-type:disc">keine Nebenhandlung </li></ul><ul id="19d5e53b-f161-4c8b-a300-8cd1878d1c61" class="bulleted-list"><li style="list-style-type:disc">keine Ortswechsel </li></ul><ul id="1b7d753b-1cd4-41a3-b1f5-461c8c62cd7f" class="bulleted-list"><li style="list-style-type:disc">Handlung darf nicht über 1 Tag hinausgehen</li></ul></details></li></ul><ul id="18756dfc-cecf-4212-8e71-5bd3d9bdc22a" class="toggle"><li><details open=""><summary>Offene Form</summary><p id="42c7b4c4-ef52-46bc-9d8d-07819f6758b3" class="">Gegenteil von <mark class="highlight-orange_background">Einheit von Handlung, Zeit und Ort</mark> → Nebenhandlungen, Ortswechsel und große Zeitsprünge.</p></details></li></ul><ul id="0eba9a6c-db05-4535-b848-70db2afa0e06" class="toggle"><li><details open=""><summary>Sekundenstil</summary><p id="2d3b7131-2f1b-4b16-8fc6-b7ad654fd167" class=""><mark class="highlight-orange_background">Geteilgetreue</mark> Darstellung für etwas → vorallem in der Epoche des <mark class="highlight-orange_background">Naturalismus</mark> (schlechtes und hässliche Darstellung → ohne Verklärung)</p></details></li></ul><ul id="d55346d6-5e82-4b3d-aee4-daf7788fdcb3" class="toggle"><li><details open=""><summary>Euphemismus</summary><p id="90159dea-7294-48ca-8aaf-2e707270d813" class="">Beschönigung</p></details></li></ul><ul id="10e66834-d7db-43c7-97d6-058efedac58e" class="toggle"><li><details open=""><summary>Fallhöhe</summary><p id="6176356e-30c5-46aa-8acd-c1f94a0e5481" class="">Je höher, der Rang der fallender Person, desto schlimmer ist die <mark class="highlight-orange_background">Wirkung</mark> auf das Publikum (Dramatik).</p></details></li></ul><ul id="89a894c6-f97b-4081-ac4f-45eb82c902b0" class="toggle"><li><details open=""><summary>Figurenkonstellation: </summary><p id="31955594-a92b-4ce4-b1f5-f952f5c13336" class=""><mark class="highlight-orange_background">Beziehung</mark> zwischen den Personen in einem Theater.</p></details></li></ul><ul id="ef2566e9-26f2-4580-9ee7-126da575fd13" class="toggle"><li><details open=""><summary>Figurenrede</summary><p id="cecf7aa7-a402-4a5f-b76e-f753771c7f0d" class="">Dramatik zuzuordnen → Wenn die Personen in Form eines Monolog oder Dialogs sprechen</p></details></li></ul><ul id="192c265c-4dd5-47f7-8a5c-150395cff7be" class="toggle"><li><details open=""><summary>Die gespielte Zeit: </summary><p id="2fb7619a-7a61-421f-89e4-4e180bb5718c" class="">Entspricht der im Text dargestellten Zeit</p></details></li></ul><ul id="19e8ed77-3199-487e-bbfb-50c9d4d97d16" class="toggle"><li><details open=""><summary>Haupttext</summary><p id="f6cacf92-45f0-4149-8d73-32c2d88c4416" class="">Dramatik zuzuordnen → Der von den Figuren gesprochene Text</p></details></li></ul><ul id="8036dc29-616b-4a84-a5c5-da1dca1fdc12" class="toggle"><li><details open=""><summary>Nebentext</summary><p id="afd57f1f-df60-45b7-ba2f-120143a132b0" class="">Regieanweisungen</p></details></li></ul><ul id="c60c80c2-ed8f-42eb-b6fa-49f5ae8cb1ab" class="toggle"><li><details open=""><summary>Parataxe</summary><p id="94a1b490-5f53-48df-a474-377ff10af939" class="">Hauptsatzreihe</p></details></li></ul><ul id="5b2c0bbc-ae08-443b-8d73-72397e0c77d2" class="toggle"><li><details open=""><summary>Hypotaxe</summary><p id="17c1eba5-aa11-4261-8f22-ee87dcba92b2" class="">Satzgefüge</p></details></li></ul><ul id="2cce56b3-3e98-4c35-aca8-8fb8b689ec41" class="toggle"><li><details open=""><summary>Inversion</summary><p id="219b5392-857a-45cb-9966-c4326e165e64" class="">Umkehrung → Die übliche grammatikalische Wortreihenfolge wird umgestellt</p></details></li></ul><ul id="39ec191a-9d98-4758-9b3e-a734d6535aec" class="toggle"><li><details open=""><summary>Pathos</summary><p id="a7308a6d-5cb6-4ca9-beeb-a4c92e3bc1ef" class="">Etwas ist mit viele Gefühlen überladen.</p></details></li></ul><ul id="d8302bf6-45f1-4364-8fbb-4001b1fa2ccf" class="toggle"><li><details open=""><summary>Oxymoron und Paradoxon</summary><p id="e6fc3104-0d52-44db-bd97-2fdab75929b5" class=""><mark class="highlight-orange_background">Widerspruch</mark> in einer Aussage</p></details></li></ul><ul id="d55e3bbc-bd16-4bbd-8232-c2a734f9f1ae" class="toggle"><li><details open=""><summary>Apposition</summary><p id="4182ff3f-047c-4a42-8de3-78e5062da258" class="">Einschub → z.B.: Karl der große, ein mächtiger Kaiser des Frühmittelalters, lebte in Aachen.</p></details></li></ul><ul id="371c103e-cb6a-486e-82d7-c95c1b91fc22" class="toggle"><li><details open=""><summary>Parenthesen</summary><p id="16f59fc8-65e1-43b2-83c7-a04d7f2f6e81" class="">Satz wurde durch eine Apposition unterbrochen.</p></details></li></ul><ul id="e7b6fa1d-38c3-4d3b-8b68-d3620bf35066" class="toggle"><li><details open=""><summary>Pleonasmus</summary><p id="11985155-b992-4107-aa0d-52ca9f484419" class="">überflüssiges Verb z.B.: der kleine Zwerk</p></details></li></ul><ul id="97fff339-61ef-4b19-ab8d-3346921b09a3" class="toggle"><li><details open=""><summary>Pointe</summary><p id="e460d2e9-591e-47a9-8196-cf77221a6cdf" class="">Höhepunkt</p></details></li></ul><ul id="0dd31473-3692-4f21-a804-8a20e5cdfbdb" class="toggle"><li><details open=""><summary>Suggestiv-Frage</summary><p id="6907d084-fc10-4a5b-b6f8-512427e36229" class="">In der Frage ist schon das, was man hören will z.B.: Was haltet ihr von meinen <mark class="highlight-orange_background">coolen, neuen</mark> Schuhen?</p></details></li></ul><ul id="a9333f32-59d6-4bc2-9c80-89175f0f0924" class="toggle"><li><details open=""><summary>Spielzeit</summary><p id="67adb142-3cfd-485e-a419-7159d3d2ecf7" class="">Die Zeitspanne, die zur Aufführung verwendet wird.</p></details></li></ul><ul id="b9d4dc28-b1f8-4d7b-af3b-81a0c4041fd9" class="toggle"><li><details open=""><summary>Strophe</summary><p id="65413cbf-aead-4cfe-85f8-f572670ecd3e" class="">Gliederungsabschnitt in einem Gedicht (aus mind. 2 Verszeilen)</p></details></li></ul><ul id="79bbc8c4-7e51-4fff-8be2-a3035b8e6fd6" class="toggle"><li><details open=""><summary>Szene</summary><p id="fff8a5db-f0e5-4a18-a721-43b75afb72f5" class="">Unterteilung eines Aktes.</p></details></li></ul><ul id="b41ed1f3-7903-40e0-94df-5fa2a3535b6c" class="toggle"><li><details open=""><summary>Tautologie </summary><p id="74dd4264-6225-439a-8848-f6c91293f2ba" class="">Wiederholung eines Ausdrucks mit anderen Wörtern, der gleichen <mark class="highlight-orange_background">Wortart</mark> oder auch dem genau <mark class="highlight-orange_background">gleichen Wort</mark> z.B.: nackt und bloß</p></details></li></ul><ul id="36ee7688-941e-47db-b43b-2326b4b6bf10" class="toggle"><li><details open=""><summary>Theatralität</summary><ul id="5795ae5b-3eef-4e57-95ee-f70945f25780" class="bulleted-list"><li style="list-style-type:disc">Mimik, Gestik</li></ul><ul id="06abf209-596b-4915-b4ce-467a7902cbd3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Intonation</mark> (Wie etwas betont wird)</li></ul><ul id="18b97552-3efe-47f7-a6bb-a14e81dd6881" class="bulleted-list"><li style="list-style-type:disc">Requisiten/<mark class="highlight-orange_background">Spieldinge</mark> (Masken, Verkleidung)</li></ul><ul id="89ddf96d-cdef-457b-aa39-0a103a68c01b" class="bulleted-list"><li style="list-style-type:disc">Kulisse → Hintergrund</li></ul></details></li></ul><ul id="5a6a3aca-c972-40f2-b22b-68ce9b3bdff4" class="toggle"><li><details open=""><summary>Utopie</summary><p id="4d8b707b-b2fa-422b-acfc-76eee3bb9a4d" class="">Gibt Auskunft darüber, wie die Zukunft aussehen könnte → meist <mark class="highlight-orange_background">Wunschvorstellungen</mark></p></details></li></ul><ul id="91b2511c-26eb-41d8-a838-874e18fa1831" class="toggle"><li><details open=""><summary>Dystopie</summary><p id="132f9de6-d435-483c-9ba8-4270711243b0" class="">Gesellschaft wird <mark class="highlight-orange_background">negativ</mark> dargestellt.</p></details></li></ul><ul id="887f94a1-1ef5-489d-94b5-636be1b58688" class="toggle"><li><details open=""><summary>Vorausdeutung</summary><p id="093ecffd-8e28-4c3c-b588-28c82ba6eab5" class="">Überlegungen, was die <mark class="highlight-orange_background">Zukunft</mark> bringen kann.</p></details></li></ul><ul id="742bdadd-8c93-4179-963c-0adc2859b511" class="toggle"><li><details open=""><summary>Walter von der Vogelweide</summary><p id="f876a175-b909-4da9-84e1-983582e9a6a4" class="">Bekanntester Deutscher Minensänger</p></details></li></ul><ul id="7d83737d-aca5-4306-a96c-374ab062a765" class="toggle"><li><details open=""><summary>Synekdoche</summary><p id="ba879728-b06f-4afd-9c4a-73ca70e5189a" class="">Ein Wort wird durch ein <mark class="highlight-orange_background">sinnverwandtes Wort</mark> ersetzt z.B.: Statt Tiger, Raubkatze</p></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

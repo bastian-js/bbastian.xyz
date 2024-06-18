@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2. SA ZF</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a1843b3d-8518-42a3-b1d0-8fd40baab5be" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">😢</span></div><h1 class="page-title">2. SA ZF</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-gray">Betriebswirtschaft</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Band 3, 4, 5</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-green">2. Semester</span><span class="selected-value select-value-color-purple">5CHK</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><h3 id="30eba8ab-cfdd-4965-9cd2-2a63e29fb294" class="">Anki File</h3><figure id="0ed10220-2b67-41dc-abe5-5a8774e9875f"><a href="https://we.tl/t-PyHbRy72pl" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">2.SA.apkg</div><div class="bookmark-description">1 file sent via WeTransfer, the simplest way to send your files around the world</div></div><div class="bookmark-href"><img src="https://prod-cdn.wetransfer.net/packs/media/images/apple-touch-icon-180x180-precomposed-fd272b89.png" class="icon bookmark-icon"/>https://we.tl/t-PyHbRy72pl</div></div><img src="https://prod-cdn.wetransfer.net/packs/media/images/wt-facebook-9db47080.png" class="bookmark-image"/></a></figure><h1 id="e39d8688-7965-473a-8162-bbf5dfe51ac1" class="">Finanzmanagement (<mark class="highlight-orange_background">Band 3</mark>)</h1><h2 id="6d04a3b0-cb35-498d-80a2-0aba586d15c1" class="">Finanzplan (Seite 213)</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist ein <span style="border-bottom:0.05em solid">Finanzplan</span>? (Seite 213)</summary><div class="indented"><p id="9bc2c843-2598-4e3d-978b-60905699a974" class="">Dort werden alle <mark class="highlight-orange_background">laufenden</mark> und <mark class="highlight-orange_background">einmaligen</mark> Ein- und Auszahlungen festgehalten.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind Maßnahmen, um die <span style="border-bottom:0.05em solid">Einzahlungen</span> zu erhöhen? (Seite 213)</summary><div class="indented"><ul id="9033e4b7-f11f-44c8-9abd-7039145d703e" class="bulleted-list"><li style="list-style-type:disc">laufende Einzahlungen erhöhen</li></ul><ul id="c3396f47-f54e-4bb3-ab0c-05c08467220d" class="bulleted-list"><li style="list-style-type:disc">Kredit aufnehmen</li></ul><ul id="d7c14850-5aa3-4ca3-b7ba-347db2af25d3" class="bulleted-list"><li style="list-style-type:disc">Privateinlagen, Gesellschafter</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind Maßnahmen, um die <span style="border-bottom:0.05em solid">Auszahlungen</span> zu senken? (Seite 213)</summary><div class="indented"><ul id="50d0737d-d556-46fa-90e6-97d025ef7b5f" class="bulleted-list"><li style="list-style-type:disc">bei laufenden Auszahlungen sparen → <strong><mark class="highlight-orange_background">Rabatt</mark></strong> beim Einkauf</li></ul><ul id="748c67e8-ba46-457a-8c2e-ff073c418774" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Privatentnahmen</mark> verringern </li></ul></div></details><h2 id="5960704d-4bfb-44e7-9687-4bc18f97613e" class="">Finanzierungsquellen</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die <span style="border-bottom:0.05em solid">Finanzierungsquellen</span> und welche Merkmale gibt es eines Unternehmers (Seite 219)?</summary><div class="indented"><figure id="649b6af2-d281-47a9-9b7b-5f6a05518ff6" class="image" style="text-align:left"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2022.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2022.png"/></a></figure><figure id="3dd78f40-a03b-46d6-9ebc-8f258076fc1a" class="image" style="text-align:left"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2023.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2023.png"/></a></figure></div></details><h2 id="d563eb2b-6547-4127-8760-dcd895e78fa0" class="">Innenfinanzierung</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten der Innenfinanzierung</span> gibt es (Seite 219)?</summary><div class="indented"><figure id="c0b5b6fa-c3b5-432c-af01-59d9ce2ea51e" class="image"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2024.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2024.png"/></a></figure></div></details><h2 id="8d1a67fa-6d2a-44a6-9517-6c70471c1772" class="">Außenfinanzierung </h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten der Außenfinanzierung</span> gibt es (Seite 228)?</summary><div class="indented"><figure id="c5441e27-bf11-4ac8-b1aa-c3b3c6de4e59" class="image"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2025.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2025.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten von Kreditsicherheiten</span> gibt es (Seite 229)?</summary><div class="indented"><figure id="eefec421-d138-4a87-8944-54f3fb907cce" class="image"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Bildschirmfoto_2023-02-20_um_23.42.39.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Bildschirmfoto_2023-02-20_um_23.42.39.png"/></a></figure><p id="30ae2aee-8199-44a5-9ed4-7621c91ad8e4" class=""><span style="border-bottom:0.05em solid"><strong>Bürgschaft</strong></span></p><ul id="86662609-95b4-4edd-8e64-026c0a13e9a7" class="bulleted-list"><li style="list-style-type:disc">Ausfallsbürgschaft (Teilhaftung)</li></ul><ul id="a49586d2-58ec-44d6-8fdf-1b254cb7cc4c" class="bulleted-list"><li style="list-style-type:disc">einfache/subsidäre Bürgschaft (Gläubiger muss erst mahnen)</li></ul><ul id="1508c1f1-bb41-4ebb-ab12-f571e9460433" class="bulleted-list"><li style="list-style-type:disc">solidarische Bürgschaft (Gläubiger kann wählen von wem er die Schuld einfordert)</li></ul><p id="92510169-fdff-4d30-8834-3e57af875316" class=""><span style="border-bottom:0.05em solid"><strong>Wechsel</strong></span>: Wertpapiere → <mark class="highlight-orange_background">bestimmter Betrag</mark> wird zu einem <mark class="highlight-orange_background">bestimmten Zeitpunkt</mark> bezahlt (diskontiert → es wird vor der Fälligkeit an eine Bank verkauft)</p><p id="1c8dfb82-3d85-4c4e-b16b-dec63c300f1b" class=""><span style="border-bottom:0.05em solid"><strong>Lombard</strong></span>: Wertpapierlombard, Edelmetalllombard und Warenlombard</p><p id="bbdeb0f7-171f-4a95-9211-94ae58eb6733" class=""><span style="border-bottom:0.05em solid"><strong>Hyptothek</strong></span> sind im <mark class="highlight-orange_background"><strong>Lastenblatt</strong></mark> des Grundbuches eingetragen.</p><p id="db040624-0930-4a14-b5b4-704ba7149210" class=""><span style="border-bottom:0.05em solid"><strong>Forderungsabtretung (Zession)</strong></span>: Lieferung „auf Ziel” → Forderung wird an die <mark class="highlight-orange_background">Bank übergeben</mark></p><p id="39c81ed8-0397-43e0-a94a-4be38087cc1a" class=""><span style="border-bottom:0.05em solid"><strong>Sicherheitsübereignung</strong></span>: Besitzer kann die Sachen weiterhin <mark class="highlight-orange_background">benutzen</mark></p><p id="843967b5-0790-4a2e-8a7d-edc225e0cdb0" class=""><span style="border-bottom:0.05em solid"><strong>Eigentumsvorbehalt</strong></span>: Sache, bleibt für die Dauer des Kredits „<mark class="highlight-orange_background">Eigentum</mark>” des Verkäufers</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist eine <span style="border-bottom:0.05em solid">Zession</span>?</summary><div class="indented"><p id="90eaf00e-d1a2-40fa-a75d-3d74463f1fb5" class=""><span style="border-bottom:0.05em solid"><strong>Forderungsabtretung</strong></span>: Lieferung „auf Ziel” → Forderung wird an die <mark class="highlight-orange_background">Bank übergeben</mark></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Provisionen</span> können verrechnet werden (Seite 231)?</summary><div class="indented"><ol type="1" id="8c92934a-c013-43e7-9328-f79bf26a39b8" class="numbered-list" start="1"><li>Zuteilungsprovisionen → bei <mark class="highlight-orange_background">Krediteinräumungen</mark></li></ol><ol type="1" id="617a4dbf-56fc-41d8-8af9-73fd81227cdc" class="numbered-list" start="2"><li>Kreditprovisionen → bei ausgenützen <mark class="highlight-orange_background">Kreditrahmen</mark></li></ol><ol type="1" id="75c5ff37-a915-488f-a512-b7081f03c3b9" class="numbered-list" start="3"><li>Umsatzprovisionen</li></ol><ol type="1" id="86893f92-90ca-4c32-8fb4-b96933119831" class="numbered-list" start="4"><li>Überziehungsprovisionen</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten der Kreditfinanzierung</span> gibt es (Seite 231)?</summary><div class="indented"><p id="5fa26839-f9eb-4c7c-9691-4a67e6fe0fb9" class=""><span style="border-bottom:0.05em solid"><strong>Lieferantenkredit</strong></span>: Lieferung auf Ziel → zahlbar innerhalb von … Tagen</p><p id="a01fd8dc-750b-49f4-98ea-a6333b2f92f9" class=""><span style="border-bottom:0.05em solid"><strong>Kontokorrentkredit</strong></span>: an ein Girokonto gebunden und wird bis zu einer maximalen Höhe („Kreditrahmen“ oder „Kreditlimit“) ausgegeben</p><p id="88609405-9a10-403c-a297-87b8f30d1d94" class=""><span style="border-bottom:0.05em solid"><strong>Langfristige Bankdarlehen</strong></span><strong> </strong>→ Einmalig ausgezahlen und in Raten zurückbezahlen</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Sonderfinanzierungsformen</span> gibt es (Seite 234)?</summary><div class="indented"><p id="234bb3b1-a53a-4fa1-94f2-59767bff849b" class=""><span style="border-bottom:0.05em solid"><strong>Factoring</strong></span>: Buchforderungen werden an eine Factoringbank verkauft.</p><p id="21643e23-f7a8-47f9-a206-9d178b0abadf" class=""><span style="border-bottom:0.05em solid"><strong>Leasing</strong></span>: Überlassung von Investitionsgütern</p><p id="c0d926c6-3a41-47de-a794-ad413bca139e" class=""><span style="border-bottom:0.05em solid"><strong>Sale and lease back</strong></span>: Investitionsgüter werden gekauft und über Leasing finanziert</p></div></details><hr id="ac1e4980-c7b1-4300-a1b1-d86d024ddf1a"/><h1 id="512b9ae8-1621-43c7-8579-1cbad7cbf6b1" class="">Investitionsmanagement (<mark class="highlight-orange_background">Band 3</mark>)</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Was sind <span style="border-bottom:0.05em solid">Arten von Investitionen</span>? (Seite 277)</summary><div class="indented"><figure id="d5539a10-9527-4485-9f22-544dbcf96968" class="image" style="text-align:left"><a href="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.05.png"><img style="width:336px" src="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.05.png"/></a></figure><ul id="e42ff914-16a1-4fd1-879b-c16fbb917e38" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Erweiterunginvestition</strong></span>: Produktausweitung</li></ul><ul id="8c8aab56-ea22-4ece-94a1-f2b460ec0e28" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Rationalisierungsinvestition</strong></span>: zur <mark class="highlight-orange_background">Senkung</mark> der <mark class="highlight-orange_background">Produktionskosten</mark></li></ul></div></details><h2 id="78e60cbc-78fa-4ba3-abab-671882f04877" class="">Tools für Investitionsentscheidungen</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind <span style="border-bottom:0.05em solid">Tools für Investitionsentscheidungen</span>? (Seite 282)</summary><div class="indented"><figure id="476e532d-dc06-494f-8657-0d2892acaf1b" class="image" style="text-align:left"><a href="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.40.png"><img style="width:336px" src="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.40.png"/></a></figure><p id="d788381a-ad4f-4ac1-a936-bd16ddeed013" class=""><span style="border-bottom:0.05em solid"><strong>Kostenvergleichsrechnung</strong></span>: <mark class="highlight-orange_background">Kosten</mark> (z.B.: pro Jahr) werden berechnet und verglichen.</p><p id="3f473994-e9a7-4429-b195-aa393203094c" class=""><span style="border-bottom:0.05em solid"><strong>Rentabilitätsvergleichsrechnung</strong></span>: Mit welchem Zinssatz verzinst sich die Investition → Gewinn im Vergleich zum eingesetzten Kapital</p><p id="d360e897-fde6-4156-8b77-f2fadcd37148" class=""><span style="border-bottom:0.05em solid"><strong>Amortisationsrechnung</strong></span>: In welchem Zeitraum rechnet/amortisiert sich die Investition?</p><p id="fef37fcf-a0e3-4568-9b25-528af7f9866a" class=""><span style="border-bottom:0.05em solid"><strong>Scoringmethode</strong></span>: z.B.: Punkte werden an Fahrzeuge vergeben</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie funktioniert die <span style="border-bottom:0.05em solid">Scoring-Methode</span>? (Seite 284)</summary><div class="indented"><p id="73238e51-3b6f-4947-81cb-a59cf271ffc4" class=""><strong>Merkmale</strong> und <strong>Kriterien</strong> werden mit Punkten vergeben → <strong><mark class="highlight-orange_background">höchste Punkteanzahl</mark></strong> gewinnt</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie wird eine <span style="border-bottom:0.05em solid">Kostenvergleichsrechnung</span> gerechnet? (Seite 285)</summary><div class="indented"><ul id="2cc57796-b8bd-420b-9a89-db64b119fff3" class="bulleted-list"><li style="list-style-type:disc">Kalk. Abschreibung → (AW – RW) / Nutzungsdauer</li></ul><ul id="a7a755a5-4187-49be-8c92-7f11d6079444" class="bulleted-list"><li style="list-style-type:disc">Kalk. Zinsen → (AW + RW / 2) * Zinssatz</li></ul><ul id="5467ce06-2978-42e7-956d-561083dbbdbf" class="bulleted-list"><li style="list-style-type:disc">Variable Kosten</li></ul><ul id="5cef4658-d6fa-44f2-b66d-60333935f5f9" class="bulleted-list"><li style="list-style-type:disc">Fixkosten</li></ul><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="4ca703b4-499c-4a49-8ec9-f79abc485329"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>kritische Menge/Auslastung</strong></span>: Ab diesem Absatz ist die andere Investition billiger. <br/>→ Differenz Fixkosten/Differenz var. Kosten pro Stück<br/></div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie wird eine <span style="border-bottom:0.05em solid">Rentabilitätsvergleichsrechnung</span> gerechnet? (Seite 288)</summary><div class="indented"><p id="d3805e14-191b-46ca-9f30-7e03b94a0bac" class=""><span style="border-bottom:0.05em solid"><strong>Gewinn</strong></span> = Ertrag - var. Kosten - Fixkosten - Abschreibung</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="e1ae7155-9885-4b21-8a9a-10d141f3d050"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>Rentabilität</strong></span> = Gewinn / durchschnittlich gebundenes Kapital<br/>→ <br/><mark class="highlight-orange_background">Keine</mark> kalkulatorischen Zinsen beachten</div></figure><p id="a88afd8b-4391-4fac-a1d9-e262215871fc" class="">Durchschnittlich gebundenes Kapital = (AW + RW) / 2</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie wird eine <span style="border-bottom:0.05em solid">Armortisationsrechnung</span> gerechnet? (Seite 289)</summary><div class="indented"><p id="d06d5e25-8084-491d-b6a5-45f443717fd1" class="">Keine Kalkulatorische Abschreibung!</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="34e0d052-e961-44e9-8d6a-da03fb3f4c13"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>Amortisationszeit</strong></span>: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mtext>Anschaffungskosten - Restwert</mtext><mtext>Gewinn</mtext></mfrac></mrow><annotation encoding="application/x-tex">\frac {\text{Anschaffungskosten - Restwert}} {\text{Gewinn}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2772em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Gewinn</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Anschaffungskosten - Restwert</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span></div></figure></div></details><hr id="345d7b0c-7555-49f1-80d0-707388f64620"/><h1 id="07a6e65b-5327-4f38-824e-151fb6bb5dd2" class="">Band 4</h1><h2 id="3d0fa736-bcc3-417c-a5c9-7ce65737bb76" class="">Dienstleistungsbetriebe</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die <span style="border-bottom:0.05em solid">Merkmale</span> von Dienstleistungen? (Seite 45)</summary><div class="indented"><figure id="b66192bb-3827-4d6b-a67b-dd6f5808ab90" class="image" style="text-align:left"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.54.17.png"><img style="width:432px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.54.17.png"/></a><figcaption>Abbildung: Merkmale von Dienstleistungen</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was heißt <span style="border-bottom:0.05em solid">Heterogenität</span>? (Seite 46)</summary><div class="indented"><p id="592e839d-414d-4839-937b-7e267665cbbc" class="">Die selbe Dienstleistung wird von Kunden unterschiedlich empfunden.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist der <span style="border-bottom:0.05em solid">Nutzen</span> von Dienstleistungen? (Seite 47)</summary><div class="indented"><figure id="13c8ba69-45a1-4cf5-9d90-e4c12cf64995" class="image" style="text-align:left"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.55.07.png"><img style="width:432px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.55.07.png"/></a><figcaption>Nutzen von Dienstleistungen</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie heißen die <span style="border-bottom:0.05em solid">drei Wirtschaftssektoren</span>? (Seite 48)</summary><div class="indented"><figure id="a2a2a60e-742c-4169-9c84-76d0400b1291" class="image" style="text-align:left"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.57.03.png"><img style="width:432px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.57.03.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die <span style="border-bottom:0.05em solid">Phasen im Kaufentscheidungsprozess</span> einer Dienstleistung? (Seite 53)</summary><div class="indented"><figure id="3a55cc5b-eaab-473f-8ea0-09fa6a7ea951" class="image"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2025.png"><img style="width:432px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2025.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie heißen die <span style="border-bottom:0.05em solid">Phasen der Dienstleistungserstellung</span>? (Seite 54)</summary><div class="indented"><figure id="63599284-220b-407f-81dd-9ea52de2f4fd" class="image" style="text-align:left"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.58.10.png"><img style="width:432px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.58.10.png"/></a><figcaption>Phasen der Dienstleistungserstellung</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die Phasen des <span style="border-bottom:0.05em solid">Service-Design-Prozesses</span>? (Seite 55)</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="a40906af-3615-4816-bcbb-f364dbc1c4fa"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Dienstleistungen werden so gestaltet, dass sie für den Kunden <span style="border-bottom:0.05em solid"><strong>nützlich</strong></span> und <span style="border-bottom:0.05em solid"><strong>einzigartig</strong></span> sind.</div></figure><figure id="29642a84-2191-47ea-9180-5e568050743c" class="image"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2026.png"><img style="width:432px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2026.png"/></a><figcaption>Service-Design-Prozess</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die „<span style="border-bottom:0.05em solid">7Ps</span>” bei der Vermarktung von Dienstleistungen (Seite 56)</summary><div class="indented"><figure id="0fef1357-e623-4ab6-9dbb-fb607ddaadf2" class="image" style="text-align:left"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.59.28.png"><img style="width:432px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Bildschirmfoto_2023-03-03_um_08.59.28.png"/></a><figcaption>Dienstleistungsmarketing</figcaption></figure><p id="6db3be36-dfd7-4f08-ab07-c48e0eee656a" class=""><span style="border-bottom:0.05em solid"><strong>Prozesspolitik</strong></span>: Alle <mark class="highlight-orange_background">Prozesse</mark>, die für die Erstellung der Dienstleistung erforderlich sind.</p><p id="9d64e54b-57be-4a17-81a6-59b648b28497" class=""><span style="border-bottom:0.05em solid"><strong>Personalpolitik</strong></span>: Das <mark class="highlight-orange_background">Auftreten</mark> und die <mark class="highlight-orange_background">Kompetenz</mark> der Mitarbeiter ist sehr wichtig.</p><p id="76856bca-ee29-456a-80df-9420e9bba646" class=""><span style="border-bottom:0.05em solid"><strong>Ausstattungspolitik</strong></span>: <mark class="highlight-orange_background">Räumlichkeit</mark> und <mark class="highlight-orange_background">Atmosphäre</mark> → da man Dienstleistungen nicht angreifen kann.</p><p id="9c040635-cee7-43b9-9342-f2c0149c5305" class="">
+</p></div></details><h2 id="59ec0b83-5899-4cd2-9d8c-cbe8ccac7a59" class="">Versicherungsbetriebe</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist der Unterschied zwischen einer <span style="border-bottom:0.05em solid">Individual- und Sozialversicherung</span>? (Seite 92)</summary><div class="indented"><p id="90516c20-28a0-4785-8be2-c01834f26e09" class=""><span style="border-bottom:0.05em solid"><strong>Individualversicherung</strong></span>: <mark class="highlight-orange_background">freiwillig</mark> (außer <span style="border-bottom:0.05em solid"><strong>Kfz-Haftpflicht</strong></span>); im <strong><mark class="highlight-orange_background">Privatrecht</mark></strong>; Beitrag nach <mark class="highlight-orange_background">Risikohöhe</mark></p><p id="cdf12c28-5837-480b-b4f8-d47d2453a500" class=""><span style="border-bottom:0.05em solid"><strong>Sozialversicherung</strong></span>: per Gesetz → <mark class="highlight-orange_background">freiwilliges Weiterversichern</mark>; Beitrag nach <mark class="highlight-orange_background">sozialen Grundsätzen</mark>; Arbeitnehmer und Arbeitgeber zahlen Beiträge; im <strong><mark class="highlight-orange_background">öffentlichen Recht</mark></strong> geregelt</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die <span style="border-bottom:0.05em solid">Beteiligten</span> in einem Versicherungsvertrag? (Seite 93)</summary><div class="indented"><ul id="d5b79ead-f9b0-4cc7-b4db-a60b5a695cb1" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Versicherer</strong></span>: Versicherung → trägt Risiko</li></ul><ul id="c585685f-3d28-47c6-89b6-e2ef0f6db441" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Versicherungsnehmer</strong></span>: schließt Versicherungsvertrag ab</li></ul><ul id="b95fb08c-4a79-4c61-b600-472d8181412c" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Rückversicherer</strong></span> → Teil des Risikos wird übertragen</li></ul><ul id="cfdb0723-3b9c-4e5e-9c99-abafe013244d" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Versicherter</strong></span>: Er wird versichert (auf Unfall, Gesundheit) und bekommt die Versicherungsleistung → muss nicht Versicherungsnehmer sein</li></ul><ul id="8a7f1786-2d91-41bb-967b-f8957f43b522" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Begünstigter</strong></span>: Bekommt Lebensversicherungssumme → bis zu 3 Personen</li></ul><figure id="fdcd3e97-2911-4fa5-b472-5c30f0205ad9" class="image" style="text-align:left"><a href="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Untitled%202.png"><img style="width:432px" src="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Untitled%202.png"/></a><figcaption>Die Beteiligten</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Pflichten</span> hat ein Versicherungsnehmer? (Seite 94)</summary><div class="indented"><figure id="54b31df5-30e8-4c23-bc06-40819416b0ee" class="image" style="text-align:left"><a href="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-03_um_09.06.54.png"><img style="width:432px" src="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-03_um_09.06.54.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wann muss eine Versicherung <span style="border-bottom:0.05em solid">nicht bezahlen</span>? (Seite 94)</summary><div class="indented"><ul id="d883228d-7cb8-4937-b2f6-9b99f1790907" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Erstprämie</strong></span> wurde noch nicht bezahlt</li></ul><ul id="eb156bb1-fdb1-4353-85fd-1cf77e12013f" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Vorsätzliche Herbeiführung</strong></span> des Schadens</li></ul><ul id="d8fb6ca7-d9b6-41f0-8a99-1db7162af418" class="bulleted-list"><li style="list-style-type:disc">Schaden wurde durch <span style="border-bottom:0.05em solid"><strong>Handlungsweise</strong></span> (z.B.: nicht löschen des Brandes) in Kauf genommen</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten von Versicherungen</span> gibt es? (Seite 95)</summary><div class="indented"><figure id="76a7bea6-8d2a-46df-b9e1-e4d19fbf3e27" class="image"><a href="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-20_um_22.21.05.png"><img style="width:432px" src="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-20_um_22.21.05.png"/></a></figure><p id="1c472794-a570-4ddf-986e-25257a0e0aaa" class=""><span style="border-bottom:0.05em solid"><strong>Versicherung von Rechten</strong></span>: Kreditversicherung</p><p id="00b82454-fcb5-416e-84b5-c8972384d6b7" class=""><span style="border-bottom:0.05em solid"><strong>Aufwandversicherung</strong></span>: Haftpflichtversicherung → z.B.: Kfz-…</p><p id="d6fc00bf-2804-469a-8ed5-0c0dbb829d91" class=""><span style="border-bottom:0.05em solid"><strong>Versicherung gegen Ertragentgang</strong></span>: Einkommen</p><p id="8c3f6136-bb25-47cb-8271-bb7497034651" class=""><span style="border-bottom:0.05em solid"><strong>Lebensversicherung</strong></span>: <mark class="highlight-orange_background">Ableben</mark>, Erreichen eines <mark class="highlight-orange_background">bestimmten Alters</mark> oder Ablauf der <mark class="highlight-orange_background">Versicherungsdauer</mark></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist eine <span style="border-bottom:0.05em solid">Bündelversicherung</span>? (Seite 97)</summary><div class="indented"><p id="3f260625-8b9b-41d3-b776-090d4284041a" class=""><mark class="highlight-orange_background">Mehrere Versicherungsarten</mark> werden zusammengefasst → <span style="border-bottom:0.05em solid"><strong>Betriebsbündelversicherung</strong></span> (Feuer, Einbruch, Diebstahl Leitungswasserschäden, …) oder <span style="border-bottom:0.05em solid"><strong>Eigenheimbündelversicherung</strong></span> (Feuer, Blitz- und Sturmschäden, Vandalismus, …)</p><p id="31f344ad-3ac0-412a-93dd-e0e1ca945b4e" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">weiteren Haftpflichtversicherungen</span> gibt es? (Seite 97)</summary><div class="indented"><ul id="ecd884e7-f226-467c-b877-46e106208876" class="bulleted-list"><li style="list-style-type:disc">Haftpflicht im Rahmen der <span style="border-bottom:0.05em solid"><strong>Haushaltsversicherung</strong></span>: Schäden von <mark class="highlight-orange_background">Kindern</mark></li></ul><ul id="17cc4e5a-8ee0-4c1b-8b1c-196e773677f3" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Sporthaftpflichtversicherung</strong></span>: Schäden, die z.B.: ein <mark class="highlight-orange_background">Skifahrer</mark> verursacht</li></ul><ul id="cfbfa50b-5eb7-4c12-a1f8-4697a1371a22" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>berufliche Haftpflicht</strong></span>: für <mark class="highlight-orange_background">Architekten</mark> und <mark class="highlight-orange_background">Wirtschaftsprüfer</mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie funktioniert das <span style="border-bottom:0.05em solid">Bonus-Malus-System</span>? (Seite 96)</summary><div class="indented"><figure id="b9d5d168-e8fc-4cfb-87aa-519878b024c5" class="image" style="text-align:left"><a href="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-03_um_09.14.34.png"><img style="width:336px" src="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-03_um_09.14.34.png"/></a></figure><p id="080c28e5-bb4e-4aaa-b83b-e5bc80349517" class="">unfallfrei → jedes Jahr eine Stufe weniger bezahlen</p><p id="3600409f-2b5c-4b12-afe7-7e809682d1d9" class="">unfall → 3 Stufen zurück (oder ich zahle den Schaden selbst)</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><span style="border-bottom:0.05em solid">Formen</span> von Versicherungen? (Seite 98-100)</summary><div class="indented"><ul id="3cda5d49-1fcf-4684-b432-3fd213a9584c" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Summenversicherung</strong></span>: Entschädigung von der Höhe des Schadens <mark class="highlight-orange_background">unabhängig</mark>.</li></ul><ul id="881d9d3f-3282-4f96-a439-f655764f0663" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Interessenversicherung</strong></span>: von der Höhe des Schadens abhängig.<ol type="1" id="02843430-0872-4308-bb09-c318abf201e6" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Erstrisikoversicherung</strong></span>: mit der Versicherungssumme begrenzt (nicht höher)</li></ol><ol type="1" id="6efc600d-b4de-4247-9982-2ce71c0ee854" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Vollwertversicherung</strong></span>: von Schadenshöhe, Versicherungssumme und Versicherungswert abhängig. → <span style="border-bottom:0.05em solid"><strong>Neuwertversicherung</strong></span> (Betrag, zu dem das Gut wiederbeschafft werden kann) und <span style="border-bottom:0.05em solid"><strong>Zeitwertversicherung</strong></span> (Betrag, den das Gut am Tag des Schadens hatte)<figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="3a186c36-752f-4af4-b462-12766c158bef"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><strong><span style="border-bottom:0.05em solid">Versicherungswert</span></strong>: <mark class="highlight-orange_background">Wert</mark> des Gegenstands zum Zeitpunkt des Schadens.</div></figure><figure id="b75f21e3-8ca5-4aaf-a835-919e92416819" class="image"><a href="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-20_um_22.41.31.png"><img style="width:288px" src="Mu%CC%88ndliche%20RP%20(ZF)%207eb3ae944485485281b0c60e2e18cf17/Bildschirmfoto_2023-03-20_um_22.41.31.png"/></a></figure></li></ol><ol type="1" id="5ff80fc0-6f59-4a79-b389-dcf6c5e84d83" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid"><strong>Versicherung mit Selbstbehalt</strong></span> (<span style="border-bottom:0.05em solid"><strong>Francise</strong></span>): Kunde zahlt selbst einen vereinbarten Betrag → <span style="border-bottom:0.05em solid"><strong>Abzugsfranchise</strong></span> (Teil, <mark class="highlight-orange_background">unabhängig</mark> von Schadenshöhe) und <span style="border-bottom:0.05em solid"><strong>Integralfranchise</strong></span> (<mark class="highlight-orange_background">ab einem Betrag</mark>, übernimmt die Versicherung den Schaden)</li></ol></li></ul></div></details><h2 id="257ccb6b-3526-499a-b6f5-f12b46f22acf" class="">Risikomanagement</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist das <span style="border-bottom:0.05em solid">Gegenteil von Risiko</span>? (Seite 113)</summary><div class="indented"><p id="a32ce121-8841-4de6-a91c-6b4bd1d97190" class="">Chance → die Unternehmensziele besser zu erfüllen als geplant</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welchen <span style="border-bottom:0.05em solid">Risiken</span> sind Unternehmer ausgesetzt? (Seite 114)</summary><div class="indented"><figure id="4c8d2c6e-7c35-45cb-b954-fbb67236c0a1" class="image"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2012.png"><img style="width:384px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2012.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie kann sich ein Unternehmer gegenüber dem Risiko <span style="border-bottom:0.05em solid">verhalten</span>? (Seite 115)</summary><div class="indented"><figure id="dde13cc2-6262-4e5f-a7f9-162bbba1756d" class="image"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2013.png"><img style="width:384px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2013.png"/></a></figure><p id="d6001232-3132-4dde-885b-18e3df1861fc" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die <span style="border-bottom:0.05em solid">Aufgaben</span> und <span style="border-bottom:0.05em solid">Phasen</span> des Risikomanagements? (Seite 118)</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="41e2215f-76ff-4f28-b28a-a675d435321e"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Das <span style="border-bottom:0.05em solid"><strong>Vermeiden</strong></span> von Risiken und das <span style="border-bottom:0.05em solid"><strong>Wahrnehmen</strong></span> von Chancen.</div></figure><figure id="4c595062-8f3c-48d2-81b1-7d7cf80ffa58" class="image"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2014.png"><img style="width:240px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2014.png"/></a></figure><ol type="1" id="96378303-b560-4b45-972d-6280a5407cdd" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Risikoerkennung</strong></span>: Umfeldanalyse, SWOT-Analyse, Delphi-Methode, Kennzahlensysteme</li></ol><ol type="1" id="c3064008-9972-4d6d-9ae5-c05c200c4fee" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Risikobewertung</strong></span>: Wahrscheinlichkeit → Risikomatrix</li></ol><ol type="1" id="428239c6-2f3f-40af-a57a-416e7a0becd3" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid"><strong>Risikosteuerung</strong></span>: risikopolitische Maßnahmen</li></ol><ol type="1" id="99cc47cb-57cd-465a-9f0b-882b6d50098d" class="numbered-list" start="4"><li><span style="border-bottom:0.05em solid"><strong>Risikoreporting</strong></span>: Entwicklungen werden beobachtet</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">risikopolitische Maßnahmen</span> können ergriffen werden? (Seite 120)</summary><div class="indented"><figure id="b1b89bc1-db23-4b45-976b-00425242c8fc" class="image"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2015.png"><img style="width:384px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2015.png"/></a></figure></div></details><h2 id="e7c84cb4-6a98-4602-a331-2b61717196cf" class="">Dynamische Investitionsrechnung</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche Tools zur Investitionsentscheidung gibt es? (Seite 226)</summary><div class="indented"><figure id="b71897dc-d9a9-4bf8-afef-81acf3dfc8ba" class="image"><a href="2%20SA%20ZF%20a1843b3d851842a3b1d08fd40baab5be/Bildschirmfoto_2023-03-15_um_10.05.05.png"><img style="width:432px" src="2%20SA%20ZF%20a1843b3d851842a3b1d08fd40baab5be/Bildschirmfoto_2023-03-15_um_10.05.05.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist das <span style="border-bottom:0.05em solid">d</span><span style="border-bottom:0.05em solid"><strong>ynamische Investitionsrechenverfahren</strong></span><strong> (vgl. statisch)? (Seite 226)</strong> </summary><div class="indented"><p id="86b18ba3-e9fe-4838-ae41-2e5660c8054c" class=""><span style="border-bottom:0.05em solid"><strong>Statisch</strong></span> → Durchschnittliche Kosten werden beachtet<br/><br/><span style="border-bottom:0.05em solid"><strong>Dynamisch</strong></span> → geplante <mark class="highlight-orange_background">Einzahlungen</mark> und <mark class="highlight-orange_background">Auszahlungen</mark></p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2b294f2e-dc13-4ffd-983b-a77ff4265dc8"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>Kapitalwert</strong></span> → Barwert der <mark class="highlight-orange_background">Einzahlungen</mark> - Barwert der <mark class="highlight-orange_background">Auszahlungen</mark></div></figure><p id="b77ac1ca-ee81-44e0-bceb-1407003784f7" class="">Muss abgezinst werden → weil Geld ist in ein paar Jahren weniger Wert</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="d0ca56ae-595b-421f-a89b-44ba2a839a7c"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>interner Zinssatz:</strong></span> Zinssatz, bei dem der Kapitalwert 0 ist. → tatsächliche Verzinsung</div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was passiert bei der <span style="border-bottom:0.05em solid">dynamischen Amortisationsrechnung</span>? (Seite 231)</summary><div class="indented"><p id="d3b36830-c951-48e8-87db-e44e2238f07d" class="">„<span style="border-bottom:0.05em solid"><strong>Pay-off-Methode</strong></span>”: <mark class="highlight-orange_background">Zeitraum</mark>, in denen die abgezinsten <mark class="highlight-orange_background">Auszahlungen</mark> durch die abgezinsten <mark class="highlight-orange_background">Einzahlungen</mark> wiedergewonnen werden.</p><p id="2d0f138a-3d48-4496-bc04-1957e0ecf9ab" class="">Kumulierte Barwert kommt hinzu → Wenn es von „Minus” auf „Plus” wechselt, amortisiert sich die Investition</p><p id="d051cc86-372a-418f-8df5-524b1640dd85" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><span style="border-bottom:0.05em solid">Einflussfaktoren</span> der dynamischen Investitionsrechnung? (Seite 232)</summary><div class="indented"><ul id="29106f50-547d-452d-99eb-444cf796f47b" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Schätzung der Ein- und Auszahlungen</strong></span></li></ul><ul id="d5f8cdd4-5067-47c0-a05a-2475d25f71a7" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Betrachtungsdauer</strong></span>: Perioden </li></ul><ul id="d073c377-2c78-4532-a5d8-f347dd420728" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kalkulationszinssatz</strong></span> → Geplante Mindestrentabilität des Kapitals, Kosten des langfristigen Fremdkapitals </li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie können <span style="border-bottom:0.05em solid">Unsicherheiten</span> bei der dynamischen Investitionsrechnung bewältigt werden? (Seite 234)</summary><div class="indented"><ul id="7bee3bb2-3204-4315-b3c0-a7166daa6b82" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Korrekturverfahren</strong></span>: Risikozu- und Risikoabschläge</li></ul><ul id="ed93e52a-d0ab-4ec1-b3c6-b71480f942b2" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Sensitivitätsanalyse</strong></span>: Veränderung, wenn man Ergebnisse leicht verändert</li></ul></div></details><h1 id="a7f2c684-4564-44ce-8e48-fde37c2d8e18" class="">Band 5</h1><h2 id="fe4fb199-3ae5-49b9-aae1-e01626823fa9" class="">Krisenmanagement</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie sieht der <span style="border-bottom:0.05em solid">Krisenverlauf</span> aus (Symptome und Tools)? (Seite 52)</summary><div class="indented"><figure id="8318a94b-fc46-441a-be29-1b1a04306133" class="image" style="text-align:left"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Untitled.png"><img style="width:480px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Untitled.png"/></a></figure><ul id="028620a1-27f7-4001-807b-5110fd3cfe11" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Strategiekrise</strong></span>: <br/>Symptome: Verlust von Marktanteilen, Preisdruck, veraltetes Produktportfolio<br/>Tools: Portfolio-Analyse, SWOT-Analyse, Branchenanalyse<br/></li></ul><ul id="04f921ce-cbad-43e3-a581-e119b5da44c4" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Erfolgekrise</strong></span>: <br/>Symptome: sinkende Umsätze und Deckungsbeiträge, Anstieg der Lagerbestände, negative Ergebnisse<br/>Tools: Unternehmensrechnung, Kennzahlenanalyse, Cashflow-Analyse<br/></li></ul><ul id="925184a1-8c16-4faa-a4bc-3fabce7db2e3" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Liquiditätskrise</strong></span>: <br/>Symptome: Verzicht auf Skonti, Zahlungsziele werden überzogen, Probleme bei Mitarbeiterentlohnung, Rückstände bei Finanzamt<br/>Tools: Liquiditätsplanung, Budgetierung<br/></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Frühwarnsysteme</span> für Krisen gibt es? (Seite 54)</summary><div class="indented"><ul id="58e59540-6344-4eaa-802c-c952be63eb6e" class="bulleted-list"><li style="list-style-type:disc">Prognose durch <span style="border-bottom:0.05em solid"><strong>Kennzahlen</strong></span></li></ul><ul id="9ef7bfe1-1ba5-4875-b715-506a264e3700" class="bulleted-list"><li style="list-style-type:disc">Quicktest</li></ul><ul id="2b1422a0-ace9-4a7c-b13e-6acb024cc917" class="bulleted-list"><li style="list-style-type:disc">multiple Diskriminanzanalyse</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die <span style="border-bottom:0.05em solid">wichtigsten Kennzahlen</span>? (Seite 55)</summary><div class="indented"><ul id="62ae9410-f1a5-48d4-8212-bd1412b00fbd" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">Eigenmittelquote</span>: weniger als 8%<figure id="9a260590-5a18-4783-bd2d-ece1fbaee068" class="image"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Untitled%201.png"><img style="width:480px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Untitled%201.png"/></a></figure></li></ul><ul id="b9c520e3-5933-4bdf-bde1-da551baa8ded" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">fiktive Schuldentilgungsdauer</span>: über 15 Jahre<figure id="9385a0ed-a1fe-42dc-9c51-8710e5764a1c" class="image"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_22.59.09.png"><img style="width:480px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_22.59.09.png"/></a></figure><figure id="da023e3d-226c-492a-9556-f55203465162" class="image"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_22.59.56.png"><img style="width:480px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_22.59.56.png"/></a></figure></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie funktioniert ein <span style="border-bottom:0.05em solid">Quicktest</span>? (Seite 57)</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="f6ba5693-b275-49dc-bb2e-6fff60cb9ab0"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Schnelltest mit <span style="border-bottom:0.05em solid"><strong>4 Kennzahlen </strong></span></div></figure><p id="455ccdc0-51ce-4465-bafa-648d73322588" class=""><span style="border-bottom:0.05em solid"><strong>Schwächen</strong></span>: nicht detailliert, verwendet Durchschnittswerte, Ergebnis kann bilanzpolitisch verfälscht werden</p><figure id="792eb055-f67f-491e-9a47-0428432534e2" class="image" style="text-align:left"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.00.29.png"><img style="width:432px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.00.29.png"/></a></figure><figure id="8c12f747-2bfd-483c-9445-1b7823c5bf66" class="image" style="text-align:left"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.00.59.png"><img style="width:432px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.00.59.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist eine <span style="border-bottom:0.05em solid">multiple Diskriminanzanalyse</span>? (Seite 59)</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="414f2503-48bc-4a75-aa5b-0cd1d4bfbf77"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Die <span style="border-bottom:0.05em solid"><strong>Wahrscheinlichkeiten</strong></span> werden berechnet → 6 Kennzahlen</div></figure><figure id="af284069-d674-4b71-ad10-d6b9bfbcb315" class="image" style="text-align:left"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.01.51.png"><img style="width:432px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.01.51.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind <span style="border-bottom:0.05em solid">Maßnahmen</span> bei zahlungsunfähigen Unternehmen? (Seite 61)</summary><div class="indented"><p id="a953625a-3a61-4a4d-b56d-e73dea889ab7" class=""><span style="border-bottom:0.05em solid"><strong>notleidend</strong></span>: zahlungsunfähig</p><figure id="eb838b07-dc78-4089-862b-a28ee002b359" class="image" style="text-align:left"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.02.52.png"><img style="width:432px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-01-23_um_23.02.52.png"/></a></figure><figure id="10f87a6f-b53f-477c-afbb-d14ed1fda975" class="image"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-03-20_um_23.42.56.png"><img style="width:432px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Bildschirmfoto_2023-03-20_um_23.42.56.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Verfahren</span> gibt es bei zahlungsunfähigen Unternehmen? (Seite 64)</summary><div class="indented"><figure id="4291b06d-06f3-435c-9f2e-25037b2e8bfe" class="image"><a href="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Untitled%202.png"><img style="width:384px" src="Krisenmanagement%203569c612f4e941669ea54449c5a11e0b/Untitled%202.png"/></a></figure><p id="1f3a5826-0f7b-4b32-bbdf-3e1b542032d4" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Gläubigeransprüche</span> gibt es bei Insolvenzverfahren? (Seite 66)</summary><div class="indented"><ul id="b7de032c-055e-46c8-b9ef-936019f035eb" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Aussonderungsansprüche</strong></span>: Vermögenswerte, die nicht Eigentum des Schuldners sind</li></ul><ul id="1b048839-b59b-415e-a0af-9e91855a2683" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Absonderungsansprüche</strong></span>: Forderungen von Gläubigern mit besonderen Rechten → Hypothek- oder Faustpfandgläubiger, …</li></ul><ul id="55e1e1cd-4bf3-4a2d-84d2-031f5a51d85d" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Masseforderung</strong></span>: Forderungen, die nach Eröffnen des Verfahrens entstehen → Kosten des Insolvenzverwalters</li></ul></div></details><hr id="f97045e0-3606-46aa-a57b-bc861d17d5f8"/><p id="3d923b0b-30aa-4d71-a7ad-6c85999bd62a" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

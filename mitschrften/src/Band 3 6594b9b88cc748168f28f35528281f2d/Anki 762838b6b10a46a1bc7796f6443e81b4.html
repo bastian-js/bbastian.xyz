@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Anki</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="762838b6-b10a-46a1-bc77-96f6443e81b4" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🎲</span></div><h1 class="page-title">Anki</h1><p class="page-description"></p></header><div class="page-body"><h1 id="61db6aa1-0f2d-48bf-a6ec-89352e92cf1a" class="">Management</h1><ul id="c1c463ae-0e6a-430b-9d9d-07900395be67" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">Perspektiven</span> des Management?</summary><figure id="0092423e-5f46-438e-bc1e-bdc2981a9562" class="image"><a href="Untitled.png"><img style="width:384px" src="Untitled.png"/></a></figure></details></li></ul><ul id="28526165-5dde-447f-8fd1-0055c37e6365" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">Managementebenen</span>?</summary><figure id="4692a723-eebf-4343-8c88-358209798add" class="image"><a href="Untitled%201.png"><img style="width:384px" src="Untitled%201.png"/></a></figure></details></li></ul><ul id="ec30a13e-9060-4b4c-b96c-d5e54de81c4f" class="toggle"><li><details open=""><summary>Was ist ein <span style="border-bottom:0.05em solid">Leitbild</span> eines Unternehmens?</summary><p id="a66fd092-3510-4b68-91de-5ce1d9788da1" class="">Ein Unternehmensleitbild formuliert die <span style="border-bottom:0.05em solid"><strong>angestrebte Identität</strong></span> eines Unternehmens.</p></details></li></ul><hr id="9830aa36-5acd-4e6f-9488-847c15877e03"/><h1 id="62b89ba3-f6b9-44dd-8017-1b558f6caf33" class="">Planungsprozess</h1><h2 id="ce6b1f8b-ba3c-4c47-9eec-9a540699ef6e" class="">Bereiche der Planung</h2><ul id="70565493-2479-4c44-85c9-8b55ad8dce49" class="toggle"><li><details open=""><summary>In welche <span style="border-bottom:0.05em solid">Bereiche</span> lässt sich die Planung unterscheiden?</summary><figure id="efd68997-c384-46f2-b91d-9ab9ffd837a9" class="image"><a href="Untitled%202.png"><img style="width:384px" src="Untitled%202.png"/></a></figure></details></li></ul><hr id="8b1f0f3d-3195-4ae8-9edb-32a5478cdcb4"/><h1 id="3c6f0968-3d88-4316-b0db-bdc12dff64df" class="">Strategische Planung</h1><h2 id="85a2e0db-64b2-455d-aa00-e5b8e640b799" class="">Tools</h2><ul id="0865d913-9634-4c5d-87c8-e96c0186e608" class="toggle"><li><details open=""><summary>Was ist eine <span style="border-bottom:0.05em solid">Umfeldanalyse</span>?</summary><p id="cc73dc5f-93b0-429d-8e28-952b3b00e94f" class="">Die systematische Beobachtungen der Bereiche der Grafik.</p><figure id="a5da27df-43cd-4db3-b652-96672addcaa1" class="image" style="text-align:left"><a href="Untitled%203.png"><img style="width:384px" src="Untitled%203.png"/></a></figure></details></li></ul><hr id="a9719156-68c7-4c6f-aff2-fa3ea691cfbf"/><p id="d33ffe4f-9216-4f6d-835a-a1ac9c03406b" class="">
+</p><h2 id="7cf1e3ac-bf46-4ac0-85f4-4a79b1e2edf5" class="">Strategien</h2><ul id="606127ec-3a19-49da-b8b0-e0131447ce8f" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">Unternehmensziele</span> der Strategischen Planung?</summary><figure id="9fa9c3a2-9ff3-479a-9787-3ea54cffc848" class="image"><a href="Untitled%204.png"><img style="width:384px" src="Untitled%204.png"/></a></figure></details></li></ul><ul id="166625d4-45f2-4c25-9d9c-4122bd1a078a" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">Basisstrategien</span> der Strategischen Planung? (Seite 31)</summary><ul id="c247afae-f78d-4e23-8105-7f18d5f1f9f8" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Differenzierung zu den Mitbewerbern</strong></span>: z.B.: durch Serviceintervalle, schneller Service</li></ul><ul id="8a7c8e20-b0a7-4779-8e87-b05fff3d9cc3" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kostenführerschaft</strong></span>: günstige Preise</li></ul><ul id="715b575b-630a-4714-b146-12dfbc79fce7" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Nischenstrategie</strong></span>: auf Teilmärkte konzentriert (z.B.: Tiertransporter, …)</li></ul></details></li></ul><ul id="aad420a6-8c92-4863-b804-5bccbcc83b09" class="toggle"><li><details open=""><summary>Was passiert bei einer <span style="border-bottom:0.05em solid">SWOT-Analyse</span>? <br/>Welche Punkte sind im Raster? (Seite 32)<br/></summary><p id="533995dc-01a1-4c53-965c-c6ff484ee2ce" class="">Es werden die Stärken und Schwächen, den Chancen und Risiken gegenübergestellt.</p><figure id="495caba7-9d30-4b91-ad08-fe113e9dc449" class="image" style="text-align:left"><a href="Untitled%205.png"><img style="width:384px" src="Untitled%205.png"/></a></figure><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="00c43b09-2ab1-4b89-ab01-30bdb63a246a"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Raster merken → Stärken-Schwächen-Chancen-Risiken</div></figure></details></li></ul><ul id="0a606f5d-62e5-4d33-a0d2-2b08d5444772" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">Normstrategien</span>? (Seite 32)</summary><figure id="03098c15-6bcf-428b-8736-9cdc5bf9419c" class="image" style="text-align:left"><a href="Untitled%206.png"><img style="width:384px" src="Untitled%206.png"/></a><figcaption>Boston Consulting Group</figcaption></figure></details></li></ul><ul id="9d18c8f9-6e54-4a45-b845-a4db666280d6" class="toggle"><li><details open=""><summary>Wofür wird das <span style="border-bottom:0.05em solid">Produkt-Markt-Expansionsraster</span> benötigt? <br/>Welche Beschriftungen hat das Raster? (Seite 33)<br/></summary><p id="f1c0f11d-4cf8-46fc-b7b9-ea150e6c5764" class="">Planung <mark class="highlight-orange_background"><strong>neuer Produkte</strong></mark> und <mark class="highlight-orange_background"><strong>neuer Märkte</strong></mark>.</p><figure id="33cbafcd-2316-4694-a209-7fa64910b79b" class="image" style="text-align:left"><a href="Untitled%207.png"><img style="width:384px" src="Untitled%207.png"/></a><figcaption>Grafik: Produkt-Markt-Expansionsraster</figcaption></figure></details></li></ul><hr id="48f5c279-e5df-44ce-8407-cee49dccc478"/><h1 id="d437dad5-cdc9-48e1-aecc-29b6940885bb" class="">Aufbau- und Ablauforganisation</h1><h2 id="ff147c46-d269-4d8b-a6d0-603b5004b35b" class="">Allgemein</h2><ul id="cdfbf261-6b3e-47e9-acfa-01f98b66e7a5" class="toggle"><li><details open=""><summary>Erkläre die Unterschiede zwischen Aufbau- und Ablauforganisation! (Seite 55)</summary><p id="bebec4fa-91d3-4760-b2e0-1464de4540d2" class=""><span style="border-bottom:0.05em solid"><strong>Aufbauorganisation</strong></span> regelt, <mark class="highlight-orange_background">wer wofür zuständig ist</mark> und <mark class="highlight-orange_background">wer wem Anweisungen erteilen darf</mark>.</p><p id="c71a4817-27c6-4e46-97ab-987ec390dbab" class=""><span style="border-bottom:0.05em solid"><strong>Ablauforganisation</strong></span> regelt, <mark class="highlight-orange_background">was in welcher Reihenfolge</mark> und <mark class="highlight-orange_background">wie und wo zu erfolgen hat</mark>.</p></details></li></ul><h2 id="3444844c-9f85-450f-9b59-0ac0225c2649" class="">Aufgaben, Stellen und Abteilungen (Seite 56-57)</h2><ul id="1ae44f1e-2f81-4322-8c52-82690d8bfc78" class="toggle"><li><details open=""><summary>Was sind <span style="border-bottom:0.05em solid">Aufgaben, Stellen</span> und <span style="border-bottom:0.05em solid">Abteilungen</span>? (Seite 56)</summary><figure id="ca56f5eb-ca3e-4f19-b362-30deb81822be" class="image" style="text-align:left"><a href="Untitled%208.png"><img style="width:384px" src="Untitled%208.png"/></a></figure></details></li></ul><ul id="9bb48410-8f5a-489b-ab19-593dbb9b806a" class="toggle"><li><details open=""><summary>In was kann eine <span style="border-bottom:0.05em solid">Aufgabe</span> aufgeteilt werden? (Seite 56)</summary><p id="c2c6da82-47d4-4f11-b4f2-86f7036c14c0" class="">Aufgabe kann in <br/><br/><span style="border-bottom:0.05em solid"><strong>Verrichtungen</strong></span> (z.B.: Bestellen, Kontrollieren, …) und <br/><br/><span style="border-bottom:0.05em solid"><strong>Objekte</strong></span> (z.B.: Fahrräder, Outdoorartikel, …) aufgeteilt werden.</p></details></li></ul><ul id="4180f24c-05c1-4dab-995a-97e8480a8976" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Arten von Stellen</span> gibt es? (Seite 57)</summary><ul id="2042994c-9bb8-4af4-94cc-8f874136dd5d" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>untergeordnete Stelle</strong></span> → ohne Weisungsbefugnis (z.B.: Lehrling in der Verkaufsabteilung)</li></ul><ul id="85ad39df-4571-4e6e-83eb-f1a599c17f0e" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Instanzen</strong></span> → mit Weisungsbefugnis (z.B.: Leiter der Einkaufsabteilung)</li></ul><ul id="16c817a2-6eae-4cda-b9e8-69093a4b1a36" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Stabstellen</strong></span> → beratende Funktion und ohne Weisungsbefugnis (z.B.: Controller, Statistiker)</li></ul></details></li></ul><ul id="5c8f81ff-ff87-4e0a-a7b8-a55ac6cfffc4" class="toggle"><li><details open=""><summary>Was sind <span style="border-bottom:0.05em solid">Grundsätze</span>? (Seite 63)</summary><p id="08f05ff7-0142-4927-907c-99443fdd49cd" class="">Es geht darum, wer wem Weisungen erteilen darf und wer wem übergeordnet ist.</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="d8767c8d-1d16-43d9-af63-3e68c8f4f708"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Grundsätze nicht auswendig zu lernen.</div></figure></details></li></ul><hr id="7716da8d-0bd9-4a32-9ac3-fc1c1ffa546f"/><h1 id="e16808ec-6e60-4e22-9511-4c34e06cd038" class="">Organisation</h1><h2 id="3a8ba027-5cc9-465c-8681-46debc1d27fd" class="">Leitungssysteme </h2><ul id="2d17505e-89f0-432a-9736-89e5d03c1a6f" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Leitungssysteme</span> gibt es und wie werden sie verwendet? (Seite 68)</summary><figure id="2d7c82fa-7d49-4450-b7e3-cfca684cf5a2" class="image" style="text-align:left"><a href="Untitled%209.png"><img style="width:384px" src="Untitled%209.png"/></a></figure></details></li></ul><ul id="a8848450-4a02-43eb-8057-55ed336d03f9" class="toggle"><li><details open=""><summary>Wie funktioniert ein <span style="border-bottom:0.05em solid">Einliniensystem</span> und welche Vor- und Nachteile gibt es? (Seite 69)</summary><p id="a8a24042-0ce5-45c1-b8e7-2aece8a6efc4" class="">Jede Stelle ist genau einer anderen Stelle unterstellt.</p><p id="a30284e8-8946-4446-84d9-ca86f529ac87" class=""><span style="border-bottom:0.05em solid"><strong>Vorteil</strong></span>: klarer Weisungsweg, <span style="border-bottom:0.05em solid"><strong>Nachteil</strong></span>: Befehlswege sehr lang</p></details></li></ul><ul id="4166ea58-8800-4514-9622-bf87fc187b3c" class="toggle"><li><details open=""><summary>Wie funktioniert ein <span style="border-bottom:0.05em solid">Stabliniensystem</span> und welche Vor- und Nachteile gibt es?  (Seite 69)</summary><p id="71ae3641-6b6b-4079-ba65-5a92dee44405" class="">In <span style="border-bottom:0.05em solid"><strong>Instanzen</strong></span> (Linienstellen) und beratende <span style="border-bottom:0.05em solid"><strong>Stabstellen</strong></span> (auch „Stäbe”) aufgeteilt.</p><p id="6610f082-5c56-46c4-8135-ee764692da81" class=""><span style="border-bottom:0.05em solid"><strong>Vorteil</strong></span>: Spezialkenntnisse der Stabstellen, <span style="border-bottom:0.05em solid"><strong>Nachteil</strong></span>: unkontrollierter Einfluss</p><figure id="20f4b83e-1215-4ceb-850a-325f7ef7ed51" class="image" style="text-align:left"><a href="Untitled%2010.png"><img style="width:384px" src="Untitled%2010.png"/></a></figure></details></li></ul><ul id="6b737b16-2262-4cda-a776-4e497277ecb5" class="toggle"><li><details open=""><summary>Was ist eine <span style="border-bottom:0.05em solid">Spartenorganisation</span> und welche Vor- und Nachteile gibt es? (Seite 70)</summary><p id="c7c70a44-45c9-4838-8d80-da26c8898aac" class="">Betriebliche Funktionen werden für <mark class="highlight-orange_background"><strong>ein Produkt</strong></mark> oder <mark class="highlight-orange_background"><strong>eine Produktgruppe</strong></mark> in einer Sparte zusammengefasst.</p><p id="109d2d80-52ab-4929-a5e8-7fa772705797" class=""><span style="border-bottom:0.05em solid"><strong>Vorteil</strong></span>: Verantwortung besser abgegrenzt, <span style="border-bottom:0.05em solid"><strong>Nachteil</strong></span>: Spartenleiter unabhängig</p><figure id="69b4997d-1149-4769-9539-be6a4bad52e6" class="image" style="text-align:left"><a href="Untitled%2011.png"><img style="width:384px" src="Untitled%2011.png"/></a></figure></details></li></ul><ul id="172f3c95-bfed-4464-a6fb-ddec63e7be5a" class="toggle"><li><details open=""><summary>Wie funktioniert ein <span style="border-bottom:0.05em solid">Mehrliniensystem</span> und für was kann es am Besten verwendet werden? (Seite 71/72)</summary><p id="aaf1d9cc-8cd7-48d0-9940-29081003d593" class="">Jede Stelle ist mehreren Instanzen unterstellt → flexibler, für Bereiche die sich schnell ändern</p><figure id="c8c00a38-9a92-4215-9089-2f6724d0d9aa" class="image" style="text-align:left"><a href="Untitled%2012.png"><img style="width:384px" src="Untitled%2012.png"/></a><figcaption><span style="border-bottom:0.05em solid">Produkt A</span> kann von allen Abteilungen Weisungen erhalten</figcaption></figure></details></li></ul><hr id="babbe25b-ee5b-41ea-a779-5a66bf6e2d91"/><h2 id="55cf4789-a52a-4d99-8eb3-115dfb25aeac" class="">Formale und informale Organisation</h2><ul id="9091de72-6a88-4814-9930-61b2ac01ee7d" class="toggle"><li><details open=""><summary>Was bedeutet „f<span style="border-bottom:0.05em solid">ormal</span>”?</summary><p id="832eb4a4-3f87-42cc-aacd-8e64103d021b" class="">Formal bedeutet „<span style="border-bottom:0.05em solid">auf dem Papier</span>”.</p></details></li></ul><ul id="548028c6-1525-4bca-b030-56ad9a2c01c1" class="toggle"><li><details open=""><summary>Was ist eine <span style="border-bottom:0.05em solid">Informale Organisation</span> und welche Elemente gibt es? (Seite 77)</summary><p id="919ed1e1-b76a-4fdb-859a-431b0df2e1d2" class=""><span style="border-bottom:0.05em solid"><strong>Informaler Führer</strong></span>: Führer, dessen Meinung von den Mitarbeitern anerkannt wird.</p><p id="ed3ca66e-d20b-4e15-8b7b-de4d6faf3c35" class=""><span style="border-bottom:0.05em solid"><strong>Informale Normen</strong></span>: Regeln, die nicht auf dem Papier existieren z.B.: Schäden werden selbst behoben</p><p id="b697189d-baf4-4f84-a14c-ed11ee318599" class=""><span style="border-bottom:0.05em solid"><strong>Informale Kommunikationsstrukturen</strong></span>: z.B.: Mitarbeiter kennen sich privat und reden miteinander, treffen sich im Buffet oder machen gemeinsam Sport. <strong>Vorteil</strong>: schnellere Kommunikation</p><p id="0e96571e-b43d-4102-8a73-2e68e276b791" class=""><span style="border-bottom:0.05em solid"><strong>Informale Gruppen</strong></span>: persönliche Zusammenschüsse (z.B.: durch gemeinsamen Sport, …)</p></details></li></ul><hr id="4598861c-3ab5-4acc-88fb-1c03720adb4c"/><h2 id="c7e5573f-bc70-40e3-b7ef-cdf751aa79a6" class="">Ablauforganisation</h2><ul id="5f023876-6809-4dca-984c-7c3834505fa2" class="toggle"><li><details open=""><summary>Wie wird die <span style="border-bottom:0.05em solid">Ablaufplanung</span> durchgeführt? (Seite 83)</summary><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="52616310-3fcd-4543-ad1d-7fd90db28e55"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Nur wissen, dass der Ablauf mit einem Balkendiagramm geplant wird.</div></figure><figure id="e9619ac6-e2cc-4bb6-bc83-3634df84e588" class="image" style="text-align:left"><a href="Untitled%2013.png"><img style="width:432px" src="Untitled%2013.png"/></a></figure></details></li></ul><hr id="03a97556-553d-4427-92a9-f552fc153792"/><h1 id="47877400-f744-4be1-b467-99335b6cc338" class="">Führung</h1><h2 id="3eb36de1-3f82-40f7-9d7d-93033b6c8a23" class="">Führungsstile</h2><ul id="01301dbe-f304-4897-b87a-d3eea38f19cc" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Führungsstile</span> gibt es? (Seite 95)</summary><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="fb7ff12c-02a6-489a-a739-e96d1e837dd2"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Extrempunkte (<span style="border-bottom:0.05em solid"><strong>Delegativ, Autoritär</strong></span>) wichtig!</div></figure><figure id="68dd3897-33b8-42ba-ad0d-6c419a93242c" class="image" style="text-align:left"><a href="Untitled%2014.png"><img style="width:432px" src="Untitled%2014.png"/></a></figure></details></li></ul><hr id="426472f9-337f-4b56-ab58-d5e734ffcf3f"/><h2 id="cec4e1fa-70dd-49b3-9ac5-e37db7bf4eb2" class="">Führungskonzepte</h2><ul id="07ee8027-142e-4a6f-9cd2-521d9c71ad4e" class="toggle"><li><details open=""><summary>Was wird mithilfe eines <span style="border-bottom:0.05em solid">Verhaltensgitter</span> ermittelt? (Seite 100)</summary><p id="f18a4244-e9a5-4145-83a5-59aec73e23b8" class="">Ist einem Unternehmer <span style="border-bottom:0.05em solid"><strong>die Leistung</strong></span> oder <span style="border-bottom:0.05em solid"><strong>das Wohl</strong></span> des Mitarbeiters wichtig.</p><figure id="74448eeb-8a5e-4f9d-98c8-f7249b93e2e9" class="image" style="text-align:left"><a href="Untitled%2015.png"><img style="width:432px" src="Untitled%2015.png"/></a><figcaption><span style="border-bottom:0.05em solid"><strong>9.9</strong></span>: am Besten, <span style="border-bottom:0.05em solid"><strong>1.1</strong></span>: am Schlechtesten</figcaption></figure></details></li></ul><ul id="40f61f8a-4bad-43b3-b175-6fbef95f02a7" class="toggle"><li><details open=""><summary>Wie sieht ein <span style="border-bottom:0.05em solid">Reifegradansatz</span> aus und was bedeutet <span style="border-bottom:0.05em solid">Reife</span>? (Seite 101)</summary><p id="ffb1798e-da36-4b55-8109-ee8f72ffcbe7" class=""><span style="border-bottom:0.05em solid"><strong>Reife</strong></span>: Kenntnisse (schon lange oder erst kurz im Unternehmen)</p><figure id="61bc2c6c-2746-4d8f-a46c-c85dd3ec5fc4" class="image" style="text-align:left"><a href="Untitled%2016.png"><img style="width:432px" src="Untitled%2016.png"/></a></figure></details></li></ul><ul id="3cecaec3-973c-47bd-a89c-ae83fbc87679" class="toggle"><li><details open=""><summary>Was sagt der <span style="border-bottom:0.05em solid">PDCA-Zyklus</span> aus und welche Elemente hat er? (Seite 114)</summary><p id="a78e46b9-8f4d-4d50-b564-7e6bd738abed" class="">Was muss ich machen um Ziele zu erreichen?</p><figure id="80f553ac-0957-4830-8478-d3838aa14566" class="image" style="text-align:left"><a href="Untitled%2017.png"><img style="width:432px" src="Untitled%2017.png"/></a><figcaption>PDCA-Zyklus</figcaption></figure></details></li></ul><hr id="d8e56c02-45c1-4ccf-8780-88348939a5e0"/><h1 id="80f67b6c-203c-451d-883a-e137a2679596" class="">Personalmanagement</h1><h2 id="1226d369-c60c-433f-8450-99df2facf5c1" class="">Personalbedarfsplanung (Seite 125)</h2><ul id="9ae8a7aa-6c92-4d04-b1f7-eaa126fe57b6" class="toggle"><li><details open=""><summary>Was muss passieren, wenn <br/>1. <br/><span style="border-bottom:0.05em solid">zu viel</span> bzw. <span style="border-bottom:0.05em solid">zu wenig</span> Personal vorhanden ist?<br/>2. das Personal zu <br/><span style="border-bottom:0.05em solid">schlechte Qualifikationen</span> hat?</summary><p id="81e39800-cb7e-4c38-a9b6-2c041a087c05" class="">Zu viel Personal: Teilzeitarbeit, entlassen schwierig, weniger Arbeiten</p><p id="e7d371dc-4970-4080-9da8-f313891ee9dd" class="">Zu wenig Personal: Neue Mitarbeiter</p><p id="930e3f0e-33cd-4431-a173-8561180c1aaa" class="">Personal hat nicht die passende Qualitfikation: Weiterbilden</p></details></li></ul><ul id="38a33d92-1099-4d0a-b0ab-c17ba9ffc0cb" class="toggle"><li><details open=""><summary>Was passiert bei der Personalbedarfsplanung (Grafik)?</summary><figure id="2db2a675-a81d-439c-9e03-620b428bf5bb" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-03_um_09.27.37.png"><img style="width:432px" src="Bildschirmfoto_2023-02-03_um_09.27.37.png"/></a></figure></details></li></ul><ul id="ea80b59f-ab43-4627-901d-1aa3bde46b62" class="toggle"><li><details open=""><summary>Was sind <span style="border-bottom:0.05em solid">Schwankungen</span> und welche Arten gibt es (Personal)?</summary><p id="a5d0e8cd-3bda-4dba-a9da-728b47cfa36a" class=""><strong>Schwankungen</strong> (kurz-, mittel und langfristig): wegen Haupt-/Nebensaison, Mitarbeiten gehen in Pension (langfristig), Krankheiten (kurzfristig), Urlaub (kurzfristig)</p><figure id="63e51c90-d8cc-4c7f-a02d-8eaed59f807b" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-03_um_09.20.44.png"><img style="width:432px" src="Bildschirmfoto_2023-02-03_um_09.20.44.png"/></a></figure></details></li></ul><ul id="4be8b1f9-f25d-4f2d-9939-24aa2e52254c" class="toggle"><li><details open=""><summary>Was sind <span style="border-bottom:0.05em solid">Maßnahmen</span> zur Deckung des Personalbedarfs (Seite 128)?</summary><ol type="1" id="9d392a22-ebe0-4953-bcad-28dd01e90303" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Personalbeschaffung</strong></span> (extern: jemanden von außen besorgen)<figure id="0bbf0f31-5411-47de-a2a0-6095117fc74f" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-02-03_um_09.21.15.png"><img style="width:432px" src="Bildschirmfoto_2023-02-03_um_09.21.15.png"/></a></figure></li></ol><ol type="1" id="6e4e6768-5e8b-4f32-9847-5ed8158bd6d7" class="numbered-list" start="2"><li>Weitere Maßnahmen:<figure id="58ad832f-cff3-453d-a9c1-561d54ce95c2" class="image" style="text-align:left"><a href="Untitled%2018.png"><img style="width:432px" src="Untitled%2018.png"/></a><figcaption>Seite 129</figcaption></figure></li></ol></details></li></ul><h2 id="3b968b86-7dfe-41f8-9dfa-9ececba7fc68" class="">Personalentlohnung</h2><ul id="9c173254-1bf5-423d-be48-48f4b9d62d4d" class="toggle"><li><details open=""><summary>Welche Arten der Arbeitsanforderungen gibt es – Genfer Schema (Seite 150)?</summary><figure id="99810b5c-b043-46f0-b6f8-014fe871f44a" class="image"><a href="Bildschirmfoto_2023-02-20_um_22.41.52.png"><img style="width:432px" src="Bildschirmfoto_2023-02-20_um_22.41.52.png"/></a></figure><p id="2f92ddf5-32b5-4452-9873-ce37e3447676" class="">
+</p></details></li></ul><ul id="a6173e42-30ad-4d8e-b3a8-fe44010152b1" class="toggle"><li><details open=""><summary>Was sind die Faktoren für gerechte Entlohnung (Seite 150)?</summary><figure id="edc7555c-733c-4015-ba1a-e556034df9c4" class="image"><a href="Bildschirmfoto_2023-02-20_um_22.43.29.png"><img style="width:432px" src="Bildschirmfoto_2023-02-20_um_22.43.29.png"/></a></figure><p id="225476c4-be83-47b7-bb1a-4872fb28e29d" class="">
+</p></details></li></ul><ul id="daa0ec9e-b611-463b-9e0c-5f064ceda40b" class="toggle"><li><details open=""><summary>Welche anderen Entgeldformen gibt es (Seite 153 + 154)?</summary><ol type="1" id="3a2e5021-61ad-43d6-a75d-9bc4a23c10a6" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Provisionen</strong></span>: Prozentuell an einem <strong>Geschäft</strong> beteiligt</li></ol><ol type="1" id="0fa353e8-f8b3-4a8d-82d5-de6c76c87b27" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Tantiemen</strong></span>: Prozentuell am <strong>Gewinn</strong> beteiligt</li></ol><ol type="1" id="c8e8dc27-c673-42c0-beab-599f9f615a18" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid"><strong>Grafikationen</strong></span>: Sondervergütungen z.B.: Bilanzgeld</li></ol><ol type="1" id="81fb0da2-fb39-4038-b94b-13c3b823bdb9" class="numbered-list" start="4"><li><span style="border-bottom:0.05em solid"><strong>Zulagen</strong></span>: zum Ausgleich von Nachteilen (Kinder)</li></ol></details></li></ul><h2 id="4cef922a-b791-4099-b9b7-a9cee80baab1" class="">Personalbeurteilung</h2><ul id="8e98cbd5-8bfb-47d9-987c-553db1802d17" class="toggle"><li><details open=""><summary>Was ist ein <span style="border-bottom:0.05em solid"><strong>Beurteilungsgespräch</strong></span> (Seite 161)?</summary><p id="8f70d38a-bbe1-47a2-b022-f7287463c6db" class="">Gespräch zwischen Mitarbeiter und Führungskraft → über Leistung oder Entwicklungsmöglichkeiten diskutieren</p></details></li></ul><ul id="31f6c966-f1ef-4059-a1ea-33640d987b43" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">Ziele eines Beurteilungsgespräch</span> (Seite 161)?</summary><ol type="1" id="42832c39-3be0-4508-9f8d-06e644f36558" class="numbered-list" start="1"><li>Verbesserung von schlechten Leistungen</li></ol><ol type="1" id="9af74a24-5807-40c9-9f47-e105741fcc6b" class="numbered-list" start="2"><li>Erhaltung eines hohen Leistungsniveaus</li></ol></details></li></ul><ul id="66643315-8347-4bcb-9392-677a8759ba7b" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Regeln</span> gelten für das <span style="border-bottom:0.05em solid">Beurteilungsgespräch</span> (Seite 162)?</summary><ol type="1" id="1ecf2417-f2e9-47b4-8da3-366d784ff1b1" class="numbered-list" start="1"><li>Merkmale der Leistung und nicht der Person besprechen</li></ol><ol type="1" id="c12bb761-eaaf-4eb8-b28b-54cbcf926604" class="numbered-list" start="2"><li>Stellungnahme erfragen</li></ol><ol type="1" id="60979dbb-9170-4781-8d23-f208f8fea5f9" class="numbered-list" start="3"><li>Verbesserungsvorschläge für die Fehler geben</li></ol></details></li></ul><h3 id="8e7ef53e-5c9f-4603-b4cf-a0c731110265" class="">Fehler bei der Personalbeurteilung</h3><ul id="f34de1ad-1cca-44c2-95c3-65d3d92abf99" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">grundlegenden Fehler</span> bei der <span style="border-bottom:0.05em solid">Personalbeurteilung</span> (Seite 162)?</summary><ol type="1" id="cfcb9c03-5d4f-47d2-b323-70b19caf2aff" class="numbered-list" start="1"><li>Wahrnehmungsverzerrungen bzw. „Halo-Effekt”</li></ol><ol type="1" id="9b08a4d9-d842-4844-983b-42f0da4b84a9" class="numbered-list" start="2"><li>Maßstabsanwendung</li></ol><ol type="1" id="649ca640-185b-4ede-a50c-36d67a842d58" class="numbered-list" start="3"><li>bewusste Verfälschungen</li></ol><ol type="1" id="f34ec611-3a17-405c-98cf-251732f8c52d" class="numbered-list" start="4"><li>andere Verzerrungsfaktoren: <strong>Alter</strong> bzw. <strong>Geschlecht</strong> des Beurteilten</li></ol></details></li></ul><ul id="e27ac801-6466-4e3e-bb35-c1d0467e452f" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Wahrnehmungsverzerrungen</span> gibt es (Seite 162)?</summary><p id="6eda69bb-e418-4cb4-8fe0-239bfe57f7b7" class=""><span style="border-bottom:0.05em solid"><strong>Nikolaus-Effekt</strong></span> (Recency-Effekt): Beziehung auf Fehler, die erst vor kurzem passiert sind.</p><p id="37491084-6651-4825-975f-73d9970f078e" class=""><span style="border-bottom:0.05em solid"><strong>Hierarchie-Effekt</strong></span>: Je höher in der Hierachie, desto besser bewertet.</p><p id="a08cbe13-49df-4260-868a-cdb728efb235" class=""><span style="border-bottom:0.05em solid"><strong>Kleber-Effekt</strong></span>: Unterschätzung von Mitarbeitern, die schon lange Zeit nicht mehr befördert wurden.</p></details></li></ul><ul id="61e17ec4-6f9c-4ccb-9185-8bf17d987938" class="toggle"><li><details open=""><summary>Welche Fehler der <span style="border-bottom:0.05em solid">Maßstabsanwendung</span> gibt es (Seite 163)?</summary><p id="ecb26405-6a37-4e8a-b18b-37a9be90b8cb" class=""><span style="border-bottom:0.05em solid"><strong>Maßstabs-Effekt</strong></span>: Beurteilender verwendet sich selbst als Maßstab</p><p id="927510ef-2c2a-46bf-95f5-fa601ec6f1d7" class=""><span style="border-bottom:0.05em solid"><strong>Tendenz zur Mitte</strong></span>: Durchschnittswerte werden bevorzugt</p><p id="8daf18fe-4312-4e68-a9ef-c33bcbdcba61" class=""><span style="border-bottom:0.05em solid"><strong>Häufungseffekt (Tendenz zur Strenge/Milde)</strong></span>: Gesamtbild der Mitarbeiter beeinflusst</p><p id="4f397ec9-3ff4-42c2-b6f2-5263d2d8873d" class=""><span style="border-bottom:0.05em solid"><strong>Sympathie/Antipathie</strong></span></p><p id="16d4835a-538c-4c9d-b33f-7da22fcd734d" class="">
+</p></details></li></ul><ul id="e17652a6-eeca-4f81-a912-a6d04caf844d" class="toggle"><li><details open=""><summary>Wofür werden <span style="border-bottom:0.05em solid">bewusste Verfälschungen</span> verwendet (Seite 163)?</summary><p id="0179e243-6820-40d7-aa91-858aa07c13e5" class=""><span style="border-bottom:0.05em solid"><strong>Beurteilung als Mittel zum Zweck</strong></span>: für Leistungszulagen, …</p></details></li></ul><h2 id="01b81ac4-7f9e-4d4f-b7af-676959f0179a" class="">Personalweiterbildung</h2><ul id="f4367454-07d2-4438-b1ba-dfbdfdb29d50" class="toggle"><li><details open=""><summary>Was sind <span style="border-bottom:0.05em solid">Teilbereiche der Personalentwicklung</span> (Seite 168)?</summary><figure id="9f0cd820-8c76-4375-8272-7b9cfc84130d" class="image"><a href="Untitled%2019.png"><img style="width:432px" src="Untitled%2019.png"/></a></figure></details></li></ul><hr id="89ec6c0c-14bf-4752-a6ac-2cb7a44163c9"/><h1 id="c9d5bb9a-41d3-4b53-917c-9b8c6d5f39a4" class="">Arbeitsgestaltung</h1><ul id="3671662a-ee83-430e-9270-63760bfb73a8" class="toggle"><li><details open=""><summary>Welche Punkte muss ein <span style="border-bottom:0.05em solid">humanisierter Arbeitsplatz</span> berücksichtigen (Seite 172)?</summary><figure id="abbbd882-17af-4533-b9ea-67901778db01" class="image"><a href="Untitled%2020.png"><img style="width:432px" src="Untitled%2020.png"/></a></figure><p id="1267971b-a34d-4fb8-86ff-a996b46543c7" class=""><strong>Probleme bei betrieblichen Sozialleistungen</strong>: Sozialleistungen aus guten Wirtschaftsjahren können schwer abgebaut werden; keinen Lohnvergleich zwischen verschiedenen Betrieben</p></details></li></ul><ul id="b389dbab-dab4-4aca-8b2b-fcede531362e" class="toggle"><li><details open=""><summary>Welche Punkte beinhaltet eine <span style="border-bottom:0.05em solid">bessere Arbeitsorganisation</span> (Seite 174)?</summary><ol type="1" id="e98992ef-1f60-4080-8435-1edf7c0dbb65" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Job-Enlargement</strong></span>: Erweiterung des Arbeitsbereichs</li></ol><ol type="1" id="695f445b-4029-4915-b427-823768b59572" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Job-Enrichment</strong></span>: Erweiterung des Verantwortungsbereiches</li></ol><ol type="1" id="f31cb64d-5b45-47a2-8701-56dddf80dc1b" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid"><strong>Job-Rotation</strong></span>: systematisches Wechseln des Arbeitsplatzes</li></ol><ol type="1" id="595e6885-5201-4a4a-a539-e37d265f544f" class="numbered-list" start="4"><li><span style="border-bottom:0.05em solid"><strong>teilautonome Arbeitsgruppen</strong></span> → Kombination aus Job-Enrichment und Job-Rotation</li></ol></details></li></ul><h1 id="2b6ac162-3762-4ce2-91c9-b7a2173c6bf9" class="">Motivation</h1><ul id="f7dfd784-6158-467e-8e4b-2b219d7f767f" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Arten der Motivation</span> gibt es (Seite 177)?</summary><figure id="7fd2b7b1-4e38-49d5-91ce-d2d15b15953e" class="image"><a href="Untitled%2021.png"><img style="width:432px" src="Untitled%2021.png"/></a></figure></details></li></ul><ul id="7b62bace-8e29-4cf6-8db3-4868effa4694" class="toggle"><li><details open=""><summary>Was sind die 5 Kategorien der <span style="border-bottom:0.05em solid">Bedürfnishierarchie</span> (Seite 178)?</summary><figure id="0d0e3742-0b15-42f0-9b88-16ea742a6cf1" class="image"><a href="Bildschirmfoto_2023-02-20_um_20.11.05.png"><img style="width:432px" src="Bildschirmfoto_2023-02-20_um_20.11.05.png"/></a></figure></details></li></ul><ul id="82b074cc-8f0c-4c8b-87b2-c57f54df7fb1" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Motivationstheorien</span> gibt es (Seite 179)?</summary><h3 id="301705a1-2f91-4864-b9cd-780878798a0c" class="">Herzbergs Zwei-Faktoren-Theorie</h3><p id="9af6bf06-3d73-441f-a755-1816084c2e84" class="">Arbeitnehmer wurden nach Faktoren gefragt, die zur Zufrieden- oder Unzufriedenheit führen.</p><p id="f22bc37c-0077-44a2-8522-4f4db6c795cc" class=""><span style="border-bottom:0.05em solid"><strong>Motivatoren</strong></span> (direkter Zus. mit der Tätigkeit): Anerkennung, Aufstieg, Verantwortung</p><p id="f687c110-81dc-4156-b0e3-32fac5e6f994" class=""><span style="border-bottom:0.05em solid"><strong>Hygienefaktoren</strong></span> (indirekter Zus. mit der Tätigkeit): Bezahlung, Arbeitsbedingungen, Arbeitssicherheit, Unternehmenspolitik</p><h3 id="470b2d4a-d516-4a0f-ae66-c5151174470a" class="">McGregors Theorien X und Y</h3><p id="ac42c59b-60df-4db0-bd71-a16b3ada2f9e" class=""><span style="border-bottom:0.05em solid"><strong>Theorie X:</strong></span> pessimistisches Menschenbild</p><p id="d59a466d-e5c7-4895-96ff-85118a98952c" class=""><span style="border-bottom:0.05em solid"><strong>Theorie Y:</strong></span> optimistisches Menschenbild</p><p id="d89a7771-e142-4218-a45b-96692e06a220" class="">
+</p></details></li></ul><hr id="03b364bd-160d-4b4e-9a4a-82b5f2b979b7"/><h1 id="8c814de6-12f0-4bcc-9d9e-64bac464865d" class="">Personal und Recht</h1><ul id="ecae1f05-d20a-436f-866f-eecf76cd0d82" class="toggle"><li><details open=""><summary>Was ist ein <span style="border-bottom:0.05em solid">Kollektivvertrag</span> (Seite 189)?</summary><p id="e6596bbf-65af-4804-b4cb-a5bbeef811e0" class="">Vertrag zwischen den Gewerkschaften Vertretung von Arbeitnehmer und Wirtschaftskammer</p></details></li></ul><ul id="3250914c-5be5-44c7-bfad-c96379671787" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Pflichten</span> hat ein <span style="border-bottom:0.05em solid">Arbeitnehmer</span> und <span style="border-bottom:0.05em solid">Arbeitgeber</span> (Seite 190)?</summary><p id="22d33922-37d0-4275-a862-3dc38a5539f7" class=""><span style="border-bottom:0.05em solid"><strong>Arbeitnehmer</strong></span>: persönliche Arbeitsleistung, Treuepflicht (Verschwiegenheit, Konkurrenzverbot → keine Nebenbeschäftigungen, keine Geschenkannahme)</p><p id="d2663662-9e27-4e11-afb2-b5b0eda6a2d1" class=""><span style="border-bottom:0.05em solid"><strong>Arbeitgeber</strong></span>: Zahlung des Entgeld, Gleichbehandlung, Arbeitnehmerschutz (Gefahrenschutz, Arbeitszeitschutz und Verwendungsschutz (z.B.: bei Kindern))</p><p id="897efc74-431a-4849-9d75-058f413657e4" class=""> </p></details></li></ul><ul id="c5f23a03-015b-4ecb-aede-7201a49efdc3" class="toggle"><li><details open=""><summary>Wie viel <span style="border-bottom:0.05em solid">Urlaub</span> steht einem Arbeitnehmer zu (Seite 191)?</summary><p id="f03e3599-60d3-4f03-975b-1ac316c31f61" class="">30 Werktage (nach 6 Monaten in voller Höhe)</p></details></li></ul><ul id="be9929b0-bc56-4e11-b337-4c3081b44c08" class="toggle"><li><details open=""><summary>Unterschied zwischen <span style="border-bottom:0.05em solid">Mutterschutz</span> und <span style="border-bottom:0.05em solid">Karenzurlaub</span> (Seite 192)?</summary><p id="f5c07e91-b356-4175-ac09-64680f391e1f" class=""><span style="border-bottom:0.05em solid"><strong>Mutterschutz</strong></span>: 8 Wochen vor, bis 8 Wochen nach dem Geburtstemin → Gehalt in voller Höhe</p><p id="ae96062c-a019-4568-ae3c-62aaf159bd68" class=""><span style="border-bottom:0.05em solid"><strong>Karenzurlaub</strong></span>: bis zum 2. Geburtstag des Kindes → ohne Entgeld </p><p id="efe9c3fe-c00b-4a43-abb2-97795ffd90cd" class="">
+</p><p id="83fb3d81-ec49-4f33-a5c4-4e343f40ad81" class="">
+</p></details></li></ul><h2 id="2346790f-83d9-475a-8baf-7e7d79be09fe" class="">Entlassung, Kündigung </h2><ul id="465ed9a1-b603-465f-ada4-a5094d07d5e3" class="toggle"><li><details open=""><summary>Wie kann ein <span style="border-bottom:0.05em solid">Arbeitsverhältnis</span> enden (Seite 192)?</summary><ul id="fea8548b-1fd8-40fe-ba87-9876e35c7bb7" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">einvernehmlich</span></strong></li></ul><ul id="abdb42ec-2624-4da0-bcd6-5329c0360fcd" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kündigung durch den Dienstgeber</strong></span> → kein Grund erforderlich (immer zum Quartalsende)</li></ul><ul id="a3a10ca8-a1f3-48ca-8ecf-35ef3d732131" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kündigung durch den Dienstnehmer</strong></span> → Einhaltung der einmontaigen Kündigungsfrist notwendig</li></ul><ul id="642ebfb6-3d4a-4651-81d0-531fbe4509dd" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Vorzeitige (fristlose) Entlassung</strong></span> → Grund notwendig (z.B.: Dienstunfähig wegen Alkohol, Beschimpfungen von Führungskräften, Verrat von Betriebsgeheimnissen oder unbefugtes Verlassen der Arbeit)</li></ul><ul id="d7e1615c-47dc-40ff-bedb-5026cd19bc71" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Fristloser Austritt des Arbeitnehmers</strong></span> → Grund notwendig (z.b.: sexuelle Belästigung, Gesundheitsgefährdung, …)</li></ul></details></li></ul><hr id="5629869e-147e-43a9-9b9a-b713764501f2"/><h1 id="b5f7e415-7a71-43b8-a6ac-b994b3550bb3" class="">Finanzierung des Unternehmens </h1><ul id="4e062e62-47ec-4e22-829e-c611d88cf582" class="toggle"><li><details open=""><summary>Was sind die <span style="border-bottom:0.05em solid">Finanzierungsquellen</span> und welche Merkmale gibt es eines Unternehmers (Seite 219)?</summary><figure id="0b9bde75-b41b-4ceb-86ec-386627e1656d" class="image"><a href="Untitled%2022.png"><img style="width:432px" src="Untitled%2022.png"/></a></figure><figure id="39b0633b-28bf-4bf2-96ef-b2caeb69838f" class="image"><a href="Untitled%2023.png"><img style="width:432px" src="Untitled%2023.png"/></a></figure></details></li></ul><h2 id="92f2811a-20d8-40c8-8c46-e9e5a3ebd62d" class="">Innenfinanzierung</h2><ul id="05f791ea-8f5f-4afe-ac3f-e888e14fd2e8" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Arten der Innenfinanzierung</span> gibt es (Seite 219)?</summary><figure id="5546f0d7-4a09-46d8-9357-12d0ad942734" class="image"><a href="Untitled%2024.png"><img style="width:432px" src="Untitled%2024.png"/></a></figure></details></li></ul><h2 id="58a30100-dc04-4ef8-9e87-bea284041290" class="">Außenfinanzierung </h2><ul id="6326c716-30b1-47a4-a073-a8088f6176ac" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Arten der Außenfinanzierung</span> gibt es (Seite 228)?</summary><figure id="8f6809f2-7c51-4cef-bbc9-b28d132fde10" class="image"><a href="Untitled%2025.png"><img style="width:432px" src="Untitled%2025.png"/></a></figure></details></li></ul><ul id="a3636d5c-a090-4372-94d5-2c092da00591" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Arten von Kreditsicherheiten</span> gibt es (Seite 229)?</summary><figure id="fed39ae1-31ae-4608-9725-c1256c8f27b2" class="image"><a href="Bildschirmfoto_2023-02-20_um_23.42.39.png"><img style="width:432px" src="Bildschirmfoto_2023-02-20_um_23.42.39.png"/></a></figure><p id="5b1a472c-cd8f-48b1-b631-0c50cb41c3c8" class=""><span style="border-bottom:0.05em solid"><strong>Bürgschaft</strong></span>: Ausfallsbürgschaft (Teilhaftung), einfache/subsidäre Bürgschaft (Gläubiger muss erst mahnen), solidarische Bürgschaft (Gläubiger kann wählen von wem er die Schuld einfordert)</p><p id="dda7147e-5b39-4e61-b4ae-41ce4903cf9a" class=""><span style="border-bottom:0.05em solid"><strong>Wechsel</strong></span>: Wertpapiere → bestimmter Betrag wird zu einem bestimmten Zeitpunkt bezahlt (diskontiert → es wird vor der Fälligkeit an eine Bank verkauft)</p><p id="c80448f6-0b33-4ef5-930a-f4590464851d" class=""><span style="border-bottom:0.05em solid"><strong>Lombard</strong></span>: Wertpapierlombard, Edelmetalllombard und Warenlombard</p><p id="5ed345d8-571c-4fa2-a840-d78fe5208709" class=""><span style="border-bottom:0.05em solid"><strong>Hyptothek</strong></span> sind im <strong>Lastenblatt</strong> des Grundbuches eingetragen.</p><p id="1567762b-cc90-49ec-8153-2e267500ebd4" class=""><span style="border-bottom:0.05em solid"><strong>Forderungsabtretung</strong></span>: Lieferung auf Ziel</p><p id="454c9b64-2864-47bd-861b-c14e7eedb6c8" class=""><span style="border-bottom:0.05em solid"><strong>Sicherheitsübereignung</strong></span>: Besitzer kann die Sachen weiterhin benutzen</p><p id="1b2a6aa0-caea-4247-bbb3-a61655627a9b" class=""><span style="border-bottom:0.05em solid"><strong>Eigentumsvorbehalt</strong></span>: Sache, bleibt für die Dauer des Kredits Eigentum des Verkäufers</p></details></li></ul><ul id="c50bd5a5-2728-41bb-b70e-2197cfefdab6" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Provisionen</span> können verrechnet werden (Seite 231)?</summary><ol type="1" id="c3085e8d-d78a-41b1-ac94-994ebade9868" class="numbered-list" start="1"><li>Zuteilungsprovisionen</li></ol><ol type="1" id="24cf99fa-fcc7-4139-aaac-cd6b316fd9a5" class="numbered-list" start="2"><li>Kreditprovisionen</li></ol><ol type="1" id="caced53d-dcf4-475b-ab1a-bf351bbaa096" class="numbered-list" start="3"><li>Umsatzprovisionen</li></ol><ol type="1" id="89d701d3-60f2-4b67-9241-b2bb65f7e375" class="numbered-list" start="4"><li>Überziehungsprovisionen</li></ol><p id="ad775d58-6321-4cce-8c87-c59ddd54e275" class="">
+</p></details></li></ul><ul id="a2ed846b-50c1-4c16-a162-dfac7c851b4e" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Arten der Kreditfinanzierung</span> gibt es (Seite 231)?</summary><p id="fbaa77ed-62b8-4326-89a1-0f3a0452620a" class=""><span style="border-bottom:0.05em solid"><strong>Lieferantenkredit</strong></span>: Lieferung auf Ziel</p><p id="0bd049ae-e4b0-4f6b-9584-ce989571c17d" class=""><span style="border-bottom:0.05em solid"><strong>Kontokorrentkredit</strong></span>: an ein Girokonto gebunden und wird bis zu einer maximalen Höhe („Kreditrahmen“ oder „Kreditlimit“) ausgegeben</p><p id="e96a3adc-dbc0-417b-a9d8-49b5f111c970" class=""><span style="border-bottom:0.05em solid"><strong>Langfristige Bankdarlehen</strong></span></p></details></li></ul><ul id="1306a7ee-7eff-45b0-9705-6c3be84db33b" class="toggle"><li><details open=""><summary>Welche <span style="border-bottom:0.05em solid">Sonderfinanzierungsformen</span> gibt es (Seite 234)?</summary><p id="95c68328-2de3-4cee-897f-524d475855c1" class=""><span style="border-bottom:0.05em solid"><strong>Factoring</strong></span>: Buchforderungen werden an eine Factoringbank verkauft.</p><p id="ad2a15e1-4f72-4ab1-ae63-acb6be0f0d89" class=""><span style="border-bottom:0.05em solid"><strong>Leasing</strong></span>: Überlassung von Investitionsgütern</p><p id="28588308-d7b3-4b68-9242-0d9b0f283869" class=""><span style="border-bottom:0.05em solid"><strong>Sale and lease back</strong></span>: Investitionsgüter werden gekauft und über Leasing finanziert</p></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

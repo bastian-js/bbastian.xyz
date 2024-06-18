@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kostenrechnungen</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9caf56f3-b210-45e1-b6a9-b3b728248991" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🧑‍💼</span></div><h1 class="page-title">Kostenrechnungen</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-orange">UNCO</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Teilkostenrechnung, …</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-pink">Matura</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><ul id="56235166-1349-43ee-a7f5-282a782fbc10" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kostenart</strong></span>: Welche Kosten sind angefallen z.B.: Materialkosten, …</li></ul><ul id="4617f859-1b3a-4d8b-817e-9bd899db158a" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kostenstelle</strong></span>: Wo sind die Kosten angefallen z.B.: Abteilung Vertrieb, …</li></ul><ul id="1c2e0107-b1ef-4469-91b3-21fc750e2197" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kostenträger</strong></span>: Welche Produkte haben welche Kosten z.B.: Produkt Tisch, …</li></ul><h1 id="61a2249e-34df-48ef-99fd-855b94b4fe4b" class="">Inhaltsverzeichnis</h1><nav id="c006886b-a675-4f43-a4cb-4763a19ea6f7" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#61a2249e-34df-48ef-99fd-855b94b4fe4b">Inhaltsverzeichnis</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ef2f5cc3-5df5-4265-9f36-d612377c219d">Vollkostenrechnung</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#63b178a3-0995-43a0-8dbf-beba1aadd1bc">Bezugskalkulation</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cf3046ad-e34f-4bca-800a-265d3e260054">Kostenstellenrechnung</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a8743eee-c6b0-46af-a141-f6d10fd9ab60">Kostenträgerrechnung</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9347adba-80ae-40d3-853e-fb723dd2b80d">Absatz- und Differenzkalkulation</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2b8c3574-95f2-4904-99b2-95735a729074">Teilkostenrechnung</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#da8d1cdc-0f20-40c4-84fa-fe0afa6c1138">Direct Costing</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#db8499ac-071c-4aec-9874-129005152cc0">Break-even-Analyse</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c9342b8b-c2b9-47bc-93f8-5561e80dc22f">Kurzfristige Preisuntergrenze</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a7918c83-759f-470e-9589-05c25ac6c2cc"><strong><strong>Programmplanung</strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#71790dfd-f377-4619-ae33-fcb2d5732c31">Eigenfertigung oder Fremdbezug</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#22205cf8-b0af-4f49-914e-bf76b5b763f2">Kostenrechnung im Handel/Handwerk</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d4c812db-315d-4ee7-9d24-ccbcfcb2aaf7">Differenzierte Kalkulation im Handel</a></div></nav><h1 id="ef2f5cc3-5df5-4265-9f36-d612377c219d" class="">Vollkostenrechnung</h1><ol type="1" id="4e92361e-b217-425e-925b-74abbc9a6512" class="numbered-list" start="1"><li><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991.html"><span style="border-bottom:0.05em solid"><strong>Bezugskalkulation</strong></span></a> → Wie viel kostet ein Produkt im Handel. (Einstandspreis)</li></ol><ol type="1" id="f6300c32-8c4e-413b-ba75-41fc488b20ea" class="numbered-list" start="2"><li><mark class="highlight-red_background">Kostenartenrechnung</mark></li></ol><ol type="1" id="1c3a78dd-78d3-4c67-8775-5c2df2f45e44" class="numbered-list" start="3"><li><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991.html"><mark class="highlight-red_background">Kostenstellenrechnung</mark></a></li></ol><ol type="1" id="778c1708-5967-4e4a-80df-e830a3fb5453" class="numbered-list" start="4"><li><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991.html">Kostenträgerrechnung</a></li></ol><ol type="1" id="73db4efa-ffed-44b1-b796-ccec5122f8a9" class="numbered-list" start="5"><li><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991.html"><span style="border-bottom:0.05em solid"><strong>Absatzkalkulation</strong></span></a> → Der Verkaufspreis wird ermittelt. (Verkaufspreis)</li></ol><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Bezugskalkulation</summary><div class="indented"><figure id="0096274a-91ab-42db-bdbe-97f1fd1f652f" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Untitled.png"><img style="width:480px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Untitled.png"/></a><figcaption>Bezugskalkulation (<span style="border-bottom:0.05em solid">Seite 15, III</span>)</figcaption></figure><h3 id="5c6011ae-01d0-45c3-85c2-c83496750880" class="">Fakturenspesen (vom Verkäufer)</h3><ul id="08325a2e-5f58-4183-ab0c-48d33e8af4c8" class="bulleted-list"><li style="list-style-type:disc">Verpackung</li></ul><ul id="b67fb93d-20f7-4bda-b1ca-4ab9d7d83790" class="bulleted-list"><li style="list-style-type:disc">Frachtkosten</li></ul><h3 id="afeae8e4-da86-48f4-9d6c-64a5ed56257d" class="">Eigene Bezugsspesen (Zusätzlich)</h3><figure id="fef2942b-b00c-4708-b377-c89b8511b7c2" class="image" style="text-align:left"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled.png"><img style="width:384px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled.png"/></a></figure></div></details><hr id="6a2c1eae-9061-4633-b134-cc08fd90b36f"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Kostenstellenrechnung</summary><div class="indented"><h3 id="235c22cd-d66a-4393-b177-5ef20079e497" class="">Gemeinkostenzuschlagssätze</h3><figure id="0be87bdf-e0df-4829-bee2-358f26980172" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%201.png"><img style="width:336px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%201.png"/></a></figure></div></details><hr id="91071fa8-38e8-4777-aaf4-55486f9676c1"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Kostenträgerrechnung</summary><div class="indented"><h3 id="43c9bef5-9cbb-4dfc-8eae-f06b285ec4eb" class="">Differenzierende Zuschlagskalkulation</h3><figure id="b5b280b3-051f-48bd-b7f2-5e6995396b37" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.33.37.png"><img style="width:432px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.33.37.png"/></a><figcaption>Zuschlagskalkulation (<span style="border-bottom:0.05em solid">Seite 69, III</span>)</figcaption></figure><figure id="73a05c37-7e58-4e3a-b62a-b6ed019b9383" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Untitled%201.png"><img style="width:336px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Untitled%201.png"/></a><figcaption>Beispiel (Angebotskalkulation): Ü 4.25</figcaption></figure></div></details><hr id="adf9a1d3-a02b-4e06-a867-3dcf6f7810a0"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Absatz- und Differenzkalkulation</summary><div class="indented"><h3 id="c83e605a-ad29-4b63-877a-f0daa28f53b6" class="">Absatzkalkulation</h3><figure id="c8a6bb15-6e39-4fb7-8d91-3f709a7126aa" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Untitled%202.png"><img style="width:480px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Untitled%202.png"/></a><figcaption>Absatzkalkulation (<span style="border-bottom:0.05em solid">Seite 76, III</span>)</figcaption></figure><h3 id="213e9f94-111b-47db-9975-c4387ef5bc4f" class="">Differenzkalkulation</h3><figure id="0450fd47-3bb4-4283-9f0d-fe6ba5f0d36e" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.35.41.png"><img style="width:480px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.35.41.png"/></a><figcaption>Differenzkalkulation (<span style="border-bottom:0.05em solid">Seite 81, III</span>)</figcaption></figure><p id="e193cc7b-6d4e-4995-819a-2ead859e5e6c" class=""><span style="border-bottom:0.05em solid"><strong>Prozentueller Gewinn</strong></span>: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mtext>Gewinn</mtext><mtext>Selbstkosten</mtext></mfrac><mo>∗</mo><mtext>1</mtext><mn>00</mn></mrow><annotation encoding="application/x-tex">\frac{\text{Gewinn}}{\text{Selbstkosten}} * \text 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Selbstkosten</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Gewinn</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord text"><span class="mord">1</span></span><span class="mord">00</span></span></span></span></span><span>﻿</span></span></p></div></details><hr id="e7e48a24-6fd0-4980-82c3-792be5a390d6"/><h1 id="2b8c3574-95f2-4904-99b2-95735a729074" class="">Teilkostenrechnung</h1><p id="6713a928-90b5-4f04-9d15-da0e5e08c6ce" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathsize="0.9em"><mtext>Deckungsbeitrag</mtext><mo>=</mo><mtext>Nettoverkaufspreis</mtext><mo>−</mo><mtext>Variable Kosten</mtext></mstyle></mrow><annotation encoding="application/x-tex">\small \text {Deckungsbeitrag}=\text {Nettoverkaufspreis}-\text{Variable Kosten}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8em;vertical-align:-0.175em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Deckungsbeitrag</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel sizing reset-size6 size5">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8em;vertical-align:-0.175em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Nettoverkaufspreis</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size5">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Variable Kosten</span></span></span></span></span></span><span>﻿</span></span></p><p id="3696b329-052f-44ef-872d-33a301dc42cf" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathsize="0.9em"><mtext>Betriebsgewinn</mtext><mo>=</mo><mtext>Summe DB</mtext><mo>−</mo><mtext>Fixkosten</mtext></mstyle></mrow><annotation encoding="application/x-tex">\small \text {Betriebsgewinn}=\text {Summe DB}-\text{Fixkosten}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8em;vertical-align:-0.175em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Betriebsgewinn</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel sizing reset-size6 size5">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.69em;vertical-align:-0.075em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Summe DB</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size5">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Fixkosten</span></span></span></span></span></span><span>﻿</span></span></p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Direct Costing</summary><div class="indented"><h3 id="28fe24b5-64a0-4423-9dd3-c458a171efdb" class="">Einstufiges Direct Costing </h3><figure id="1dfb0b95-778e-4e3c-ae91-70b0d770cfaa" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%202.png"><img style="width:336px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%202.png"/></a><figcaption>Beispiel (Direct Costing): <span style="border-bottom:0.05em solid">Seite 99, III</span></figcaption></figure><h3 id="da6ea2a6-b50d-4b85-b361-593083256160" class="">Mehrstufiges Direct Costing</h3><figure id="52c3eff6-8936-46d6-9d43-a0c49b675062" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%203.png"><img style="width:384px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%203.png"/></a><figcaption>Beispiel (Direct Costing): <span style="border-bottom:0.05em solid">Seite 107, III</span></figcaption></figure><h3 id="c60e0384-edc3-477d-a3f1-bc7cbf1d2a0e" class="">Kostenträgererfolgsrechnung</h3><figure id="b666ace1-56d9-43ad-8c6b-21df34b0f550" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%204.png"><img style="width:384px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%204.png"/></a><figcaption>Beispiel (Kostenträgererfolgsrechnung): <span style="border-bottom:0.05em solid">Seite 107, III</span></figcaption></figure></div></details><hr id="a548ff64-3c2c-4ddd-96ce-79f33a3c0657"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Break-even-Analyse</summary><div class="indented"><figure id="afe0cf18-fe4d-482d-a148-b74e96e96059" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.38.04.png"><img style="width:432px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.38.04.png"/></a><figcaption>Break-even-Analyse (<span style="border-bottom:0.05em solid">Seite 118, III</span>)</figcaption></figure></div></details><hr id="b82de76f-44ad-4c1e-971e-6f9779283caf"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Kurzfristige Preisuntergrenze</summary><div class="indented"><figure id="84c9b362-3fa4-4fd7-af8f-37670b1cadb6" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.38.44.png"><img style="width:480px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.38.44.png"/></a><figcaption>Theorie KPU/LPU (<span style="border-bottom:0.05em solid">Seite 120, III</span>)</figcaption></figure><figure id="0d79019e-997c-4006-929b-ab18a820afbf" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.39.36.png"><img style="width:480px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.39.36.png"/></a><figcaption>Beispiel KPU (<span style="border-bottom:0.05em solid">Seite 121, III</span>)</figcaption></figure></div></details><hr id="ae3330cf-a900-487d-862e-ff066881913a"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong><strong>Programmplanung</strong></strong></summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Ohne Engpass</summary><div class="indented"><figure id="b7eb7bd2-d4e4-4601-b761-b7160902f4a3" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.41.08.png"><img style="width:384px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.41.08.png"/></a></figure><figure id="35dc990c-4ef6-4226-9a38-c184928d8e0e" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.41.17.png"><img style="width:384px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.41.17.png"/></a><figcaption>Programmplanung ohne Engpass (<span style="border-bottom:0.05em solid">Seite 124, III</span>)</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Mit Engpass</summary><div class="indented"><figure id="43460358-5cc1-4203-bdcd-ebcde5127491" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.42.43.png"><img style="width:384px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.42.43.png"/></a></figure><figure id="e10b1ae8-78c9-41ab-bb33-3206cef1dc45" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.42.33.png"><img style="width:384px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.42.33.png"/></a></figure></div></details></div></details><hr id="11b34fa9-33f7-4827-8227-19eb7397b243"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Eigenfertigung oder Fremdbezug</summary><div class="indented"><figure id="8bb319a6-ad16-4fcd-a170-cfb436926506" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%205.png"><img style="width:432px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%205.png"/></a></figure><figure id="5c4911d6-6ebf-4b30-894d-13e23b99c1b2" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.43.21.png"><img style="width:432px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.43.21.png"/></a></figure></div></details><hr id="3a1a68b3-1fc5-4152-bf4b-ba02333ecdf9"/><h1 id="22205cf8-b0af-4f49-914e-bf76b5b763f2" class="">Kostenrechnung im Handel/Handwerk</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Differenzierte Kalkulation im Handel</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Grundschema</summary><div class="indented"><figure id="9a282d4d-cc92-49c8-8352-4219a9906536" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%206.png"><img style="width:384px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%206.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Rohaufschlag</summary><div class="indented"><figure id="f5cd32e3-d0ee-44cf-bbe6-fe9dd261b93e" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%207.png"><img style="width:384px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%207.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Handelsspanne</summary><div class="indented"><figure id="2525978b-eb65-497d-8f36-8f6d6fba3f3b" class="image"><a href="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%208.png"><img style="width:384px" src="Kostenrechnungen%209caf56f3b21045e1b6a9b3b728248991/Untitled%208.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Beispiel</summary><div class="indented"><figure id="3dea310c-3257-4cc9-bf53-1fcc344641de" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.45.35.png"><img style="width:480px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_00.45.35.png"/></a><figcaption>Seite 155</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Direct Costing</summary><div class="indented"><figure id="233994a5-a114-461c-839a-873bb4cbb24e" class="image" style="text-align:left"><a href="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_22.25.00.png"><img style="width:480px" src="Kostenrechnung%20393081f36dc1462aa14610b04992877d/Bildschirmfoto_2023-03-01_um_22.25.00.png"/></a></figure><p id="43d44078-1301-420b-9d64-3a72156ae144" class="">
+</p></div></details></div></details><hr id="9a4140d5-9381-4dee-b4bc-0ba17f6510e5"/><p id="2c59eb57-79e3-4f4e-b454-4b4cd4aa3b39" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
