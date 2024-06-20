@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Anki (ignorieren)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="96c54f6e-c9b3-41e3-b978-0bb7b7ad7cee" class="page sans"><header><h1 class="page-title">Anki (ignorieren)</h1><p class="page-description"></p></header><div class="page-body"><p id="b784596f-3699-40c1-a1ad-8d3cf6b14d9e" class="">
+</p><ul id="5351aec9-c8ee-4cc9-93e8-a61704be48a8" class="toggle"><li><details open=""><summary>Wer ist die Präsidentin des Europäischen Parlaments?</summary><p id="715ec9c6-5268-4814-8de9-8da668bcf8cc" class="">Roberta Metsola. </p></details></li></ul><ul id="444a8115-f516-4424-9ad1-366e5f734dcb" class="toggle"><li><details open=""><summary>Standorte des Europäischen Parlaments?</summary><p id="1c432d23-5753-4ccd-a1a3-d6abcf09b14b" class=""><strong>Straßburg (Hauptstandort)</strong>, Brüssel und Luxemburg. </p></details></li></ul><ul id="15198201-6a98-4b79-9d49-d25d3218b149" class="toggle"><li><details open=""><summary>Was macht das Europäische Parlament?</summary><p id="333d85d4-c4e3-49b0-b020-72ccd0cc303c" class="">Direkt gewähltes EU-Organ mit Zuständigkeit für Gesetzgebung, Aufsicht und Haushalt → <strong>Gesetzgebungsorgan/Legislative</strong> der EU.</p><p id="281861d6-e142-4d63-9b54-caf380bab293" class="">Kontrolliert die Arbeit der <span style="border-bottom:0.05em solid"><strong>Kommission (Exekutive)</strong></span><strong> </strong>→ letztes Wort beim Budget</p></details></li></ul><ul id="6d595db4-dff9-4a24-bd40-0fe9979b0b6f" class="toggle"><li><details open=""><summary>Wie sind die Mitglieder im Europäischen Parlament aufgeteilt?</summary><p id="135b2d35-010a-47c1-bd7a-028fd713ce10" class="">Mitglieder sind nach <strong><span style="border-bottom:0.05em solid">Fraktionen</span></strong> und nicht nach Staatsangehörigkeit gruppiert.</p></details></li></ul><ul id="653c9ff7-257b-4413-ba13-9e34a328b713" class="toggle"><li><details open=""><summary>Wie wird das Europäische Parlament gewählt?</summary><p id="3963880c-1a10-43fc-967a-c9038e6fd570" class="">Europawahl → Alle 5 Jahre direkt von den Bürgerinnen und Bürgern der EU gewählt!</p></details></li></ul><ul id="bffcbf32-0588-4ae9-b94d-81b220295a84" class="toggle"><li><details open=""><summary>Wie viele Mitglieder gibt es im Europäischen Parlament?</summary><p id="b156a8ea-de71-4ee6-8564-adf01fd4f9c0" class=""><strong>705 </strong>(704 zuzüglich des Präsidenten) Mitgliedern des Europäischen Parlaments. → Die Anzahl der Abgeordneten pro Land richtet sich ungefähr nach der <span style="border-bottom:0.05em solid">Bevölkerungszahl</span><strong> </strong>(Grundsatz der <span style="border-bottom:0.05em solid"><strong>degressive Proportionalität</strong></span>)</p><p id="2fcbe4a5-e67d-48e7-8361-b8fbee14103b" class="">Kein Land kann weniger als <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">sechs</span></mark> oder mehr als <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">96 Abgeordnete</span></mark> haben.</p></details></li></ul><ul id="01681725-84de-4452-a7ef-5479116cd015" class="toggle"><li><details open=""><summary>Wie wird der Europäische Rat noch genannt?</summary><p id="bae729b6-38dc-43d2-87a7-14b87bb14da9" class="">„EU-Gipfeltreffen”</p></details></li></ul><ul id="8097708b-f8b1-47ea-aab6-aeda67bf661a" class="toggle"><li><details open=""><summary>Wo hat der Europäische Rat seinen Sitz</summary><p id="e416e2a8-2b6f-4c20-ae5f-146d6ba87a48" class="">Brüssel</p></details></li></ul><ul id="c8ca0f19-18a4-49b5-90d8-3b450762c6f9" class="toggle"><li><details open=""><summary>Wie ist der Vorsitz im Europäische Rat geregelt</summary><p id="ae692d93-a8c7-4c7e-90e2-72293aecb54b" class="">Bis 2009 wechselte Ratsvorsitz nach Mitgliedsländern. Seit 2009 Neuregelung mit dem <mark class="highlight-orange_background"><strong>Vertrag von Lissabon</strong></mark> → Ratspräsident eingeführt. (aktuell <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Charles Michel</span></mark>, Belgien) wird für <strong>2,5 Jahre</strong> (1x verlängerbar) gewählt und vertritt die EU nach außen hin. → hat kein Stimmrecht</p></details></li></ul><ul id="e74ff3ac-09e3-4304-92ea-17699400f07a" class="toggle"><li><details open=""><summary>Was passiert im Europäische Rat?</summary><p id="ddd84b9f-208c-42d2-acf8-2383a48a3f52" class=""><span style="border-bottom:0.05em solid"><mark class="highlight-orange_background">Höchste Ebene</mark></span> der politischen Zusammenarbeit zwischen den EU-Ländern. </p><p id="91204595-6574-40fa-8a01-d38fea1d2bfb" class="">Die <span style="border-bottom:0.05em solid"><strong>Staats- und Regierungschefs</strong></span> der EU-Länder kommen zusammen → um die politische Agenda der EU festzulegen sowie Themen, die nicht im Ministerrat geklärt werden konnten</p><p id="1d52d352-a0de-468c-af20-88589051e2e8" class="">Es geht um die Bestimmung der allgemeinen politischen Zielvorstellungen und Prioritäten der EU.</p></details></li></ul><ul id="b74826fe-99fd-4e17-a50a-b869dec9eaec" class="toggle"><li><details open=""><summary>Was sind die Mitglieder des Europäische Rats?</summary><ul id="af22447b-2187-47df-bc7d-384283edf58f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Staats- und Regierungschefs</span></mark> der EU-Länder</li></ul><ul id="f0f6a60c-49d3-4c54-a3db-9579e9540610" class="bulleted-list"><li style="list-style-type:disc">Präsident des <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Europäischen Rates</span></mark></li></ul><ul id="9fe5933c-763b-48fc-aa4f-29218c108d83" class="bulleted-list"><li style="list-style-type:disc">Präsident der <span style="border-bottom:0.05em solid"><mark class="highlight-orange_background">Europäischen Kommission</mark></span></li></ul></details></li></ul><ul id="e133e967-3c86-454e-a74b-446ccd5e7b0e" class="toggle"><li><details open=""><summary>Wie wird der Rat der EU noch genannt?</summary><p id="9a8a871d-9183-4271-b19b-9291b8fe2764" class="">„<span style="border-bottom:0.05em solid">der Rat</span>“ oder „Ministerrat”</p></details></li></ul><ul id="8c9ed942-5ad0-45de-be63-ccdc4d5fb7c8" class="toggle"><li><details open=""><summary>Wo hat der Rat der EU seinen Sitz?</summary><p id="5e84b892-7ab2-4f43-a593-9da418e30aeb" class="">Brüssel</p></details></li></ul><ul id="71e4db93-30aa-4b50-a644-4683265138e4" class="toggle"><li><details open=""><summary>Was passiert im Rat der EU?</summary><p id="d2c396f8-7eca-4edf-bdbd-a4be64c05ce9" class="">Die jeweiligen <strong><span style="border-bottom:0.05em solid">Fachminister</span></strong> (insgesamt 10 Räte) aus allen EU-Ländern kommen zusammen, um Rechtsvorschriften zu diskutieren, zu ändern und anzunehmen. → Koordinieren ihre <span style="border-bottom:0.05em solid">Politikbereiche</span>. </p><p id="0b6d70e4-8dc6-4e32-8c0e-b57f96a02fe4" class="">Alle auf den Ratstagungen anwesenden Minister sind befugt: „für die Regierungen der von ihnen vertretenen Mitgliedstaaten verbindlich zu handeln“.</p><p id="806a1479-1b6e-4b70-9096-9c51d2e2cb9c" class="">Rolle: Minister sind Stimme der eigenen Länder; nehmen Gesetze an und koordinieren EU-Politik.</p></details></li></ul><ul id="1de7e1cb-cbcc-4204-b40f-c221f14fd33d" class="toggle"><li><details open=""><summary>Wie viele Stimmen gibt es im Rat der EU?</summary><p id="c90a939b-1a18-4134-961a-e6fca5866a5c" class=""><span style="border-bottom:0.05em solid"><strong>Anzahl der Stimmen</strong></span>: 352 (auf die Bevölkerungszahl (1:10) verteilt → kleinere Staaten werden in Relation aufgewertet - degressive Proportionalität)</p></details></li></ul><ul id="d6d26a1a-335e-48cd-b35c-86f99879b9db" class="toggle"><li><details open=""><summary>Was bedeutet der Ratsvorsitz und wo findet man ihn?</summary><p id="bbb42022-b593-4d1d-b5ca-267c24a951a6" class="">Jedes Land übernimmt <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">turnusmäßig</span></mark> den <span style="border-bottom:0.05em solid"><strong>Ratsvorsitz</strong></span> für sechs Monate (aktuell Schweden, dann Spanien). → Den ständigen Vorsitz im Rat der Außenminister führt der <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Hohevertreter</span></mark> – derzeit der Spanier <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Josep Borrell</span></mark>. </p><p id="d3eed529-d352-4458-bb6a-451cf5104d41" class="">Bei den übrigen Tagungen des Rates führt der zuständige Minister des EU-Mitgliedstaats den Vorsitz, das den Ratsvorsitz innehat. Wenn beispielsweise der Rat „Umwelt“ in dem Zeitraum tagt, in dem Estland den EU-Ratsvorsitz innehat, führt der estnische Umweltminister den Vorsitz. </p></details></li></ul><ul id="ae98d8cd-77da-48d6-ba44-d34b6252ac0f" class="toggle"><li><details open=""><summary>Wie enden die Abstimmungen im Rat der EU?</summary><p id="097418ea-c130-42ce-9d35-c9a7e44bd013" class=""><span style="border-bottom:0.05em solid"><strong>Einstimmigkeit</strong></span> → bei besonders <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">heiklen Fragen</span></mark></p><p id="e8059c32-0f5e-4fed-bd5a-12d5c24503e6" class=""><span style="border-bottom:0.05em solid"><strong>Normalerweise</strong></span> → <span style="border-bottom:0.05em solid"><mark class="highlight-orange_background">55% der Mitgliedsstaaten</mark></span> zustimmen (65% der EU-Bevölkerung)</p></details></li></ul><ul id="6ec6acde-298a-46f1-861f-bf69f0ef12dd" class="toggle"><li><details open=""><summary>Was ist die Europäische Kommission und wer leitet sie?</summary><p id="73be2cbe-cd56-49ed-b336-d8876600ef86" class=""><span style="border-bottom:0.05em solid"><strong>Kommissionspräsidentin</strong></span>: Alle 5 Jahre von Parlament gewählt. Ursula von der Leyen</p><p id="0b9139f8-0d54-46cb-9db6-f5bfacbff63b" class=""><span style="border-bottom:0.05em solid"><strong>Österreichischer EU-Kommissar</strong></span>: Johannes Hahn (Haushalt und Verwaltung)</p><p id="155bcf84-f185-4831-acd3-92306d321828" class=""><span style="border-bottom:0.05em solid"><strong>Standort</strong></span>: Brüssel</p><p id="86910163-af89-42ce-a2ce-b27766106ef5" class="">Setzt sich aus je einem <span style="border-bottom:0.05em solid"><strong>Kommissar</strong></span> pro Mitgliedsstaat zusammen. → Gemeinsam bildet dieses Team das „<span style="border-bottom:0.05em solid"><strong>Kollegium</strong></span>“.</p><ul id="f73a7c14-6e68-47ce-8887-2c7c24da3e93" class="bulleted-list"><li style="list-style-type:disc">Für die Erarbeitung von Vorschlägen für neue europäische <mark class="highlight-orange_background">Rechtsvorschriften</mark> zuständig → werden im Europäischen Parlament diskutiert.</li></ul><ul id="26eba7c5-110b-41ec-b174-321c96193ef7" class="bulleted-list"><li style="list-style-type:disc">Setzt die Beschlüsse des <mark class="highlight-orange_background">Europäischen Parlaments</mark> und <mark class="highlight-orange_background">Rates der EU</mark> um. </li></ul><ul id="4f3e11fc-4224-4ca8-a6f4-4c181196069a" class="bulleted-list"><li style="list-style-type:disc">Sie fördert die <mark class="highlight-orange_background">allgemeinen Interessen der EU</mark> durch Vorschläge für neue europäische Rechtsvorschriften und deren Durchsetzung. </li></ul><ul id="b4d0c3c9-8ced-48bb-a24c-b1304c1ec5d4" class="bulleted-list"><li style="list-style-type:disc">Setzt Strategien um und verwaltet den <mark class="highlight-orange_background">EU-Haushalt</mark>. </li></ul></details></li></ul><ul id="47276692-1c52-4106-8470-6235740d06f3" class="toggle"><li><details open=""><summary>Was ist eine Bürgerinitiative?</summary><p id="15d63836-f014-4f22-b227-6f349c1e00f2" class="">Gesetzesinitiative ab 1 Millionen Unterstützungserklärungen</p></details></li></ul><ul id="4f521f60-2730-4b99-a2fd-726436aafea9" class="toggle"><li><details open=""><summary>Was ist die Europäische Zentralbank (EZB) und wie setzt sie sich zusammen?</summary><p id="cc59a0ca-5295-4f0d-9ff1-b759af05274b" class=""><span style="border-bottom:0.05em solid"><strong>Mitglieder</strong></span>: Präsidenten der nationalen <strong>Zentralbanken</strong> der EU-Länder: Robert Holzmann AT</p><p id="4cf177bc-3f9d-4d76-b047-2e27ce00ecc2" class=""><span style="border-bottom:0.05em solid"><strong>Standort</strong></span>: Frankfurt</p><p id="98534c79-e78b-4720-ab63-13035f2e86db" class="">Verwaltung des Euro, Gewährleistung der Preisstabilität und Umsetzung der Wirtschafts- und Währungspolitik der EU. </p></details></li></ul><ul id="17993f20-2edc-43b0-9e74-afcf7253ceb0" class="toggle"><li><details open=""><summary>Was macht der Europäischer Rechnungshof und wo ist sein Sitz?</summary><p id="f644fb21-8918-4ad8-8df5-531f7d584a42" class=""><span style="border-bottom:0.05em solid"><strong>Mitglieder</strong></span>: 1 aus jedem EU-Land</p><p id="323533dd-2b17-4e34-8588-9b5f59d8c4e9" class=""><span style="border-bottom:0.05em solid"><strong>Sitz</strong></span>: Luxemburg.</p><p id="3c096387-d93f-4c28-aed7-5fb561d7708b" class="">Kontrolle der ordnungsgemäßen Erhebung und Verwendung der EU-Geldern</p><p id="235ed5e1-d596-4539-80e8-7ae28593d804" class="">Beitrag zur Verbesserung des Finanzmanagements der EU. </p></details></li></ul><ul id="e569d28a-494a-4514-96bc-b7d048479b85" class="toggle"><li><details open=""><summary>Wo ist der Sitz der Europäische Investitionsbank (EIB) und was macht sie?</summary><p id="34881973-a0d6-412c-829d-d23b5b05ad07" class=""><span style="border-bottom:0.05em solid"><strong>Standort</strong></span>: Luxemburg</p><p id="c06fef0e-b637-42dd-a534-69e705eb2253" class="">Befindet sich in gemeinsamem Besitz der EU-Mitgliedstaaten. </p><p id="55e28f05-880e-4185-b277-acb3b4c5bded" class="">Fördert Projekte, die zum Wachstum in Europa beitragen.</p><p id="9a56b532-6382-429a-810e-f1c0c417b23c" class=""><span style="border-bottom:0.05em solid"><strong>Zielsetzungen</strong></span></p><ul id="b0097255-300f-4dc5-a84d-b835ff44856a" class="bulleted-list"><li style="list-style-type:disc">Europas Potenzial in Bezug auf Wachstum und Beschäftigung voll ausschöpfen,</li></ul><ul id="713672e5-c69f-4074-97e5-5f315362c684" class="bulleted-list"><li style="list-style-type:disc">Maßnahmen gegen den Klimawandel unterstützen</li></ul><ul id="c3966468-b0e9-4099-ab93-348abda46397" class="bulleted-list"><li style="list-style-type:disc">EU-Politik außerhalb der EU fördern</li></ul></details></li></ul><ul id="0d15d0e8-cacd-4e4e-9b70-beaaa4d0758a" class="toggle"><li><details open=""><summary>Was macht der Europäischer Gerichtshof „EuGH” und wo ist sein Sitz?</summary><p id="6b5cac0f-6c87-4501-bd7e-a460fdeb5e5c" class=""><span style="border-bottom:0.05em solid"><strong>Ort</strong></span>:<strong>­</strong> Luxenburg</p><p id="c849e4ab-8314-4455-8cb7-db2eaa3522cf" class=""><span style="border-bottom:0.05em solid"><strong>Europäisches Gericht (EuG)</strong></span>: 2 Richter aus jedem EU-Land</p><p id="b858178e-a1c5-4698-8bb0-8e0c99529662" class=""><span style="border-bottom:0.05em solid"><strong>Gerichtshof (EuGH)</strong></span>: 1 Richter aus jedem EU-Land und 11 Generalanwälte. </p><p id="956806c6-274c-40a9-aed7-b03300007c0f" class="">Der EuGH gewährleistet, dass EU-Recht in allen EU-Mitgliedsstaaten auf dieselbe Weise angewendet wird und es wird darauf geachtet, dass alle EU-Länder das <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">EU-Recht</span></mark> einhalten. </p></details></li></ul><ul id="0374df48-bf1a-43e4-999c-e77ab32674c5" class="toggle"><li><details open=""><summary>Was und wo ist das Europäisches Polizeiamt (Europol)</summary><p id="0a292421-d270-4281-b3e0-532638545e03" class="">Strafverfolgung</p><p id="58346934-e62f-4411-b7df-52775898cd2f" class=""><span style="border-bottom:0.05em solid"><strong>Standort</strong></span>: in den Haag</p></details></li></ul><ul id="abfdadc5-6aae-4e1f-b718-351198909da8" class="toggle"><li><details open=""><summary>Was macht das Europäischer Auswärtiger Dienst (EAD) und wo ist der Sitz?</summary><p id="7ab0b790-f62a-4caa-9daa-3dec01e826de" class=""><span style="border-bottom:0.05em solid"><strong>Sitz</strong></span>: Brüssel</p><p id="ac485ba3-bb9a-4798-9363-3daabd2a628c" class="">Der Europäische Auswärtige Dienst (EAD) ist der <span style="border-bottom:0.05em solid"><strong>diplomatische Dienst</strong></span> der Europäischen Union.</p><p id="22a65c9d-e3aa-41ae-887e-3a2bd3172437" class="">Er soll die EU-Außenpolitik kohärenter und wirksamer machen —&gt; Einfluss Europa stärken.</p></details></li></ul><ul id="e023c950-f104-4ae8-b3cd-253328ce322e" class="toggle"><li><details open=""><summary>Wo und was ist die Europäische Agentur für Grundrechte?</summary><p id="669f9871-e8d3-4efc-9c33-4843a7ccbbf4" class=""><span style="border-bottom:0.05em solid"><strong>Sitz</strong></span>: Wien</p><p id="da29790d-66d0-462c-8d12-f3084f4e6e95" class="">Eine von <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">40 spezialisierte und dezentrale Agenturen</span></mark> → um technische, wissenschaftliche und verwaltungstechnische Aufgaben wahrzunehmen </p></details></li></ul><ul id="f31d5bc2-c41a-40d3-86d3-a8611951ad92" class="toggle"><li><details open=""><summary>Was und wo ist der Europäischer Bürgerbeauftragter?</summary><p id="98704acc-e78f-4d02-8909-56b0216e8267" class=""><span style="border-bottom:0.05em solid"><strong>Sitz</strong></span>: Straßburg</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="8c483f94-bdb8-470b-8717-dbe751b9da40"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Untersucht verschiedene Arten von <span style="border-bottom:0.05em solid">Missständen in der Verwaltungspraxis</span> der EU.</div></figure><p id="27b898ff-a3bd-484e-a167-8c654656b2b5" class="">zB: ungerechte Behandlung, Diskriminierung, Machtmissbrauch, Verweigern von Infos</p></details></li></ul><ul id="bfa77a0f-f9ac-4513-9943-601200098283" class="toggle"><li><details open=""><summary>Was macht der Europäischer Datenschutzbeauftragte (EDSB) und wo ist er?</summary><p id="4a6d5dec-9cb4-44c5-873f-204cda8a4c8e" class=""><strong><span style="border-bottom:0.05em solid">Sitz</span></strong>: Brüssel</p><p id="cfd90131-44c0-41f6-bf57-c38c6c65be42" class="">Der Europäische Datenschutzbeauftragte sorgt für die Einhaltung der <span style="border-bottom:0.05em solid"><strong>Datenschutzregeln.</strong></span></p><p id="bb9664e6-14eb-4696-9e8b-10a88f7dcad4" class="">Im Rahmen ihrer Aufgaben müssen die EU-Organe und -Einrichtungen gelegentlich <strong>personenbezogene Informationen ihrer Bürgerinnen und Bürger verarbeiten</strong> – in elektronischer, schriftlicher oder visueller Form. </p></details></li></ul><ul id="6318fd8e-f447-4fd2-914f-a87bec465aa2" class="toggle"><li><details open=""><summary>Was ist der Europäischer Datenschutzausschuss (EDSA)?</summary><p id="0114eef3-81e5-411a-ad73-880257579e4d" class="">Der EDSA ist ein <span style="border-bottom:0.05em solid"><strong>unabhängiges Gremium</strong></span>, das dafür sorgt, dass die einschlägigen EU-Vorschriften – insbesondere die Datenschutzgrundverordnung (DSGVO) und die Richtlinie zum Datenschutz bei der Strafverfolgung – in allen EU Ländern angewandt wird. </p></details></li></ul><ul id="d772176c-a28c-41f3-8a17-ea3927394fea" class="toggle"><li><details open=""><summary>Was macht und wo ist der Europäischer Wirtschafts- und Sozialausschuss (EWSA)?</summary><p id="90ba9a99-f791-4214-9378-f752d911669f" class="">Über <span style="border-bottom:0.05em solid"><strong>300 Mitglieder</strong></span> aus den einzelnen Staaten. </p><p id="feefbbe6-87ef-4ac6-95a0-015e7939fb4e" class=""><span style="border-bottom:0.05em solid"><strong>Standort</strong></span>: Brüssel</p><p id="145ade0c-6016-447b-b615-812c7040ceba" class="">Vertretern von <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Arbeitnehmer- und Arbeitgeberorganisationen (Sozialpartner)</span></mark> und anderen (Konsumentenschutz) (12 Mitglieder aus Österreich) → <span style="border-bottom:0.05em solid"><strong>Beratende Einrichtung</strong></span></p><ul id="fe0345f3-32b4-45f7-b4fe-94f4eb905253" class="bulleted-list"><li style="list-style-type:disc">Legt dem Rat der Europäischen Union, der Europäischen Kommission und dem Europäischen Parlament Stellungnahmen zu EU-Themen vor</li></ul></details></li></ul><ul id="482069aa-4678-46b8-bb08-c2f9ac72bd3f" class="toggle"><li><details open=""><summary>Was macht der Europäischer Ausschuss der Regionen (AdR) und wo ist er?</summary><p id="701f0939-57a8-4fab-a638-b806dcdf7dcd" class=""><strong><span style="border-bottom:0.05em solid">Sitz</span></strong>: Brüssel</p><p id="e8572cf7-3415-4360-835d-1441fc00d7bf" class=""><span style="border-bottom:0.05em solid"><strong>Beratende Einrichtung (Gremium)</strong></span> der EU → besteht aus <span style="border-bottom:0.05em solid"><strong>lokal und regional</strong></span> gewählten Vertretern aller 27 Mitgliedsländer (Österreich mit jedem <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Bundesland</span></mark> + 3 Sitze für <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Städte und Gemeinden</span></mark>: 12 Mitglieder)</p><p id="81d1b0ce-e96c-4989-84ca-9fa9b4f381db" class="">Diese können über den Ausschuss <mark class="highlight-orange_background">Stellungnahmen (Berichte) zu EU-Rechtsvorschriften</mark> abgeben, die sich direkt auf ihre Regionen und Städte auswirken. </p></details></li></ul><ul id="db77861c-76b5-4455-bed2-4567924ddd73" class="toggle"><li><details open=""><summary>Was sind die Kopenhagener Kriterien?</summary><p id="f5caa482-01da-4c1f-8ce8-ebbdcfdca67b" class="">Kriterien für mögliche Beitrittsländer → seit 1993 bei einem Treffen in Kopenhagen</p><ul id="17042bed-c8e2-4c39-84e2-f65ebb8cbdf9" class="bulleted-list"><li style="list-style-type:disc"><strong>Politische Kriterien</strong>: Der Staat muss eine <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Demokratie</span></mark> sein, die <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Menschenrechte</span></mark> achten und im Land befindliche Minderheiten schützen. Das Handeln der politischen Institutionen darf <mark class="highlight-orange_background">nicht willkürlich</mark> sein, sondern muss auf Gesetzen beruhen.</li></ul><ul id="b67105c6-7e6d-47a2-ad52-04f302a4db85" class="bulleted-list"><li style="list-style-type:disc"><strong>Wirtschaftliche Kriterien</strong>: Der Staat muss über eine <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">funktionsfähige Marktwirtschaft</span></mark> verfügen, die den Wettbewerb innerhalb der EU verkraftet.</li></ul><ul id="0c9e4e3e-0481-4498-bbee-d870f6c56219" class="bulleted-list"><li style="list-style-type:disc"><strong>Rechtliches Kriterium</strong>: „Acquis-Kriterium, Acquis communautaire“ Der Staat muss die Verpflichtungen, die sich aus der EU-Mitgliedschaft ergeben einhalten → <span style="border-bottom:0.05em solid"><mark class="highlight-orange_background">EU-Recht</mark></span> und <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">EU-Politik</span></mark> und sich die <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Ziele der Europäischen Union</span></mark> zu eigen machen.</li></ul></details></li></ul><ul id="74955c87-3633-457b-845c-f5c27c9eab8a" class="toggle"><li><details open=""><summary>Was sind aktuelle EU-Beitrittskanditaten?</summary><ul id="8cf294db-a4de-4ade-bd94-3974b5620135" class="bulleted-list"><li style="list-style-type:disc">Serbien</li></ul><ul id="9d813a79-bee5-4d2c-85bd-d875acf4c7d9" class="bulleted-list"><li style="list-style-type:disc">Montenegro</li></ul><ul id="d506e123-cc0c-4f6e-9111-8fce1d1d2b6d" class="bulleted-list"><li style="list-style-type:disc">Kosovo</li></ul><ul id="ee382e59-d591-4dcc-894b-e1b044ecdc7b" class="bulleted-list"><li style="list-style-type:disc">Nordmazedonien</li></ul><ul id="51eadac0-398e-4b4a-92cc-de1459e83b97" class="bulleted-list"><li style="list-style-type:disc">Bosnien → hat die besten Voraussetzungen</li></ul><ul id="af6957c0-8692-4189-ba4e-6a81c4cd997a" class="bulleted-list"><li style="list-style-type:disc">Weißrussland und Moldavien → schwierig, weil die größte ethnische Gruppe, die rumänischen Moldauer sind (Strategische Interessen: Russland)</li></ul></details></li></ul><ul id="2f677178-2f02-431a-8a8c-5fc659d18205" class="toggle"><li><details open=""><summary>Warum wird die Türkei nicht aufgenommen?</summary><p id="84b49ea7-f18c-4ddb-a6a5-acaa5b2b1e09" class="">Antrag seit 1959, seit 1999 Beitrittskandidat</p><p id="8aa896e3-1985-4b80-97ab-9fc88e9358bf" class=""><span style="border-bottom:0.05em solid"><strong>Annäherungsprozess</strong></span>: Abschaffung der Todesstrafe, weniger Einfluss des Militärs auf die Politik</p><p id="6bf62963-fbdb-46fa-9e1f-57cb4fc11671" class=""><span style="border-bottom:0.05em solid"><strong>Zypern-Konflikt</strong></span>: Nordteil von Zypern wurde von der Türkei besetzt (international nicht anerkannt) → UN-Wiedervereinigungsplan von dem griechischen (südlichen) Teil abgelehnt</p></details></li></ul><ul id="68cdd890-07b9-4811-8557-312940042480" class="toggle"><li><details open=""><summary>Was ist die EGKS?</summary><p id="1296c8b7-bed1-4f0c-9b41-13c15a36a2ff" class="">Europäische Gemeinschaft für Kohle und Stahl (Montanunion); Gegründet, um ein <span style="border-bottom:0.05em solid"><mark class="highlight-orange_background"><strong>Wettrüsten</strong></mark></span> zu verhindern. → Deutschland, Frankreich, Benelux-Staaten, Italien</p></details></li></ul><ul id="afcaeeb0-39ce-4408-a801-b3d19e2c8a6c" class="toggle"><li><details open=""><summary>Was ist der Vertrag von Rom?</summary><p id="019a2325-246a-46b3-9793-a2523dafb898" class="">Euroatom (Europ. Atomgemeinschaft) und EWG (Europ. Wirtschaftsgemeinschaft) entstanden</p></details></li></ul><ul id="6e69f27c-85ad-444b-ab83-885718eaffdc" class="toggle"><li><details open=""><summary>Was ist die Europäische Gemeinschaft?</summary><p id="27366f63-c592-45c6-aab7-da1a08d7034b" class="">3 Organisationen (EGKS, EWG, Euratom) zusammengeschlossen und die Europäische Gemeinschaft gegründet</p></details></li></ul><p id="77833843-3dfc-4b5d-9674-26a7d5b3aa72" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

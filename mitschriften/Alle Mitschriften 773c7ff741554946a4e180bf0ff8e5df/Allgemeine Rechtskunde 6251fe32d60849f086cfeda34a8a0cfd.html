@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Allgemeine Rechtskunde</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6251fe32-d608-49f0-86cf-eda34a8a0cfd" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🎲</span></div><h1 class="page-title">Allgemeine Rechtskunde</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-brown">Recht</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Landes- und Bundesregierung, Gesetze, Gewaltenteilung, Parteien</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-blue">1. Semester</span><span class="selected-value select-value-color-pink">4CHK</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-green">Mitschrift</span></td></tr></tbody></table></header><div class="page-body"><p id="1984e329-4dab-4783-aadc-c897a8b687e4" class=""><strong>News</strong>: Norwegen Parlamentswahlen</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Bundestagswahlen Deutschland</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="3c345f29-80d0-42dd-b8e7-6e12e213dd95"><div style="font-size:1.5em"><span class="icon">ℹ️</span></div><div style="width:100%">→ vergleichbar mit <span style="border-bottom:0.05em solid"><strong>Nationalratswahl</strong></span> in Österreich</div></figure><p id="695f9b62-c6cb-44b8-b90e-cfdad107ecd9" class=""><strong>Angela Merkel</strong> möchte nicht mehr antreten.<br/>Alleinregierung in Form einer <br/><strong>Minderheitsregierung</strong> (evt. Mehrheitsregierung - über <strong>50 % der gültigen Stimmen</strong>).</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Parteien</summary><div class="indented"><ul id="4917047e-ec45-490d-9403-0542d4f927aa" class="toggle"><li><details open=""><summary><strong>CDU</strong>: Christlich Demokratische Union</summary><ul id="b6a6af73-c1bc-445f-b809-6395ac50c5fa" class="bulleted-list"><li style="list-style-type:disc">steht <strong>mittig-rechts</strong></li></ul><ul id="cc99a860-cf5c-4ec4-a4f0-f6596f8f2355" class="bulleted-list"><li style="list-style-type:disc">Spitzenkandidat: <strong>Armin Laschet</strong> (tritt auch für Schwesterpartei <strong>CSU - Christlich Soziale Union</strong>)</li></ul></details></li></ul><ul id="854d6294-c513-47e6-9554-7ed7e5b5abcf" class="toggle"><li><details open=""><summary><strong>SPD</strong>: laut den Umfragen vorne</summary><ul id="e16a9525-46fd-4db2-9478-be14ff4c1e7e" class="bulleted-list"><li style="list-style-type:disc">steht <strong>links</strong></li></ul><ul id="0c12fbbe-5536-43b1-90d4-1ede43c007c1" class="bulleted-list"><li style="list-style-type:disc">Spitzenkandidat: <strong>Olaf Scholz</strong></li></ul></details></li></ul><ul id="7173b861-8baa-4cbd-9f3e-a2ff06ebc1e5" class="toggle"><li><details open=""><summary><strong>Grüne</strong>: <a href="Allgemeine%20Rechtskunde%206251fe32d60849f086cfeda34a8a0cfd.html">Plagiatsvorwurf, Lebenslauf</a></summary><ul id="a2e96d3c-3e03-477c-96e6-fe71c8e873ef" class="bulleted-list"><li style="list-style-type:disc">steht <strong>mittig-links</strong></li></ul><ul id="095cca7d-e290-47d5-b9c1-4f0424cbc7c0" class="bulleted-list"><li style="list-style-type:disc">Spitzenkandidatin: <strong>Annalena Baerbock</strong></li></ul></details></li></ul><ul id="5717fa75-9e8e-4423-8d2f-daf339551e59" class="toggle"><li><details open=""><summary><strong>FPD</strong></summary><ul id="3dfa07b7-3375-492c-afe7-0e74c4854879" class="bulleted-list"><li style="list-style-type:disc">steht <strong>mittig-rechts</strong></li></ul><ul id="d232c6de-7056-450f-b705-78cfefa5be52" class="bulleted-list"><li style="list-style-type:disc">Spitzenkandidat: <strong>Christian Lindner</strong></li></ul></details></li></ul></div></details><h3 id="0129ed59-b27b-4064-a863-bcf78ddbe55c" class="">Baerbock Plagiatsvorwürfe/Lebenslaufveränderung</h3><p id="ecacbb96-f3fe-4c73-a699-0b888b967090" class=""><strong>Plagiat</strong>: man zitiert nicht richtig - Urheberrechtsverletzung /turn</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="c2bb63f3-4388-43bb-9ad1-d59edf592e16"><div style="font-size:1.5em"><span class="icon">ℹ️</span></div><div style="width:100%"><strong>Ministerpräsident</strong> ist mit dem <strong>Landeshauptmann</strong> gleichgültig.</div></figure></div></details><hr id="f52d4187-2b36-4032-a50b-99ac77ecf5bb"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Landesregierung</summary><div class="indented"><p id="498fe018-0b54-4efa-a464-2a8f5e2b349b" class="">besteht aus: <strong>Landeshauptmann, Landeshauptmann Stellvertreter und Landesräte</strong></p><h3 id="4862d1d4-3eae-48dc-abaa-fe4f8ace492d" class=""><strong>Landtag</strong>: </h3><p id="f751f44f-289a-4942-9967-2ed165d45a19" class="">Landesgesetze (z.B.: Jugendschutz, <strong>Sozialwesen</strong>: Sozialhilfe, Baurecht, Fischereiwesen, Jagdwesen, ...) </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Salzburg</summary><div class="indented"><ul id="167c2d47-561c-417d-a873-02dfd884996f" class="toggle"><li><details open=""><summary>Koalition</summary><p id="d73aed00-233f-4bee-98d7-e34221d8319d" class="">ÖVP - Grüne (2er Koalition)</p></details></li></ul><ul id="aa93c197-47fe-4749-9d51-0d997c073a0b" class="toggle"><li><details open=""><summary>Landtag</summary><p id="648a55af-560f-47ab-98ae-b1ed2d807792" class="">36 Abgeordnete </p><p id="f0afc4b4-aa80-4097-a7b0-13091635d3ca" class="">7 Mitglieder (4 Landesräte)</p></details></li></ul><ul id="ada1f39f-b9f6-408d-854c-3ffb1cf4b853" class="toggle"><li><details open=""><summary>Landeshauptmann</summary><p id="4bd884d3-ff0f-4b25-98c9-3e2de5f3bd53" class="">Dr. Wilfried Haslauer (ÖVP)</p><p id="ce632454-79ab-4906-9dcf-dc33f79e7320" class=""><strong>Heinrich Schellhorn</strong></p></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Oberösterreich</summary><div class="indented"><p id="4448baba-769e-426e-8bbf-0c0c540e96fb" class="">Landeshauptmann Oberösterreich: Thomas Stelzer (ÖVP)<br/><br/><strong>Oberösterreich</strong>: 26. September 2021</p><p id="5b801e6e-54a2-4b62-b3ef-fee6983c453f" class="">Koalition: ÖVP (schwarz - Landesparteien sind immer noch schwarz) - FPÖ</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Landtagswahlen</summary><div class="indented"><p id="b7db75c3-4e47-4dc9-a5ba-28e71a8e4880" class=""><strong>alle 6 Jahre</strong> (Oberösterreich)<br/><br/><strong>alle 5 Jahre</strong> (jedes andere Bundesland) <br/>mindestens <br/><strong>4 %</strong> der <strong>gültigen Stimmen</strong> um als Partei berücksichtigt zu werden (in Salzburg <strong>5 %</strong>)</p></div></details></div></details><hr id="d6b82351-5e2c-409e-a3f9-90aff40d9972"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Bundesregierung</summary><div class="indented"><p id="62597124-f052-4076-9cb3-bfbbb83e3907" class="">Nationalrat beschließt Bundesgesetze (z.B.: AGBG, E-Commerce, UGB, KGB, Straßenverordnung, Aktiengesetz, ...) - vor kurzem wurde Stalking strafbar gemacht</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="832bdd55-8ad5-47d1-8dbc-a13a06fd283d"><div style="font-size:1.5em"><span class="icon">ℹ️</span></div><div style="width:100%">Nationalrat in <strong>Russland</strong>: <span style="border-bottom:0.05em solid">Duma</span><br/>Nationalrat in den <br/><strong>USA</strong>: <span style="border-bottom:0.05em solid">Kongress</span><br/>Nationalrat in <br/><strong>Deutschland</strong>: <span style="border-bottom:0.05em solid">Bundestag</span> </div></figure><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Nationalrat</summary><div class="indented"><p id="3bf73ae9-d0bc-4f4d-925b-d866ec335ce8" class=""><strong>183 Abgeordnete</strong> im Nationalrat</p><ul id="46661743-8bfc-40e4-b306-64056233a685" class="toggle"><li><details open=""><summary><strong>Aufteilung</strong></summary><ul id="889a38b0-17d7-41a4-81e5-adf6ccaf3b0b" class="bulleted-list"><li style="list-style-type:disc">ÖVP: 71</li></ul><ul id="11fb4fcd-8a77-4c1f-b367-a7104cc9fd01" class="bulleted-list"><li style="list-style-type:disc">SPÖ: 40</li></ul><ul id="49b92177-b930-4429-b107-47e37a7344fd" class="bulleted-list"><li style="list-style-type:disc">FPÖ: 30</li></ul><ul id="78d46ade-50b6-47b3-a805-2830781b0c7f" class="bulleted-list"><li style="list-style-type:disc">Grüne: 26</li></ul><ul id="3f65fe46-8462-4272-852c-0821d47aa498" class="bulleted-list"><li style="list-style-type:disc">Neos: 15</li></ul><ul id="30783661-de29-4450-b95a-6663a9f39011" class="bulleted-list"><li style="list-style-type:disc">und Philipa Strache ist parteilos (Sie hat Parteigelder der FPÖ veruntreut) - Grundsatz des freien Mandats</li></ul></details></li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Gewaltenteilung/Behörden</summary><div class="indented"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b1e0d66a-6b60-4bfd-99e3-d10158439c67"><div style="font-size:1.5em"><span class="icon">❗</span></div><div style="width:100%">Es ist nicht möglich gleichzeitig Abgeordneter im Landtag und Landeshauptmann zu sein. → zu viel Macht</div></figure><ul id="7709bfa4-d0f5-46ce-9fa3-8b3b6c42e821" class="bulleted-list"><li style="list-style-type:disc"><strong>Legislative</strong> beschließt die Gesetzte (Landtag, ...) - Gesetzgebende Gewalt</li></ul><ul id="011a4887-9c2a-4b09-a180-f1623aaf9d44" class="bulleted-list"><li style="list-style-type:disc"><strong>Judikative</strong> entscheidet mit einem <strong>Urteil oder Gerichtsbeschluss</strong></li></ul><ul id="b882a844-46f3-42b0-b939-4867aa98cdd6" class="bulleted-list"><li style="list-style-type:disc"><strong>Exekutive</strong> entscheidet mit einem <strong>Bescheid - </strong>Vollziehende Gewalt</li></ul><h3 id="2507f906-bc8c-4abd-8a62-56fbd753c31c" class="">Legislative</h3><p id="fc2cea3b-b0a9-460f-9ee8-e225ebb4b3c3" class="">Lex: das Gesetz<br/>Lexis: des Gesetzes<br/></p><h3 id="9036c8a2-fb19-46b7-8888-52eeb35ebbf3" class="">Judikative</h3><p id="a0359f7f-2a04-44ee-9054-04bea6691d9d" class="">Gerichtsbeschluss:</p><ul id="ca01f20d-ecd6-44f4-b590-09b8d98ccb55" class="bulleted-list"><li style="list-style-type:disc">Der Zeuge ist am Gerichtstermin nicht aufgetreten (daher wird der Gerichtstermin vertagt; Geldstrafe).</li></ul><ul id="9ad532f7-591f-4585-a4be-e6127d861474" class="bulleted-list"><li style="list-style-type:disc">Zeuge ist zu jung (es gibt einen Vormund). Vormund wird benötigt. (Über 18: Erwachsenenvertreter)</li></ul><ul id="f2741734-d375-44dc-bd7d-ccc7cdab4c2a" class="bulleted-list"><li style="list-style-type:disc">Antrag auf Eintrag in das Firmenbuch (z.B.: Antrag wird bewilligt)</li></ul><ul id="ab046484-58e4-4abf-a50d-4ef4a0f04c13" class="bulleted-list"><li style="list-style-type:disc">Antrag auf Adoption eines Kindes</li></ul><p id="ec34a6a6-6501-448d-88db-60f0f3a615ea" class=""><strong>Judikatur der Gerichte</strong>: Rechtssprechnung der Gericht</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>Behörden</strong> (Vollziehende Gewalt)</summary><div class="indented"><ul id="675bf794-1487-4798-b567-2107c57b8eb9" class="bulleted-list"><li style="list-style-type:disc">Verwaltungsbehörden (Zollamt, Finanzamt, Bezirkshauptmannschaft, ...) - <strong>Exekutive</strong></li></ul><ul id="f594656c-fee2-4d54-96bb-7209756e7b8e" class="bulleted-list"><li style="list-style-type:disc">Gerichte (Richter, ...) - <strong>Judikative</strong></li></ul><ul id="f408bb2a-dbe3-4dc4-b7fe-7f00f44fd779" class="bulleted-list"><li style="list-style-type:disc">Kollegiale Behörden: Es entscheidet ein <strong>Kollegium</strong> (Bundesregierung, Landesregierung, ...)</li></ul><ul id="02785034-bdbf-49ef-be96-749444172e00" class="bulleted-list"><li style="list-style-type:disc">Monokratische Behörden: (<strong>Bundespräsident - oberste Behörde</strong>, Bürgermeister)</li></ul></div></details></div></details><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="cbc3cad4-fbb0-46d9-9deb-ee74340a2ab0"><div style="font-size:1.5em"><span class="icon">⏱️</span></div><div style="width:100%">20. September 2021 </div></figure><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Gesetze</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Der Weg</summary><div class="indented"><ol type="1" id="1a6016c0-a2e7-4be4-bf01-7c11e4a9d593" class="numbered-list" start="1"><li>Gesetzesentwurf: Bundesregierung (Exekutive Gewalt)</li></ol><ol type="1" id="6d011a81-b08c-4324-bbe9-97207199e5b5" class="numbered-list" start="2"><li>Er kommt in die erste Lesung (1/3): Wenn die Regierung den Entwurf bringt entfällt die erste Lesung (Regierungsvorlage). Dort wird entschieden, ob man sich überhaupt mit dem Gesetzesentwurf beschäftigt.</li></ol></div></details><h3 id="bdb5d61a-5a49-473d-83e6-f75301e1e263" class="">Grundsatz des freien Mandats</h3><p id="7e311dea-6262-4b05-a4df-b7ff0168c33b" class="">Jeder Abgeordneter soll <strong>nach besten Wissen</strong> entscheiden.</p><h3 id="ed570fca-002a-495c-98c9-18c571c01693" class="">Partei</h3><p id="b16dfac8-16fb-4c0c-833b-0c34723b9152" class="">Wenn man mehr als 5 Mandate hat, kann man einen politischen Club gründen. Man kann neben der <strong>Parteiförderung</strong>, aus dem Budget auch eine <strong>Clubförderung</strong> anfordern (richtet sich nach der Anzahl der Mandate).<br/>Im Landtag: 3 Mandate für die Clubbildung.<br/></p><h3 id="a32a4919-d0bb-4a6c-b3c6-7d577e40f279" class="">Bundestagswahl</h3><p id="f5b703f5-2709-47ff-84a0-6351cc0fbc43" class="">Koalitionsverhandlungen: falls sie sich nicht</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Arten</summary><div class="indented"><ul id="b2c807c6-5c72-4a42-93e1-6a2fcd966402" class="bulleted-list"><li style="list-style-type:disc">einfache Landesgesetze</li></ul><ul id="a42d666a-3b50-40dc-97ef-6a14c27a3180" class="bulleted-list"><li style="list-style-type:disc">Landesverfassungsgesetze </li></ul><ul id="fc3eb835-6c22-46af-8ba8-341d4e6df17b" class="bulleted-list"><li style="list-style-type:disc">einfache Bundesgesetze</li></ul><ul id="28cb9622-47f3-474a-a54d-cde9f2db0a6a" class="bulleted-list"><li style="list-style-type:disc">Bundesverfassungsgesetze</li></ul></div></details><p id="fa5a64e7-4961-4889-aa4c-2aedbec4277e" class=""><strong>Koalition</strong>: 2 oder mehrere Parteien bilden die Regierung. → mindestens eine Oppositionspartei</p><p id="7561a408-4dbf-492b-a695-852d380ad76b" class=""><strong>Präsensquorum</strong>: anwesend sein (Landesgesetz: 1/3, Bundesgesetz: 1/2)<br/><br/><strong>Consensquorum</strong>: dafür sein (Landesgesetz: 1/2, Bundesgesetz: 2/3)</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Volksbegehren</summary><div class="indented"><ul id="e1947e58-edc8-4b04-913e-37b49727e507" class="bulleted-list"><li style="list-style-type:disc"><strong>gegen die Impfpflicht</strong>: <br/>Regierung: Arbeiten nur mit 3G-Nachweis (+ Selbsttest kosten Geld).<br/></li></ul><ul id="0afe157e-b12d-416e-98a2-9a4c5055e3b5" class="bulleted-list"><li style="list-style-type:disc"><strong>Notstandshilfe</strong>: bekommt nur jemand der schon in die Sozialkassa eingezahlt. Das Arbeitslosengeld (55 % vom letzten Nettoeinkommen) ist befristet. Wenn das aus ist, kann man Antrag auf Notstandshilfe (beim AMS) beantragen. Notstandshilfe ist unbefristet. Man darf keine Vermögensgegenstände oder Geldvermögen (bis 4.000 €). Die Regierung will das Arbeitslosengeld etwas verlängern, aber die Notstandshilfe abschaffen.<br/><br/><strong>Sozialhilfe</strong>: um die 1.000 € in Salzburg</li></ul></div></details><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="28f1ee48-3d63-4b36-ba44-d68a1a71f0c7"><div style="font-size:1.5em"><span class="icon">⏱️</span></div><div style="width:100%">23. September 2021</div></figure><hr id="70307657-1dea-4542-bdb8-8b44a8725ece"/><p id="04c96aed-ead6-4e5b-aef9-6128fac8b369" class="">ÖVP - Grüne - Neos (schwarz-grün-pink) <br/><br/><strong>Landeshaupt</strong>:</p><ol type="1" id="7b777246-754a-4243-b324-9e24b2751c70" class="numbered-list" start="1"><li>Christian Stöckl</li></ol><ol type="1" id="1443b332-5bee-436a-a19f-a9c55e126d22" class="numbered-list" start="2"><li>Schellhorn (Grüne)</li></ol><p id="143d77c8-1103-4bc4-9437-6b8493da7e54" class=""><strong>Landesräte</strong>:</p><ol type="1" id="5714062b-86e3-4e12-87a4-0e66e08eb642" class="numbered-list" start="1"><li>Josef Schwaiger: Agrarresore</li></ol><ol type="1" id="875eb58c-e9b7-44bc-98bf-8261b0b8aeab" class="numbered-list" start="2"><li>Stefan Schnöll: Verkehr: Umfahrungsstraßen (ÖVP)</li></ol><ol type="1" id="8bcf01d7-6028-45f5-93fb-bd3dfa7923b9" class="numbered-list" start="3"><li>Andrea Klambauer (Neos)</li></ol><p id="fd68971b-2326-46ee-82ed-6189b94bea2e" class=""><strong>Judikative/Exekutive</strong>: Man kann nicht zurgleich Richter und Finanzamt/Bürgermeinster sein.</p><p id="1272bcdb-562b-4888-98e2-0f7dc05bf69e" class="">Abgeordnete (aus der Oposition) können irgendeinem Mitglied der Bundesregierung einen <strong>Misstrauensantrag</strong> stellen. (1/2 Anwesend, 1/2 Dafür). Wird wahrscheinlich scheitern, da die Regierung die Mehrheit im Nationalrat hat.</p><p id="3f93dcac-9dfa-45a5-a41d-b35ba2a78246" class="">2019: SPÖ haben der gesamten Bundesregierung das Misstrauen ausgesprochen. Das hat niemand verstanden, da nur der Vize-Kanzler schuld war (Ibiza Skandal: HC Strache).</p><p id="36b8e1d8-a446-4a8a-a286-535cbe1b3460" class="">Bundesregierung aus 1920: Hat immer eine Lösung.</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="b6c54817-cbb1-44ac-b8ad-1b188452d3c4"><div style="font-size:1.5em"><span class="icon">⏱️</span></div><div style="width:100%">27. September 2021 </div></figure><p id="07c4bd4b-7e2e-4ff1-a6e3-52a8f774a18f" class="">SPD: links der mitte<br/>CDU:<br/>KPÖ: ziemlich links<br/></p><p id="62106208-5dc5-4913-a6af-a0d8f5f45b08" class=""><strong>Merkmale einer linken Partei:</strong></p><ul id="ed0e45bd-79ca-480a-a736-60c94bc8867c" class="bulleted-list"><li style="list-style-type:disc">andere Einstellung Asylpolitik</li></ul><ul id="392e2a82-e9d3-46ca-934d-27b214e6195d" class="bulleted-list"><li style="list-style-type:disc">Unterstützung von sozial Schwachen</li></ul><ul id="48a1db88-381f-40e0-be52-ae5c739f47a0" class="bulleted-list"><li style="list-style-type:disc">Reformfreudig</li></ul><p id="b0a3428f-57ad-4b91-833e-ad1305e1392e" class=""><strong>Konservative Parteien (ÖVP):</strong></p><ul id="07b91eec-339b-405a-8fa9-55ca48b093ce" class="bulleted-list"><li style="list-style-type:disc">an Traditionen/Altbewarten festhalten</li></ul><ul id="13c219df-4543-4459-a745-d8fca2c6e84e" class="bulleted-list"><li style="list-style-type:disc">dem Christentum nahe</li></ul><p id="b5dcdf84-b737-44bf-990a-132bef1a0aba" class=""><strong>Elke Kahr</strong>: leistbares Wohnen</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="76560fbc-d945-41ef-a3e8-3cf8fa3ff127"><div style="font-size:1.5em"><span class="icon">⏱️</span></div><div style="width:100%">30. September 2021 </div></figure><h2 id="17c4d9b3-2153-43d4-8b24-c0825dad2074" class="">04. Oktober 2021</h2><p id="31f3947f-51d8-4089-a9a7-c1c175e3724e" class="">Unter Denkmalschutz: Man kann das Haus <strong>nicht</strong></p><p id="b23d76da-ec31-4458-8ecb-6baa1926ef77" class="">Verfassungsänderung: Tierschutz ist jetzt per Bundesgesetz</p><p id="7f5bb341-98ef-4233-a719-b94d3bf6d0ca" class="">Jugenschutzgesetz: Salzburger ist ziemlich liberal (Eltern können ab 16 erlauben, dass man unbegrenz rausgehen darf); keine Sonnenstudios (wegen Hauterkrankungen); kein Casino</p><p id="2c1697fb-16e5-4a99-93ee-6d220b4471ad" class="">Verwaltungsstrafverfahren: Bezirkshauptmannschaft; Wirt schenk Minderjährigen Alkohol aus (er hat eine Verwaltungübertretung begangen). Er muss ein Bußgeld in x Tagessätzen bezahlen.</p><p id="74b3cfda-9fc5-4f44-a9d6-6d5305e712df" class="">Strafrahmen: z.B.: 180 bis 360 Tagessätze (wird mit einem Geldbetrag multipliziert); Der Richter kann die Strafe nur innerhalb des Strafrahmens bemessen. z.B.: Topmanager (€ 4500) / Mindests € 4</p><p id="a2244e73-661e-45a2-8572-bab959d8cf92" class="">Firmenbuch ist im <strong>Landesgericht</strong>.</p><p id="09325083-84b8-4569-9c10-91bd8729c1ee" class="">Grundbuch ist im zuständigen <strong>Bezirksgericht</strong> (Beschluss: z.B.: Antrag wird bewilligt).</p><p id="ec24fa60-d2a2-4667-bafb-39fe87ea61a8" class=""><strong>Wiener Landesregierung</strong>: SPÖ (rot) &amp; Grüne</p><p id="6e0107d8-0413-42d8-a512-21a89ef76d1b" class="">ehemalige Bundeskanzler verdienen mehr, da sie als Regierungsberater im Ausland arbeiten.</p><p id="949f33f5-6c57-403e-b40a-baa232a1a973" class="">Christian Kern: verdient jetzt weniger ÖBB Management; ehemaliger Parteichef der SPÖ</p><h2 id="8f02d36d-98e8-482f-ae09-d5613a493f93" class="">07. Oktober 2021</h2><p id="b484b581-ff44-4557-90a0-ff7811a3ee75" class=""><strong>Clubzwang</strong>: Wenn man in einer Partei ist, stimmt man meist nach der Partei. Sie treffen sich vorher und legen fest wie sie abstimmen werden.</p><p id="9c64f159-6b7b-47e7-8552-b0a58efa1a60" class=""><strong>Unschuldsvermutung</strong>: es gilt die Undschultsvermutung, bis man rechtskräfig verurteilt wurde.</p><p id="9415755e-c34f-4bbb-bebc-c6ac4eb88363" class=""><strong>Rechtskräfige Verurteilung</strong>: Wenn das Urteil nicht mehr angefochten werden kann. Das Urteil wird mündlich verkündet. Dann wird es schriftlich erstellt und versendet. Ab dem Zeitpunkt an dem es ankommt. Ab dem darauffolgenden Tag 4 Wochen (<strong>Berufspflicht</strong>).</p><h3 id="5f2b83b3-5a4c-4986-8a2e-5ab0a2d0cc63" class="">Inseratenaffäre</h3><p id="a729b8bf-481d-471f-9688-8c6a6c8065ad" class="">Es gab Razzien bei der ÖVP Zentrale und im Bundeskanzleramt. WKSA (Wirtschafts-/ Korruptionsstaatsanwaltschaft) ermittelt. Es geht um den Vorwurf der Untreue, Bestechung und Bestechlichkeit.</p><p id="c94dce76-7b10-4a80-9ba9-a4522cc2e51e" class="">Kurz soll mit seinen engsten Leuten Meinungsumfragen gegen Bezahlung von <strong>Steuergeld</strong> durch das Finanzministerium manipoliert haben.</p><h3 id="b455884c-fb03-4455-ae56-34cadbd5947a" class="">Oberösterreich</h3><p id="0e20acd4-034b-4671-8c1c-bb5188a60ba3" class="">Wenn sie keine Koalition bilden:</p><h3 id="b90ec2b5-5bf3-453b-9933-019e9c2ebe25" class="">Strafe</h3><ul id="bedde1e1-6f61-459e-83b5-f68fe0ec92ab" class="bulleted-list"><li style="list-style-type:disc">Geldstrafe: x-Tagessätze (hängt vom Einkommen und Unterhaltsverpf)</li></ul><ul id="625cc5fe-5669-4111-81eb-ff2a0e6f37a2" class="bulleted-list"><li style="list-style-type:disc">Freiheitsstrafe</li></ul><p id="eebe98f7-14df-4b4b-9318-f49a3d251d6b" class="">Eintragung meines Eigentums ins Grundbuch <strong>Eintragungsgebühr</strong>: 1 % vom Kaufpreis <br/>Der wahre Eigentümer ist immer der im Grundbuch steht.<br/></p><p id="1fc52b98-86d8-4eb7-9761-8a63a6078b82" class=""><strong>Exekutionsverfahren</strong>: jemand klagt sein Geld zurück.</p><p id="e2359b6e-2ea0-4c5a-b5e1-e982ff0810b5" class=""><strong>Kredit aufnehmen</strong>: Pfandrecht an einer Immobilie (Pfandvertrag); Man könnte Antrag auf <strong>Zwangsversteigerung</strong> stellen.</p><p id="ee938cc8-4dd8-4884-96a3-5a9ab05757db" class=""><strong>Pfandrecht an einer unbeweglichen Sache</strong>: Hypothek</p><p id="d0c34c31-5721-4295-83af-bc285d49e742" class="">Man brauch ungefähr 600 m2 Grundstück, um einen Baugenemigung für ein Einfamilienhaus zu bekommen.</p><hr id="f5b5985a-857a-446b-ac1a-c46345b750ec"/><h2 id="1e0f6da0-1d08-49e4-b7dd-8b5b1563560c" class="">14. Oktober 2021</h2><h3 id="526e7053-7d32-4602-9039-5a0d558642a0" class="">Nationalrat</h3><ul id="67b2c011-4b38-48f2-8aed-205cec9db317" class="bulleted-list"><li style="list-style-type:disc">Einsetzung eines Untersuchungsausschuss, um die Missstände die von der Bundesregierung oder irgend einem Mitglied.</li></ul><ul id="21f75f17-9962-41a3-b720-4dd12f0f1bd1" class="bulleted-list"><li style="list-style-type:disc">einfach Bundesgestetze</li></ul><ul id="832aeebf-e0b7-41bd-98da-a63f780f6052" class="bulleted-list"><li style="list-style-type:disc">Bundesverfassungsgesetze</li></ul><h3 id="de0ca384-84b2-466c-8d38-3dfa643ec679" class="">Landtag</h3><ul id="67569fcb-c680-46a2-bb37-cbcc665710c9" class="bulleted-list"><li style="list-style-type:disc">einfache Landesgesetze</li></ul><ul id="03d65865-bf26-4b3b-8d17-a9661ed69c55" class="bulleted-list"><li style="list-style-type:disc">Landesverfassungsgesetze</li></ul><h3 id="ae0bb9fd-b20c-4d09-9792-87b9ef149b41" class="">Berufung</h3><ul id="77385c06-c448-4fde-a1e4-47bf3f695ff8" class="bulleted-list"><li style="list-style-type:disc">Verurteilte</li></ul><ul id="92b8472c-fe94-4eb5-a83e-33e9906c08c9" class="bulleted-list"><li style="list-style-type:disc">Ankläger (Staatsanwalt - wenn ihm die Strafe zu milde ist)</li></ul><p id="17b793e1-bedc-4b40-b57a-7e1e033c349f" class=""><strong>Kläger</strong> gibt es nur in einem Zivilprozess, nicht in einem Strafprozess.</p><ul id="6dde763b-ad86-497a-a212-a33ef9b0f874" class="bulleted-list"><li style="list-style-type:disc"><strong>1. Instanz</strong>: Bezirksgericht (im Pongau: St. Johann; z.B.: bei einfachem Diebstahl; Geldstrafe oder Freiheitsstrafe bis 6 Monate) oder Landesgericht (z.B.: bei Mord)</li></ul><ul id="c47eb011-0a27-4d3e-b388-285b353e9895" class="bulleted-list"><li style="list-style-type:disc"><strong>2. Instanz</strong>: Landesgericht (1. Instanz Bezirksgericht) oder Oberlandesgericht (in Linz)</li></ul><h3 id="173209df-1e8f-448c-aba2-4bf6159fc13c" class="">Grundbuch</h3><ul id="ddc422ea-fcbd-47ee-b952-cf95e2aaa8c4" class="bulleted-list"><li style="list-style-type:disc">A-Blatt:</li></ul><ul id="f49e2ddb-8734-45eb-857b-c0a090eace45" class="bulleted-list"><li style="list-style-type:disc">B-Blatt: Der Eigentümer (Antrag auf Eintragung des Eigentums in das Grundbuch)</li></ul><h3 id="7e045d87-dbb2-4302-b10c-1af8e4708a8f" class="">Zustellgesetz</h3><p id="c2896e1a-47a7-480b-a924-1c96b5bd71cb" class="">Das Schriftstück darf nur den Addressarten zugesetellt werden.</p><ul id="2f4ab7f9-8159-45a8-9460-9352e98751ca" class="bulleted-list"><li style="list-style-type:disc">Wenn er nicht aufgefunden wird: Dann 2. Zustellversuch</li></ul><ul id="3625439e-4e7b-47b9-b33c-526cf850c5b3" class="bulleted-list"><li style="list-style-type:disc">Dann wird er im Postamt oder Postfach hinterlegt.</li></ul><p id="a7b43a8c-295a-460a-aa00-93298bf12835" class="">Frist beginnt am nächst folgenden Tag nach der Hinterlegung (4 Wöchige Berufungsfrist) oder am Tag der Unterschrift.</p><p id="91d097da-5811-48b5-9acd-bc996e3f198d" class=""><strong>Widerbetätigung</strong>: Verbotsgesetz</p><h3 id="75795a98-5a39-433a-8c67-d4c51d433d33" class="">Mehrere Delikte</h3><p id="d887b796-8ebe-4105-b809-d6686d4baa68" class="">Erschwernisgrund für den Richter.</p><ul id="94dbe334-d3f8-47b0-85a5-19099a2cdaaf" class="bulleted-list"><li style="list-style-type:disc">Milderungsgrund:<ul id="6962e50a-ca04-441e-a937-b3740bbf9c7b" class="bulleted-list"><li style="list-style-type:circle">Geständis</li></ul></li></ul><ul id="89f8fa24-938c-4dc6-9c52-65da0df1549c" class="bulleted-list"><li style="list-style-type:disc">Erschwernisgrund:<ul id="446e0554-70b6-4649-831a-9868ff783f0f" class="bulleted-list"><li style="list-style-type:circle">unter Eid schwören (und dann )</li></ul></li></ul><h3 id="11975cfa-2f94-4667-8a39-c7f2fd1ef725" class="">Kollektivvertragsverhandlungen</h3><p id="2ee97d23-b33c-4cbe-8f4c-88eab83d55b4" class="">Gewerkschaft verhandelt mit der Kammer</p><h3 id="b7b266a8-6e82-499a-aa14-ee723be9de1d" class="">Immunitätsausschuss</h3><p id="398ecb9a-b45b-453e-9c75-8a6e7766a6f5" class="">Bei Mehrheit: Sebastian Kurz</p><p id="bb032702-7e35-4577-8e9d-27e8c64df267" class=""><strong>Auslieferungsbegährden</strong>: nur wenn die Ermittlungen ausreichen.</p><p id="a9832d42-8942-4fe5-a8e7-21992a44309a" class="">umfangreiches Beweisverfahren</p><p id="4122cee4-19ce-4ae1-ab57-862d2587b023" class="">Urteilsspruch</p><h2 id="fa4c2b20-a496-422e-8341-f9db04ef6fb0" class="">4.11</h2><p id="f3f61d3f-e8b9-42de-9496-9ebf3aa7e106" class="">Novelle: Veränderung<br/>1929<br/></p><p id="ba542ca9-b1c2-4b6e-8933-113ba1105eb3" class="">Verfassung: Oktober 1920</p><ul id="68d2c582-e979-42ce-9e60-51a7b504ab0f" class="bulleted-list"><li style="list-style-type:disc">Wie oft ein Bundespräsident</li></ul><ul id="f84440fd-0bb3-4ac8-aea0-0e6ffcd6aa56" class="bulleted-list"><li style="list-style-type:disc">Bürger und Menschenrechte (Unterschied: Bürgerrecht nur dem Staatsbürger; Menschenrecht: jeder der sich im )</li></ul><ul id="ce3059bd-3e31-4f04-8a92-9b51379c72a1" class="bulleted-list"><li style="list-style-type:disc">Was ist zu tun wenn der Nationalrat die (Misstrauensvotum, Beharrungsbeschluss, ...)</li></ul><ul id="aee1d7b6-4106-42d9-86fe-495a92c06e72" class="bulleted-list"><li style="list-style-type:disc">Österreich ist eine Demokratie.</li></ul><p id="a690b79c-32f1-4caf-a2c7-b574c1887c2b" class="">Jedes Land hat eine eigene.</p><p id="461a7aa6-fc6e-4bf2-8223-2c26d9671c75" class="">Direkte und indirekte Mittel der Demokratie: Volkswahlen, Volksbegehren, Volksabstimmung, Volksbefragung (es gab erst eine 2013: Soll das Österreichische Bundesherr in ein Berufsherr umgewandelt werden.)</p><p id="3e7ea312-062e-4dd7-ae6a-4ddaba785d89" class="">Volksbefragung verändert die Regierung nicht</p><p id="837243d0-aea0-4453-96a7-5b2936b2e288" class="">Volksbefragung der Salzburger: Soll sich Salzburg zu den Olympische Winterspiele bewerben?</p><p id="709c7203-082c-413c-a9b3-38f028e73da2" class="">Volksabstimmungen seit 1945:</p><p id="66999ecf-390f-446c-9ccc-3b8e76b681de" class="">Stufe 2 Corona: 300 Betten<br/>Sutfe 3: 400 Intensivbetter<br/></p><p id="0f07c639-6552-4e93-9531-7bc4a8239bb4" class="">Verordnung: näher Ausgestaltung eines Gesetztes</p><p id="17e4add9-4575-4fc9-9873-39be2e132df5" class="">Epidemiegesetzt</p><p id="89ba5a7d-d0f4-45b8-9a61-3f4ab4e3bd8e" class="">Österreich ist ein Rechtsstaat:</p><p id="680e0dda-c33b-4abf-9146-d69eaabf4cbe" class="">Strafgesetzbuch: Vorsätzliche Sachbeschätzigung, Diebstahl, Mord, Betrug, ...</p><p id="ea4cb8b3-45d2-4073-a099-8de241f70bec" class="">Verbotsgesetz: Wiederbetätigung</p><p id="708da4ec-ba25-4d63-ac12-5cf9f36defa4" class="">Suchtmittelgesetz:</p><p id="8a858979-403c-4272-a35d-d23c9ab4b556" class="">nächste Landtagswahl: in Niederösterreich 2023</p><p id="fa1ff6c8-2c80-4248-918f-ad24a26cfc68" class="">letzte Gemeinderatswahl in Wien: viele EU Bürger konnten nicht mitmachen, weil dort auch die Landtagswahl ist.</p><p id="345b9c1b-8677-46b8-9e9f-1e64c6cc4ad6" class="">Wenn die Auswirkung die komplette Änderung der Verfassung -&gt; dann zwingend eine Volksabstimmung (EU Betritt -&gt; EU Recht ist höher als das Nationale Recht: über 66% waren dafür 2/3 mindestens).</p><hr id="bc663266-4c36-439a-bd7b-138936136190"/><p id="0763594c-3ad2-4ad9-a9a7-573420da5b9b" class="">Staatsform: eine Republik (keine Monarchie-&gt;einer herrscht oder Aristokratie-&gt;einige wenige herrschen)</p><p id="ee14b706-f07f-4013-9b23-9449d16ae1fc" class="">Bundespräsident: Wiederwahl ist möglich, beim darauf folgenden Wahl.</p><p id="5b05138f-84d0-4a68-b8db-171c2f8f731b" class="">Österreich ist ein Rechtsstaat.</p><p id="dc4d62f9-1cda-415a-8415-64d7c2dd56df" class="">EU: 26 Regierungschefs (Ungarn: Ministerpräsident)</p><p id="b6f3041b-112e-40ee-981d-be733bd165bb" class="">Regierungschef von Frankreich: Jean Castex</p><p id="7b1715ea-eec6-459d-9af2-a328a3cddec6" class="">Französische Verfassung: ist eine Präsidentschaftsrepublik</p><p id="3034103a-1063-4c10-9dd7-0da1753549a3" class="">Wenn das Nationale Recht nicht verfassungsmäßig mit den EU Richtlinien ist. Dann ist das EU Recht höher.</p><p id="32c6af74-357f-4ee4-9617-32cb5ff832fb" class="">Behörden: Gerichte und Verwaltungsbehörden dürfen nur nach den Gesetzen entscheiden. Es kann nicht willkürlich entschieden werden. Jede Entscheidung einer Behörde/Gericht () kann mit einem Rechtsmittel in der nächst höheren Instanz angefochten werden.</p><p id="5aeb6d5a-c92c-463c-bfa6-32fdc5f346db" class="">Österreich ist ein Bundesstaat: Bundesregierung, Landesregierung, ... Wir sind kein zentral Staat (es gibt keine eigenen Landesgerierungen).</p><p id="f14409cb-49f1-4421-a50f-0d0b3f9739f6" class="">EU gibt keine Gesetze: Richtlinien (Sie hat ein Ziel: Richtlinie muss erst mit einem Gesetzesbeschluss als Gesetz beschlossen werden: z.B.: Rauchverbot in Lokalen), Verordnungen (wirkt unmittelbar in den Ländern: z.B.: Roaming Gebühren)</p><ul id="7fc789f9-2d6f-4a22-8ee8-49ecaf0cb45e" class="bulleted-list"><li style="list-style-type:disc">Bundesverfassungrecht: Bundesverfassung in den restlichen Teilen: Bundesverfassungsgesetz über die Neutralität.</li></ul><ul id="62ea898a-d16e-43fd-8a96-c3d98392b61c" class="bulleted-list"><li style="list-style-type:disc">Gesetze: Strafgesetzbuch, UBGB, Covid-Maßnahmengesetz</li></ul><p id="0a760457-4c32-4b02-8a9e-2c16d94ae632" class="">Verordnung: macht ein Minister; damit kann er ein zugrundeliegenden Gesetz näher ausgestalten.</p><p id="57c3bfdb-a34d-4a01-a3f9-dd20c79fa92a" class="">Verfassungsgerichtshof (VFGH) überprüft die Verfassungswidrigkeit der Gesetze und Verordnungen (Corona Maßnahmen waren nicht gesetzwidrig)</p><p id="eba686bf-ab30-4e39-9e7b-39231c833346" class="">Ein Gesetz darf nicht gesetzwidrig oder verfassungswidrig sein (muss im Gesetz gedeckt sein).</p><p id="b8bed196-06c7-4768-b5b6-61dd0a01564e" class="">Vollstreckung: Exekution (Gehaltsexekution -&gt; Zivilprozess bewilligt)</p><p id="90492a31-1c94-4150-9f04-b4a262f5c5ee" class="">3G Regel für alle Mitarbeiter konnte erst später beschlossen werden, weil sie erst das Covidmaßnahmengesetz verändern mussten.</p><hr id="a11bbe2e-f34a-46e0-947a-5d16d573f289"/><h3 id="1fa54462-b598-4ae7-aac4-a71f03c14164" class="">Zivilprozess</h3><ul id="5bafba9f-c3af-4fc2-9e58-2a82721ef2c7" class="bulleted-list"><li style="list-style-type:disc">Instanz bei Geldforderung immer das Bezirksgericht ➔ Klagebegähren wird abgewiesen ➔Kläger hat verloren<br/>Es Stattgegeben wird: Kläger hat gewonnen; Beklagte hat verloren<br/></li></ul><h3 id="42bc3035-5d35-4537-bf91-27e862e906e9" class="">Juristische Person:</h3><ul id="e75bf714-069c-4576-b238-86fac70953cf" class="bulleted-list"><li style="list-style-type:disc">Der Bund</li></ul><ul id="ce0bb08b-7caa-40a0-b660-238fbe353de2" class="bulleted-list"><li style="list-style-type:disc">jedes Land</li></ul><ul id="62ddb204-3eb8-4df7-a042-683bf4567e2e" class="bulleted-list"><li style="list-style-type:disc">Gemeinde Kaprun</li></ul><ul id="28c738fc-5553-4329-bb5a-91519d09ab44" class="bulleted-list"><li style="list-style-type:disc">Stadt Zell am See</li></ul><ul id="f5d02a28-18ac-4a70-9e58-4e41c6162196" class="bulleted-list"><li style="list-style-type:disc">Kapitalgesellschaften (GmbH), Aktiengesellschaften, Personengesellschaft (KG -&gt; Kommanditen haften)</li></ul><ul id="e4569832-4eb4-4d96-9539-edb58bee0de2" class="bulleted-list"><li style="list-style-type:disc">jeder Verein oder Gewerkschaft</li></ul><h3 id="0ff5f1f7-f7a2-4358-b8be-762b7180b15e" class="">Impfschaden (Impfschadensgesetz: Österreich haftet als Person für die Impfung):</h3><p id="ab4b58c9-18e9-4bac-ba17-979dfc409134" class="">Über 75.000 Euro das <strong>Landesgericht</strong></p><ul id="869519de-a17a-4f0f-ba77-84834d6dbac4" class="bulleted-list"><li style="list-style-type:disc">Klage wird stattgegeben: eher nicht, weil man dem Richter das diese Impfung ursächlich für diese Folgen ist, glaubbar machen muss. ➔ Es ist sehr schwierig einen kausalen Zusammenhang nachzuweisen (Gutachten durch einen <strong>gerichtlich beeideten Sachverständiger</strong> ➔ Mediziner) nach ein paar Jahren. ➔ Beklagte (der Bund) vertreten durch <strong>Finanzprokuratur</strong>, wird berufen</li></ul><ul id="c11a9621-2a69-4c47-af14-b01b18ee9e17" class="bulleted-list"><li style="list-style-type:disc">Instanz: Oberlandesgericht -&gt; wieder recht;</li></ul><ul id="1fdf9f3e-1fe1-4641-b84f-3c3ec60dc965" class="bulleted-list"><li style="list-style-type:disc">Instanz: Berufung an den Obersten Gerichtshof<br/>Kläger und Beklagter<br/></li></ul><p id="14acb169-e02c-4ae4-9d4a-b83e0b6f19e7" class="">Der der den Prozess verloren hat trägt:</p><ul id="e13e924d-35c3-448e-988e-eebe78439464" class="bulleted-list"><li style="list-style-type:disc">Anwaltskosten (hoher der Klagsbetrag hoher die Kosten)</li></ul><ul id="e27659e3-1cf5-4720-9dff-33c4ebc9518d" class="bulleted-list"><li style="list-style-type:disc">und Gerichtskosten: Klage, Sachverständigen, Zeugengebühren zu tragen.</li></ul><ul id="555bbcde-be85-4727-85b8-3a6079d236d4" class="bulleted-list"><li style="list-style-type:disc">➔ <strong>Rechtsschutzversicherung</strong> könnte bezahlen</li></ul><h3 id="83632639-b536-400d-ad41-90f09ff4b76c" class="">Organe des Bundes:</h3><ul id="d603590c-664b-4b98-baf4-d1936774a44d" class="bulleted-list"><li style="list-style-type:disc">Die Bundesregierung als kollegiale Behörde</li></ul><ul id="bbae73db-e2db-47ad-b972-9100f7c8f0f1" class="bulleted-list"><li style="list-style-type:disc">Polizei</li></ul><ul id="91057fa0-16db-4c33-b40f-7ee9c76d2cdd" class="bulleted-list"><li style="list-style-type:disc">Minister</li></ul><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="9f5b17bd-f9c9-403b-bee9-d2a32e07e1ec"><div style="font-size:1.5em"><span class="icon">ℹ️</span></div><div style="width:100%">4.11</div></figure><h2 id="0d019db4-c2b2-46f1-8b73-d1a9bb3969f3" class="">Gesetz</h2><p id="95fc2f37-e6b5-458b-8068-5b52491ef044" class=""><strong>Impfschadensgesetz</strong>: Republik Österreich haftet mit der Finanzprokuratur</p><ul id="97199211-bc9b-45fb-8cf7-139e29f62a49" class="bulleted-list"><li style="list-style-type:disc">verfassungswidrig ➔ wenn der Vollzug nicht möglich ist ➔ unverhältnismäßig (Lockdown für Ungeimpfte)</li></ul><ul id="a71e27c4-87b7-4004-a18c-24eab68d3457" class="bulleted-list"><li style="list-style-type:disc">gesetzwidrig</li></ul><p id="ed4c0199-7d2b-4ef9-8b5e-ad9b42dfa1d1" class=""><strong>Verfassungsgerichtshof</strong>: Man behauptet, dass man in einem Recht verletzt wurde, das mir laut Verfassung zusteht. / Es wurde ein Gesetz oder Verordnung angewandt, das verfassungs oder gesetzwidrig ist.<br/>VWGA:<br/>Der Bescheid wird nach 4 Wochen nach der schriftlichen Zustellung rechtskräftig.<br/></p><ul id="92f068cb-dee1-4e35-a0c9-27b8ab582abd" class="bulleted-list"><li style="list-style-type:disc">1.Instanz und 2. Instanz hat rechtswidrig (rechtlich falsch) entschieden</li></ul><ul id="d0a12c97-24fe-4218-b4b9-7c7b841b51bd" class="bulleted-list"><li style="list-style-type:disc">Außenordentliches Rechtsmittel an den Verwaltungsgerichtshof.<br/>Verfassung/Gesetz/Verordnung<br/></li></ul><ul id="9ce19b3b-da8a-4fb4-af51-c0f99bb11900" class="bulleted-list"><li style="list-style-type:disc">Bei der Bezirkshauptmannschaft sitzen fast keine Juristen</li></ul><ul id="2a7983d6-ad6b-49f1-a47b-479b5cd0f9d0" class="bulleted-list"><li style="list-style-type:disc">Verfassungs- und Verwaltungsgerichtshöfe können nur Beschlüsse der 1. Instanz kontrollieren</li></ul><p id="62820e67-feb7-47f2-b68e-e35fb9c25336" class=""><strong>Verordnung (Abänderung eines Gesetzes)</strong>: von einem Minister (Epidemiegesetz, Covid Maßnahmengesetz), darf nicht <strong>gesetzwidrig</strong> und <strong>verfassungswidrig</strong></p><p id="e551677e-0b78-4e8b-bdcc-e5e33ec93074" class="">Grundrecht auf Freiheit wird mit dem Schutz der öffentlichen Sicherheit argumentiert.</p><ul id="bb5db086-3ff0-434d-ad18-f18c86080397" class="bulleted-list"><li style="list-style-type:disc"><strong>Volksabstimmungen</strong>: nur 2 bis jetzt (verbindlich für die Regierung; Verfassung wird total verändert oder einer der leitenden Prinzipien wird verändert ➔ Impfpflicht)<ul id="c0c1f3ad-1274-4c2f-8d14-81080a6148c3" class="bulleted-list"><li style="list-style-type:circle">1978 (Atomkraftwerk gebaut werden soll ➔ Es gab viele Gegner, es war knapp);</li></ul></li></ul><ul id="4f7f67c0-209a-4063-9590-a6c4cefb08be" class="bulleted-list"><li style="list-style-type:disc"><strong>Volksbefragung</strong>: ist nicht verbindlich für die Regierung ➔ <strong>2013</strong>: &quot;Soll das Österreichische Bundesherr in ein Berufsherr umgewandelt werden?&quot;</li></ul><h3 id="8211ce4d-ddab-420f-892c-7468d9aa59f6" class="">Kaprun Tragödie</h3><p id="03997813-71ad-483a-8291-3a60b137a64d" class="">Schrägzug hat gebrand ➔ 155 Tote</p><p id="6237f6b7-afa5-4621-927b-5ea622870fe7" class="">Man wollte den <strong>Schadensersatzprozess</strong> in die USA verlagern, weil dort die Schadensersätze um einiges höher sind.</p><p id="377a95cd-b918-47fc-83a6-2705cdaa6121" class="">Es gab keine <strong>Schadensklage</strong> in Kaprun (Betreiber: Gletscherbahnen Kaprun AG) ➔ Man hat sich auf einen Vergleich geeinigt.</p><p id="fc5af742-848c-451d-a081-6d00c469be4b" class=""><strong>Österreichische Schadensersatzrecht (Allgemeines Bürgerliches Gesetzbuch)</strong>:</p><ul id="5dceb3e1-52f5-4824-ba4e-cac89ab5fa57" class="bulleted-list"><li style="list-style-type:disc">nur materielle Schade ➔ keine immateriellen Schäden (Schmerzen für Trauerschäden, Frustrierte Urlaubsfahrten (Man hat einen Urlaub gebucht: Pool hat kein Wasser, Schimmel im Zimmer, …) -&gt; nicht ABGB sondern Judikatur des OGH)</li></ul><ul id="d6040d2c-5a19-489e-bdb6-aa171b7f6162" class="bulleted-list"><li style="list-style-type:disc">außer Schmerzensgeld (Körperverletzung) ➔ Fachzeitschrift lesen alle Anwälte, Richter, …</li></ul><h3 id="420f3b75-67b0-4237-9928-4383f812d547" class="">Verfassung: von Oktober 1920</h3><ul id="f109a886-45c6-4cf2-83ac-0998199a26c4" class="bulleted-list"><li style="list-style-type:disc">Wie oft ein Bundespräsident</li></ul><ul id="d951ed90-0a81-4337-8cbe-ca9149c973e2" class="bulleted-list"><li style="list-style-type:disc">Bürger und Menschenrechte (Unterschied: Bürgerrecht nur dem Staatsbürger; Menschenrecht: jeder der sich im )</li></ul><ul id="52ad8e57-d8a3-4b18-8df6-dcb2c1500b49" class="bulleted-list"><li style="list-style-type:disc">Was ist zu tun wenn der Nationalrat die (Misstrauensvotum, Beharrungsbeschluss, ...)</li></ul><ul id="b4e18a6b-2af8-490b-ae69-9e0d201294e2" class="bulleted-list"><li style="list-style-type:disc">Österreich ist eine Demokratie.</li></ul><p id="f572c856-bf35-4af0-ba70-936d8d5cb755" class=""><strong>EU</strong> ➔ Richtlinien</p><p id="90dafa0f-cfa6-40b5-90e9-0bf08de6ace9" class=""><strong>Verordnung</strong>: von einem Minister ➔ nähere Ausgestaltung eines Gesetzes ➔ muss darf nicht verfassungs- und gesetzwidrig sein.</p><p id="9e2e5559-251a-44da-9c33-9d40630f7cff" class=""><strong>Verfassungsgerichtshof</strong> (VFGH) überprüft die Verfassungswidrigkeit der Gesetze und Verordnungen (Corona Maßnahmen waren nicht gesetzwidrig)</p><h2 id="7e1626e9-2fab-4165-b3a8-1c7c18484bc2" class="">25. November 2021</h2><h3 id="cdce9cd2-4fad-4755-baf2-e6bdfd57703b" class="">Ampel-Regierung</h3><ul id="e485e5c0-be5c-498b-a280-82f197b9f016" class="bulleted-list"><li style="list-style-type:disc">schnellerer Kohleausstieg</li></ul><ul id="7d5145a8-a5cf-41ee-a568-626f6265ff1d" class="bulleted-list"><li style="list-style-type:disc">Erhöhung des Mindestlohn</li></ul><p id="fe700b0f-0653-4d3c-8c53-f30d30e49a1f" class="">In Österreich gibt es keinen Mindestlohn sonder einen Kollektivvertragslohn.</p><h3 id="abd6c731-3f6f-454b-bd97-ad0194b0aafc" class="">Kollektivvertragsverhandlungen</h3><p id="e088bc84-72f1-4aae-89d6-6176d299e641" class="">Es beginnen immer die Metaller. Die Arbeitgeber wird von der Wirtschaftskammer vertreten. Sie verhandeln mit der Gewerkschaft.</p><p id="6dedb0f6-99b0-40ed-9d47-56bcc8bb4ae3" class=""><strong>KV-Lohn</strong>: Handelsangestelte (SPÖ wollte einen Mindestlohn von 1800 Euro)</p><p id="3fdab185-1516-4cb7-a23f-3a07f040c226" class=""><strong>Salzburger Festspiele</strong>: neue Präsidentin</p><p id="9bf2d127-327c-44a5-a1a5-4c4262a01876" class=""><strong>Landtag in Salzburg</strong>: 36 Abgeordnete</p><p id="196e93c7-b3d3-47d7-a4e5-5141813b1d1a" class=""><strong>Grundrecht</strong>:</p><ul id="edee6dd0-4256-455a-af1e-9ff4c6993dd1" class="bulleted-list"><li style="list-style-type:disc">Recht auf Freiheit</li></ul><ul id="ca711917-befc-412f-ba5a-fec295900056" class="bulleted-list"><li style="list-style-type:disc">Recht auf Körperliche Verzagtheit</li></ul><ul id="f94f13f0-cfc1-4657-aa09-819baa140ec9" class="bulleted-list"><li style="list-style-type:disc"><strong>J. Personen</strong>: Der Bund, Die Gemeinde, ...</li></ul><ul id="e4579ef7-1649-4f3a-825a-b0ee1a952d3f" class="bulleted-list"><li style="list-style-type:disc"><strong>Natürliche Personen</strong>: Alle Menschen</li></ul><p id="2dc0ac34-1b08-49a4-b126-6cb4871662d4" class=""><strong>Verfassungsgerichtshof</strong> ist in Wien.</p><p id="f639b89c-52da-4b42-b183-067468d7f382" class=""><strong>Bescheid</strong>: Entscheidung</p><h3 id="f9a49b49-a8e2-4aaa-b943-93f9615ce712" class="">Gerichte:</h3><ul id="05e697ed-b0ac-46e3-afa1-33b5b0b31ee5" class="bulleted-list"><li style="list-style-type:disc"><strong>Strafgericht</strong>: angeklagt wegen: Freispruch oder Schulspruch</li></ul><ul id="cc80ae3d-1f41-4d92-9585-40f4fc666ed7" class="bulleted-list"><li style="list-style-type:disc"><strong>Zivilgericht</strong>: Beklagter; Kläger</li></ul><p id="3a2ab42c-73b6-43e2-84b2-fdfb9be583be" class=""><strong>Polizist überfährt Junge</strong>: Fahrlässige Tötung</p><p id="16aab0bb-9bc7-43c3-944d-012ef693af0c" class=""><strong>Tötung</strong>:</p><ul id="3f9789e3-c8fa-43a5-960c-ccf44fc23e52" class="bulleted-list"><li style="list-style-type:disc">Fahrlässige Tötung: notwendig - Du stoßt jemand, der tödlich fällt.</li></ul><ul id="6d7a908d-e677-4117-b480-ab06fd3ecbbe" class="bulleted-list"><li style="list-style-type:disc">Vorsätzliche Tötung: Mord, Todschlag</li></ul><p id="1af56257-5106-46ab-ac09-79357e1c870b" class=""><strong>Urlaub im Lockdown</strong>: Ausnahme, da Aufenthalt im Freien zur körperlichen und psychischen Erholung <br/><br/><strong>Deutscher in Österreich</strong>: nach 5 Tagen Quarantäne freitesten <br/><br/><strong>Branchen haben offen</strong>: alle Produktionsbetriebe, Filmstudio, Sonnenstudio</p><p id="4cb9e673-e45a-4a17-81fe-727c8f815014" class=""><strong>Es sind mehr Leute auf den Straßen</strong>: über das Handy<br/><br/><strong>Spielregeln Landesebene</strong>: Landesverwaltung</p><p id="3c0d2c82-85f6-4935-b116-925bba668e23" class=""><strong>4 Bundesräte</strong>: aus Salzburg</p><h2 id="9cbd6975-44fd-48a7-afb4-fcfe40c0b267" class="">29. November 2021</h2><h3 id="16587789-eeea-4389-8c23-732fce916d12" class="">Corona Mutation</h3><p id="4c2ae461-24e1-4968-83ed-b2fba711f9a3" class=""><strong>Omicron</strong>. Ein Fall aus Tirol wurde bestätigt. Viele Verdachtsfälle.</p><h3 id="1584a964-d3e2-433f-a957-201c5d1363da" class="">Schweiz stimmt ab</h3><p id="36634b88-38c7-4787-b930-26b9cc940224" class="">ob die Corona-Maßnahmen verschärft werden sollten.</p><h3 id="77aaaff4-3878-4ce1-900e-d02419bca333" class="">Ukraine</h3><p id="356e5b10-9e8a-4a57-a9a6-15de6feb9842" class="">Präsident Selenskij warnt vor einem Staatsstreich (Putsch - das Militär stürzt den Präsidenten). Er sagt das der reichste Ukraine und Russland verwickelt sind.</p><h3 id="b9c4b8eb-0fdb-4819-9475-c06443ac9b3e" class="">Ärmelkanal</h3><p id="2ee7436f-b71a-4eee-b9e0-057606117980" class="">Vor einer Woche starben 31 Menschen. Es gab ein Treffen zwischen Frankreichs, Belgiens, Deutschlands, der Niederlande. Großbritanien wurde nicht eingeladen.</p><p id="5d0fd077-c6cd-4d07-a9a4-5ed34259bc91" class=""><strong>Verwaltungsübertretung</strong>: Gesetzwidriges Verhalten (aber kein Delikt) z.B.: im Straßenverkehr, Lärmbelästigung, Erregung öffentlichen Argernisses</p><p id="2c73c325-de2f-4910-880b-9126d7eec606" class=""><strong>Verkuntbarung eines Gesetzes</strong>: Bundesblatt oder <a href="https://www.ris.bka.gv.at/">www.ries.gv.at</a>; Sobald es Kundgemacht wurde ist es</p><p id="4c0be4a7-d88d-4bed-aa33-6ace66cd19f3" class="">§2: Unkenntnis schützt vor Strafe nicht.</p><h2 id="2a670b6a-109c-4b1d-b2d7-acf637727a1e" class="">Gerichtliches Strafverfahren</h2><ul id="35c70371-2ea1-42b8-9791-d623030ce39f" class="bulleted-list"><li style="list-style-type:disc">Verwaltungsstrafverfahren</li></ul><h2 id="c2ac8e61-0577-4691-bbae-551cdf4adf47" class="">Kapitel 4</h2><p id="91e3013b-1569-459f-b52e-28d91cd6c85f" class=""><strong>Budgetjahr</strong>: 1 Jahr<br/><br/><strong>Bundesverfassungsgesetz</strong>: vorraussichtliche Einnahmen und Ausgaben</p><p id="c948fe10-9130-4e3f-bb21-ee70f93e09b7" class=""><strong>Finanzgebahrung des Bundes</strong>:</p><p id="e3242030-1e3d-4f1d-9953-4aed5a9945a0" class=""><strong>Rechnungshof</strong>: Kontrolliert am Ende eines Budgetjahres wie die Finanzen gelungen sind (Finanzgebahrung des Budgetvollzugs); Hilfsorgan des Rechnungshofs</p><p id="8cce44d4-5807-48a9-96a5-bdcfadc64c7a" class="">Entwurf bis 22. Oktober ➔ Budgetdebatten <br/><br/><strong>Bundesrat</strong> kann keinen Einspruch machen.</p><p id="f1e95d7a-a684-42b6-92b4-7cf65f30b052" class=""><strong>Bericht des Rechnungshofes</strong> ➔ Nationalrat (eigener Ausschuss) ➔ Regierungmitglieder werden entlastet (Untreue; Geld missgewirtschaftet) ➔ Budgetdefizit ist höher, aber die Regierung hat nur von Prognose ausgehen können ➔ Nachtragskredit</p><p id="349df8bb-fabb-4971-a8fd-2d93555dfb15" class=""><strong>Budgetdefizit</strong> leider höher ➔ Österreich in den letzen Jahren (86 % des BIPs sind Schulden) ➔ Kreditzinsen sind auch für den</p><p id="aedd7680-3f37-4cdb-aee8-a235db1e90a3" class=""><strong>Wirtschaftswachstumsprognose</strong>: für das nächste Jahr gut</p><p id="f9e5f166-52e2-408a-a4be-b6d528e2958f" class=""><strong>Österreich Bonität</strong>: AA+ (früher AAA)</p><p id="bbaa407a-5eb9-4781-a389-8c905aedab93" class=""><strong>EZB Geldpolitik</strong>: Leitzinssatz (Geschäftsbank leit sich selbst Geld aus, um uns Kredite zu gewähren)</p><p id="1e781bb4-59da-46ed-a65d-9d00f85bf6b8" class=""><strong>Pakettrecht</strong>: Abgeordneten in einer Sondersitzung des Nationalrats können Fragen über die Art der Anwendung der Gesetze an den Mitgliedern der <strong>Bundesregierung</strong> stellen.</p><p id="8cebdce9-35d9-40ac-aba0-990adfe5df7d" class="">EU Kommission<br/>Europäischer Gerichtshof<br/></p><p id="c58298fd-1f80-42a8-aa7c-d49b89e4f81e" class="">Raser: Recht auf Eigentum (Auto wird beschlagnahmt) - in Italien gibt das schon</p><p id="2dd3541c-c0db-4760-9502-8f39d244f7b8" class="">Frage der Verhältnismäßigkeit</p><p id="c4a63b1f-7e22-42ab-8eb3-88d3815a8a9b" class="">Impfpflicht: Grundrecht auf körperliche Unversehrtheit</p><p id="7407ab71-bc33-4f29-ab37-95e21f881d67" class="">Beschwerden: Lockdown - Verhältnis</p><p id="70310131-c8c9-4f01-b923-269a81f52620" class=""><strong>Interpellationsrecht</strong>: Abgeordnete aus der Opposition stellen lästige Fragen an Regierungsmitglieder über die Art der Anwendung der Gesetze; Manche Minister haben einen Staatssekretär (müssen nicht selbst erscheinen); Schriftliche Anfragen (Kanzler; Vize K. haben länger Zeit) <br/><br/><strong>Interbelare</strong>: Fragen auf Lateinisch</p><p id="b6fb9734-fa13-4b4d-990c-6515eb3b92b8" class=""><strong>Resolutionsrecht</strong>: Es gibt einen Interpretationsspielraum; Kind -&gt; Jugendlicher oder Baby; eine Behörde hat einen Spielraum; im Asylgesetz ist es möglich, dass ein Asylant der Endgültig -&gt; Er will das Land nicht verlassen -&gt; Schubhaft -&gt; so lange bis er wieder zurückgeführt wird -&gt; Kinder und Jugendliche sind in Schubhaft gelangt -&gt; Resolution an die Vollziehende Organe -&gt; Keine Familien mit Kinder in Schubhaft -&gt; Eigene Häuser ohne Vergitterung <br/><br/><strong>Resolution</strong>: Wünsche an die Regierungsmitglieder über die Art der Anwendung der Gesetze; Das Gesetz soll humaner angewendet werden</p><p id="d0cdf02e-5fc8-4471-9c87-7363e3d114f3" class=""><strong>Enqueterecht</strong>: Recht auf einen Antrag für einsetzung eines Untersuchungsausschusses -&gt; Abgeordneter aus der Opposition -&gt; Behauptete Missstände in der Bundesregierung werden untersucht -&gt; UAS: wenn dem Antrag zugestimmt wird -&gt; 1/2: anwesend; 1/2: zustimmen; Verfassungsänderung vor einigen Jahren: ein 1/4 (46 -&gt; den Minderheiten gelingt es auch) der Abgeordnete reichen aus um einen UAS zu starten -&gt; Eurofighteruntersuchungsauschuss</p><p id="dbb4e527-c3af-4968-b674-eca3fe5f99a3" class=""><strong>Misstrauensantrag</strong>: Regierung wird abgesetzt</p><h2 id="bab11b71-f69f-4de0-b8d8-b2e7e2cb3647" class="">Aktuelles</h2><p id="fd665565-cb3a-444b-a855-048e1ef5a6e7" class=""><strong>GECKO</strong>: Beraten die Regierung über Corona</p><h3 id="6d464a97-b144-4455-add9-b5e27bbe60ba" class="">August Wöginger (Klubchef der ÖVP):</h3><p id="b5d09d56-061e-4614-be27-de8052ba87e4" class=""><strong>Immunitätsausschuss</strong>: Abstimmung, ob die Immunität von Wöginger aufgehoben wird (Auslieferungsbegehren).<br/><br/><strong>Vorwurf</strong>: Ihm wird der Amtsmissbrauch vorgeworfen ➔ politisch motivierte <strong>Postenschacherei</strong></p><p id="25d133f6-b1bd-4527-a3a9-b662a9faacf3" class=""><strong>Nicht Einzelrichterverfahren</strong>: Geschworenen Prozess 3 Richter und 8 Geschworenen (Österreich und mind. 20 Jahre und keine rechtskräftige Verurteilung mit mehr als 1 Jahr)</p><p id="1ecd4453-7ff6-4e4c-849e-9499cb7deb3e" class=""><strong>Schweiz</strong>: Finanzplatz der russischen Oligarchen<br/><br/><strong>Duma</strong>: gesetzgebende Gewalt in Russland<br/>Wörter wie <br/><strong>Krieg, Kriegsverbrechen &amp; Invasion</strong> werden mit bis zu 15 Jahre Haft bestraft.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a2d9fb9e-5bae-4c4d-8d62-d823976bc7e1"><div style="font-size:1.5em"><span class="icon">❗</span></div><div style="width:100%">1. Republik seit 1945</div></figure><p id="74b784ec-3e90-4f51-9614-6cb541c54383" class=""><strong>Scheinmonarchien</strong>: Niederlande, ...<br/><br/><strong>Volkswirtschaftlich Queen</strong>: Touristeneinnahmen (Buckingham Palace)</p><p id="5286f36c-c0f7-4af8-87de-345e90717b2e" class=""><strong>Ex-Familienministerin Sophie Karmasin</strong>: Untreue, Geldwäsche wegen der Inseratenaffäre</p><p id="5479cfa7-a83c-4791-8335-addbd606ceee" class=""><strong>Veruntreuung</strong>: Kassier steckt das Geld in die eigene Tasche (fremde Gelder) z.B.: Philipa Strache<br/><br/><strong>Untreue</strong>: Geld zu zweckwidrigen Zwecken werden verwendet</p><p id="ff60fedb-4aa6-44fe-abdf-b9232681ea33" class=""><strong>Alma Zadic</strong>: Justizministerin ➔ Plagiatsvorwürfe</p><p id="3f02d49d-ac82-4ab1-b248-d121778580c6" class=""><strong>EU-Eingreiftruppe</strong>; bis 2025 sollen 5000 Soldaten (Deutschland) bereitstehen ➔ Klaudia Tanner (Verteidigungsministerin) &quot;Österreich beteiligt sich auch daran&quot;</p><p id="bae64c6f-8060-4dff-b29d-09a955d99b7e" class=""><strong>Joe Biden</strong> hat zum Schluss in einer Rede gesagt: „Dieser Mann darf nicht an der Macht bleiben“. Das Weiße Haus hat sich von dieser Aussage distanziert. Er hat indirekt zu einem Sturz von Putin aufgerufen.</p><p id="aef33052-a430-4c06-9f26-1325d860724e" class=""><strong>Pamela Rendi-Wagner (SPÖ-Chefin)</strong> will Bundeskanzlerin werden ➔ Nächste <strong>Nationalratswahl</strong> erst 2024</p><p id="51058feb-d3b1-4f51-a362-74beb16e69aa" class=""><strong>Bundesland Saarland</strong>: Landtagswahl hat die SPD die CDU besiegt (Ministerpräsidentin Anke Rehlinger)<br/>Nach 23 Jahre wieder stärkste Kraft<br/></p><p id="668e27dc-3cc7-4723-bfb6-d0c1e7b6eb84" class=""><strong>Chef der Industriellenvereinigung</strong> fordert Ausgleich für die hohen Energiepreise: 200 Mio Euro</p><p id="8673515d-a0db-4df8-b4c1-ba522011a60e" class=""><strong>Impfquote bei 69</strong>%; 2,8 Millionen Personen haben keinen ausreichenden Impfschutz</p><hr id="e33269cf-01f9-4108-97fc-a6ad3935f7e4"/><h2 id="3e9d0122-155b-4e46-a295-dc93347fb821" class="">U-Haft</h2><p id="8c6b8125-eeed-4027-b7ae-9740155a4a0f" class=""><strong>Untersuchungshaftrichter</strong>: Beschluss</p><p id="c8bb9b70-2057-4463-a38b-1a2f2bda4161" class=""><strong>Verwahrungshaft</strong> längstens von 48 Stunden</p><p id="513bb5ca-f27f-4696-9386-2ede43461e5d" class=""><strong>Gelindere Mittel</strong>: eine Kaution (man zahlt Geld, um entlassen zu werden), Passabnahme</p><h2 id="52765423-5159-441a-9ae6-540d809d8d0e" class="">Organe der EU</h2><ul id="e8c2fce4-9ee7-405b-aef3-3451a5b2a84c" class="bulleted-list"><li style="list-style-type:disc"><strong>Rat der EU</strong>: gesetzgebende Gewalt (Legislative) ➔ dort sitzen die jeweiligen Fachminister</li></ul><ul id="819326ed-3ba1-4121-b85d-831dceddd26b" class="bulleted-list"><li style="list-style-type:disc">Europäischer Rat: Staats- und Regierungschefs</li></ul><h3 id="e4d513b0-e09d-4c40-86d1-228e4d0d08c6" class="">EU-Verordnung:</h3><ul id="ab76067b-b63c-48c7-aa36-170096fca668" class="bulleted-list"><li style="list-style-type:disc"><strong>Roaming Gebühren</strong> (Kein Gesetz, sondern eine Verordnung)</li></ul><ul id="aa1512d6-5538-4634-b3aa-6dcef1fd3286" class="bulleted-list"><li style="list-style-type:disc"><strong>Gurken</strong> dürfen nicht zu stark gekrümmt sein, wegen den Transportkosten</li></ul><ul id="25f6dd0f-d515-4440-8585-d44e22ad5b2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Rauchverbot</strong>: nur bauliche Maßnahmen</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

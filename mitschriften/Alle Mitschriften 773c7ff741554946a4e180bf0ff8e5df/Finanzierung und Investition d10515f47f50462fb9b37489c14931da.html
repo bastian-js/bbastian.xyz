@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Finanzierung und Investition</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d10515f4-7f50-462f-b9b3-7489c14931da" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💹</span></div><h1 class="page-title">Finanzierung und Investition</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-gray">Betriebswirtschaft</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Finanzplan, Investitionsmanagement</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-pink">Matura</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><div><h1 id="9cb4b155-48fc-4618-8a05-62ed0bd0cad3" class="">Finanzmanagement</h1><h2 id="33d71827-7382-45f6-9fda-eaa7644f2da6" class="">Finanzplan (Seite 213)</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist ein <span style="border-bottom:0.05em solid">Finanzplan</span>? (Seite 213)</summary><div class="indented"><p id="d2dc1dee-b37a-4c68-aa62-b2b22781815c" class="">Dort werden alle <mark class="highlight-orange_background">laufenden</mark> und <mark class="highlight-orange_background">einmaligen</mark> Ein- und Auszahlungen festgehalten.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind Maßnahmen, um die <span style="border-bottom:0.05em solid">Einzahlungen</span> zu erhöhen? (Seite 213)</summary><div class="indented"><ul id="585b199d-d2a9-453f-82aa-51a2289a7c65" class="bulleted-list"><li style="list-style-type:disc">laufende Einzahlungen erhöhen</li></ul><ul id="be6cd2e3-54ff-4630-a586-495f85ef8704" class="bulleted-list"><li style="list-style-type:disc">Kredit aufnehmen</li></ul><ul id="68df1ee9-c8b4-4eb2-81a1-9ecceca5f3d8" class="bulleted-list"><li style="list-style-type:disc">Privateinlagen, Gesellschafter</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind Maßnahmen, um die <span style="border-bottom:0.05em solid">Auszahlungen</span> zu senken? (Seite 213)</summary><div class="indented"><ul id="abc33fc5-c6a0-4d57-9cf5-1db44ec02ac0" class="bulleted-list"><li style="list-style-type:disc">bei laufenden Auszahlungen sparen → <strong><mark class="highlight-orange_background">Rabatt</mark></strong> beim Einkauf</li></ul><ul id="fecf2bd2-1a28-417b-bfc9-e672db797d74" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Privatentnahmen</mark> verringern </li></ul></div></details><h2 id="6f7beba7-07a8-47a4-ba5b-020acca2d4a6" class="">Finanzierungsquellen</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind die <span style="border-bottom:0.05em solid">Finanzierungsquellen</span> und welche Merkmale gibt es eines Unternehmers (Seite 219)?</summary><div class="indented"><figure id="114aa85e-dada-4845-b49a-b393891679a8" class="image" style="text-align:left"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2022.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2022.png"/></a></figure><figure id="006d6e1e-f9bf-45bc-9ea0-cdfbf66b2b67" class="image" style="text-align:left"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2023.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2023.png"/></a></figure></div></details><h2 id="24c2212e-e290-4d59-a9a4-0f35e50310d0" class="">Innenfinanzierung</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten der Innenfinanzierung</span> gibt es (Seite 219)?</summary><div class="indented"><figure id="b1d46bb2-0e33-4601-b00f-c9bc5d8c3403" class="image"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2024.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2024.png"/></a></figure></div></details><h2 id="66831b6f-4892-4cb6-bf4b-db9029820323" class="">Außenfinanzierung </h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten der Außenfinanzierung</span> gibt es (Seite 228)?</summary><div class="indented"><figure id="711fbb26-4d75-4464-82b0-d98b80d26b9a" class="image"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2025.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Untitled%2025.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten von Kreditsicherheiten</span> gibt es (Seite 229)?</summary><div class="indented"><figure id="4690a057-44c5-48d4-be65-0797d84ea1e6" class="image"><a href="Band%203%206594b9b88cc748168f28f35528281f2d/Bildschirmfoto_2023-02-20_um_23.42.39.png"><img style="width:432px" src="Band%203%206594b9b88cc748168f28f35528281f2d/Bildschirmfoto_2023-02-20_um_23.42.39.png"/></a></figure><p id="bef3d47b-bb44-4cb7-96b3-a3a4cb848a40" class=""><span style="border-bottom:0.05em solid"><strong>Bürgschaft</strong></span></p><ul id="ba694480-3b0c-447c-b2b2-99f2bd1a335a" class="bulleted-list"><li style="list-style-type:disc">Ausfallsbürgschaft (Teilhaftung)</li></ul><ul id="5aa462fa-98d7-44dc-8556-bbaec54a7c3b" class="bulleted-list"><li style="list-style-type:disc">einfache/subsidäre Bürgschaft (Gläubiger muss erst mahnen)</li></ul><ul id="beb63b54-ba51-4da9-9073-2c9d7e60cffd" class="bulleted-list"><li style="list-style-type:disc">solidarische Bürgschaft (Gläubiger kann wählen von wem er die Schuld einfordert)</li></ul><p id="3ad3322e-9f6c-4df2-a580-7a35be3df562" class=""><span style="border-bottom:0.05em solid"><strong>Wechsel</strong></span>: Wertpapiere → <mark class="highlight-orange_background">bestimmter Betrag</mark> wird zu einem <mark class="highlight-orange_background">bestimmten Zeitpunkt</mark> bezahlt (diskontiert → es wird vor der Fälligkeit an eine Bank verkauft)</p><p id="14690185-08a1-4151-b0ad-62d440550fb6" class=""><span style="border-bottom:0.05em solid"><strong>Lombard</strong></span>: Wertpapierlombard, Edelmetalllombard und Warenlombard</p><p id="77f38d3d-957a-4969-a9e0-98567fe13667" class=""><span style="border-bottom:0.05em solid"><strong>Hyptothek</strong></span> sind im <mark class="highlight-orange_background"><strong>Lastenblatt</strong></mark> des Grundbuches eingetragen.</p><p id="80952e23-b176-4913-96e0-228f8a8f91ec" class=""><span style="border-bottom:0.05em solid"><strong>Forderungsabtretung (Zession)</strong></span>: Lieferung „auf Ziel” → Forderung wird an die <mark class="highlight-orange_background">Bank übergeben</mark></p><p id="ea8895a5-7080-42df-80eb-057b1fc05564" class=""><span style="border-bottom:0.05em solid"><strong>Sicherheitsübereignung</strong></span>: Besitzer kann die Sachen weiterhin <mark class="highlight-orange_background">benutzen</mark></p><p id="84cbda70-cdbc-45fb-99d2-9056f9baa593" class=""><span style="border-bottom:0.05em solid"><strong>Eigentumsvorbehalt</strong></span>: Sache, bleibt für die Dauer des Kredits „<mark class="highlight-orange_background">Eigentum</mark>” des Verkäufers</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was ist eine <span style="border-bottom:0.05em solid">Zession</span>?</summary><div class="indented"><p id="22c6f2ab-aa3a-407f-a1a3-358479a89548" class=""><span style="border-bottom:0.05em solid"><strong>Forderungsabtretung</strong></span>: Lieferung „auf Ziel” → Forderung wird an die <mark class="highlight-orange_background">Bank übergeben</mark></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Provisionen</span> können verrechnet werden (Seite 231)?</summary><div class="indented"><ol type="1" id="b13ad089-1c7f-40ed-8a8f-92f366ac341e" class="numbered-list" start="1"><li>Zuteilungsprovisionen → bei <mark class="highlight-orange_background">Krediteinräumungen</mark></li></ol><ol type="1" id="31bc5c43-03b3-4065-bcb4-4f61e21dd638" class="numbered-list" start="2"><li>Kreditprovisionen → bei ausgenützen <mark class="highlight-orange_background">Kreditrahmen</mark></li></ol><ol type="1" id="eb6d9254-c04f-4767-8ef9-ca97268894dd" class="numbered-list" start="3"><li>Umsatzprovisionen</li></ol><ol type="1" id="1036e25d-e196-485c-8542-9fdd0adef1b5" class="numbered-list" start="4"><li>Überziehungsprovisionen</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Arten der Kreditfinanzierung</span> gibt es (Seite 231)?</summary><div class="indented"><p id="d707e40a-140e-4aa2-b755-372eb537d98d" class=""><span style="border-bottom:0.05em solid"><strong>Lieferantenkredit</strong></span>: Lieferung auf Ziel → zahlbar innerhalb von … Tagen</p><p id="0ec7cff8-b133-4531-ab54-703e89324a5b" class=""><span style="border-bottom:0.05em solid"><strong>Kontokorrentkredit</strong></span>: an ein Girokonto gebunden und wird bis zu einer maximalen Höhe („Kreditrahmen“ oder „Kreditlimit“) ausgegeben</p><p id="e3ed5848-8436-471d-82af-7480c0c7ff92" class=""><span style="border-bottom:0.05em solid"><strong>Langfristige Bankdarlehen</strong></span><strong> </strong>→ Einmalig ausgezahlen und in Raten zurückbezahlen</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Welche <span style="border-bottom:0.05em solid">Sonderfinanzierungsformen</span> gibt es (Seite 234)?</summary><div class="indented"><p id="ec0a5058-5620-4b27-aa2c-82fff42fa836" class=""><span style="border-bottom:0.05em solid"><strong>Factoring</strong></span>: Buchforderungen werden an eine Factoringbank verkauft.</p><p id="1cb5612a-1aa9-485f-b9e1-4e6531987fde" class=""><span style="border-bottom:0.05em solid"><strong>Leasing</strong></span>: Überlassung von Investitionsgütern</p><p id="a8b4dd7a-a31d-4da7-9a54-2cdc2fc571bb" class=""><span style="border-bottom:0.05em solid"><strong>Sale and lease back</strong></span>: Investitionsgüter werden gekauft und über Leasing finanziert</p></div></details><h1 id="edf4b2cd-1086-4adf-ae36-3eda7565d96b" class="">Investitionsmanagement</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind <span style="border-bottom:0.05em solid">Arten von Investitionen</span>? (Seite 277)</summary><div class="indented"><figure id="09abe84b-8a9a-4430-9993-c41e26865979" class="image" style="text-align:left"><a href="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.05.png"><img style="width:336px" src="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.05.png"/></a></figure><ul id="4cada5c5-9faa-4049-89b8-50dd612fa67e" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Erweiterunginvestition</strong></span>: Produktausweitung</li></ul><ul id="d5894da7-2fbd-4fe8-af38-c5309a2dafa8" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Rationalisierungsinvestition</strong></span>: zur <mark class="highlight-orange_background">Senkung</mark> der <mark class="highlight-orange_background">Produktionskosten</mark></li></ul></div></details><h2 id="dcba9626-760f-40eb-8f69-eeaf87438d87" class="">Tools für Investitionsentscheidungen</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Was sind <span style="border-bottom:0.05em solid">Tools für Investitionsentscheidungen</span>? (Seite 282)</summary><div class="indented"><figure id="780c50a1-6140-42f0-9bfb-85e8e3b1e455" class="image" style="text-align:left"><a href="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.40.png"><img style="width:336px" src="Band%203%20-%20Teil%202%20246efcbdbf2042b5871d43c36142b3ca/Bildschirmfoto_2023-02-24_um_08.45.40.png"/></a></figure><p id="67e27dc9-70e0-4e4f-9081-6e578cad0ddc" class=""><span style="border-bottom:0.05em solid"><strong>Kostenvergleichsrechnung</strong></span>: <mark class="highlight-orange_background">Kosten</mark> (z.B.: pro Jahr) werden berechnet und verglichen.</p><p id="0c70b94f-cd06-42a9-b3ee-5eaae5f42b06" class=""><span style="border-bottom:0.05em solid"><strong>Rentabilitätsvergleichsrechnung</strong></span>: Mit welchem Zinssatz verzinst sich die Investition → Gewinn im Vergleich zum eingesetzten Kapital</p><p id="e450e722-c6d7-423f-84c4-305e24828f99" class=""><span style="border-bottom:0.05em solid"><strong>Amortisationsrechnung</strong></span>: In welchem Zeitraum rechnet/amortisiert sich die Investition?</p><p id="153b892c-c549-4072-bf5f-8a0a550ffe9e" class=""><span style="border-bottom:0.05em solid"><strong>Scoringmethode</strong></span>: z.B.: Punkte werden an Fahrzeuge vergeben</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie funktioniert die <span style="border-bottom:0.05em solid">Scoring-Methode</span>? (Seite 284)</summary><div class="indented"><p id="67e06e27-362e-422f-bbb1-8cc728bdb3ce" class=""><strong>Merkmale</strong> und <strong>Kriterien</strong> werden mit Punkten vergeben → <strong><mark class="highlight-orange_background">höchste Punkteanzahl</mark></strong> gewinnt</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie wird eine <span style="border-bottom:0.05em solid">Kostenvergleichsrechnung</span> gerechnet? (Seite 285)</summary><div class="indented"><ul id="194fd1bd-87df-4881-a0f7-3ac9a2bc1efe" class="bulleted-list"><li style="list-style-type:disc">Kalk. Abschreibung → (AW – RW) / Nutzungsdauer</li></ul><ul id="ac921a3e-41d4-4461-b6ff-1c8b04e437ee" class="bulleted-list"><li style="list-style-type:disc">Kalk. Zinsen → (AW + RW / 2) * Zinssatz</li></ul><ul id="a0c9104a-d1fc-4ab4-8eba-95a46a66757f" class="bulleted-list"><li style="list-style-type:disc">Variable Kosten</li></ul><ul id="24034dcf-0ba4-4d21-ad5c-d8d77db0930c" class="bulleted-list"><li style="list-style-type:disc">Fixkosten</li></ul><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="494a0cea-f9d4-4659-b97b-930e190506cf"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>kritische Menge/Auslastung</strong></span>: Ab diesem Absatz ist die andere Investition billiger. <br/>→ Differenz Fixkosten/Differenz var. Kosten pro Stück<br/></div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie wird eine <span style="border-bottom:0.05em solid">Rentabilitätsvergleichsrechnung</span> gerechnet? (Seite 288)</summary><div class="indented"><p id="3f503ed6-0de2-4abe-98d8-15bad58c2261" class=""><span style="border-bottom:0.05em solid"><strong>Gewinn</strong></span> = Ertrag - var. Kosten - Fixkosten - Abschreibung</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="77a338a6-a4cd-4185-99b0-ea29b2181485"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>Rentabilität</strong></span> = Gewinn / durchschnittlich gebundenes Kapital<br/>→ <br/><mark class="highlight-orange_background">Keine</mark> kalkulatorischen Zinsen beachten</div></figure><p id="b77bc107-bae2-4335-9f5b-d4f71a3fe491" class="">Durchschnittlich gebundenes Kapital = (AW + RW) / 2</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie wird eine <span style="border-bottom:0.05em solid">Armortisationsrechnung</span> gerechnet? (Seite 289)</summary><div class="indented"><p id="e6dcd70b-6d05-4ae4-84b5-219d1fc6834b" class="">Keine Kalkulatorische Abschreibung!</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2b15310b-ca5a-43fa-b7be-dfe4395ba19e"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>Amortisationszeit</strong></span>: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mtext>Anschaffungskosten - Restwert</mtext><mtext>Gewinn</mtext></mfrac></mrow><annotation encoding="application/x-tex">\frac {\text{Anschaffungskosten - Restwert}} {\text{Gewinn}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2772em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Gewinn</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Anschaffungskosten - Restwert</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span></div></figure></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

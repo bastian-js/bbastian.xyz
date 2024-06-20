@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Einkauf und Beschaffung</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ebe3509c-9059-471e-892d-8ddbeab3b8bd" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🛍️</span></div><h1 class="page-title">Einkauf und Beschaffung</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-gray">Betriebswirtschaft</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Lagerung, Spediteure</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-pink">Matura</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><div><h1 id="da548fd5-2dcb-4aaa-906c-69aaa961e752" class="">Materialwirtschaft</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Aufgaben vom Materialwirtschaft (S. 203)</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="1d85a0e7-3e1e-4d63-97c1-12a0a0a22cf2"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Das Unternehmen mit allen nötigen Gütern und Leistungen zu versorgen.</div></figure><ul id="0825ebfc-45f0-4bf2-b47e-1764e2bef61b" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Beschaffen</strong></span>, <span style="border-bottom:0.05em solid"><strong>Lagern</strong></span>, <span style="border-bottom:0.05em solid"><strong>Verteilen</strong></span>, <span style="border-bottom:0.05em solid"><strong>Entsorgen</strong></span></li></ul><p id="343782ca-bde3-479c-b2b0-1fcc0019d163" class="">Güter sollten in der richtigen <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Qualität</span></mark>, <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Menge</span></mark>, zum <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">richtigen Zeitpunkt</span></mark>, am <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">richtigen Ort</span></mark> und unter <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Minimierung der Kosten</span></mark>.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Bedeutung von Materialwirtschaft (S. 204)</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="8fed2339-2b02-4443-852d-3ee0b46059f9"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Wichtig weil,<br/>1. <br/><span style="border-bottom:0.05em solid"><strong>Waren- und Materialkosten</strong></span> sind sehr hoch<br/>2. <br/><span style="border-bottom:0.05em solid"><strong>Anteil der Vorräte</strong></span> ist in manchen Branchen sehr hoch.</div></figure></div></details><h2 id="bae80808-bf7c-4b93-b67d-b3d563bae79c" class="">Beschaffung und Entsorgung</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Beschaffung und Entsorgung (S. 207)</summary><div class="indented"><ul id="d332cbd9-913a-426f-ae8e-4543150b9c82" class="bulleted-list"><li style="list-style-type:disc"><strong>Beschaffungsplanung</strong> (Menge, Termine, …)</li></ul><ul id="fb15ea1d-63c9-49c3-93e3-14530b31b79c" class="bulleted-list"><li style="list-style-type:disc"><strong>Beschaffungsdurchführung</strong> (Angebotseinholung, Angebotsprüfung, …)</li></ul><ul id="18e581f6-2257-4805-a1a0-c5d5ca849eba" class="bulleted-list"><li style="list-style-type:disc"><strong>Beschaffungskontrolle</strong> (Qualität, Liefertermine, …)</li></ul><p id="2160f122-82fd-4ee8-a51a-8c57ab71014e" class=""><br/>„Alltagsgeschäft”: <br/><span style="border-bottom:0.05em solid"><strong>operative Entscheidungen</strong></span> → wiederkehrende Entscheidungen</p><p id="9f0a51dd-14a1-4bac-a6ac-ebe624ad4fdf" class="">Beschaffungsplanung (Menge, Qualität, Zeitpunkt, Ort, Kosten): <span style="border-bottom:0.05em solid"><strong>strategische Entscheidungen</strong></span> → langfristig</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Beschaffungsmarketing</summary><div class="indented"><p id="3d710ea9-cba3-4690-b800-15f0cf6782cf" class=""><strong>Beschaffungsmarktforschung</strong>: <br/><br/><span style="border-bottom:0.05em solid"><strong>Sekundärforschung</strong></span> (Auswerten unternehmensinterner Unterlagen), <br/><br/><span style="border-bottom:0.05em solid"><strong>Primärforschung</strong></span> (Befragung und Beobachtung), <br/><br/><span style="border-bottom:0.05em solid"><strong>Internet</strong></span> (Recherche)<br/><br/></p><ol type="1" id="0d23d078-a4f5-475b-a607-eca9003a9e2a" class="numbered-list" start="1"><li><mark class="highlight-orange_background">Was</mark> wird eingekauft? (<span style="border-bottom:0.05em solid"><strong>Beschaffungsprogrammpolitik</strong></span>) → <mark class="highlight-orange_background">Welche Güter</mark> und in <mark class="highlight-orange_background">welcher Menge</mark></li></ol><ol type="1" id="471efbc4-8103-4a54-bd82-cd20cb06d084" class="numbered-list" start="2"><li>Zu welchem <mark class="highlight-orange_background">Preis</mark>? (<span style="border-bottom:0.05em solid"><strong>Beschaffungspreispolitik</strong></span>) → Einfluss von Rabatten, Zahlungsbedingungen<ol type="a" id="666f1ec7-f588-4077-bea7-909203fd1946" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">passive Preis- und Konditionspolitik</span>: güstige Preise und Konditionen durch Angebote.</li></ol><ol type="a" id="15088214-5e55-4af8-992a-6e7a54b70fa3" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">aktive Preis- und Konditionspolitik</span>: Preis durch Verhandlungen verbessern.</li></ol></li></ol><ol type="1" id="1db2d58a-f79b-4809-9ff3-98d85110cfb8" class="numbered-list" start="3"><li><mark class="highlight-orange_background">Wie</mark> und von <mark class="highlight-orange_background">wem</mark> einkaufen? (<span style="border-bottom:0.05em solid"><strong>Beschaffungsmethodenpolitik</strong></span>) <ol type="a" id="c83a5e97-3c6d-4638-aa9b-31425d6b03aa" class="numbered-list" start="1"><li>Wer kauft ein? <span style="border-bottom:0.05em solid">betriebseigene</span> (Einkaufsabteilung) oder <span style="border-bottom:0.05em solid">betriebsfremde</span> (Handelsvertreter) Einkäufer.</li></ol><ol type="a" id="aeef5c98-5f25-486b-b238-4c8ee1b3be80" class="numbered-list" start="2"><li>Wo wird eingekauft? <span style="border-bottom:0.05em solid">direkt</span> (Produzent) oder <span style="border-bottom:0.05em solid">indirekt</span> (über den Handel)</li></ol><ol type="a" id="1a183b3b-c479-470a-96fb-cf7e053cf389" class="numbered-list" start="3"><li>Wie ist der Einkauf organisiert? <br/><br/><span style="border-bottom:0.05em solid">zentralisiert</span> (von einer Stelle aus) oder <span style="border-bottom:0.05em solid">dezentralisiert</span> (von mehreren Stellen)<figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="809d959f-9535-430b-aed7-24eca3c190c0"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Vor- und Nachteile des zentralen Einkaufs<br/>+ kostengünstige Beschaffung (größere Mengen), bessere Marktübersicht/Kontrolle<br/>– mehr Verwaltungsaufwand, durch längere Bestellwege<br/></div></figure></li></ol></li></ol><ol type="1" id="392069c8-7551-4fb0-a8ff-c98d4c35a022" class="numbered-list" start="4"><li>Wie <mark class="highlight-orange_background">präsentiert</mark> man sich dem Käufer? (<span style="border-bottom:0.05em solid"><strong>Beschaffungskommunikationspolitik</strong></span>) → Aufbau eines guten Images</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Beschaffungsprinzipien</summary><div class="indented"><ul id="de7d5a09-d538-4efa-ac86-e0beb27858a3" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Vorratsbeschaffung</strong></span>: Artikel ist immer auf Lager (ständige Lieferbereitschaft, kostengünstig durch hohe Mengen; hohe Lagerkosten, Gefahr auf Veralterung)</li></ul><ul id="ad67b244-ae2b-4190-bc0a-c168de14dfe6" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Einzelbeschaffung</strong></span>: Bestellung, wenn benötigt (kurze Lagerdauer, geringe Kapitalbindung; Lieferbereitschaft nicht immer möglich → Wartezeiten)</li></ul><ul id="7b901df6-0378-49df-9966-caa0898aae4e" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Just-in-Time Beschaffung</strong></span>: Bestellung, wenn für die Produktion benötigt (Hohe Konventionalstrafen)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Beschaffungsmengen</summary><div class="indented"><ul id="e27eb8d8-18ed-4a86-91f8-23b18f831721" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Materialbedarf</strong></span>: Wie viel wird benötigt? → geplanter Absatz und Kundenaufträge, Marktforschung</li></ul><ul id="13fc77cd-3bf5-472f-98e7-8d2f6e73e9f1" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Beschaffungszeit</strong></span>: Wie lange dauert es bis zur Lieferung? → Beschaffungsvorbereitungszeit, Lieferzeit, Transportzeit und Prüfzeit</li></ul><ul id="df8bdd42-f768-4628-afbb-7f94eded5de1" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Beschaffungsmenge</strong></span>: Kleine (weniger Lagerkosten) oder große Mengen (höhere Lagerkosten)<figure id="f00f6a8a-eded-45ec-ae43-a8af6d10da23" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled.png"><img style="width:336px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled.png"/></a></figure><ul id="81e5909a-567c-4ec2-94b7-48a93fcb437d" class="bulleted-list"><li style="list-style-type:circle">branchenübliche Mindestbestellmenge</li></ul><ul id="515c215a-cdae-403d-8a18-bdbddd784007" class="bulleted-list"><li style="list-style-type:circle">Ausnutzung Frachtraum</li></ul><ul id="1ab8e1e1-0080-4ac6-a551-b61ff5d0c96f" class="bulleted-list"><li style="list-style-type:circle">Modeänderungen</li></ul><ul id="71e96fa9-e30d-4aae-806c-749c3f1e2114" class="bulleted-list"><li style="list-style-type:circle">drohende Materialengpässe (Sicherheitseinkäufe)</li></ul></li></ul><ul id="a47ba81f-6e21-4083-85f4-cd7825ff5e68" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Beschaffungstermin</strong></span>: Wann soll bestellt werden?<ul id="c36328ad-cc0d-4fda-aecc-c1962f30f3ab" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Bestellpunktsystem</span>: Festlegung eines <strong><mark class="highlight-orange_background">Meldebestands</mark></strong> (Mindestbestand) → Bestellung bei Unterschreitung (bei <mark class="highlight-orange_background"><strong>vollständigem Verbrauch</strong></mark> oder ab Erreichen des <mark class="highlight-orange_background"><strong>Sicherheitsbestands</strong></mark> → nach <strong>Verbrauch</strong> oder <strong>Beschaffungszeit</strong>)<p id="3a99d74e-f3da-4ad9-ba04-d4b7d0f44ce9" class="">„<strong>eiserner Bestand</strong>”: Reservebestand</p></li></ul><ul id="4d1b8031-1e3a-43ba-a5f8-adfe7a42eb8d" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Bestellrhythmussystem</span>: Festlegung eines <strong><mark class="highlight-orange_background">Zeitabstand</mark></strong> (z.B.: 2 Wochen) und <mark class="highlight-orange_background"><strong>Richbestandes</strong></mark> (Menge, auf die das Lager aufgefüllt wird)</li></ul><ul id="8183bc62-19eb-4666-897f-b0ddbb571ba6" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Optionalsystem</span>: bei schwankendem Verbrauch (nach Zeitabstand oder Meldebstand …)</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lieferantenmanagement (S. 218)</summary><div class="indented"><p id="cab17b04-e57a-4f94-9760-c29223071840" class="">Auswahl neuer Lieferanten → Preis, Qualität, Lieferkonditionen, Lieferzuverlässigkeit und Nebenleistungen.</p><p id="40cef0e2-4ba4-4bc2-9bd7-70c80197298a" class="">Lieferantenbeziehungen: <strong><span style="border-bottom:0.05em solid">Versorgungswirtschaft</span></strong> (durch den <mark class="highlight-orange_background"><strong>Beschaffungswert</strong></mark> der Güter beeinflusst → Auswirkung auf den Gewinn), <strong><span style="border-bottom:0.05em solid">Versorgungssicherheit</span></strong> (durch das <mark class="highlight-orange_background"><strong>Beschaffungsrisiko</strong></mark> beeinflusst → Wahrscheinlichkeit, dass der Lieferant ausfällt)</p><figure id="b39216cd-a551-4af0-927a-b5eac6260882" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_21.29.09.png"><img style="width:288px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_21.29.09.png"/></a></figure><ul id="0ac0798f-3f97-4673-b100-8cdce933e27d" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>strategische Lieferanten</strong></span>: langfristige Zusammenarbeit; besonderes Vertrauensverhältnis</li></ul><ul id="93447400-7eb5-41db-9285-359537830d74" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Engpasslieferanten</strong></span>: langfristige Verträge empfehlenswert → Versorgungsengpässe; Zusätzliche flexible Verträge → falls ein Lieferant ausfällt</li></ul><ul id="4a50acec-87f9-4447-b5a5-e2dd4227c619" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Hebellieferanten</strong></span>: kurzfristige Verträge → Versorgungsrisiko gering, weil genügend Lieferanten; Beschaffungswert hoch</li></ul><ul id="86e53a22-cd8f-4355-8d3c-505b31e664ef" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Standardlieferanten</strong></span>: kostengünstige Produkte.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Entsorgung</summary><div class="indented"><p id="2e5a6920-2514-4e59-996d-5f5f82024678" class="">Bedeutung steigend, wegen <strong>Umweltschutz</strong>.</p></div></details><h2 id="728c1572-65f8-4e84-bfea-1e1714b4c1f5" class="">Lagerung</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lagern und Verteilen</summary><div class="indented"><p id="0c913297-6a3e-459c-a426-42bc9a424601" class="">Funktionen: <span style="border-bottom:0.05em solid"><strong>Ausgleich</strong></span> (Überbrückung zwischen Beschaffung und Verwendung), <span style="border-bottom:0.05em solid"><strong>Umformung</strong></span> (Materiale werden in einen anderen Zustand gebracht)</p><ul id="8a5f7071-2274-46bc-9921-4b66e4a70c55" class="bulleted-list"><li style="list-style-type:disc">Guter Anschluss an außer- und innerbetriebliche Transportsysteme: Zufahrtsmöglichkeiten, Anschlussgleise, Laderampen</li></ul><ul id="e8c45724-0e63-4cdf-933a-35690218b884" class="bulleted-list"><li style="list-style-type:disc">Lagerordnung<ul id="d93aa0b1-8ae4-4728-8a6e-c7478640f407" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Festplatzsystem</strong></span>: Jedes Lagergut hat einen festgelegten und reservierten Platz. → übersichtlich und leichte Kontrolle der Bestände.<br/>„schnell/langsam drehende Ware”: Ware, die täglich/nicht täglich verkauft wird<br/></li></ul><ul id="eaeb79ab-4233-42b6-8e31-0fef5ca5054d" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>chaotisches System</strong></span>: jeder nächstliegende freie Lagerplatz wird verwendet → raumsparend</li></ul></li></ul><ul id="747d5d3c-64c2-4eb8-b891-687f35d5d857" class="bulleted-list"><li style="list-style-type:disc">Transport- und Stapeleinheiten: Einlagerung in gleichen Stapeleinheiten</li></ul><ul id="57f9ead9-29bf-4016-b463-3bbd41efa3a1" class="bulleted-list"><li style="list-style-type:disc">Kontrolle unter Beachtung der Wirtschaftlichkeit: Lagerfachkarten (mengenmäßige Kontrollkarten in den Regalen), Lagerkarteikarten (mengenmäßige Lagerbuchhaltung)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">ABC- und XYZ Analyse</summary><div class="indented"><ul id="97eee4c2-35b0-4793-9229-43a54f4eb9bd" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">ABC-Analyse</span>: Einteilung nach dem <mark class="highlight-orange_background"><strong>relativen Anteil</strong></mark> der Güter <mark class="highlight-orange_background"><strong>am Gesamtwert</strong></mark>.<ul id="ff5f515c-ed7e-427a-b0a9-8cfff5b9a058" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Erfassung</strong></span> der Artikelgruppen: Stückwert und Jahresverbrauch</li></ul><ul id="2e12ab58-9c3c-4851-b57c-c3588fb0fd2f" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Sortierung</strong></span>: Ermittlung und Sortierung des Verbrauchswert (Stückwert * Jahresverbrauch)</li></ul><ul id="d883c8f0-e149-4423-8da5-272ed50be972" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Berechnung</strong></span> der Summe der Verbrauchswerte, prozentuellen Anteils am Gesamtverbrauchswert und kumulierten Anteils.</li></ul><ul id="378dbf53-1585-4b1e-8e73-eb0dd0ce8081" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Auswertung</strong></span>: Zuordnung der Artikelgruppen zu den Wertgruppen.</li></ul><p id="a2248d98-642f-4180-808c-a023f59a1efd" class="">A-Güter: exakte Bestellmengen, Prüfung Preise und Konditionen, …<br/>B-Güter: Mittelstellung<br/>C-Güter: Einkauf großer Mengen, geringer Aufwand, dezentrale Lagerung, …<br/></p></li></ul><ul id="a2797e07-71b5-4c98-8813-c04926ab057c" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">XYZ-Analyse</span>: Vorhersagen des Materialbedarfs<ul id="fc28457a-4620-4b83-9d1f-e35a1ca08c22" class="bulleted-list"><li style="list-style-type:circle"><strong>X-Güter</strong>: konstanter Verbrauch → <mark class="highlight-orange_background">hohe</mark> Vorhersagegenauigkeit</li></ul><ul id="3b167ef4-46ec-4fa1-8a83-f9be8dcf30a9" class="bulleted-list"><li style="list-style-type:circle"><strong>Y-Güter</strong>: Verbrauch mit starken Schwankungen → <mark class="highlight-orange_background">mittlere</mark> Vorhersagegenauigkeit</li></ul><ul id="7b7e4ca1-be56-4885-9de5-4575213940f4" class="bulleted-list"><li style="list-style-type:circle"><strong>Z-Güter</strong>: unregelmäßiger Verbrauch → <mark class="highlight-orange_background">niedrige</mark> Vorhersagegenauigkeit</li></ul></li></ul><p id="6b336088-b00f-4565-8ba2-dce1a96f0f68" class=""><strong>AX-Güter</strong>: Menge und Termin muss genau geplant werden</p><p id="085d2304-e874-42be-ad3d-cb05e5b3f5fa" class=""><strong>AZ-Güter</strong>: Planung schwierig → bei wertvollen Gütern sorgfälltig</p><p id="941911b5-04cb-4135-8cc6-5e6c8013c57b" class=""><strong>CZ-Güter</strong>: großzügigere Planung, durch geringer Wert der Ware → Rahmenverträge mit Lieferanten</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Kosten der Materialwirtschaft</summary><div class="indented"><figure id="69fadb8a-eda2-4936-9023-71ca63e076b3" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.09.45.png"><img style="width:480px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.09.45.png"/></a></figure><ul id="5dc717cf-4351-4a29-88fb-8bc585b6f780" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Beschaffungskosten</strong></span>: <mark class="highlight-orange_background">unmittelbar</mark> (Menge * Preis pro Einheit) und <mark class="highlight-orange_background">mittelbar</mark> (Personalkosten, Bestellung, Terminüberwachung)</li></ul><ul id="24018d2a-f52f-4f13-9586-f1b5455e51e3" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Lagerhaltungskosten</strong></span>: Kapitalbindungkosten, Lagerraumkosten, Lagerpersonalkosten und Wertminderung (Schwund, …)</li></ul><ul id="71d045ae-a575-4f55-97dd-b7458c909548" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Fehlmengenkosten</strong></span>: Preisdifferenzen (Beschaffung von Ersatzgütern), entgangene Gewinne, Konventionalstrafen oder Goodwillverluste (Ruf leidet)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Kennzahlen der Materialwirtschaft</summary><div class="indented"><ul id="dec17b94-3c27-4720-97e7-7fa456c93a78" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Beschaffungskennzahlen</strong></span>:<ul id="6567a477-9c4a-4623-baeb-1e996b8473cb" class="bulleted-list"><li style="list-style-type:circle"><strong><mark class="highlight-orange_background">Materialintensität</mark></strong>: Höhe des Wareneinsatzes am Gesamtumsatz<figure id="7899c7b2-fe3f-4a7b-b01b-59abbda0d8dd" class="image"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.15.46.png"><img style="width:288px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.15.46.png"/></a></figure></li></ul><ul id="d7ff2065-71fb-4d82-9048-7c6b1830cdce" class="bulleted-list"><li style="list-style-type:circle"><strong><mark class="highlight-orange_background">Kosten pro Bestellung</mark></strong>: im Zeit- und Branchenvergleich<figure id="c8e07668-7929-43a6-af98-9bccb65a69c5" class="image"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled%201.png"><img style="width:288px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled%201.png"/></a></figure></li></ul></li></ul><ul id="b9b79386-7534-43d1-a8b9-05c9e9c5107a" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Lagerkennzahlen</strong></span>: <ul id="2f716131-fdbd-4d8b-85f6-ad703d261ed8" class="bulleted-list"><li style="list-style-type:circle"><strong><mark class="highlight-orange_background">Lagerumschlagshäufigkeit</mark></strong>: geringe Raumkosten, Risiko, Wartungskosten und Kapitalbedarf<br/>Erreichbar durch <br/><span style="border-bottom:0.05em solid">Lagerverminderung</span> (Einschränkung Sortiment, Verkürzung Beschaffungszeit)<figure id="0262e45c-bb6c-473d-953e-1a28a433f4ae" class="image"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.16.53.png"><img style="width:288px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.16.53.png"/></a></figure></li></ul><ul id="ad603a27-efa5-4743-81ab-6beb1c900e0c" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background"><strong>Lagerumschlagsdauer</strong></mark><figure id="a6689948-b127-44bf-a2db-e8b9ac365a46" class="image"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.17.30.png"><img style="width:288px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.17.30.png"/></a></figure></li></ul><ul id="32781abe-cbfe-4e7d-b028-3a1e371dc458" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background"><strong>Lieferbereitschaft</strong></mark>: Wie viel Prozent der Bestellungen vom Lager könen erfüllt werden?<figure id="9db9cfd2-1d22-472a-b1c2-c9e9a3f2570f" class="image"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled%202.png"><img style="width:288px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled%202.png"/></a></figure></li></ul></li></ul><p id="f8a5659e-0fe8-43c0-8692-7415e95bd1bf" class="">
+</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="9a3e7972-ab9e-448a-bced-6445aecdbc45"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Kennzahlen können mengenmäßig/wertmäßig oder für das gesamte Lager berechnet werden. </div></figure></div></details><hr id="07f724d2-df2b-4668-b264-b2f6e53ec3ea"/><h1 id="254c7ece-c8b9-4a05-bb4e-941efff01831" class="">Spediteure</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Leistungsangebot/Definition von Spediteueren</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="7baca5b3-9e41-429c-9fa6-65654f065f37"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Ein Spediteur organisiert Transporte!</div></figure><p id="fb2cbdbc-12fb-46a0-b487-c354144a4bcc" class="">
+</p><figure id="138a3786-7a3f-4bd6-8785-d3fa12eb2cb6" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.25.45.png"><img style="width:384px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.25.45.png"/></a><figcaption>Aufgaben von Spediteuren</figcaption></figure><p id="cb6a427a-e17a-4c25-905d-4fff7798f732" class="">„<span style="border-bottom:0.05em solid"><strong>Selbsteintritt</strong></span>”: Spediteur darf die Beförderung der Ware selbst ausführen.</p><ul id="3250329d-488f-4a5f-a560-8d6b57884abe" class="bulleted-list"><li style="list-style-type:disc">Zeit- und Kostenersparnis</li></ul><ul id="16bdcaf8-6138-463e-a33c-e81ff92bc0c6" class="bulleted-list"><li style="list-style-type:disc">Versandvorteile → Sammelladungen</li></ul><ul id="a38cf6cf-a0a4-40a5-9796-f7167e515632" class="bulleted-list"><li style="list-style-type:disc">sichere Kalkulationsgrundlage</li></ul></div></details><h2 id="97b2dcef-6602-4413-9976-882c50383ca2" class="">Handelsbetriebe</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Funktionen eines Einzelhandelbetriebs</summary><div class="indented"><figure id="4b364d9a-bd89-4170-a394-3f0a4496ed53" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.29.49.png"><img style="width:480px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.29.49.png"/></a></figure><ul id="f465a6fb-70f1-4afb-ae05-57cfdcc0a4f0" class="bulleted-list"><li style="list-style-type:disc"><strong>räumliche Funktion</strong>: Räume werden durch Transport überbrückt</li></ul><ul id="caeba181-89b4-4e0b-88e6-470081945932" class="bulleted-list"><li style="list-style-type:disc"><strong>zeitliche Funktionen</strong>: Zeit wird durch Lagerhaltung überbrückt</li></ul><ul id="d6bff932-c35f-4a90-abbf-7fc794360074" class="bulleted-list"><li style="list-style-type:disc"><strong>Quantitätsfunktion</strong>: Handel verteilt die Waren</li></ul><ul id="7c20ecb3-2df7-4cac-a482-464cdc4645be" class="bulleted-list"><li style="list-style-type:disc"><strong>Qualitätsfunktion</strong>: Zusammenstellung des Sortiments</li></ul><ul id="ba09a244-488a-4245-aa19-7b02aba9e863" class="bulleted-list"><li style="list-style-type:disc"><strong>Servicefunktion</strong>: Serviceleistungen → Beratung, …</li></ul><ul id="18d3d425-aa2e-4cf0-b90a-c0015c5498f8" class="bulleted-list"><li style="list-style-type:disc"><strong>Kreditfunktion</strong>: Verkauf „auf Ziel” (spätere Bezahlung)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Unterscheidungsmerkmale Einzelhandel</summary><div class="indented"><figure id="99b41189-f7ec-4474-9bd5-9fd2dfd9aedb" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled%203.png"><img style="width:480px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Untitled%203.png"/></a></figure><ul id="c69c23f6-2100-4d01-8c43-9dee54f77fa4" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Vertriebssysteme</strong></span><ul id="d90fbe2e-4ef7-47c0-98d8-99e43a3fcab4" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Handelsketten</span>: vielen Fillialen, zentrale Verwaltung</li></ul><ul id="78e563ad-9154-41d3-b899-ac4343fc08bf" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Franchisesysteme</span>: …</li></ul><ul id="2441f550-80e9-4254-bec6-af3e1e0544e1" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Verbundgruppen</span>: selbstständige schließen sich zum z.B.: gemeinsamen Einkauf zusammen</li></ul></li></ul><ul id="09ca269b-f640-481c-8a82-d87a62edda23" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Verkaufsmethoden</strong></span><ul id="e48da7e5-15cb-42d4-9bc6-bb032704966f" class="bulleted-list"><li style="list-style-type:circle">Bedienungssysteme: <span style="border-bottom:0.05em solid">Fremdbedienung</span> und <span style="border-bottom:0.05em solid">Selbstbedienung</span> (Vorwahl: Kunde informiert sich selbst; volle Selbstbedienung)</li></ul><ul id="57b88901-2953-4d54-afc6-df905c142617" class="bulleted-list"><li style="list-style-type:circle">Gestaltung: Shop-Design (Aufstellung Regale), Warenpräsentation (Zeitersparnis bei der Suche)</li></ul></li></ul><ul id="e4b4362c-59cc-40c0-834b-69c994a1b211" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Sortimentsgestaltung</strong></span><ul id="53c3ba3c-53e1-4545-9541-ea1e9c465d9b" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">artmäßige Zusammensetzung</span>: welche Warengruppen (Material, Art, …) </li></ul><ul id="6baa2a00-e1ff-469d-b043-ef1419f3a515" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Sortimentsbreite</span>: wie viele Warengruppen → breite (viele Warengruppen) oder enge Sortimente</li></ul><ul id="7f2c3251-b924-47ad-9d16-4cc6bcccc71c" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Sortimentstiefe</span>: wie viele Artikel innerhalb der Warengruppe → tiefes oder flaches Sortiment</li></ul><ul id="1175519a-e89a-4c0a-bd09-2d41e8677a90" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Nebenleistungen</span>: Beratung, Verpackung</li></ul></li></ul><ul id="7609ef8c-5846-4df5-a292-17a6f224f008" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">Preis:</span></strong><strong> </strong>Standard, Gemischte Preispolitik, Sonderangebotspolitik<ul id="cd16edc3-e5e9-4f24-8c54-a8f205d9aea4" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Diskontpreise (Economy-Segment)</span>: unter den üblichen Einzelhandelspreisen</li></ul><ul id="6c5b031d-5039-4bc4-baad-7b6fc421a67f" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">konventionelle Preise (Standard-Segment)</span>: Aufschlag von 33 bis 50 %</li></ul><ul id="de6671ae-5222-4bc9-8deb-99c483c7fc28" class="bulleted-list"><li style="list-style-type:circle">exklusive Preise (Premium-Segment): durch Nebenleistungen</li></ul></li></ul><ul id="4ac80c92-4791-43f3-bca2-d195aac1a40f" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Standort</strong></span><ul id="934938f4-1199-40eb-bdf2-4772bb51746e" class="bulleted-list"><li style="list-style-type:circle">Nähe der Abnehmer: möglichst nahe</li></ul><ul id="47824dff-3664-4983-8b6c-4a42921a443b" class="bulleted-list"><li style="list-style-type:circle">Konkurrenz</li></ul><ul id="e8cfe691-ab09-443a-879c-bb1cd342c64c" class="bulleted-list"><li style="list-style-type:circle">Verkehr</li></ul><ul id="2c63e730-8785-453a-901b-b6286cc86e51" class="bulleted-list"><li style="list-style-type:circle">Raumkosten</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Standortwahl</summary><div class="indented"><figure id="930188f0-abcc-4c0e-bcc0-fcd0e77f9aeb" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.47.46.png"><img style="width:480px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.47.46.png"/></a></figure><figure id="c541e244-5ac7-4c79-bf2a-1ac6299d11d1" class="image" style="text-align:left"><a href="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.48.48.png"><img style="width:480px" src="ZF%20Band%202%20und%205%207478f9886d4440328fc3d0f0f2c55880/Bildschirmfoto_2023-01-23_um_22.48.48.png"/></a></figure><h3 id="c41ebf2c-6afc-44e2-a999-edeef87e8aa5" class="">Auswahl</h3><ul id="e42e7ff3-0c9a-4c61-8429-77ef6aaf4fe0" class="bulleted-list"><li style="list-style-type:disc">Geld bewertbare Faktoren: Grundstücke, Arbeitskosten, …</li></ul><ul id="bf7a61a8-dc55-47dc-af27-4c8efe33b00f" class="bulleted-list"><li style="list-style-type:disc">Geld unbewertbare Faktoren: politische Sicherheit, Vorschriften</li></ul></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

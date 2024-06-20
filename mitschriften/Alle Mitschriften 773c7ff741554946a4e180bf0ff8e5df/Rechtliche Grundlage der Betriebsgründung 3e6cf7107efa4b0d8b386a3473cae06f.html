@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Rechtliche Grundlage der Betriebsgründung</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3e6cf710-7efa-4b0d-8b38-6a3473cae06f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏠</span></div><h1 class="page-title">Rechtliche Grundlage der Betriebsgründung</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-gray">Betriebswirtschaft</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Rechtsformen, Firma, Firmenbuch, Prokura</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-pink">Matura</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><div><h1 id="469ec092-e9ca-4f86-a205-b029a45658db" class="">Firma, Firmenbuch, Rechtsformen</h1><h2 id="0a61f1df-855d-4b8a-917d-2e08fb6c5708" class="">Firmenbuch </h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften eines Firmenbuches?</summary><div class="indented"><p id="541cec8a-c175-4241-836a-6c2cec81af23" class="">Das Firmenbuch ist ein öffentliches Verzeichnis aller eingetragener Unternehmen →  erhöht das Vertrauen in das Unternehmen; Es wird vom jeweiligen <span style="border-bottom:0.05em solid">Bezirksgericht</span> verwaltet.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wer muss eingetragen sein? (Firmenbuch)</summary><div class="indented"><p id="b0c89e1b-faa0-4e2d-bef5-530f2c82802b" class="">Alle <span style="border-bottom:0.05em solid">großen Unternehmen</span> müssen jedoch eingetragen werden.</p><ul id="f8c0e1bb-b514-4dd7-bafc-8267a57eff4c" class="bulleted-list"><li style="list-style-type:disc">Unternehmen die von mehreren Unternehmern gemeinsam betrieben werden (Personen/Kapitalgesellschaften)</li></ul><ul id="9a4bb32a-071b-4c5d-8930-12fe9687ec31" class="bulleted-list"><li style="list-style-type:disc">Einzelunternehmen die in zwei aufeinanderfolgenden Geschäftsjahren mehr als 700.000€ oder in einem Jahr <span style="border-bottom:0.05em solid">mehr als 1. Mio. € Umsatz</span> aufweisen.</li></ul><p id="9b608046-a896-4e37-8905-578e65bec52a" class="">Freiberufler müssen nicht eingetragen sein.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Auf muss man bei der Firmenbezeichnung beachten?</summary><div class="indented"><p id="79bd73ed-b28b-47ef-a54b-9861ba24e6c0" class=""><strong>Wahl der Firmenbezeichnung: </strong>Grundsätzlich <span style="border-bottom:0.05em solid">freie Wahl der Bezeichnung</span>, muss aber Hinweis auf Rechtsform enthalten.</p><p id="0e89e455-4468-4999-8d2d-6044ccc406f9" class="">Die <strong>Firmenbezeichnung</strong>: muss <span style="border-bottom:0.05em solid">Unterscheidungskraft</span> besitzen; darf <span style="border-bottom:0.05em solid">nicht irreführend</span> sein; Einzelunternehmen: nur Namen des Einzelunternehmers/Gesellschafter (muss aber nicht)</p><figure id="0858718f-6409-4cbd-863e-1e514849425a" class="image"><a href="Rechtliche%20Grundlage%20der%20Betriebsgru%CC%88ndung%203e6cf7107efa4b0d8b386a3473cae06f/Untitled.png"><img style="width:336px" src="Rechtliche%20Grundlage%20der%20Betriebsgru%CC%88ndung%203e6cf7107efa4b0d8b386a3473cae06f/Untitled.png"/></a><figcaption>Beispiel: <span style="border-bottom:0.05em solid">Firmenbezeichnung</span> fremder Name</figcaption></figure></div></details><h2 id="59fb4f3d-24cc-4c8b-9562-41fdeba93543" class="">Rechtsformen</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Rechtsformen der Unternehmen?</summary><div class="indented"><figure id="ded0f89f-a873-47d9-96dc-6eb73141aad9" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_00.54.26.png"><img style="width:384px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_00.54.26.png"/></a><figcaption>Grafik: Rechsformen der Unternehmen (<span style="border-bottom:0.05em solid">Seite 6, II</span>)</figcaption></figure><p id="f174ae9d-98e1-4039-8cdd-459dc3b017ee" class=""><span style="border-bottom:0.05em solid"><strong>Regelungen</strong></span>: UGB und ABGB</p><ul id="fc6990d3-a6b7-43dc-8bb9-469091c185ff" class="bulleted-list"><li style="list-style-type:disc"><strong>Einzelunternehmen:</strong> Eigentum einer <span style="border-bottom:0.05em solid">einzigen Person</span>. → Er entscheidet und haftet allein mit seinem Unternehmens- und Privatvermögen.</li></ul><ul id="dd37eeb4-046a-4bf0-94c3-0b282d27caeb" class="bulleted-list"><li style="list-style-type:disc"><strong>Gesellschaftsunternehmen:</strong> Eigentum <span style="border-bottom:0.05em solid">mehrerer Personen</span>.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wer muss welche Bücher führern?</summary><div class="indented"><ul id="d44949e5-2d2c-4a3c-b41a-dfc2156a7abc" class="bulleted-list"><li style="list-style-type:disc">Doppelte Buchführung<ul id="98d4105a-f57e-4a30-8293-5bb51596f3ef" class="bulleted-list"><li style="list-style-type:circle">Kapitalgesellschaften und Genossenschaften</li></ul><ul id="46ea1908-2989-4a4f-b605-fc84381aebaf" class="bulleted-list"><li style="list-style-type:circle">Einzelunternehmen und Personengesellschaften bei über 1. Mio Euro Jahresumsatz (oder 700.000€ bei 2 aufeinanderfolgenden Jahren)</li></ul></li></ul><p id="07f63ffa-6eea-4ed8-a276-1afce3dd9cb1" class=""><span style="border-bottom:0.05em solid"><strong>Freiberufler und Landwirte</strong></span> als Personengesellschaft/Einzelunternehmen müssen trotz Umsatzüberschreitung keine DB führen. → „Einnahmen-Ausgaben-Rechnung” bzw. Gewinnermittlung pauschaliert</p></div></details><h2 id="863498ca-12e9-487f-a497-281d960ed77f" class="">Personengesellschaften</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Allgemeine Eigenschaften von Personengesellschaften</summary><div class="indented"><figure id="f1243e3a-2342-42a8-a5fa-d276ea2a9b6f" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_00.57.05.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_00.57.05.png"/></a><figcaption>Grafik: Personengesellschaften (<span style="border-bottom:0.05em solid">Seite 14, II</span>)</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Kapital bei Personengesellschaften</summary><div class="indented"><figure id="1272292a-a71a-4489-8efd-3100d6daccfd" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_00.57.50.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_00.57.50.png"/></a><figcaption>Grafik: Kapital (Seite 15, II)</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Risiko bei Personengesellschaften</summary><div class="indented"><ul id="da155092-1f41-4f01-b219-6b3d37227614" class="bulleted-list"><li style="list-style-type:disc"><strong>Offene Gesellschaft</strong>: Gesellschafter haften <span style="border-bottom:0.05em solid">unbeschränkt</span> (mit Privatvermögen) und <span style="border-bottom:0.05em solid">solidarisch</span> (jeder beliebige könnte für den Gesamtbetrag haftbar gemacht werden)</li></ul><ul id="927e9929-cf07-4c8e-bb8d-e61541782aa5" class="bulleted-list"><li style="list-style-type:disc"><strong>Kommanditgesellschaft</strong><ul id="c52b52a4-fe39-4913-bef9-37c922021482" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Komplementäre</span>: unbeschränkt und solidarisch</li></ul><ul id="3444d592-7302-4359-9b19-13d19707d844" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Kommanditisten</span>: beschränkt (nur mit der Einlage)</li></ul></li></ul><ul id="f868c200-eec4-4ae4-b34b-583821abd928" class="bulleted-list"><li style="list-style-type:disc"><strong>Stille Gesellschaft</strong>: beschränkt (nur mit der Einlage)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Mitarbeit und Kontrolle bei Personengesellschaften</summary><div class="indented"><ul id="13b3f034-dc6e-41fd-813d-601ba10faf64" class="bulleted-list"><li style="list-style-type:disc"><strong>Offene Gesellschaft</strong>:<ul id="b964be11-c54f-4a39-95fd-c980f7f9e4f5" class="bulleted-list"><li style="list-style-type:circle">zur Mitarbeit berechtigt und verpflichtet</li></ul><ul id="d9519ac7-719f-4eac-a2fa-b3069d393a92" class="bulleted-list"><li style="list-style-type:circle">haben Kontrollrechte</li></ul></li></ul><ul id="c287e359-23ae-47dc-b07f-793251354f38" class="bulleted-list"><li style="list-style-type:disc"><strong>Kommanditgesellschaft</strong><ul id="744b239e-27d3-4df8-bb99-ee6c8e9febbd" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Komplementäre</span>: zur Mitarbeit berechtigt und verpflichtet</li></ul><ul id="ae2d3644-4b38-4f40-b9ef-e4d30e5769e0" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Kommanditisten</span>: kein Mitarbeits- und beschränktes Kontrollrecht</li></ul></li></ul><ul id="f6557f3d-d045-4ddb-a1bd-87301adf5b6c" class="bulleted-list"><li style="list-style-type:disc"><strong>Stille Gesellschaft</strong>: kein Mitarbeitsrecht; Kontrollrechte: Abschrift der Bilanz, Jahresabschlüsse</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Namen bei Personengesellschaften</summary><div class="indented"><p id="bf0adcce-4b8f-44b8-b8d0-5a351d406772" class="">OG und KG sind haben eine Eintragungspflicht im Firmenbuch</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Vorteile/Nachteile bei Personengesellschaften</summary><div class="indented"><ul id="20b36eb5-faad-41bf-9693-cbaeb5ada155" class="bulleted-list"><li style="list-style-type:disc"><strong>Offene Gesellschaft</strong>:<ul id="8d769ed0-9f84-4221-85f2-c028a8eb5ce3" class="bulleted-list"><li style="list-style-type:circle">Vorteile: Volle Kontrollmöglichkeit, Erweiterte Finanzierungsmöglichkeiten, Arbeitsteilung</li></ul><ul id="a01ab1dd-f5e2-4c5e-bab0-fcd697c3e032" class="bulleted-list"><li style="list-style-type:circle">Nachteile: Wettbewerbsverbot → enge Bindung, unbeschränkte und solidarische Haftung</li></ul></li></ul><ul id="8ee69c83-d812-4c9f-9c34-9144ca902455" class="bulleted-list"><li style="list-style-type:disc"><strong>Kommanditgesellschaft</strong><ul id="23a618b9-6f44-4fd5-b730-f98a0f8d9a43" class="bulleted-list"><li style="list-style-type:circle">Vorteile: Verbreiterung der Eigenkapitalbasis (Komplementäre), Beteiligung ohne Pflicht zur Mitarbeit (Kommanditisten)</li></ul><ul id="e13f2be2-3d7f-4bf4-81ef-d1b30a53a709" class="bulleted-list"><li style="list-style-type:circle">Nachteile: beschränkte Kontrollmöglichkeiten (Kommanditisten)</li></ul></li></ul><ul id="1671b250-cdad-42ac-b7f0-9bd11c0ba91d" class="bulleted-list"><li style="list-style-type:disc"><strong>Stille Gesellschaft</strong>: <ul id="b857822b-0dc7-45d1-8431-a83ce5aa5ff4" class="bulleted-list"><li style="list-style-type:circle">Vorteile: Beteiligung ohne Pflicht zur Mitarbeit, Geheimhaltung der Beteiligung</li></ul><ul id="5e3f83ee-2db7-490b-9762-bad763c07758" class="bulleted-list"><li style="list-style-type:circle">Nachteile: Keine Beteiligung am Wertzuwachs (Bei Ausscheidung: nur Anspruch auf die Einlage), Beschränkte Kontrollmöglichkeiten</li></ul></li></ul></div></details><h2 id="170bdc60-bf8d-4cf1-8d2c-b4c5bc88e80c" class="">Kapitalgesellschaften</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften/Arten von Kapitalgesellschaften</summary><div class="indented"><figure id="b4567931-5c47-4fad-887f-5a690151f96a" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.09.38.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.09.38.png"/></a><figcaption>Grafik: Kapitalgesellschaften (<span style="border-bottom:0.05em solid">Seite 23, II</span>)</figcaption></figure><figure id="af83f339-99fe-4e88-95b1-b6dbbe2ebdb2" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.10.03.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.10.03.png"/></a><figcaption>Grafik: Arten von Kapitalgesellschaften (<span style="border-bottom:0.05em solid">Seite 24, II</span>)</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften einer GmbH</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="5d2407d4-3397-4c32-9116-e41839ba8527"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Hälfte des <span style="border-bottom:0.05em solid">Stammkapitals</span> kann in Vermögensgegenstände sein.</div></figure><p id="0051ec43-40f9-4f9d-8cfb-92a44ee475a0" class=""><span style="border-bottom:0.05em solid"><strong>Stammkapital</strong></span><strong>: </strong>€ 35.000</p><p id="6a5d5172-1391-471a-9418-4ddb1b028fe7" class=""><strong>Mindesthöhe des </strong><span style="border-bottom:0.05em solid"><strong>Geschäftsanteils</strong></span>: € 70</p><p id="f7ee0d4a-05a2-4b55-aad7-0559c76c52a8" class="">Gesellschafter bringen sogenannte <span style="border-bottom:0.05em solid">Stammeinlagen</span> auf.</p><p id="173be51c-9047-4a73-a8f9-6b9240afd3d3" class="">Recht auf Gewinnanteil und Stimmrecht auf der Generalversammlung.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften einer Aktiengesellschaften (AG)</summary><div class="indented"><p id="85f78f62-68f9-45e3-915d-65e751e1778d" class=""><strong><span style="border-bottom:0.05em solid">Grundkapital</span></strong><strong> (Summe der Nennwerte aller Aktien)</strong>: € 70.000</p><p id="884efa92-dd29-4233-b628-320599f5dd17" class=""><strong><span style="border-bottom:0.05em solid">Mindestnennwert</span></strong><strong> einer Aktie</strong>: € 1</p><p id="aa5c816c-aa63-4f7a-ad0e-d5b56eb3c2d1" class="">Aktionäre kaufen Aktien und sind <span style="border-bottom:0.05em solid">Eigentümer</span>.</p><p id="f0a30e7d-0ab1-43d7-9622-a4e255024e32" class="">Recht auf Gewinnanteil (Dividende) und Stimmrecht auf der Hauptversammlung.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Risiko bei Kapitalgesellschaften</summary><div class="indented"><ul id="16f6e8ac-4e36-4777-a823-b8098874305e" class="bulleted-list"><li style="list-style-type:disc">GmbH: Haftung auf die Stammeinlage beschränkt.</li></ul><ul id="bf616e47-dd2b-4042-9c0f-7b5dc7a32d0d" class="bulleted-list"><li style="list-style-type:disc">AG: Haftung auf die Einlage beschränkt.</li></ul><p id="1dd0a0d9-ab31-4f87-a4d1-1545ee178c8a" class="">Beide haften als juristische Person mit dem gesamten Betriebsvermögen.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Mitarbeit und Kontrolle bei Kapitalgesellschaften</summary><div class="indented"><figure id="b7068a2f-4f91-4fe6-a9a8-e0c475736b7f" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.13.49.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.13.49.png"/></a></figure><figure id="ff74e1cc-b372-45ca-b112-693882d8574c" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.14.27.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.14.27.png"/></a><figcaption>Grafik: Mitarbeit und Kontrolle (<span style="border-bottom:0.05em solid">Seite 25, II</span>)</figcaption></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Vorteile/Nachteile bei Kapitalgesellschaften</summary><div class="indented"><figure id="2063da25-dc74-444a-a5c7-ae99b84d0f82" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.15.27.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-17_um_01.15.27.png"/></a><figcaption>Grafik: Vorteile/Nachteile (<span style="border-bottom:0.05em solid">Seite 26, II</span>)</figcaption></figure></div></details><h2 id="d5e161d9-883e-4272-8c30-676e50c1e8c4" class="">Sonderformen </h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Sonderform der Europäische Aktiengesellschaft (SE)</summary><div class="indented"><p id="e8dfa694-6326-4858-888d-1a32c27b07d5" class="">z.B.: <span style="border-bottom:0.05em solid"><strong>STRABAG SE</strong></span></p><p id="af291ded-1067-4bc4-be56-3e0e3d01c473" class="">„Societas Europea” → überall in der EU tätig ohne Gründung einer Tochtergesellschaft (durch EU-Recht geregelt)</p><p id="c82015de-1f9b-4deb-909e-7724bd9f3b16" class=""><span style="border-bottom:0.05em solid"><strong>Mindestkapital</strong></span>: € 120.000</p><p id="a280625f-083f-45dc-9611-c7cec40abb8e" class=""><span style="border-bottom:0.05em solid"><strong>Leitung</strong></span>: Verwaltungsrat („Board”)</p></div></details><h1 id="059bc279-bfe7-4e4a-92c3-9bcce559e81c" class=""><strong>Sonstige Gesellschaftsformen </strong></h1><h2 id="d8024460-2f79-4ac5-97a1-ed0d92b874ef" class=""><strong>Erwerbs- und Wirtschaftsgenossenschaft</strong></h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften/Definition einer <strong>Erwerbs- und Wirtschaftsgenossenschaft</strong></summary><div class="indented"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6828263b-4013-4e29-b66c-d6b053a6002d"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Vereine von nicht geschlossener Mitgliederzahl zur Förderung des Erwerbs oder der Wirtschaft ihrer Mitglieder.</div></figure><p id="6f5d7e69-9293-46c8-9a64-c65381f61259" class="">Haben eine <span style="border-bottom:0.05em solid">eigene Rechtspersönlichkeit</span> und sind eine <span style="border-bottom:0.05em solid">juristische Person</span>.</p><figure id="eb67dfcb-7d3e-41d7-986b-f027838c860a" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%204.png"><img style="width:384px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%204.png"/></a><figcaption>Grafik: Genossenschaften (<span style="border-bottom:0.05em solid">Seite 32, II</span>)</figcaption></figure><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="659574c6-d6b9-455a-a371-c7cd5df6b201"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/warning_gray.svg"/></div><div style="width:100%">Tätigkeit ist <strong><mark class="highlight-yellow_background">nicht in erster Linie auf Gewinn</mark></strong> ausgerichtet, sondern auf die Förderung ihrer Mitglieder.</div></figure><p id="dada8a05-2fcc-4316-a88f-5e764b57245f" class=""><strong>Doppelstellung der Mitglieder</strong>: sind „<span style="border-bottom:0.05em solid">Unternehmer</span>” und ihre eigenen „<span style="border-bottom:0.05em solid">Kunden</span>”</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2e38f3e3-7a4c-4139-b87e-5e36daf0de75"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Höhe und Anzahl der Geschäftsanteile, die vom einzelnen Mitglied zu zeichnen sind, werden durch die <span style="border-bottom:0.05em solid">Satzung</span> bestimmt. </div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Besonderheiten von <strong>Erwerbs- und Wirtschaftsgenossenschaften</strong></summary><div class="indented"><ul id="35cc0fbf-3066-4ed0-99dd-35cf53590f87" class="bulleted-list"><li style="list-style-type:disc">Mitglieder werden unterstützt.</li></ul><ul id="c7dbf106-f7cb-4092-a00a-b15bb6d50b77" class="bulleted-list"><li style="list-style-type:disc">Sie haften mit der <mark class="highlight-orange_background">eigenen Einlage</mark>.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Arten von <strong>Erwerbs- und Wirtschaftsgenossenschaften</strong></summary><div class="indented"><ul id="40bc0542-5b3c-4b76-bea2-038bbce4f52d" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Einkaufsgenossenschaft (Bezugs- und Rohstoffgenossenschaft)</strong></span><p id="d498c451-3d8d-4ca3-a4bc-baaec5603371" class="">Gemeinsamer Einkauf von großen Mengen und Aufteilung auf die Mitglieder → Kleingewerbetreibende können billiger Einkaufen und dem Wettbewerb mit Großbetrieben besser begegnen.</p></li></ul><ul id="fbae55d7-d1d3-4c46-9eb3-5526fca792a4" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Verkaufsgenossenschaft (Absatzgenossenschaft)</strong></span><p id="dd847490-6303-4c38-8e2a-20e6fba46dd2" class="">Erzeugnisse der Mitglieder werden durch eine gemeinsame Verkaufsstelle verkauft.</p><ul id="198e78e5-ec49-4fe0-a5ff-3506b3a8a145" class="bulleted-list"><li style="list-style-type:circle">Verringert die Kosten → keine Lagerkosten und kein eigener Vertrieb nötig</li></ul><ul id="117bbe47-e31f-40db-b330-cf6500908c67" class="bulleted-list"><li style="list-style-type:circle">Höhere Auswahl für Kunden</li></ul><ul id="61a1d5d8-9c46-45d4-b4c2-5bec4589effc" class="bulleted-list"><li style="list-style-type:circle">Kleingewerbe hat eine größere Möglichkeit auf große Aufträge</li></ul></li></ul><ul id="43ab778d-adc3-4454-bb73-954ee21eadb4" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Verwertungsgenossenschaft</strong></span><p id="b2c81bc4-79aa-4b82-bacc-55fea08bdc3d" class="">Verarbeiten und Verwertung der Produkte der Mitglieder</p><ul id="dc11e4f9-62f8-4b32-b6e3-2b2f14ca4001" class="bulleted-list"><li style="list-style-type:circle">Molkereigenossenschaft</li></ul><ul id="b491684a-69f6-477d-a0ce-1bf2c8ace008" class="bulleted-list"><li style="list-style-type:circle">Winzergenossenschaft</li></ul><ul id="be1eca37-3090-430c-b612-b19977d1defb" class="bulleted-list"><li style="list-style-type:circle">Obst- und Gemüsegenossenschaft</li></ul></li></ul><ul id="7b378ebc-10fe-4026-afee-42e324c4cb14" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Nutzungsgenossenschaft</strong></span><p id="0077effc-4eb1-4c28-9d59-df2a38b218fe" class="">Gemeinsame Nutzung von Anlagen und Einrichtungen (z.B.: große landwirtschaftliche Maschinen → Mähdrescher und Traktoren)</p></li></ul><ul id="c99801dc-52a2-41b9-b2a9-eb2322b9f57e" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Kreditgenossenschaft</strong></span><p id="d2c18627-2739-4581-93a1-a7fd27231c77" class="">Gewährt Kredite an die Mitglieder, die keinen Kredit bei der Bank bekommen, weil die Beträge zu klein waren oder die Sicherheiten nicht ausreichen.</p><ul id="a4b5af46-1d37-409c-a149-aa1c6bbea54b" class="bulleted-list"><li style="list-style-type:circle"><strong>Raiffeisenbanken</strong>: früher Kreditgewährung an die bäuerliche Kreise</li></ul><ul id="3ba9ad28-10d7-4be6-82f5-e3b7aa4ad698" class="bulleted-list"><li style="list-style-type:circle"><strong>Volksbanken (gewerbliche Kreditgenossenschaften):</strong> hauptsächlich Kleingewerbetreibende</li></ul></li></ul><ul id="a8c4360f-7b09-4af3-97cc-87d55279bea3" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Bau- und Siedlungsgenossenschaft</strong></span><strong> </strong><p id="899754ed-1c72-4f64-bcef-de7cc12aa976" class="">Den Mitgliedern den <mark class="highlight-orange_background">Erwerb von Grund und Boden</mark> erleichtern oder Einrichtung von <mark class="highlight-orange_background">Siedlungshäusern</mark> und <mark class="highlight-orange_background">Genossenschaftswohnungen</mark>.</p></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Organisation einer <strong>Erwerbs- und Wirtschaftsgenossenschaft</strong></summary><div class="indented"><ul id="ed8deb1c-97a5-4d67-a0e4-25269b0e63d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Generalversammlung</strong>: Versammlung der Mitglieder → <mark class="highlight-orange_background">wählen Aufsichtsrat und Vorstand</mark> (jedes Mitglied hat eine Stimme, außer die Satzung sieht etwas anderes vor.)</li></ul><ul id="1011c413-3c7f-4ab3-99de-e728927447b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Aufsichtsrat</strong>: <mark class="highlight-orange_background">Kontrollorgan</mark>, dass den Vorstand kontrolliert. (ab 40 Arbeitnehmern vorgeschrieben)</li></ul><ul id="cbfbbaa0-eb69-4361-9d64-37e0cc99b5d1" class="bulleted-list"><li style="list-style-type:disc"><strong>Vorstand</strong>: Geschäftsführung (muss Mitglied der Genossenschaft sein)</li></ul></div></details><h2 id="4a107ddc-d0d8-4b87-afa8-cad0cdb3d937" class="">Gesellschaft bürgerlichen Rechts (GesbR)</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wie werden Gesellschaften bürgerlichen Rechts gegründet?</summary><div class="indented"><ul id="b93f7283-f8eb-4a4c-bce0-8a457fc2afc5" class="bulleted-list"><li style="list-style-type:disc">als Arbeitsgemeinschaft → z.B.: bei größeren Bauprojekten</li></ul><ul id="e97540fe-0e8d-4ae2-a0e3-e846be690781" class="bulleted-list"><li style="list-style-type:disc">als Vorgesellschaft → bevor die AG ins Firmenbuch eingetragen wird (Satzung noch nicht beschlossen)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften einer Gesellschaft bürgerlichen Rechts</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="54448bb7-becc-4aa4-8fed-5fb67ac456ca"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Leistungen bzw. Sachen (Geld, Güter, Arbeit) werden zum gemeinsamen Nutzen eingesetzt. </div></figure><ul id="bedfd82a-47d2-4f84-bfb9-deb88c6fa586" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>kein Firmenbucheintrag</strong></span> → Keine Firma des UGB</li></ul><ul id="bdfb9b11-563e-4dc8-9ad6-943bb6b93667" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Gesellschaftsvertrag</strong></span> → Geschäftsführung, Dauer der Gesellschaft, Gewinnverteilung</li></ul><ul id="f45166c1-e772-46b2-a187-b20cdcf3ffe8" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Rechte</strong></span> der Gesellschafter: Büchereinsicht, Kündigungsrecht (bei unbestimmter Zeit)</li></ul><ul id="c6a7168b-83ee-4afe-a2d5-86c464e427a9" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Haftung</strong></span>: unbeschränkt und solidarisch</li></ul><ul id="36a3d538-21a8-46f4-8956-245f1a058585" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Gewinngrenze</strong></span>: 700.000 bzw. 1. Mio. → Umformung in Offene Gesellschaft/Kommanditgesellschaft</li></ul></div></details><h2 id="35d428cd-0405-4774-bd7e-231b76f07ae4" class="">Privatstiftung</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften einer Privatstiftung</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="a63fb89f-5ccb-4ae5-8400-f40c3c6057f1"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Ein oder mehrere Stifter übertragen Teile ihres Vermögens an eine juristische Person </div></figure><ul id="5ef641da-f146-405a-8358-cb8f11829ba7" class="bulleted-list"><li style="list-style-type:disc">kein Eigentümer → vom Stiftungsvorstand verwaltet und von Stiftungsprüfern geprüft</li></ul><ul id="ec0ec1dc-b80e-48c3-86c2-467bec43eac8" class="bulleted-list"><li style="list-style-type:disc">Sitz im Inland</li></ul><ul id="95388430-c02d-429a-89d6-0e4ddcac6a6a" class="bulleted-list"><li style="list-style-type:disc">Zweck im Stiftungsvertrag → gemeinnützig bzw. zum Versorgen des Stifters</li></ul></div></details><h2 id="02acdc6b-5a34-4839-aa60-7ad2346c8413" class="">Kommanditgesellschaften (GmbH &amp; Co KG)</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften/Merkmale einer Kommanditgesellschaft</summary><div class="indented"><figure id="e76f03ff-0965-4676-a1ba-9b9d94ba9eb8" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_20.38.05.png"><img style="width:480px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_20.38.05.png"/></a></figure><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="b3fffeb6-3415-49f8-bd7d-7c85f3d45293"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Beibehalten der Vorteile einer Personengesellschaft + unbeschränkte Haftung ausgeschaltet.</div></figure></div></details><h1 id="75661f09-6d8c-42b5-999b-5ef8dc66e589" class="">Unternehmer braucht Hilfe</h1><h2 id="f1e1735c-45ce-4ee5-b690-8a50713f3082" class="">Vollmachten</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften/Arten von Vollmachten</summary><div class="indented"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8aba2bf0-adad-41cb-83e7-129020ae967d"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Bevollmächtigt werden auch Ehepartner, Kommanditisten, Stille Gesellschafter, …</div></figure><figure id="f334d7e8-e641-4301-a4cf-ee8289448099" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_20.42.42.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_20.42.42.png"/></a><figcaption>Grafik: Vollmachten (<span style="border-bottom:0.05em solid">Seite 40, II</span>)</figcaption></figure></div></details><h2 id="e4231ba6-23fa-498e-a743-289b14db887a" class="">Prokura</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Allgemeine Eigenschaften von Prokuren</summary><div class="indented"><p id="056756fa-8023-4753-9d2f-c8e66f4fa84d" class="">Firmenbucheintragung</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ab173f91-91b5-49a1-89ce-bd8add5cce67"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Zu allen Arten von <span style="border-bottom:0.05em solid">gerichtlichen</span> und <span style="border-bottom:0.05em solid">außergerichtlichen</span> Geschäften und Rechtshandlungen.</div></figure><ul id="8b3bd24b-e46c-4c1e-a7ba-afc17c0fb007" class="bulleted-list"><li style="list-style-type:disc">Ein Prokurist darf:<ul id="3a36efe2-4fec-44fd-bf68-2748978dd1bb" class="bulleted-list"><li style="list-style-type:circle">Waren und Wertpapiere kaufen und verkaufen</li></ul><ul id="69377a8e-80d0-4b0e-9ec5-07a5c2e3247c" class="bulleted-list"><li style="list-style-type:circle">Angestellte aufnehmen und entlassen</li></ul><ul id="bea008f9-70cd-42de-939c-ec18b1cba46f" class="bulleted-list"><li style="list-style-type:circle">Handlungsvollmachten erteilen</li></ul><ul id="feb70c5f-929c-427a-aaff-054bed64b0ed" class="bulleted-list"><li style="list-style-type:circle">Kredite aufnehmen</li></ul><ul id="ba3f201a-70c9-49df-81d4-5c6112d080ce" class="bulleted-list"><li style="list-style-type:circle">das Unternehmen bei Gericht vertreten</li></ul></li></ul><ul id="71f153c1-1ce7-4681-9004-dcac977e5a56" class="bulleted-list"><li style="list-style-type:disc">Ein Prokurist darf nicht:<ul id="bf0d06a3-2efc-437f-8b08-d8bad631845a" class="bulleted-list"><li style="list-style-type:circle">Grundstücke belasten oder veräußern (außer besondere Ermächtigung)</li></ul><ul id="ddce7d2b-c3aa-465c-a245-df62a59171ce" class="bulleted-list"><li style="list-style-type:circle">das Unternehmen auflösen oder verkaufen</li></ul><ul id="bd206bb4-9cfd-404f-a04f-234390b676e2" class="bulleted-list"><li style="list-style-type:circle">einen Prokuristen bestellen oder die Prokura übertragen </li></ul><ul id="1a6363bc-a4c8-4053-a95a-9ebbc857edf2" class="bulleted-list"><li style="list-style-type:circle">Inventar und Bilanz unterschreiben</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Arten von Prokuren</summary><div class="indented"><ul id="bff391b6-58e8-467e-ab6d-acf9ee879da5" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">Einzelprokura</span></strong>: keine Einschränkungen</li></ul><ul id="d439b7f2-52ae-42df-8ab7-43fddf826096" class="bulleted-list"><li style="list-style-type:disc"><strong>persönliche Beschränkungen</strong><ul id="97623e4c-e9d4-4325-a99c-80761054e039" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Gesamtprokura</span>: Prokurist nur gemeinsam mit einem oder mehrerer Prokuristen zeichnungsberechtigt.</li></ul><ul id="8ca6ba1f-3580-4094-b407-e98ae580d6cb" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Gemischte Prokura</span>: Prokurist ist nur gemeinsam mit einem geschäftsführenden Gesellschafter oder Vorstandsmitglied zeichnungsberechtigt.</li></ul></li></ul><ul id="4479e888-48af-4b9c-bf58-ad6b44bcb39d" class="bulleted-list"><li style="list-style-type:disc"><strong>örtliche Beschränkungen</strong>: (<span style="border-bottom:0.05em solid">Filialprokura</span>) → Prokurist ist nur für eine oder mehrere Niederlassungen zeichnungsberechtigt.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Erteilung von Prokuren</summary><div class="indented"><ul id="fecb7133-dfa6-4bcf-a5e2-91522065dc60" class="bulleted-list"><li style="list-style-type:disc">durch einen im Firmenbuch eingetragenen Unternehmer</li></ul><ul id="3ffcacad-778b-4e00-a404-e917b977609e" class="bulleted-list"><li style="list-style-type:disc">mittels ausdrücklicher Erklärung</li></ul></div></details><h2 id="5c666afa-eaf9-4951-9986-a0bd6d0fab00" class="">Handlungsvollmacht</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Eigenschaften von Handlungsvollmachten</summary><div class="indented"><p id="69af975a-67f3-4294-97ae-bcccf654aae7" class="">keine Firmenbucheintragung</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="da5144fa-50fc-4302-928b-af8f328bde0b"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Unternehmer oder Dritte werden zu bestimmten <span style="border-bottom:0.05em solid">Geschäften</span> oder <span style="border-bottom:0.05em solid">Handlungen</span> berechtigt.</div></figure><p id="9983a9d6-3701-4da1-8529-685e44dd24f1" class="">Zusätzlich zu den Geschäften, denen Prokuristen untersagt sind:</p><ul id="4ce578dc-fd36-438a-acd5-cf110568ab41" class="bulleted-list"><li style="list-style-type:disc">Wechselverbindlichkeiten eingehen</li></ul><ul id="3a5af5f1-e0e7-4124-8b46-100900fb24d0" class="bulleted-list"><li style="list-style-type:disc">Darlehen aufnehmen</li></ul><ul id="7000c3b9-fa64-4687-982a-0db12ced40dc" class="bulleted-list"><li style="list-style-type:disc">das Unternehmen vor Gericht vertreten</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Arten von Handlungsvollmachten</summary><div class="indented"><ul id="fc8b458d-e682-44f0-b74b-09eb2b52a701" class="bulleted-list"><li style="list-style-type:disc"><strong>Generalvollmacht</strong>: erstreckt sich auf Geschäfte, die der Betrieb eines bestimmten Handelsgewerbes gewöhnlich mit sich bringt.</li></ul><ul id="59d4d4df-27fe-4297-a1a3-5d2af714b2e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Artvollmacht</strong>: Vornahme einer bestimmten Art von Geschäft (z.B.: Einkäufer → einkaufen)</li></ul><ul id="88f87a53-abb6-43cb-91cd-814c52c27956" class="bulleted-list"><li style="list-style-type:disc"><strong>Ladenvollmacht</strong>: Verkaufen und Empfangnahmen, die in einem Laden gewöhnlich geschehen</li></ul><ul id="ac2baf76-0985-464b-aac9-c173beb9e3ab" class="bulleted-list"><li style="list-style-type:disc"><strong>Spezialvollmacht</strong>: Vornahme einer einzelnen und genau bestimmten Handlung (z.B.: Inkasso einer bestimmten Rechnung)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Erteilung einer Handlungsvollmacht</summary><div class="indented"><ul id="e383b6b7-a7a0-48ea-8992-a044e9147078" class="bulleted-list"><li style="list-style-type:disc">durch Unternehmer </li></ul><ul id="aadd4df2-ee5d-4fe0-b6ff-7a4731fc1c8e" class="bulleted-list"><li style="list-style-type:disc">Prokurist</li></ul><ul id="2602c7b8-999c-42f3-ba55-fccc3c975123" class="bulleted-list"><li style="list-style-type:disc">Handlungsbevollmächtigter</li></ul><p id="1e497991-dfb5-430a-bcd0-3355ab60c223" class="">
+</p></div></details><h2 id="47086470-003a-41ad-8ddc-30264e8217ab" class="">Beschäftigungsverhältnisse</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Beschäftigungsformen</summary><div class="indented"><figure id="ebb28923-e5a7-468e-8fd2-cdfc3b63032a" class="image"><a href="Rechtliche%20Grundlage%20der%20Betriebsgru%CC%88ndung%203e6cf7107efa4b0d8b386a3473cae06f/Untitled%201.png"><img style="width:384px" src="Rechtliche%20Grundlage%20der%20Betriebsgru%CC%88ndung%203e6cf7107efa4b0d8b386a3473cae06f/Untitled%201.png"/></a><figcaption>Grafik: Beschäftigungsformen (<span style="border-bottom:0.05em solid">Seite 49, II</span>)</figcaption></figure><p id="ed83542d-469e-4271-a980-3660bb26161a" class="">Echter Dienstvertrag: verpflichtet, für bestimmte oder unbestimmte Zeit Arbeitsleistung …</p><p id="cce70530-95f8-4875-bce0-cc869e14ee41" class="">Freier Dienstvertrag: Aufgaben werden persönlich erfüllt, Eigene und Betriebsmittel des Arbeitgebers; Arbeitsablauf und Ort entscheidet er selbst → Schuldet nur Bemühen nicht Erfolg</p><p id="77e909a5-6403-45a0-b95f-b012a7fa9625" class="">
+</p></div></details><h1 id="443f4fb9-7ff4-4ed6-b482-144569b10b6a" class="">Außenhandel</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Risiken im Außenhandel</summary><div class="indented"><ul id="97bc5e24-bcc0-4bce-8e04-2fa3da2494ef" class="bulleted-list"><li style="list-style-type:disc">Exporteur (Verkäufer)<ul id="4a9e2744-f106-4fcb-a463-f8b8c90097db" class="bulleted-list"><li style="list-style-type:circle">Marktrisiko: Fehleinschätzung des Auslandsmarktes</li></ul><ul id="872b9d98-7d09-4e75-9d78-0cf766b522eb" class="bulleted-list"><li style="list-style-type:circle">Preisrisiko: Gefahren von Preisänderungen</li></ul><ul id="7628ee60-ba06-448a-98e8-3077a0a7f090" class="bulleted-list"><li style="list-style-type:circle">Dubiosenrisiko: Käufer bezahlt später oder gar nicht.</li></ul><ul id="e182dc87-b04d-4cd1-bc09-21977f2efba1" class="bulleted-list"><li style="list-style-type:circle">Annahmerisiko: Käufer die Ware nicht annimmt (Mängel schwer zu überprüfen)</li></ul><ul id="357cc4d5-ae24-4264-a86f-981a3ab3bef7" class="bulleted-list"><li style="list-style-type:circle">Länderrisiko: ökonomische, rechtliche, soziale und politische Schwierigkeiten</li></ul><ul id="feb4840e-c0f0-4e05-b379-be8f3d710837" class="bulleted-list"><li style="list-style-type:circle">Kursrisiko: Wechselkurs der vereinbarten Währung könnte sinkt.</li></ul><ul id="cec82226-0eaa-4799-bc4a-a8fb6b285ad8" class="bulleted-list"><li style="list-style-type:circle">Transportrisiko: Beschädigung oder Verlustes der Ware während des Transports.</li></ul></li></ul><ul id="25b12d3e-9844-4505-9db3-409b31232e58" class="bulleted-list"><li style="list-style-type:disc">Importeur (Käufer)<ul id="7307b211-eec2-4115-8ebf-639b5c717664" class="bulleted-list"><li style="list-style-type:circle">Lieferungsrisiko: Lieferant hält die vereinbarte Lieferfrist oder Menge/Qualität nicht ein.</li></ul><ul id="d979fdc0-622a-49be-8cd0-ba855054d70a" class="bulleted-list"><li style="list-style-type:circle">Kursrisiko: Wechselkurs der vereinbarten Währung könnte sinkt.</li></ul><ul id="f176efad-e5a6-49c6-8ad2-1fd8349ce95f" class="bulleted-list"><li style="list-style-type:circle">Transportrisiko: Beschädigung oder Verlustes der Ware während des Transports.</li></ul></li></ul><figure class="block-color-red_background callout" style="white-space:pre-wrap;display:flex" id="85690352-b950-4839-8ae5-9e721f41ae6a"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/warning_gray.svg"/></div><div style="width:100%">Risiken sollten rechtzeitig erkannt und sinnvolle Maßnahmen zur Absicherung getroffen werden. </div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Dokumente im Außenhandel</summary><div class="indented"><ul id="a5cbd3b9-cd83-4f5a-a735-555f96bfa301" class="bulleted-list"><li style="list-style-type:disc"><strong>Rechnungen</strong><ul id="1de20af2-d57a-4b76-a9a9-2dcd08d86842" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Zollrechnung</span></summary><p id="3073f247-f1e1-4e82-856f-c1c8bf299985" class="">Rechnung mit Ursprungsvermerk → Grundlage für die Verzollung</p></details></li></ul><ul id="665d3722-fd17-4ef6-994c-ba18cdad048e" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Pro-Forma-Rechnung</span></summary><p id="316595d1-dc6d-4812-82f2-44d42e0c0952" class="">Vorläufige Rechnung → dient zur Beantragung einer Importlizenz (wenn nötig)</p></details></li></ul></li></ul><ul id="9a4e4314-ff88-4c3c-b9b3-40437d8d9e31" class="bulleted-list"><li style="list-style-type:disc"><strong>Ursprungsnachweise</strong><ul id="cd65c0ea-c11a-4e67-9a15-2c3f4748816d" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Warenverkehrsbescheinigung</span></summary><p id="9d7587bc-6440-466d-9b93-c4d4542050a2" class="">Weist Ursprung der Ware nach → für Inanspruchnahme von begünstigten Zöllen oder Zollbefreiungen </p></details></li></ul><ul id="8650a6b3-b9b5-4ca5-b24b-ae6b68803ea9" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Ursprungszeugnis</span></summary><p id="51e422a8-d1bc-431d-a846-c8996ef87970" class="">Weist Ursprung der Ware nach → für Export- und Importkontrollen von Warenströmen (Kontingenten) – von den Handelskammern ausgestellt</p></details></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Incoterms</summary><div class="indented"><figure id="cbf0b270-a040-4f6e-8212-5c2cc458980e" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_21.24.12.png"><img style="width:384px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_21.24.12.png"/></a></figure><p id="a6e30e64-a9f4-44f5-a47e-9e2272efc5aa" class=""><span style="border-bottom:0.05em solid">Einpunktklauseln</span>: Risiko und Kosten gehen an einem Ort vom Verkäufer auf den Käufer (Gruppe E, F und D)</p><p id="21b08d43-0e61-4b18-8e4f-f31e31b58bc4" class=""><span style="border-bottom:0.05em solid">Zweipunktklauseln</span>: Verkäufer bezahlt Haupttransport; Risiko überträgt sich bei der Übergabe an den Frachtführer (Gruppe C)</p><p id="3b5c8d2c-a304-4c07-be99-8e23ed9594e8" class=""><span style="border-bottom:0.05em solid">Multimodalklauseln</span>: mehrere Transportmittel</p><p id="ec84b29c-a833-4204-ad7d-71a27008baf3" class="">Schiffsverkehr: FAS, FOB, CIF und CFR</p><p id="60eb29bf-f4ee-4a3a-aa49-737ef2ebfdb3" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Zahlungsbedingungen</summary><div class="indented"><figure id="92c3e01e-9662-450d-a13d-b5d83ea51c72" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%205.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%205.png"/></a></figure><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Dokumentenakkreditiv</summary><div class="indented"><p id="74c3e24b-d6a4-4cda-bc7d-063edbebb6bf" class=""><em>Gibt eine Sicherheit an Verkäufer und Käufer. </em></p><p id="7c0bf47f-9945-4c5f-a495-cd3ce58aedd4" class="">Auftrag vom Käufer an ein Kreditinstitut → Käufer zahlt bei Nachweis der Lieferung. → Auszahlung durch das Kreditinstitut</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="89bedfc5-ba8d-4937-9eaf-bfd51738cf38"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Verkäufer → erhält den Rechnungsbeitrag, wenn er rechtzeitig liefert.<br/>Käufer → bezahlt, wenn er die Ware rechtzeitig erhält.<br/></div></figure><ul id="ce181fb4-8bc8-48ef-9fa0-d3052f436a16" class="bulleted-list"><li style="list-style-type:disc">unwiderruflich: wegen Annahmerisiko</li></ul><ul id="d1274531-e4f1-4593-bac9-375e5078778b" class="bulleted-list"><li style="list-style-type:disc">befristet: wegen Dubiosenrisiko<ul id="5a195757-6e3f-467b-a207-7927b0be3536" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Verfallfrist</span>: bis dahin müssen die Frachtdokumente bei der Bank eingelangt sein</li></ul><ul id="e58bd679-47d3-4ffe-84b0-e9ba505de822" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Vorlagefrist der Dokumente ab Ausstellungsdatum</span>: Frist, innerhalb welcher die Frachtpapiere ab ihrer Ausstellung übergeben werden müssen (wenn nicht festgelegt → nicht länger als 21 Tage)</li></ul><ul id="bc53767f-ce12-4360-9928-1b207ca4d880" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Verladefrist</span>: Zeitpunkt, an dem die Ware verladen sein muss (kürzer als Verfallfrist)</li></ul></li></ul><ul id="c12183f1-8baf-4226-939d-ca69d19e517c" class="bulleted-list"><li style="list-style-type:disc">Merkmale<ul id="a01bb4de-bcc0-42fb-8677-6dbc21bc434e" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Bestätigung</span>: Wenn vom Kreditinstitut des Verkäufers bestätigt, haftet auch diese für die Einlösung.</li></ul><ul id="df6c7350-7c61-4ace-b161-10d40f5deb3a" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Übertragbarkeit</span>: Kann an eine andere Person ausbezahlt werden, wenn von der eröffneten Bank als „übertragbar” gekennzeichnet</li></ul><ul id="a6d8a385-0d87-42d7-a20e-6fa0a045f149" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Teilbarkeit</span>: Zahlungen für Teillieferungen</li></ul></li></ul><ul id="f78d683e-0943-4be1-b982-ec27c9a3227f" class="toggle"><li><details open=""><summary><strong>Abwicklung</strong></summary><figure id="8038e30e-13c0-4553-93cf-c48a05fdef0e" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%206.png"><img style="width:384px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%206.png"/></a></figure></details></li></ul><ul id="3bc5783f-8f57-4019-a05d-deec9532f3f7" class="toggle"><li><details open=""><summary><strong>Vorteile</strong></summary><ul id="ad253535-a84b-40d9-91ef-202e3881c71c" class="bulleted-list"><li style="list-style-type:disc">Exporteur/Verkäufer: Sichert gegen Annahme- und Dubiosenrisiko</li></ul><ul id="459d6283-e46e-4145-8c48-006ff3895c41" class="bulleted-list"><li style="list-style-type:disc">Importeur/Käufer: rechtzeitige Lieferung</li></ul></details></li></ul><ul id="aefb3563-d5ff-4571-9db8-1f68d908b65c" class="toggle"><li><details open=""><summary><strong>Nachteile</strong></summary><ul id="ef71877d-4d95-4998-88b6-01a938e5fb37" class="bulleted-list"><li style="list-style-type:disc">Exporteur/Verkäufer: Wenn nicht rechtzeitig verladen, verfällt das Akkreditiv.</li></ul><ul id="3ad19f4c-552b-46cd-b5de-38e974766945" class="bulleted-list"><li style="list-style-type:disc">Importeur/Käufer: Es werden nur die Dokumente und nicht die Ware geprüft.</li></ul></details></li></ul><p id="50862c33-d619-43ab-95d0-0077af871a15" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Dokumenteninkasso</summary><div class="indented"><p id="275e16b6-f7da-46ac-a96d-8bb26ab612ac" class=""><em>Verkäufer beauftragt Bank (Einreicherbank) → Ware wird ohne Sicherheit versendet, dass der Käufer die Ware bezahlt oder annimmt.</em></p><ul id="248d6e85-fcb1-4c4b-871c-70b62a286278" class="bulleted-list"><li style="list-style-type:disc">D/P (Documents against Payment): Dokumente werden gegen Bezahlungen übergeben.</li></ul><ul id="3e566e4c-c80b-4560-a634-777d951cf475" class="bulleted-list"><li style="list-style-type:disc">D/A (Documents against Acceptance): Dokumente werden übergeben, wenn der Importeur einen auf ihn gezogenen Wechsel akzeptiert (Zahlungsziel gegen Wechselakzept)<ul id="0214df3b-323f-4f5b-a67c-39ba62cd4279" class="bulleted-list"><li style="list-style-type:circle">Kann Aussteller zurückgesandt werden</li></ul><ul id="bc929a75-d023-4624-b332-68ba08bee40b" class="bulleted-list"><li style="list-style-type:circle">bis zur Fälligkeit bei der Inkassobank bleiben</li></ul><ul id="5e7330fb-f978-4b9b-829a-f87802859c2d" class="bulleted-list"><li style="list-style-type:circle">durch die Inkassobank diskontiert werden</li></ul></li></ul><p id="ea9ac597-dcc7-4f6e-b9bc-ed1cbde9014d" class="">
+</p></div></details></div></details><hr id="b7dba06a-949e-4a6c-a3f5-97abc9eb0535"/><h1 id="e2199946-3db9-436d-b92f-b5a1b71435a1" class="">Wertschöpfungsprozesse</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Leistungserstellung</summary><div class="indented"><ul id="f2aeef75-f6f0-434d-8616-5af0d236d9f5" class="bulleted-list"><li style="list-style-type:disc"><strong>Rationalisierung</strong>: <span style="border-bottom:0.05em solid">menschliche Arbeit</span> wird immer mehr durch <span style="border-bottom:0.05em solid">betriebliches Vermögen</span> ersetzt → z.B.: Roboter in der Industrie</li></ul><ul id="41bf68d1-52da-4753-b454-8c44ec5ece96" class="bulleted-list"><li style="list-style-type:disc"><strong>Outsourcing</strong>: Leistungen die bisher selbst erbracht wurden, werden an andere Unternehmen übertragen. → z.B.: Reinigung an Reinigungsfirmen</li></ul><ul id="8a8263be-9209-49d2-9ea5-ee4ad07f7e4b" class="bulleted-list"><li style="list-style-type:disc"><strong>Globalisierung</strong>: Firmen lassen Leistungen dort erstellen, wo es am <span style="border-bottom:0.05em solid">wirtschaftlichsten</span> ist → z.B.: Rechnungswesen nach Indien; Produktion von Kleidung in Asien</li></ul><ul id="db039cd9-4241-4b82-8c7c-403d667e703b" class="bulleted-list"><li style="list-style-type:disc"><strong>E-Business</strong>: IuK-Technologien (Informations- und Kommunikationstechnologien) ermöglichen <span style="border-bottom:0.05em solid">Wettbewerbsvorteile</span>.<ul id="f3099502-00bc-4aa6-8575-dc381f631ed4" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Kostensenkung</span>: Mehr Informationen können bearbeitet und gespeichert werden.</li></ul><ul id="9c6f6075-113e-4045-9bf4-3ad542867d7c" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Wirtschaftlichkeit</span>: Abwicklung innerbetrieblicher Prozesse wird vereinfacht und beschleunigt.</li></ul><ul id="94d6b719-1627-4ce0-ad07-cf2d00546807" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Beziehung zu Kunden und Lieferanten</span> wird verbessert.</li></ul></li></ul><ul id="5070b873-516d-43fa-a1c3-b2c904719f48" class="bulleted-list"><li style="list-style-type:disc"><strong>Nachhaltigkeit</strong>: Nachhaltiges Entwicklung → <mark class="highlight-teal_background">Entwicklung, welche die Bedürfnisse der heutigen Generation entspricht, ohne die Möglichkeiten der zukünftigen Generation zu gefährden, ihre Bedürfnisse befriedigt</mark>.<p id="1b943999-89c6-4e5b-84fd-239feafd30b2" class=""><strong>3 Dimensionen der Nachhaltigkeit:</strong></p><ul id="bac5702c-32ef-420a-ba96-063ba8fc0a17" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">ökologische Nachhaltigkeit</span>: Erhaltung von Natur, Umwelt und natürliche Ressourcen.</li></ul><ul id="b27c8f81-beb7-4145-ba1c-ce2948b1c59a" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">ökonomische Nachhaltigkeit</span>: stabiler Wohlstand auf der Basis eines stabilen Wirtschaftswachstums.</li></ul><ul id="7b04acad-50f8-46b4-a58f-ff4bafb1e001" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">soziale Nachhaltigkeit</span>: menschengerechter Umgang mit der Gesellschaft.</li></ul><p id="30323c0f-39f5-44eb-9a57-c4cfc564530b" class="">
+</p></li></ul></div></details><h2 id="8d3ea47d-acb2-49fb-8b86-206324d18100" class="">Überprüfung mit Kennzahlen (Leistungserstellung)</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Produktivität</summary><div class="indented"><figure id="77c2fd68-e04e-430e-9b7b-7c9528673e54" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.20.33.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.20.33.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wirtschaftlichkeit</summary><div class="indented"><figure id="f7e77642-3c84-4c6c-84e2-22b6b23a431c" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.21.16.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.21.16.png"/></a></figure><p id="e1e1b7fc-dcea-4750-8423-3bab11ae32b9" class="">Verhältnis von Einsatz und Ertrag → <span style="border-bottom:0.05em solid">kein Gewinn</span> bedeutet <span style="border-bottom:0.05em solid">nicht wirtschaftlich</span></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Rentabilität</summary><div class="indented"><figure id="91ffeeda-528e-4b12-9791-acbfa5d1c2ce" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.22.58.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.22.58.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wertschöpfung</summary><div class="indented"><figure id="d79807dd-0038-4831-bdad-60d5f86562a0" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%207.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%207.png"/></a></figure><figure id="e3c6dd95-37e4-497e-ad1f-0187e1cd667c" class="image" style="text-align:left"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.24.37.png"><img style="width:336px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-11-16_um_22.24.37.png"/></a></figure></div></details></div><p id="66a982aa-daec-45d6-8b4d-cfd05a5e9418" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

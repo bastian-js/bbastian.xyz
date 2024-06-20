@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kennzahlen</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bc62f54f-7323-4093-8c77-7e540e1432fc" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">👨‍🏫</span></div><h1 class="page-title">Kennzahlen</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-orange">UNCO</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Wichtigsten Kennzahlen</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-green">2. Semester</span><span class="selected-value select-value-color-purple">5CHK</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><h2 id="300780e1-ee88-4c07-a283-564fe427756a" class="">Wichtige Sachen</h2><p id="7b0d5b70-2220-4e16-afb1-08dd035d3db9" class=""><span style="border-bottom:0.05em solid"><strong>Kurzfristig gebundenes Vermögen</strong></span>: Lieferforderungen</p><p id="addc59e2-d69a-4637-8b40-7c447fbf18e4" class=""><span style="border-bottom:0.05em solid"><strong>Kurzfristige Verbindlichkeiten</strong></span>: Lieferverbindlichenkeiten (bis 3 Monate)</p><p id="bd64f799-c649-4fa9-b711-0290abc8b818" class=""><span style="border-bottom:0.05em solid"><strong>Langfristiges Kapital</strong></span>: Darlehen</p><h2 id="7f206d3e-48df-41fc-86b5-daa46264b6b4" class="">Beschreibung und Verbesserungsvorschläge</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>Anteil des Anlagevermögens</strong></summary><div class="indented"><p id="fc659c9c-5f48-4d0f-a00b-93d6454d132f" class="">Je niedriger, desto besser</p><p id="c3ff3e5a-b4b1-41b5-baa5-dc00779cf824" class="">Wie viel von meinem Vermögen ist langfristig gebundenes Vermögen (verursacht überwiegend Fixkosten) </p><p id="54631464-2e17-465c-bc9b-7a47e834a3e8" class="">Je mehr langfristig gebundenes Kapital wir haben → desto <span style="border-bottom:0.05em solid"><strong>unflexibler</strong></span></p><ol type="1" id="67b59d47-8f18-4f59-94ce-aa676e6e4ea2" class="numbered-list" start="1"><li>Eventuell Anlagevermögen leasen statt zu kaufen (bei Ersatzinvestitionen).</li></ol><ol type="1" id="b5b39802-ce12-44d4-af6f-d7085e8ab120" class="numbered-list" start="2"><li>Veraltetes/Unbenütztes AL entfernen/verkaufen</li></ol><ol type="1" id="1a403374-9dfe-421c-8398-afe105cf00f9" class="numbered-list" start="3"><li>Sale and lease back</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>Anteil des Umlaufvermögens</strong></summary><div class="indented"><p id="a94d20de-9e02-4436-9b11-d90a80f9f9da" class="">Je höher, desto besser</p><p id="39135efe-1733-4c7a-b150-217d4f82bc13" class="">Wie viel von meinem Kapital ist weniger als 1 Jahr im Betrieb</p><p id="bdee3f3f-e1d9-4a40-8e2e-1bac1b73b99e" class="">Je größer der Anteil ist → desto <span style="border-bottom:0.05em solid"><strong>flexibler</strong></span> (Anpassen von <strong>Beschäftigungsschwankungen</strong>)</p><ol type="1" id="205e6966-3f7e-4900-97a0-5719ad8439ef" class="numbered-list" start="1"><li>Umsatzsteigerung durch gezielte Marketingmaßnahmen</li></ol><ol type="1" id="8ee27a82-2d63-483a-9ce2-d47fefbcd347" class="numbered-list" start="2"><li>Veraltetes/Unbenütztes AL entfernen bzw. verkaufen - Gesamtvermögen sinkt - Anteil des UV steigt</li></ol><ol type="1" id="2482d67a-ca5f-4d1e-9433-56d02bbdad85" class="numbered-list" start="3"><li>Lagerbestände vermindern durch gezielte Beschaffungsmarketingmaßnahmen</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>Anteil des Eigenkapitals</strong></summary><div class="indented"><p id="efd4acc0-0c53-4a59-a89d-fbda9c09d46a" class="">Je höher, desto besser</p><p id="5cc474fe-c7f2-44fb-b1fc-1f7c0dafef6a" class="">Grad der finanziellen Unabhängigkeit bzw. Eigenfinanzierung </p><p id="fa6d8165-b9a9-406f-88aa-48e537085061" class="">Je höher → desto <span style="border-bottom:0.05em solid"><strong>unabhängiger</strong></span> (finanziell)</p><ol type="1" id="c6a5796c-7812-4ab7-9ed1-983cd79d9745" class="numbered-list" start="1"><li>GmbH/AG: Erhöhung der Stammeinlagen/Ausgabe junger Aktien, Rücklagen einbehalten; Gewinnausschüttung verringern</li></ol><ol type="1" id="fa5d4962-98c7-42e4-80ab-8e7ba752cc11" class="numbered-list" start="2"><li>Einzelunternehmen: weniger Privatentnahmen</li></ol><ol type="1" id="dfccf00a-c8c7-45bb-b519-e56df2a5319e" class="numbered-list" start="3"><li>Erlöse erhöhen - Marktstrategie überdenken</li></ol><ol type="1" id="6443a40b-10f5-4bc8-8110-12c9c0dd85f4" class="numbered-list" start="4"><li>Nicht benötigtes ALV verkaufen</li></ol><ol type="1" id="6b6f0c90-182b-4811-868f-720ae283d5bf" class="numbered-list" start="5"><li>Umgründungen</li></ol><p id="881327fd-9d7c-4a87-a0d7-8d2ea40be417" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>Anteil des Fremdkapitals</strong></summary><div class="indented"><p id="aab26a93-1b12-459c-a35e-1ddff370e2ec" class="">Je niedriger, desto besser</p><p id="c7fd08ae-3485-4f90-9ecb-5556aa78dbfb" class="">Grad der Verschuldung </p><p id="69981611-ab1a-436b-b141-15d01578b53c" class="">Je höher → desto <span style="border-bottom:0.05em solid"><strong>abhängiger</strong></span> von fremden Kapitalgebern (Zinsbelastungen)</p><ol type="1" id="29a078b3-4bc7-4d96-8427-c61bb9e2706d" class="numbered-list" start="1"><li>günstigere Lieferanten → Verhandlungen führen, andere Lieferanten suchen - Fremdkapital sinkt</li></ol><ol type="1" id="6f525d5e-b2bc-4ec5-bfd1-6f48051cc1f9" class="numbered-list" start="2"><li>Innerhalb der Skontofrist bezahlen - Fremdkapital sinkt</li></ol><ol type="1" id="d3568039-7528-433f-be0c-d12907cc6349" class="numbered-list" start="3"><li>Überlegung der Einkaufsmengen</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Fiktive Schuldentilgungsdauer</summary><div class="indented"><p id="9ccc8c91-948d-4348-aad9-d6f42497d6b4" class="">Je kürzer, desto besser.</p><p id="24a347e3-168a-44e5-adc1-a6d73b8eaac7" class="">In wiel vielen Jahren kann man seine Schulden aus dem Cashflow zurückzahlen</p><p id="be49f564-c643-4ee1-97cd-d3a180d7e320" class="">Je kürzer → desto <span style="border-bottom:0.05em solid"><strong>liquider</strong></span></p><p id="18aa910f-f46a-4aa6-ae11-064d2c7750bd" class=""><span style="border-bottom:0.05em solid"><strong>Problem</strong></span>: Zur Tilgung wird ausschließlich der Cashflow verwendet.</p><ol type="1" id="a70c67f5-fbc5-457e-8b03-4137fd9c0161" class="numbered-list" start="1"><li>Gewinn erhöhen durch geziele Marketingmaßnahmen (Umsatz)</li></ol><ol type="1" id="132fff3d-1529-4a22-ada6-7dde23d95b1f" class="numbered-list" start="2"><li>Alle Aufwände (vor allem die großen - WEIS, Personal) senken</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Anlagendeckung</summary><div class="indented"><p id="7f8bf237-b731-4308-8dbd-ecf27a8ed1f5" class="">Je höher, desto besser.</p><p id="cac49534-6b65-425d-a3b9-7742767f1ee4" class="">Wie viel des langfristig gebunden Vermögen wurde mit langfristigem Kapital finanziert</p><p id="72713173-e142-408c-90e1-a20d388d6ba3" class="">Wichtig: Anlagedeckung soll nicht unter 100% sinken → Kurzfristiges FK ist teuer.</p><ol type="1" id="635dcdbc-0f1e-469f-9282-786a72bedc94" class="numbered-list" start="1"><li>Eigenkapital erhöhen (neue Gesellschafter aufnehmen)</li></ol><ol type="1" id="daa72753-3d21-4f2f-a24f-e6263e2922e8" class="numbered-list" start="2"><li>Gewinnausschüttung reduzieren - erhöht des Eigenkapitals</li></ol><ol type="1" id="5f486b48-df80-4e43-a328-f9a4ce064911" class="numbered-list" start="3"><li>Überlegen ob die Investition nötig ist</li></ol><ol type="1" id="24f01f45-d6c0-4517-99cf-b85ea3a10b4f" class="numbered-list" start="4"><li>EK erhöhen: Aufnahme stiller Gesellschafter; Privatentnahmen verringern</li></ol><ol type="1" id="22c72d00-e096-46d3-9b40-34cf40b545e6" class="numbered-list" start="5"><li>Umgründung in GmbH</li></ol><ol type="1" id="c06e6622-3f65-4eb4-8392-c82c1b497445" class="numbered-list" start="6"><li>Sale and lease back</li></ol><ol type="1" id="e2854977-5ccb-4d8c-9b68-3ba920bc1c28" class="numbered-list" start="7"><li>Umschuldung</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lagerumschlagshäufigkeit</summary><div class="indented"><p id="00f175f0-f534-49d3-9e70-fec86c773a8b" class="">Wie oft werden die Waren während des Geschäftsjahres verkauft</p><p id="1efa2166-f69f-46a7-941c-102a8d6f8d4b" class="">Je höher → desto geringer ist die Gefahr des Verderbs und der modischen oder technischen Entwertung</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lagerumschlagsdauer</summary><div class="indented"><p id="38169485-6c8a-426e-9983-1868436fdc7e" class="">Je niedriger, desto besser.</p><p id="e0212248-6dfe-4c7e-aca8-1668ab117159" class="">Wie lange die Ware auf Lager liegt (vom Einkauf bis zum Verkauf). </p><p id="0bda5e6b-bf25-47de-a3af-bf84a4fd67cf" class="">Eine kurze Lagerdauer besagt, dass die Handelswaren schnell wieder in liquide Mittel umgewandelt werden.</p><ol type="1" id="095d5912-9d55-4250-b55b-d7a1c61a9890" class="numbered-list" start="1"><li>Kontrolle der Beschaffungsprinzipien</li></ol><ol type="1" id="b09c7c79-7ff9-4c14-9d91-2682ab068a76" class="numbered-list" start="2"><li>Umsatz steigern - Lagerbestand reduzieren</li></ol><ol type="1" id="2278ac38-2eca-4a8d-91b4-866116946de2" class="numbered-list" start="3"><li>Wareneinsatz minimieren - eventuell günstiger einkaufen</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Debitorenumschlagshäufigkeit</summary><div class="indented"><p id="1d9cbce2-35c4-4c51-89c9-23bbcbba774a" class="">Gibt an wie oft sich der Debitorenstand in einem Jahr erneuert.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Debitorenumschlagsdauer</summary><div class="indented"><p id="8f250547-f501-4a1d-a84b-911117156469" class="">Je niedriger, desto besser.</p><p id="79a890d1-c729-44c7-9382-850e1ecfee17" class="">Durchschnittliche Frist, innerhalb der die Lieferforderungen beglichen<br/>werden an. (Dauer zwischen Rechnung und Zahlung des Kunden).  <br/></p><p id="fc49af14-93b0-494e-a672-6e8d096f5fe8" class="">Niedrige Debitorenumschlagshäufigkeit kann kurzfristige Zahlungsschwierigkeiten ausgleichen. </p><p id="93e10ec3-00f0-44b0-9665-f2ad618dd0c4" class="">Ein höhe Debitorenumschlagsdauer kann zu Zahlungsschwierigkeiten führen.</p><ol type="1" id="24c47a82-1d24-42fc-8372-fe50a4e6f640" class="numbered-list" start="1"><li>Skonto gewähren - Zahlungsbedingungen überprüfen</li></ol><ol type="1" id="a025724f-40d1-4070-a684-d7873b5799c2" class="numbered-list" start="2"><li>Mahnwesen überprüfen</li></ol><ol type="1" id="41d1f566-25d5-475b-96ed-afc3dc2fd117" class="numbered-list" start="3"><li>Zahlunsziel verkürzten</li></ol><ol type="1" id="f302d5d0-6805-4f75-8ac6-4b8a2d342889" class="numbered-list" start="4"><li>Vorauszahlung bzw. Anzahlung verlangen</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Kreditorenumschlagshäufigkeit</summary><div class="indented"><p id="ff10a1a0-8e3f-413d-b0bc-4ad37ec59d50" class="">Wie oft sich die Lieferverbindlichkeiten in einem Jahr erneuern.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Kreditorenumschlagsdauer</summary><div class="indented"><p id="a0feaf56-f7ad-41b0-b828-f096d5e59fd2" class="">Je niedriger, desto besser.</p><p id="b92a465e-e7fb-4a8c-907e-83708421c2ae" class="">Durchschnittliche Frist an, innerhalb der die Lieferverbindlichkeiten beglichen werden.</p><p id="2ad1ccef-9f1b-4aa2-b59b-5932d7d83533" class="">Ein steigende Kreditorenumschlagsdauer bedeutet, dass die teure Lieferantenfinanzierung anstelle der günstigen Kreditfinanzierung verwendete wird. </p><p id="2b3984ce-fe90-4750-8c1a-fb310b3059b4" class="">Eigentlich ist lange gut, falls Skonto gewährt wird ist die Zahlung innerhalb der Kassafrist gut.</p><ol type="1" id="fe7bb6bf-596b-43c3-9bef-64e42939443f" class="numbered-list" start="1"><li>Überprüfen, ob ich nicht zu viel einkaufe</li></ol><ol type="1" id="e972afb2-3aeb-4096-9e9d-da5390b64eb5" class="numbered-list" start="2"><li>Skonto ausnutzen</li></ol><ol type="1" id="af22beda-a9d1-4791-a8d6-159fcd730504" class="numbered-list" start="3"><li>Verhandlungen mit LV führen</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Kapitalumschlagshäufigkeit</summary><div class="indented"><p id="ad532c80-0978-4f34-afba-7365207d984c" class="">Je höher, desto besser.</p><p id="904dc096-4574-4e06-b6e6-eb87a953d412" class="">Wie oft steckt das investierte Kapital im Umsatz → Mit 1 € Kapitaleinsatz erwirtschafte ich 3,50 € Umsatz. </p><p id="9f557856-10f8-4e09-b750-fb97416197db" class="">Je höher, desto <span style="border-bottom:0.05em solid"><strong>produktiver</strong></span> wird das investierte Kapital eingesetzt. </p><p id="f4083b39-860f-469f-87a7-b02cfcc139cd" class="">Gründe für schlechte Werte: Zu hohe Forderungen, Nicht ausgelastetes AV, zu geringe Betriebsleistung</p><ol type="1" id="6e52a864-6c42-487d-baae-245adadf5083" class="numbered-list" start="1"><li>Umsatz steigern - Marketingstrategien<br/>überdenken<br/></li></ol><ol type="1" id="8c9427dd-1108-42ec-a1ca-52153aee2e46" class="numbered-list" start="2"><li>Bessere Auslastung</li></ol><ol type="1" id="0e752160-0e5e-4f31-ad3b-da5a0ee55dd8" class="numbered-list" start="3"><li>Preiserhöhungen überdenken</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Working Capital</summary><div class="indented"><p id="6fcb2c41-42ab-4c2a-a1e9-2166dcdfb9da" class="">Wie viel des Umlaufvermögens wurde mit langfristigem Kapital finanziert → Können die kurzfristigen Verbindlichkeiten gedeckt werden.</p><p id="f7d6e54b-3e65-4256-a4d4-465ab4f3effc" class="">Umlaufvermögen → ohne ARA</p><p id="ab136cbe-8ed9-4930-b296-9eef0633d48e" class="">Sollte 30-50% sein</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong><strong>Material- bzw. Warenintensität</strong></strong></summary><div class="indented"><p id="5e43ed6e-7314-48da-8fb1-7ed3090d30d4" class="">Verhältnis zwischen Wareneinsatz und Betriebsleistung.</p><p id="81d6eb3b-0492-40cc-95cb-6897a01f7d7b" class="">kleiner als 60% → gut</p><p id="3f2109a5-5b57-41de-beb2-5c7a26cffad7" class="">größer als 70% → schlecht</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Personalintensität</summary><div class="indented"><p id="3dd5c2c9-2e1e-4b11-a844-c95d64c5e977" class="">Verhältnis zwischen Personalaufwand und Betriebsleistung</p><p id="04085888-d8b3-4048-a94a-e33701322539" class="">Kleiner als 10% → gut</p><p id="c892292a-49fa-4db8-be78-820174b6a81c" class="">Größer als 20-30% → schlecht</p><ol type="1" id="c8f99bf1-9019-48df-8fda-58304a4ed122" class="numbered-list" start="1"><li>Personalaufwand überdenken, Überstunden abbauen, Teilzeit, Pensionierungen nicht nachbesetzen</li></ol><ol type="1" id="8c107403-3345-416e-a331-0fb017ea55c7" class="numbered-list" start="2"><li>Warenerlöse steigern - mehr verkaufen - Marketingstrategien überdenken - erhöht Betriebsleistung</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Umsatz je Beschäftigter</summary><div class="indented"><ol type="1" id="7d5f0b05-5bd5-4d77-8c88-551b6cb82002" class="numbered-list" start="1"><li>Überlegen brauche ich so viel Personal - Personal abbauen - verringer Personalaufwand</li></ol><ol type="1" id="cc338a26-579a-4eea-80bc-2346b50c2b02" class="numbered-list" start="2"><li>Warenerlöse steigern - mehr verkaufen - Marketingstrategien überdenken - erhöht Betriebsleistung</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>Handelsspanne</strong></summary><div class="indented"><p id="a6c87d30-a1a7-4a50-85ac-1b43121ecf94" class="">Prozentuelle Differenz zwischen Bruttogewinn und Erlösen</p><p id="15cf1769-13b2-403e-a277-5f9133dd1799" class="">Bei einem Umsatz von 100 Euro werden …€ Gewinn erzielt.</p><ol type="1" id="bbdf8db8-90e0-4fef-9865-be1037113663" class="numbered-list" start="1"><li>billiger einkaufen - mit Lieferanten verhandeln bzw. billigere Lieferanten suchen - geringerer Wareneinsatz</li></ol><ol type="1" id="c2773ee0-4eb9-40bc-a4b4-62b2bfa59ebc" class="numbered-list" start="2"><li>Preiskalkulationen überdenken - erhöht Bruttogewinn</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Rohaufschlag</summary><div class="indented"><p id="0514a713-3f94-4235-bb98-2c59586b6283" class="">Differenz zwischen dem Bruttogewinn und dem Wareneinsatz</p><p id="3ef1add8-bf39-4942-ab94-f6374bc26fdb" class="">Bei einem Wareneinsatz von 100 Euro werden …€ Bruttogewinn erzielt.</p><ol type="1" id="19dd511f-0d77-436f-96c2-234a105651ed" class="numbered-list" start="1"><li>billiger einkaufen - mit Lieferanten verhandeln bzw. billigere Lieferanten suchen - geringerer Wareneinsatz</li></ol><ol type="1" id="d8fc6808-f621-491e-81ef-fc0b98d8f4b6" class="numbered-list" start="2"><li>Preiskalkulationen überdenken - erhöht Bruttogewinn</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Rentabilität des Eigenkapitals</summary><div class="indented"><p id="00a7d503-07aa-4378-8ea9-2a20e6750436" class="">Wie viel Ertrag bringt ein investierter Euro → Verzinsung des Eigenkapitals</p><ol type="1" id="3640fa83-8fb8-4b2b-a5f6-055ef8b85175" class="numbered-list" start="1"><li>Analyse der Aufwände und Erträge - Aufwände senken u Erträge steigern, vor allem die großen Positionen</li></ol><ol type="1" id="0a796e90-6ee2-4057-9a4c-cf97a8bfcb52" class="numbered-list" start="2"><li>Warenerlöse steigern - mehr verkaufen - Marketingstrategien überdenken -erhöht Ergebnis vor Steuern</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Rentabilität des Gesamtkapitals</summary><div class="indented"><ol type="1" id="1ecb91db-1a57-4369-ae3a-7f2cee528993" class="numbered-list" start="1"><li>nicht mehr benötigtes Anlagevermögen<br/>verkaufen bzw. ausscheiden - Schulden begleichen - verringert<br/>Gesamtkapital<br/></li></ol><ol type="1" id="3ba5d1c5-b320-475b-8510-f7e6afe78cd6" class="numbered-list" start="2"><li>Warenerlöse steigern - mehr verkaufen - Marketingstrategien überdenken -erhöht Ergibnis vor Steuern</li></ol><ol type="1" id="45ba30df-afe1-4934-92ae-87a60b7b31f2" class="numbered-list" start="3"><li>Aufwände senken (große Positionen)</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong><strong>Leverage-Effekt</strong></strong></summary><div class="indented"><p id="0fd8fd46-57f3-4ef5-9855-94b698560456" class="">Gesamtkapitalrentabilität ist über dem Fremdkapitalzinssatz → Bei zunehmender Fremdfinanzierung steigt die Eigenkapitalrentabilität</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Umsatzrentabilität</summary><div class="indented"><ol type="1" id="55c84afa-88c4-483e-b265-b082574063a4" class="numbered-list" start="1"><li>billiger einkaufen - mit Lieferanten verhandeln bzw. billigere Lieferanten suchen - geringerer Wareneinsatz - erhöht Ergibnis vor Steuern</li></ol><ol type="1" id="8d9a46fb-50fe-4ee1-91af-720948bc87ac" class="numbered-list" start="2"><li>Warenerlöse steigern - mehr verkaufen - Marketingstrategien überdenken -erhöht Ergibnis vor Steuern</li></ol></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Test - ZF</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5eccbb77-bff0-4b64-a2fc-d3fe761e6ff5" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/map_gray.svg"/></div><h1 class="page-title">Test - ZF</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-red">🌏 IWK </span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Nahost Konflikt, Iran (+Buch), Kulturkreise, Saudi Arabien </td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-blue">1. Semester</span><span class="selected-value select-value-color-purple">5CHK</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><h1 id="15f712f3-40bf-4e5b-a6f2-3e5f57e1f850" class="">Kulturerdteile</h1><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="1de04016-7683-4b84-9baa-a5124135b6c2"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><strong>BRICS-Staaten</strong>: Brasilien, Russland, Indien, China und Südafrika (Schwellenländer) </div></figure><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Karte</summary><div class="indented"><figure id="981a1391-f975-4c7c-92ea-aa0dab882eed" class="image"><a href="Test%20-%20ZF%205eccbb77bff04b64a2fcd3fe761e6ff5/Untitled.png"><img style="width:384px" src="Test%20-%20ZF%205eccbb77bff04b64a2fcd3fe761e6ff5/Untitled.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Europa/Europäisches Abendland</summary><div class="indented"><p id="0286f58f-8ba6-472a-9c28-83cac50df82d" class=""><strong>Religion</strong>: vorwiegend Christentum</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="4acae6e6-fff4-46b7-bf4f-de81889f6f15"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>Grenze Europa/Asien:<br/><br/></strong></span>Uralgebirge → Uralfluss → Kaspisches Meer → Manytsch-Ebene od. Kaukasus (Elbrus-Diskussion) → Schwarzes Meer → Bosporus → Dardanellen (Inseln) → Ägäis</div></figure><p id="baca3d69-e807-4f6b-8629-18e7799c75cb" class=""><strong>Elbrus-Diskussion</strong>: Mont Blanc ist bei der EU</p><p id="37fe4f94-53c8-4b79-a809-4a2fac297a19" class="">Grönland</p><h3 id="cb031c1b-940a-4ae8-ab07-ca7a60a6b596" class="">Öl in Österreich</h3><p id="e75cd643-a521-4077-8ab2-ac182d59a2df" class="">von Schweden und Nahosten → Raffinerie in Schwechat</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="9274812b-57ea-4256-8266-b13543e041bb"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Ölförderung <span style="border-bottom:0.05em solid">sehr gering</span></div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Orient/Morgenland</summary><div class="indented"><p id="92481661-0a37-4975-8086-93ed24a648e2" class=""><strong>Religion</strong>: <span style="border-bottom:0.05em solid">Islam</span>-geprägt</p><p id="d1edcdf7-a778-4603-b87b-92ba47cf0432" class="">Kasachstan („…<span style="border-bottom:0.05em solid">stan”</span> → Land der, Heimat der … <mark class="highlight-orange_background">Kasachen</mark>)</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Russland</summary><div class="indented"><p id="f4cb73df-c584-47eb-a47a-4e261a65e88e" class=""><strong>Religion</strong>: <span style="border-bottom:0.05em solid">Christlich-orthodox</span></p><p id="3f687b2c-a7a4-4309-acb5-5603c4b00ffb" class="">Bekannt für <mark class="highlight-orange_background">Alkoholismus</mark></p><p id="78c95c87-0275-41d2-9431-0916d5ab4cf3" class=""><strong>Gulag</strong>: Arbeitslager</p><p id="444d3749-805a-49fb-a9e9-12bfc4918239" class=""><strong>Oligarchie</strong>: finanziell starke Oligarchen haben die Macht</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Südasien</summary><div class="indented"><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="985458e3-9753-410c-be02-eb752a9001b9"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map-pin-alternate_gray.svg"/></div><div style="width:100%"><strong>Länder</strong>: Pakistan, Bangladesch, Indien</div></figure><p id="54432c65-047f-4834-857b-a082917b4f85" class=""><strong>Kastensystem</strong>: Man wird in sogenannte Kasten geboren (<span style="border-bottom:0.05em solid">Soziale Stellung</span>)</p><p id="0da13171-f0ba-466d-98cc-3ccfb8c7a512" class=""><strong>Religion</strong>: Hinduismus</p><p id="7be48cbb-6b07-4eff-99fd-87472e16da44" class="">Mittlerer Osten: Pakistan, …</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Ostasien</summary><div class="indented"><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="5a8762ff-9619-420b-800e-79cd8806ed87"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map-pin-alternate_gray.svg"/></div><div style="width:100%"><strong>Länder</strong>: Japan, China, Mongolei, Korea</div></figure><p id="5a064919-5820-4630-b26f-098705d1f133" class=""><strong>Chindia</strong>: China und Indien</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Südostasien</summary><div class="indented"><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="26922c1b-f2e6-4b49-a586-13416d85c154"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map-pin-alternate_gray.svg"/></div><div style="width:100%"><strong>Länder</strong>: Indonesien (größter <span style="border-bottom:0.05em solid">Moslem-Staat</span>), Philippinen, Thailand, Laos, Bali (<span style="border-bottom:0.05em solid">Hinduismus</span>)</div></figure><p id="744eeee2-d9e7-4e99-9614-9f2383c405c2" class=""><strong>Religion</strong>: überwiegend <span style="border-bottom:0.05em solid">Buddhismus</span></p><p id="9b877701-9c19-437b-8c81-2442ce64e238" class="">Bekannt für Sextourismus</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="d2d84cd8-9b5a-4c96-86c6-2fd936c1cc27"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><strong>ASEAN</strong>: The Association of Southeast Asian Nations (wollen wie die EU sein).</div></figure><p id="14231089-871c-45ed-a6c1-7a0ead632768" class=""><strong>Ferner Osten</strong>: Ost, Südostasien</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Australien/Ozeanien</summary><div class="indented"><p id="d7890d80-c04b-4ad0-b83a-d36d4093e403" class="">Zählt zur <span style="border-bottom:0.05em solid">europäischen Welt</span>! → Kolonie von <span style="border-bottom:0.05em solid">Großbritannien</span></p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="b0ab2e3b-00ec-482e-a85b-d8fb44351b78"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/light-bulb_gray.svg"/></div><div style="width:100%"><strong>Transportation</strong>: Britten haben die Gefangenen nach Australien aufgrund von überfüllten Gefängnissen transportiert (Gefängnisinsel).</div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Angloamerika</summary><div class="indented"><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="4b9a7b9b-cc67-4229-aa85-c74344e04667"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map-pin-alternate_gray.svg"/></div><div style="width:100%"><strong>Länder</strong>: Kanada, USA</div></figure><p id="ebf2bbca-ede4-443c-ac20-f35b8614e320" class=""><strong>Anglo</strong> bedeutet: „<span style="border-bottom:0.05em solid">Englisch</span>”!</p><p id="fcb0e6d3-0788-4eb6-a925-e70d8f067d4c" class=""><strong>Anglo-Saxon</strong>: Volksstamm</p><p id="ba78e450-a79a-4133-8994-a4285ef778c9" class=""><strong>Rio Grande</strong>: <span style="border-bottom:0.05em solid">natürliche Grenze</span> zwischen USA und Mexiko</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Lateinamerika</summary><div class="indented"><p id="cc59f695-10b5-499a-8d48-527be0615f27" class=""><strong>Sprachen</strong>: Spanisch, Portugiesisch (Brasilien), Englisch, Französisch</p><p id="09a7eae1-2cf6-4aaf-897a-2311e481b2ea" class=""><strong>Romanische Sprachen</strong>: Grundlage Latein (deswegen Lateinamerika)</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Subsahara Afrika</summary><div class="indented"><p id="0df11920-a665-402d-a26c-298dc6d67616" class=""><strong>Religion</strong>: <span style="border-bottom:0.05em solid">Christlich</span> → <span style="border-bottom:0.05em solid">Katholizismus</span></p><p id="e4be8c89-9375-49c0-b711-c18d762d281d" class="">Bekannt für <span style="border-bottom:0.05em solid">Armutsnöte</span>, <span style="border-bottom:0.05em solid">Misswirtschaft</span></p><p id="972692d0-109c-41ce-87bc-deb62a48ccaa" class="">Viele <span style="border-bottom:0.05em solid">Bodenschätze</span></p></div></details><hr id="8b601fbc-5477-4f70-b9b5-eca47de73259"/><h1 id="94148494-ce26-41e9-a3eb-19b33ff83ff3" class="">Naher Osten</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Irak</summary><div class="indented"><p id="6ad8df13-6419-4b70-9eb4-bee362a640ee" class="">Amerikaner haben den Herrscher (Hussein) gehängt.</p><p id="efe19333-4f53-42ba-94ef-851bf33c3cd7" class="">Minaretturm</p><p id="a831e7cd-e15d-4d8f-8ba1-323252cb4a33" class="">Türkei: Aus dem Museum eine Moschee gemacht (Kalifat)</p><p id="c7096054-f7d9-4f2f-8481-b1da5ef6fb5e" class="">Aus den Geschichtsbüchern, die Evolutionstheorie gestrichen (nur Religion)</p><p id="842e1ce7-a034-45f8-887b-bee14b70b86d" class="">Terroranschläge in Istanbul: Palestinensische Gruppierung</p></div></details><hr id="872ab208-5d7a-4a21-b065-fc51939db9c7"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Iran</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="21aa0006-ed15-4c01-877c-c6fd2cda57a1"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Seit dem <mark class="highlight-orange_background">01. April 1979</mark> gibt es die „Islamische Republik Iran”. </div></figure><p id="1752d8a8-c89b-4006-aec9-fe925029d932" class=""><strong>Historischer Name</strong>: Persischer Golf</p><p id="2d033ea8-6ae0-48ce-afeb-d292643a3fd9" class=""><strong>Oberhaupt</strong>: Schah (Schachmatt → Schah ist hilflos)</p><p id="922f6ace-d469-488d-95b9-6df8b5bfbbbb" class=""><strong>Mahdi</strong>: Nachfolger des Propheten Mohammed.</p><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="8a4e3c41-a494-4ccb-96f9-da0261a71a61"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/mosque_gray.svg"/></div><div style="width:100%"><strong><span style="border-bottom:0.05em solid">Sunniten</span></strong> → meisten Muslime<br/><br/><strong><span style="border-bottom:0.05em solid">Shiiten</span></strong> → Iran, Irak<br/>Es geht um die Nachfolge vom Propheten Mohammed!<br/></div></figure><p id="35e0dc10-6960-425e-8a7e-881d907e860b" class=""><strong>Levante</strong>: Naher Osten</p><p id="509e4e29-a178-492c-8a85-5b25b88868d8" class=""><strong>Erzfeind</strong>: Saudi Arabien, Israel</p><p id="ee3514e5-ff23-4ea1-a583-1ae2302677aa" class=""><strong>Ali Chamenei</strong>: seit 1989 amtierend</p><p id="6c423b40-1db2-4b64-900d-9bd38b1842de" class=""><strong>Säkularismus und Laizismus</strong>: Trennung von Staat und Religion</p><h3 id="0ac4a723-8c3a-4550-8c73-fbbe85e626ea" class="">Britisches Weltreich</h3><p id="1003eea7-5b64-4c37-80c6-0b449baeb85a" class=""><mark class="highlight-yellow_background">Jahr 1800</mark> → Land muss sich gegen Russland (bzw. Britisches Weltreich) behaupten.</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="5e3c922b-3657-4f40-9ff2-88defeb72d10"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/warning_gray.svg"/></div><div style="width:100%"><strong><span style="border-bottom:0.05em solid">Bodenschätze</span></strong> (Öl, Gas) sind interessant! → ausländische Firmen</div></figure><h3 id="deb8120a-28f2-4c18-8790-bed2b0854aaa" class="">Erster Weltkrieg</h3><p id="7b0b2b1d-d399-4b13-9ac6-12009d3b16e4" class="">Iran war Kampfgebiet (obwohl <span style="border-bottom:0.05em solid">neutral</span>)</p><h3 id="2fb2899f-8d49-41a7-bc60-8b2ff46d9cb3" class="">Reza Chan (1925 bis 1941)</h3><p id="5c578c0d-13d7-4158-a1b8-dd13875c57af" class=""><mark class="highlight-yellow_background">Durch </mark><span style="border-bottom:0.05em solid"><strong><mark class="highlight-yellow_background">Putsch</mark></strong></span><mark class="highlight-yellow_background"> an der Macht</mark> → Modernisiert das Land (nach <span style="border-bottom:0.05em solid"><strong>westlichem Vorbild</strong></span>)</p><p id="dd0b9d67-3503-4bcc-8820-3eb1b4f13b3a" class="">Name „<span style="border-bottom:0.05em solid">Iran</span>” seit <mark class="highlight-orange_background">1934</mark></p><p id="f2a0f118-54c7-4556-b5fd-d13e925205c2" class=""><span style="border-bottom:0.05em solid"><strong>Mullahs</strong></span> (Schriftgelehrte) → äußern sich erstmals politisch</p><p id="84cca356-151a-4ec0-af97-52f7699e1e7b" class="">Schah verprügelt <span style="border-bottom:0.05em solid">reformunwilligen Mullah</span> in einer Moschee (<mark class="highlight-yellow_background">1927</mark>).</p><h3 id="0d393ac8-739b-4c41-8c32-e5e72a720ac1" class="">Zweiter Weltkrieg</h3><p id="54d706ac-7fa5-4cdd-a935-00196a7d1890" class="">Iran bleibt <span style="border-bottom:0.05em solid">neutral</span> → wird von Großbritannien und Sovetunion besetzt</p><h3 id="19d629f7-8da8-47d6-9420-f59c4753ec27" class="">Verstaatlichung der Öl-Industrie</h3><p id="14454c70-42d3-4edd-a205-558d670b92d4" class="">Sohn von Reza Chan → <mark class="highlight-yellow_background">Mohammad Reza Pahlavi</mark> war der letzte iranische Schah.</p><p id="294cd3c5-f384-45a8-acc1-d462a6f60031" class="">Schah zieht sich zurück → Politik vom Premierminister <mark class="highlight-yellow_background">Mohammad Mossadegh</mark></p><p id="2299b5e1-f086-4b48-b1da-8f867714ab5a" class="">Fremde Mächte werden herausgedrängt → <span style="border-bottom:0.05em solid"><strong>Wirtschaftembargo</strong></span> von USA und Großbritannien</p><p id="a5cba538-3f2f-4a09-8bae-af1c434fb01d" class="">1953 → Putsch durch das Militär (<span style="border-bottom:0.05em solid">CIA</span> beteiligt).</p><h3 id="d8f0001c-bf45-40c5-910c-b5969fadf391" class="">Ruhollah Musawi Kohmeini </h3><p id="d1420383-9e6d-464a-9204-0ef36fa74afa" class=""><strong>Hochschullehrer</strong> → hat die Dynastie gehasst (<strong><mark class="highlight-orange_background">erzkonservativer Prediger</mark></strong>)</p><p id="66a67841-553d-4e8b-bc62-6d0f72f5c827" class=""><mark class="highlight-orange_background">1964</mark> vom Schah ins <span style="border-bottom:0.05em solid">Exil</span> geschickt → hat von der Türkei aus weitergemacht</p><p id="ab1545be-8bfe-4e73-b5ee-d9f6151ebaa1" class="">Sohn von Kohmeini wurde getötet</p><p id="da453e6a-7e25-4476-854e-da650c38789c" class="">Kehrt am 01.02.1979 vom Exit zurück → Schah geht ins Exil</p><h3 id="c8be273e-defc-44af-be90-db73f9a0916d" class="">Hierarchie</h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="624dcf17-1006-496d-9b14-c3b57bf4ff98"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><strong><span style="border-bottom:0.05em solid">Geistlicher Führer (Rahbar)</span></strong>:<br/>Oberbefehl über die Streitkräfte, Wächterrat (Gericht), Kandidaten und Präsidenten <br/><br/><strong>Scharia</strong>: das islamische Recht</div></figure><p id="12404d27-dd65-4493-bf2d-4eed3cfe05c7" class=""><strong>Theokratie</strong>: Religöse Diktatur mit demokratischen Elementen (Herrscher legt die Religion fest; Es wird danach gelebt. → <span style="border-bottom:0.05em solid">Staatsreligion</span>)</p><h3 id="3a17280a-3111-4aa4-9901-c1a33aea3bfc" class="">Atomprogramm</h3><p id="822e214c-faba-47b2-bd4b-fb388f1b775a" class="">Sanktionen → 2015 Atomabkommen</p><p id="48e2d52f-5855-44ad-b54e-71c4eb042b7e" class="">Keinen diplomatischen Kontakt mit Amerika (werden durch die Schweiz vertreten)</p><h3 id="0e52b134-c497-4682-b3cf-30a2de6f6045" class="">Aktuelle Lage</h3><ul id="5411bb8c-c555-4bde-bbb9-f2d08a92b8a0" class="bulleted-list"><li style="list-style-type:disc">Arbeitslosigkeit</li></ul><ul id="ae2bde54-e3f5-4c1e-9fbd-848d522920e5" class="bulleted-list"><li style="list-style-type:disc">Paramilitärische Gruppen (<span style="border-bottom:0.05em solid">Revolutionsgarde</span>): Sorgen für Ordnung</li></ul><ul id="26c74d12-d849-4296-b7d7-c569e59c46e9" class="bulleted-list"><li style="list-style-type:disc"><strong>Proteste</strong>: Frauenrechte</li></ul><h3 id="f141ca82-e68b-42c0-9b81-71c86bb55a35" class="">Religionsfreiheit</h3><p id="97df2eca-569a-4a04-8f2d-7e333b0c25fa" class=""><strong>Österreich</strong>: durch <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">Kaiser Joseph II.</span></mark> (Sohn von <mark class="highlight-orange_background">Maria Theresia</mark>)</p><p id="4b78ed3b-769c-4ff7-a979-96d0da59df60" class=""><strong>Augsburger Religionsfriede</strong>: im Jahr 1555</p><h3 id="c67038a8-119c-450c-8ceb-25126e358892" class="">Erzfeind Israel</h3><p id="0a851803-8779-458a-b2e4-fc5e0ef8309e" class=""><mark class="highlight-orange_background">Türkei</mark> arbeitet als einziges islamisches Land mit Israel zusammen → z.B.: <mark class="highlight-orange_background">Militärübungen</mark></p><p id="7489dc49-5170-46c8-811b-5d0838912b1a" class=""><mark class="highlight-orange_background">USA</mark> unterstützt Israel und hat Israel als Staat anerkannt</p><p id="ef999b15-8c0a-45e6-bcf7-75ee4cbe3ec6" class=""><strong>Golfkrieg</strong>: USA mit Präsident Bush (Familie Bush war im Ölgeschäft)</p><h3 id="9e202d12-ddbc-4e65-9679-cf81d9055563" class=""><strong>Österreich Sittenpolizei</strong></h3><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="aabbb733-5098-444a-a17c-707c2ecfbb70"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Wurde von <span style="border-bottom:0.05em solid">Maria Theresia</span> eingeführt!</div></figure><p id="95940636-239f-4cd2-a79c-ea0ae180ca6e" class="">für <span style="border-bottom:0.05em solid">Prostitution</span> (<strong>Theorie</strong>: ihr Mann hatte sich angeblich dort vergnügt)</p></div></details><hr id="63e9852e-de42-49a9-867a-c169b978d6b3"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Nahost-Konflikt</summary><div class="indented"><p id="e24a7139-f5c6-4ae5-84db-cf9167cea6d6" class=""><strong>Zionismus</strong>: jüdische Bewegung → Vorstellung eines eigenen jüdischen Staates in Palästina</p><p id="6d2a7f1a-cbe4-4699-af23-6ff12b8db86d" class="">Gründer des Zionismus: <mark class="highlight-yellow_background"><strong>Theodor Herzl</strong></mark></p><h3 id="347fbbe2-9d9d-4ab5-bf42-048cfc674cac" class="">Auswanderungswellen</h3><ol type="1" id="84c1d7be-53bf-4760-98d1-18ff23a340a0" class="numbered-list" start="1"><li>Russland</li></ol><ol type="1" id="69b210eb-be1d-458b-bbde-b4ef6fed529e" class="numbered-list" start="2"><li>Alija</li></ol><p id="8c0ff6db-345d-4ed4-9417-358a3caaf9c4" class="">Paramilitärische <span style="border-bottom:0.05em solid">HaSchomer</span> → Vorläufer <span style="border-bottom:0.05em solid">Haganah</span> und der israelischen Armee.</p><figure class="block-color-red_background callout" style="white-space:pre-wrap;display:flex" id="7f450f2a-032a-4223-832d-269f8553e8de"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/exclamation-mark_gray.svg"/></div><div style="width:100%">Versammlung des Jüdischen Nationalrats im Stadtmuseum in Tel Aviv (1948) <br/>→ <br/><strong><span style="border-bottom:0.05em solid">israelische Unabhägigkeitserklärung</span></strong> <br/>(nach 11 Minuten von <br/><strong><mark class="highlight-yellow_background">USA</mark></strong>, später von <strong><mark class="highlight-yellow_background">Sovjetunion</mark></strong> und <strong><mark class="highlight-yellow_background">Türkei</mark></strong> anerkannt) </div></figure><p id="bad1c9aa-b23f-4376-8450-e4a6c4990593" class="">
+</p><figure id="7c034a8b-be3f-4ff8-a5bc-282c96e07ea1" class="image"><a href="Test%20-%20ZF%205eccbb77bff04b64a2fcd3fe761e6ff5/Untitled%201.png"><img style="width:384px" src="Test%20-%20ZF%205eccbb77bff04b64a2fcd3fe761e6ff5/Untitled%201.png"/></a><figcaption>Israel und Palästina</figcaption></figure><p id="71389fb8-5c72-4f93-a7b3-35ad5ca591f6" class=""><strong>Golan-Höhen</strong>: Auslandseinsätze des <span style="border-bottom:0.05em solid">Österreichisches Bundesheer</span></p><p id="68c1e5d3-895a-4e45-9de2-5a874f37bfef" class=""><strong>See Genezareth</strong>: Jesus über das Wasser gegangen, <strong>Nazareth</strong>: Geburtsort von Jesus, <br/><br/><strong>Jericho</strong>: (Jesus ist dort getauft worden) → Posaunen von Jericho </p><p id="1cc288f8-261b-4e50-9ae3-ec9d81589332" class=""><strong>Totes Meer</strong>: hoher Salzgehalt</p><p id="f3a249f7-9eda-41c5-a85d-7f1b75024ae0" class=""><strong>Solomon und Gomorra</strong>: Biblische Städte → Wurden von Gott zerstört, wegen dem lasterhaften Leben dort (sündhaftes Leben)</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="adc29219-dfe7-4027-b031-6361eebf362c"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">… (z.B.: Zell am See) und Gomorra → Sprichtwort für negative Stadt</div></figure><h3 id="f32e72ab-b69e-40a3-9245-8d36329f921e" class="">Wasserpolitik Jordan Fluss </h3><p id="8f72f926-d5e8-463b-be66-fb7d25accd7d" class="">Israel leitet wird das Wasser ab (auch bei Euphrat und Tigris, Mesopotamien) <br/>→ für Bewässerung des eigenen Landes<br/></p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="bb3f3851-93f5-4359-b9fa-a13165a4ccc3"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/book_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid">mäandrieren</span> → nicht reguliert (Fluss); baut Kurven ein </div></figure><h3 id="fef2c1f5-c941-479b-b397-d40c7facb258" class="">Konferenz von Évian</h3><p id="6b00a303-ddb1-4d72-9941-d29fc98e6f1d" class="">Évian: Stadt in Frankreich</p><p id="b41d8e63-cdb1-45c2-b97e-8ec7a93404eb" class="">Es gab in Europa <span style="border-bottom:0.05em solid">Flüchtlingswellen</span> (wegen Hitler) → alle 32 Staaten (<mark class="highlight-orange_background">außer Dominikanische Republik</mark>) wollten keine jüdische Flüchtlinge aufnehmen. </p><h3 id="2c7cd3f4-7dff-4d69-808c-b8def7e2d57e" class="">Donald Trump - Israel</h3><p id="b84176fe-9d6d-40d0-85a3-ad81e6a7c059" class="">Eigentliche Hauptstadt: <span style="border-bottom:0.05em solid">Tel Aviv-Jaffa</span></p><p id="fc009a5b-a15a-4770-8073-f22b93942769" class="">Trump hat <span style="border-bottom:0.05em solid">Jerusalem</span> als Hauptstadt erklärt! → Problem, weil dort <mark class="highlight-orange_background">3 Weltreligionen</mark> aufeinandertreffen (Islam, Christentum und Judentum)</p><hr id="32886397-827c-4900-9a52-efc01bf42e50"/><h1 id="531322b9-eb75-416a-950a-d377f55b1ea3" class="">Saudi Arabien</h1><p id="bbebfaad-d63e-4766-8356-9730cc7b98a9" class=""><span style="border-bottom:0.05em solid"><strong>Asiatischen Winterspiele 2026</strong></span> sollen im Berggebiet „<mark class="highlight-teal_background"><strong>Trojena</strong></mark>” stattfinden.</p><p id="992eb74d-a638-4b14-b167-8858818665fe" class="">Kunstschnee zu 100% aus erneuerbaren Energien.</p><h3 id="74c74598-e1e3-4e1a-bbc7-8342ef65213d" class="">Kritik (Menschenrechtsverletzungen)</h3><ul id="3749f48a-8535-49f7-bd90-2b6629db5672" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">Umgang mit Frauen</span></strong>: Diskriminierung und Inhaftierung von Frauenrechtlerinnen</li></ul><ul id="fc8d6f25-c059-4b6a-b1eb-5ec36dd60799" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">Hinrichtungen</span></strong>: die meisten auf der ganzen Welt</li></ul><ul id="261daa2c-a0bb-48d7-87f6-aa94ae822a81" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">Folter</span></strong>: grausame, unmenschliche und erniedrigende Misshandlungen</li></ul><ul id="3b0219db-1ba6-42e2-a181-ae09cc8ccadf" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">Sklaverei</span></strong>: besonders die arme Bevölkerung leidet darunter</li></ul><h3 id="29c11646-4d9b-449f-b8aa-14a6d21b8e54" class="">Jamal Khashoggi </h3><p id="58c3956f-9be2-4ce3-9d0f-edfd05f06e46" class="">Saudischer <span style="border-bottom:0.05em solid">Journalist</span> (Washington Post) → aufgrund kritischen Aussagen über die <br/>saudi-arabische Politik 2018 im <br/><mark class="highlight-teal_background"><span style="border-bottom:0.05em solid">saudi-arabischen Konsulat in Istanbul ermordet</span></mark></p><p id="7f434145-24f6-4696-937a-81da182bb223" class="">
+</p></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

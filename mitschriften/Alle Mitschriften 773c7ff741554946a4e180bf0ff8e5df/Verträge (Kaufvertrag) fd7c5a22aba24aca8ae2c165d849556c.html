@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Verträge (Kaufvertrag)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fd7c5a22-aba2-4aca-8ae2-c165d849556c" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💶</span></div><h1 class="page-title">Verträge (Kaufvertrag)</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-gray">Betriebswirtschaft</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>Grundlagen</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-pink">Matura</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-purple">Zusammenfassung</span></td></tr></tbody></table></header><div class="page-body"><div><h1 id="c58be533-178a-433f-bf26-f53710c489b7" class="">Vertrag</h1><h2 id="9337d4d2-1997-4468-b4dc-13534de74250" class="">Allgemein</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Definition/Häufigsten Arten eines Vertrages</summary><div class="indented"><p id="7fd711f8-95a0-4b00-a6b4-5bcb4f85bf37" class="">Ein Vertrag ist eine Vereinbarung zwischen mindestens zwei Vertragspartnern über ihre gegenseitigen <br/>Rechte und Pflichten → regelt die Geschäftsbeziehung.<br/><br/></p><figure id="8000ef94-a7b6-4acf-ba9c-c0e64250cd71" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.07.40.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.07.40.png"/></a><figcaption>Grafik: häufigsten Vertragsarten</figcaption></figure></div></details><h2 id="3a442962-ce04-4807-a6f8-9b33d13658d7" class="">Rechtliche Bedingungen</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Rechtlichen Bedingungen eines Vertrags (Grafik)</summary><div class="indented"><figure id="84123048-87d7-44bf-90f9-6b6ac23cb839" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%201.png"><img style="width:528px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%201.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Übereinstimmende Willenserklärung</summary><div class="indented"><p id="f1667d7c-0bee-4fc9-82f8-98e1a51b0e79" class="">Eine <strong>übereinstimmende Willenserklärung</strong> ist die <strong>eindeutige Zustimmung</strong> der Vertragspartner <strong>zum</strong> <strong>Vertragsinhalt</strong>. <br/>Sie kann <br/><strong>ausdrücklich oder schlüssig</strong> erfolgen.</p><ul id="357b8aed-8ee1-4fbd-99c2-e015f5910130" class="bulleted-list"><li style="list-style-type:disc"><strong>ausdrücklich</strong><ul id="1ac213b7-aaa1-48af-bb5d-4155877bb2f4" class="bulleted-list"><li style="list-style-type:circle">mündlich</li></ul><ul id="9440ea96-c38b-40d0-bc18-d580c4072374" class="bulleted-list"><li style="list-style-type:circle">schriftlich</li></ul><ul id="1bd9f07a-5d02-4c03-b48b-052758afc38f" class="bulleted-list"><li style="list-style-type:circle">elektronisch → im Internet</li></ul></li></ul><ul id="dd307e61-ccb4-4437-b34e-f5cd57210659" class="bulleted-list"><li style="list-style-type:disc"><strong>schlüssig: </strong>aus Handlung der Partner geht eindeutig hervor, was sie wollen.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Geschäftsfähigkeit</summary><div class="indented"><p id="3b46f51e-76f5-4108-8ae8-2420218b2465" class="">Vertragspartner können Verträge nur abschließen, wenn <strong>beide Geschäftsfähig</strong> sind. Geschäftsfähigkeit hängt vom Alter ab:<br/><br/></p><figure id="1c998217-2a33-42f3-8680-333d2ac7ad4a" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.22.23.png"><img style="width:384px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.22.23.png"/></a></figure><p id="90bad89b-2589-4310-97de-6635ec828640" class="">
+</p><ul id="765e2548-b566-4604-91db-f530d1e908e9" class="bulleted-list"><li style="list-style-type:disc">nicht geschäftsfähig<ul id="0c5dae2e-0642-431f-a01a-218e86e6d23d" class="bulleted-list"><li style="list-style-type:circle">geringwertige Sache dürfen erworben werden</li></ul></li></ul><ul id="06c402b7-1add-43b8-a341-bec348e4674c" class="bulleted-list"><li style="list-style-type:disc">beschränkt geschäftsfähig<ul id="d20567f2-b9ab-4da3-ad10-bbbe615ccb87" class="bulleted-list"><li style="list-style-type:circle">dürfen Schenkungen annehmen, wenn sich dadurch keine Verpflichtungen ergeben</li></ul></li></ul><ul id="e60a6029-1af5-4a5e-a0f6-af84833f663d" class="bulleted-list"><li style="list-style-type:disc">erweitert geschäftsfähig<ul id="5aa87d47-c295-4852-89cd-1fad7dd5f23b" class="bulleted-list"><li style="list-style-type:circle">dürfen über das verfügen, was sie selbst verdienen → darf den Lebensunterhalt nicht gefährden</li></ul><ul id="dcf085f3-f2c3-4ef3-9332-5f17d79fc316" class="bulleted-list"><li style="list-style-type:circle">können sich vertraglich zu Dienstleistungen verpflichten</li></ul></li></ul></div></details><h2 id="99f9cfe3-9969-4cca-8340-478b31400e16" class="">Rechnung</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Bestandteile einer Rechnung</summary><div class="indented"><figure id="272cf7e9-69a2-4c6d-8dc3-f646ea0cf0bd" class="image"><a href="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2021.png"><img style="width:288px" src="Fachklausur%202023%202%200%2076f5c8aeca0d47a1948c27218c04bb92/Untitled%2021.png"/></a></figure></div></details><h2 id="c6cf1272-2570-4b2d-bfb3-f03085b66fdf" class="">Kaufvertrag</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Gesetzliche Grundlagen</summary><div class="indented"><figure id="aa50336f-2ce6-4104-89dc-5af5664c0aa2" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.28.12.png"><img style="width:480px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.28.12.png"/></a></figure><p id="b3bbb519-ad7e-4f5d-9ab3-d27c39a0d08f" class=""><br/><br/><strong>Usancen</strong>: ungeschriebene Gesetze → Kiste wird mit 24 Flaschen bepackt.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Bestandteile</summary><div class="indented"><p id="76c05690-007e-476d-bb9b-13d797073a80" class=""><strong>5 Bestandteile:</strong></p><figure id="ae3e9bab-cdd1-495e-b898-b608846198c4" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.32.41.png"><img style="width:528px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.32.41.png"/></a></figure><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Warenart (Qualität)</summary><div class="indented"><p id="d847d5e8-fc6a-4138-b1d2-5daa49d55207" class="">muss im <strong>Kaufvertrag festgelegt</strong> werden. <br/>Unter <br/><strong>Qualität</strong> versteht man die <strong>Eigenschaften</strong> der Ware. Mit folgenden Kriterien kann man die Qualität festlegen:</p><ul id="a179ce1e-3139-4371-ac61-26f6fb34203d" class="bulleted-list"><li style="list-style-type:disc"><strong>vertretbare</strong> (fungible) Waren: sind Waren die alle dieselben Eigenschaften haben → z.B.: DVDs mit den gleichen Eigenschaften</li></ul><ul id="355f5aeb-e69e-4ab3-a76f-5489a0179db7" class="bulleted-list"><li style="list-style-type:disc"><strong>nicht vertretbare</strong> (nicht fungible) Waren: sind Waren mit einzigartigen Merkmalen → z.B.: Auto mit bestimmter km-Leistung</li></ul><p id="1816b27a-771b-41fb-8871-29b8ad399e8b" class="">
+</p><figure id="9f60c666-d583-494a-9d1e-742d84f0106f" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.36.46.png"><img style="width:480px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_19.36.46.png"/></a></figure></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Prüfung der Lieferung</summary><div class="indented"><p id="fa45b8c0-9c8f-47a7-a158-13d04c88eee5" class="">Innerhalb einer angemessenen Frist muss die Ware genau geprüft werden.</p><p id="483c91eb-0ef6-4913-a0b2-05db6b0facad" class="">Ware und Menge muss sofort überprüft werden.</p><p id="ab43fdb7-d952-4b99-b712-e1a36856caec" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Spezifikationskauf</summary><div class="indented"><p id="ad45888c-5df7-4e7d-970c-69bbd1575d88" class="">ist eine Sonderregelung der Qualitätsfestlegung. Es wird nur die Gattung der zu liefernden Ware festgelegt (500 Paar Schuhe).</p><p id="c120f927-cec0-4483-8d52-401c4ecd4838" class="">Käufer bestimmt Modell, Farben und Größe der Ware.<br/>Meist ist dieser Kauf verbunden mit einer “Sukzessiv-Lieferung”. Das heißt es werden Teilmengen abgerufen, um die Qualität zu überprüfen.<br/></p><ul id="a1fb5c7d-da63-4287-92d7-f9271f3a139c" class="bulleted-list"><li style="list-style-type:disc"><strong>Vorteile für Käufer</strong><ul id="3b777ab4-a16a-4f1e-94b6-3b6577e2f3d0" class="bulleted-list"><li style="list-style-type:circle">Verringerte Lagerhaltung</li></ul><ul id="387a70ba-9070-4bf8-948c-6f697ef289c8" class="bulleted-list"><li style="list-style-type:circle">Beschaffungssicherheit</li></ul><ul id="9a650417-a2aa-42b4-aeae-fe67f07ef2b9" class="bulleted-list"><li style="list-style-type:circle">Ware kann auf den aktuellen Trend angepasst werden.</li></ul></li></ul><ul id="fa8de60d-1d50-4e22-aeac-eca3c3604316" class="bulleted-list"><li style="list-style-type:disc"><strong>Vorteile für Verkäufer</strong><ul id="9421d55e-10f9-4c14-aa53-8d3fcfde4d1b" class="bulleted-list"><li style="list-style-type:circle">Absatzsicherheit</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Verpackung</summary><div class="indented"><figure id="0f7240ce-ebc7-4da2-83d9-6945732cd31a" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_20.19.16.png"><img style="width:528px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_20.19.16.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Preisfestsetzung</summary><div class="indented"><p id="9685f7d8-fe7b-4630-8cbe-efa0d2608307" class=""><strong>Verträge mit festem Preis</strong></p><p id="57c7b173-8971-46f3-a269-7c60be2acc26" class="">Der Preis wird pro Mengeneinheit genau angegeben.</p><p id="b86aa2a1-3936-4f7d-aa6d-6abe32373a26" class=""><strong>Verträge mit freibleibendem Preis:</strong></p><ul id="caf5ce52-9cb9-46c5-b56b-67f01cbeadf2" class="bulleted-list"><li style="list-style-type:disc"><strong>Basiskauf<br/><br/></strong>Der Preis wird im Kaufvertrag aufgrund einer <strong>Basisqualität</strong> festgelegt. Sollte diese besser oder schlechter sein werden <strong>Zu-</strong> bzw.<strong> Abschläge</strong> verrechnet.</li></ul><ul id="7e8a8244-d816-48c1-a454-e9aa6fe77522" class="bulleted-list"><li style="list-style-type:disc"><strong>Kostenschwankungsklauseln<br/><br/></strong>Sie ermöglichen es, den Preis <strong>zwischen Vertragsabschluss und Lieferung</strong> zu <strong>erhöhen</strong> sollten Rohstoffpreise/Löhne steigen.</li></ul><ul id="c9486c4a-fdb6-4f3a-89db-dc6dfa651a07" class="bulleted-list"><li style="list-style-type:disc"><strong>Indexklauseln<br/><br/></strong>Ermöglichen Preisanpassung entsprechend der Entwicklung eines Index z.B. Verbraucherpreisindex</li></ul><p id="7e6adbb3-169a-499c-87dc-1e26422fbc4c" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Preisabzüge und Preisnachlässe</summary><div class="indented"><h3 id="ee682a4e-be46-4103-8484-907dee878cdb" class=""><strong>Skonto</strong></h3><ul id="27c456f5-0d9e-46f3-8214-9fa59bb2afde" class="bulleted-list"><li style="list-style-type:disc"><strong>Zinsenvergütung</strong>: Verkäufer erhält sein Geld früher. Er erspart sich evtl. Kreditzinsen</li></ul><ul id="e045fe23-5018-4be2-a147-2915b77b08d9" class="bulleted-list"><li style="list-style-type:disc"><strong>Risikoprämie</strong>: Wird gleich gezahlt besteht kein „Dubiosenrisiko”.</li></ul><ul id="3b6422d9-3a4f-447b-9b58-2ad1586b2d62" class="bulleted-list"><li style="list-style-type:disc"><strong>Verwaltungsaufwandvergütung</strong>: Wird gleich bezahlt hat der VK keine Arbeit durch Mahnungen etc.</li></ul><ul id="1d5250f7-482c-44e4-a6bc-48989a95ea59" class="bulleted-list"><li style="list-style-type:disc"><strong>Verminderung des Geldwerts: </strong>Wird früher gezahlt sinkt das Risiko, dass der Geldwert durch Inflation sinkt.</li></ul><p id="6b2c024f-64ef-4447-bbe9-73352ef6ce36" class=""><strong>Beispiel:</strong></p><figure id="fcca00cc-3dc0-4d58-badf-715699bea4bf" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_20.34.53.png"><img style="width:528px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_20.34.53.png"/></a></figure><hr id="a3c3338f-6ffb-48e7-b958-2dea48a62f13"/><h3 id="a3fb519b-bfb3-4fcc-9d22-0b4475ccf7f8" class=""><strong>Rabatt</strong></h3><ul id="8efaed03-63f5-4260-bf0c-c9bbd0c3f1ff" class="bulleted-list"><li style="list-style-type:disc">Mengenrabatt</li></ul><ul id="d86f160c-cfd4-4bc7-b5b7-3cdb6a5a26b7" class="bulleted-list"><li style="list-style-type:disc">Treuerabatt</li></ul><ul id="d2b65ac5-ab11-4035-94ea-c955edf1781c" class="bulleted-list"><li style="list-style-type:disc">Einführungsrabatt</li></ul><ul id="359c483d-a5a4-4797-b999-e9c87e481674" class="bulleted-list"><li style="list-style-type:disc">Ausverkaufsrabatt</li></ul><ul id="a3753f96-55d0-4cc1-ae60-fc4d00df9c56" class="bulleted-list"><li style="list-style-type:disc">Mängelrabatt</li></ul><ul id="49f44e57-89c3-401e-bebb-2bf11d6bc118" class="bulleted-list"><li style="list-style-type:disc">Ausstellungsrabatt</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lieferbedingungen</summary><div class="indented"><figure id="fb585a5d-d593-4fba-bfa4-ffed2c30430f" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_20.41.18.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_20.41.18.png"/></a></figure><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Liefertermin</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="a90ed475-c59e-4eaf-988a-7bd187239e9d"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid">Zeitpunkt</span>, an dem der Verkäufer dem Käufer die Ware übergeben muss.  </div></figure><figure id="49d7901b-daa1-4989-9ccc-0ba9214d2193" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.21.37.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.21.37.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lieferort</summary><div class="indented"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="6cba907c-4d4f-4c48-b089-442cda3b3a77"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%"><span style="border-bottom:0.05em solid">Ort</span>, an dem der Verkäufer dem Käufer die Ware übergeben muss.  </div></figure><p id="ac64a9dd-45dc-412a-a5fb-76ebd9f3d98e" class=""> Die Übergabe kann auf diese Arten erfolgen:</p><ul id="f78270a8-7592-433b-95ad-1dbb98a7b03c" class="bulleted-list"><li style="list-style-type:disc"><strong>Körperlich: </strong>Ware wird dem Käufer übergeben</li></ul><ul id="9b231d0a-9331-48ad-97d7-b6d02fcf5597" class="bulleted-list"><li style="list-style-type:disc"><strong>Elektronisch:</strong> Werden durch Download übergeben (Spiele)</li></ul><ul id="b79687cf-bf5b-4000-bbc2-626fdb451ceb" class="bulleted-list"><li style="list-style-type:disc"><strong>Symbolisch:</strong> Nur Papiere werden übergeben (Frachtpapiere) → Käufer kann über die Ware verfügen.</li></ul><p id="b2d4c6d5-ff3b-4f8d-903d-7ed53fbe8f20" class=""><strong><span style="border-bottom:0.05em solid">Erfüllungsort</span></strong>: Eigentum der Ware wird vom Verkäufer auf den Käufer übertragen.</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Kaufvertragsklauseln</summary><div class="indented"><div id="98b4f1d6-2e1c-402a-a940-14c5bba924f0" class="column-list"><div id="f228b42f-25c3-4976-a367-704a310bf206" style="width:31.25%" class="column"><p id="d1eddd9b-3d7b-4711-9a86-13f5e8938200" class="">Kaufvertragsklauseln klären wo die <strong>Kosten des Transports,</strong> <strong>Eigentum</strong> und <strong>Risiko</strong> auf den <strong>Käufer übergehen</strong>. Man unterscheidet zwischen <strong>Ein- („ab”, „frei”) und Zweipunktklauseln („frachtfrei”)</strong>.</p><p id="444e7aad-39a3-4ab1-b9a4-6fc44c615643" class="">
+</p></div><div id="3c4d7871-2957-4eac-abc6-df475dfc769a" style="width:68.75%" class="column"><figure id="8db01885-55e0-4b28-b2ac-5914a72b4b6f" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.27.21.png"><img style="width:384px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.27.21.png"/></a></figure><p id="c1bc301c-2ad4-4822-8fc3-14e235ded02b" class="">
+</p></div></div></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Verpackung</summary><div class="indented"><p id="c4a61608-cca9-493f-ad4f-c6e277c89bcf" class="">Verpackungen werden genutzt um:</p><ul id="0b3792ea-1286-4df8-a2cf-59edac572b0f" class="bulleted-list"><li style="list-style-type:disc">Ware durch Einwirkungen von außen ( Schläge Stöße) und gegen Verlust (ausrinnen) zu schützen</li></ul><ul id="ee6103fe-90bc-4e12-aadd-2fa32e85cb15" class="bulleted-list"><li style="list-style-type:disc">Die Transport und Lagerfähigkeit zu erhöhen</li></ul><ul id="036aa3f1-9481-455e-b15a-b962d78a3518" class="bulleted-list"><li style="list-style-type:disc">Die Verkaufsfähigkeit zu erhöhen (Geschenkpackungen)</li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Zahlungsbedingungen</summary><div class="indented"><figure id="79cfd8e9-e11f-4a2d-b267-af7661df0ea2" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.38.54.png"><img style="width:288px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.38.54.png"/></a></figure><ul id="f51246c1-2718-42ea-a5b5-71d404d1e695" class="bulleted-list"><li style="list-style-type:disc"><strong>Vorauszahlung: </strong>Volle Vorauszahlung → meist im Onlineshopping</li></ul><ul id="03cb6bc2-3b98-4bee-a484-2c7206140dd2" class="bulleted-list"><li style="list-style-type:disc"><strong>Prompte Zahlung:</strong> Zug um Zug → Zahlung bei Übergabe der Ware</li></ul><ul id="fc95b980-245b-4023-842a-61351dac4d04" class="bulleted-list"><li style="list-style-type:disc"><strong>Spätere Zahlung (Zielkauf): </strong> Zielfristen wie „zahlbar innerhalb von 30 Tagen“ (Kassafrist → Skonto).</li></ul><ul id="beb89131-b2fb-4d4f-ac77-30ad7576b7b1" class="bulleted-list"><li style="list-style-type:disc"><strong>Anzahlung: </strong>teilweise Vorauszahlung.</li></ul><ul id="d8e78eb9-920c-4f36-9ef1-aebc20d9cfc6" class="bulleted-list"><li style="list-style-type:disc"><strong>Angeld:</strong> teilweise Vorauszahlung.<figure id="96319947-d13e-4384-8d3d-267a4905cbdb" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.44.06.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_22.44.06.png"/></a></figure></li></ul><ul id="6c4aed8f-3c4f-40b6-80f9-57ffb60c8b9c" class="bulleted-list"><li style="list-style-type:disc"><strong>Ratenzahlung und Teilzahlung: </strong>unter strengen Bestimmungen → Verbraucherkreditgesetz (nur wenn mind. 200 Euro und 3 Monate Laufzeit)<ul id="c5a8d02b-c6ce-4c5a-9999-cbbf3f7b4a03" class="bulleted-list"><li style="list-style-type:circle">Rücktrittsrecht: innerhalb von 14 Tagen</li></ul><ul id="7723d225-79b4-4cbf-8529-2b36cfe42da8" class="bulleted-list"><li style="list-style-type:circle">Informationspflichten</li></ul><ul id="a304d07e-a3c4-4300-9e47-d902963811a5" class="bulleted-list"><li style="list-style-type:circle">Schuldforderung: wenn der Käufer 6 Wochen im Verzug ist kann der Verkäufer die gesamte restliche Summe einfordern.</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Sonstige Vertragsbestandteile und das „Kleingedruckte”</summary><div class="indented"><p id="62474e4c-0758-4a6b-9a98-3993a3e57199" class=""><strong>Wichtige sonstige Vertragsbedingungen:</strong></p><ul id="876a03f8-a3ab-4187-8bc9-878686f9f5dd" class="bulleted-list"><li style="list-style-type:disc"><strong>Eigentumsvorbehalt: </strong>Käufer kann die Ware benutzen, sie bleibt jedoch im Besitz des Verkäufers → dient zur Sicherung der Forderung bei Zielverkäufen.<ul id="2b96e4f4-6117-4f3e-b74b-071a8cfe8610" class="bulleted-list"><li style="list-style-type:circle">Erlischt, wenn die Ware vom Käufer weiterverkauft oder verarbeitet (z.B.: Stoffe zu Kleider) wird.</li></ul></li></ul><ul id="e849c5d0-2649-4cbc-b9a9-c2796cd408da" class="bulleted-list"><li style="list-style-type:disc"><strong>Umtauschrecht:</strong> Umtauschrecht muss vereinbart werden, ist aber meist als Kundendienst Standard.</li></ul><ul id="03a59c1d-01b0-480a-be9c-cbe599d29f50" class="bulleted-list"><li style="list-style-type:disc"><strong>Konventionalstrafen:</strong> Käufer kann <strong>Pönale</strong> festlegen, wenn es wichtig ist, dass Waren pünktlich geliefert werden.</li></ul><ul id="cbc6238a-cc2b-432e-ab0f-996ef29a5384" class="bulleted-list"><li style="list-style-type:disc"><strong>Stornogebühr (Reuegeld):</strong> Vertragspartner möchte gegen Zahlung vom Vertrag zurücktreten.</li></ul><ul id="1460f189-b639-4f43-a1b2-dd056cbdd75f" class="bulleted-list"><li style="list-style-type:disc"><strong>Verzugszinsen:</strong> Käufer zahlt nicht rechtzeitig.</li></ul><ul id="46802a95-86b8-460c-80c1-31c0b069b203" class="bulleted-list"><li style="list-style-type:disc"><strong>Gewährleistung und Garantie:</strong> bei Lieferung mangelhafter Waren.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">AGBs</summary><div class="indented"><p id="df33a0d1-6497-4fb9-b86e-6329a7b4648e" class="">Beim Online-Shopping muss der Kunde besonders darauf hingewiesen werden. (z.B.: direkt am Bestellformular)</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Arten des Angebots</summary><div class="indented"><figure id="6072f3a2-f6af-402c-97c6-ce754f97525b" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.10.03.png"><img style="width:480px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.10.03.png"/></a></figure><p id="48cb5099-37c8-4e18-b0c2-e3ec732b5b37" class="">Bindung: Es geht um die Lieferkonditionen.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Bindungsdauer</summary><div class="indented"><figure id="8479bb98-e47a-4a16-a795-0e2615800843" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.16.07.png"><img style="width:480px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.16.07.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lieferanten auswählen</summary><div class="indented"><p id="ecf1a04e-15ea-4506-9a3c-03f87e60f049" class="">Gibt es mehrere Angebot muss man aus diesen Kriterien eine Entscheidung treffen</p><ul id="bf19aede-d180-4212-a951-14a5e4298b98" class="bulleted-list"><li style="list-style-type:disc">Qualität</li></ul><ul id="3778ecf0-a936-4844-859e-b8cad293c137" class="bulleted-list"><li style="list-style-type:disc">Preis</li></ul><ul id="e884c962-0d80-4321-8c3b-0d4be3db6433" class="bulleted-list"><li style="list-style-type:disc">Lieferbedingungen</li></ul><ul id="fee02fa8-726b-4000-83e0-9634771da706" class="bulleted-list"><li style="list-style-type:disc">Zahlungsbedingungen</li></ul><ul id="fe383678-ee62-47bd-ae41-abec923c4c19" class="bulleted-list"><li style="list-style-type:disc">Pünktlichkeit</li></ul><ul id="bf742d39-d8f9-44f2-8bbe-768ece83b212" class="bulleted-list"><li style="list-style-type:disc">Zuverlässigkeit</li></ul><ul id="2f0b3fd0-a5a8-4c89-bb4f-36320f162d31" class="bulleted-list"><li style="list-style-type:disc">Nebenservice (Service)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Wege zum Abschluss eines Kaufvertrags</summary><div class="indented"><figure id="61fc9449-7861-4853-91e8-e53be38a23bd" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.19.13.png"><img style="width:480px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.19.13.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Bestellungen über das Internet</summary><div class="indented"><p id="65cc9b98-aa1d-4178-b989-38b900721d16" class="">Beim Onlineshopping unterscheidet man zwischen <strong>B2B</strong> und <strong>B2C.</strong></p><p id="188e7905-eab6-4ef5-acdf-4b03ba92d719" class=""><strong>Vorteile:</strong></p><ul id="de6ad296-7b50-4238-b538-49975609e818" class="bulleted-list"><li style="list-style-type:disc">Weltweiter Preisvergleich</li></ul><ul id="e0caa0a7-0c43-4b4b-9153-6d7c14534b60" class="bulleted-list"><li style="list-style-type:disc">Flexible Suchmöglichkeiten</li></ul><ul id="797a3817-7024-41ae-be90-3b5c7565ad25" class="bulleted-list"><li style="list-style-type:disc">Rund um die Uhr bequem und zeitsparend</li></ul><ul id="0c7b6227-0cb9-46f8-a444-41e82463acfd" class="bulleted-list"><li style="list-style-type:disc">Druckkosten entfallen</li></ul><ul id="216ed483-0489-4531-811b-c21e98c33048" class="bulleted-list"><li style="list-style-type:disc">Angebot schnell aktualisieren</li></ul><ul id="4de6da7d-1abd-44a0-83fa-b5d1af91cfa0" class="bulleted-list"><li style="list-style-type:disc">Elektronische Verarbeitung -&gt; Kosten sparen</li></ul><p id="63a26922-25f1-4566-94c5-2421827a87a9" class=""><strong>Nachteile:</strong></p><ul id="d51c122b-efce-4925-abf5-ac896c8ebad8" class="bulleted-list"><li style="list-style-type:disc">Mangelnde Zahlungssicherheit</li></ul><ul id="ad784973-a94c-4beb-bb78-b930cc766e36" class="bulleted-list"><li style="list-style-type:disc">Betrugsgefahr</li></ul><ul id="f87274dc-9bf6-4bfd-8014-6cbc95c2520c" class="bulleted-list"><li style="list-style-type:disc">Lieferung kompliziert</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Konsument Rechte</summary><div class="indented"><h3 id="b504f5d4-42f0-44ae-9a97-25f2fd10758d" class="">Haustürgeschäfte</h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="b263b2a7-9a35-4057-b19c-488f2a31bf5f"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Geschäfte außerhalb der Geschäftsräumlichkeiten → z.B.: „Werbefahrten”</div></figure><ol type="1" id="3471241e-17e9-4dfd-87a4-fd73b3ef5145" class="numbered-list" start="1"><li>Rücktrittsrecht Käufer: kann zurücktreten, obwohl er die Ware bereits übernommen, bezahlt und teilweise verbraucht bzw. benützt hat.</li></ol><ol type="1" id="60dfb852-9068-4683-aefd-bdbfdaa0a55c" class="numbered-list" start="2"><li>Rücktrittsfrist: innerhalb von 2 Wochen nach Erhalt der Ware. (ohne Rücktrittsbelehrung → 1 Jahr und 2 Wochen)</li></ol><ol type="1" id="95d3f245-0e47-4616-8fc9-dbfb27cecb82" class="numbered-list" start="3"><li>Form: am besten in schriftlicher Form</li></ol><ol type="1" id="244d2cb0-db29-4391-8108-91769e9f656e" class="numbered-list" start="4"><li>Rücksendung innerhalb von 2 Wochen.</li></ol><h3 id="530b7631-82e0-41bf-a76f-ef498c6aed91" class="">Online-Shopping</h3><ol type="1" id="9242afc3-6f50-474d-be5e-7e54450ac062" class="numbered-list" start="1"><li>Rücktrittsfristen: innerhalb von 2 Wochen nach Erhalt der Ware. (ohne Rücktrittsbelehrung → 1 Jahr und 2 Wochen)</li></ol><ol type="1" id="6fa9289c-ad23-4bc0-8df6-eb1bbe27ca7d" class="numbered-list" start="2"><li>Wann hat der Käufer kein Rücktrittsrecht?<ol type="a" id="b57faaf1-7ac5-4064-a2d6-e425956ed00c" class="numbered-list" start="1"><li>Lieferung von Lebensmittel</li></ol><ol type="a" id="675c9aa3-db94-46b7-b74b-0145c22b7514" class="numbered-list" start="2"><li>Zeitungen/Zeitschriften</li></ol><ol type="a" id="33d1d5d6-a4d2-4bed-a032-c632397f8164" class="numbered-list" start="3"><li>Freizeitdienstleistungen</li></ol><ol type="a" id="46b8327c-b222-4135-8ab9-1f00e217b240" class="numbered-list" start="4"><li>Wertpapiergeschäfte</li></ol></li></ol><ol type="1" id="d4ef9165-056b-455a-a3c8-f3db8cf4e78d" class="numbered-list" start="3"><li>Käufer muss die Ware auf seine Kosten zurückschicken.</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Erfüllung des Vertrags</summary><div class="indented"><figure id="aacbdc86-5011-4c67-8c5a-4769647dea28" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%202.png"><img style="width:480px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%202.png"/></a></figure><p id="933323b6-2a06-4cb5-a158-f16b6479d48e" class="">Lieferung wird oft vorher angekündigt</p><ul id="fee3fd1e-c44c-4ab1-b50c-1f27bd78cfb3" class="bulleted-list"><li style="list-style-type:disc">Käufer kann Vorkehrungen treffen (Platz im Lager machen)</li></ul><ul id="e86551eb-b12b-41cf-b140-cbf01301df94" class="bulleted-list"><li style="list-style-type:disc">Entscheidungen über den Weiterverkauf treffen</li></ul><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Unterschied Spediteur und Frachtführer</summary><div class="indented"><p id="dc16a3d6-0bf7-4553-94ed-f17aab70438b" class=""><span style="border-bottom:0.05em solid"><strong>Frachtführer</strong></span> führt den physischen Transport durch (z.B.: die Post).</p><p id="5381fafb-9366-4611-9ec9-8e2f25a7ea9a" class=""><strong><span style="border-bottom:0.05em solid">Spediteur</span></strong> ist der Vermittler zwischen Auftraggeber und Frachtführer.</p><p id="993fb01b-0316-465c-9b1e-8e55bcf8ea6c" class=""><span style="border-bottom:0.05em solid"><strong>Selbsteintritt</strong></span> → sie sind für beides zuständig.</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Begleitpapier</summary><div class="indented"><ul id="d90793ac-3bce-4c59-b979-5e33fffbdfc4" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Lieferschein</strong></span> → bleibt beim Käufer</li></ul><ul id="fcd071e1-ef4d-4fac-8a68-32ccd90e8a02" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Gegenschein</strong></span> → Bestätigung für den Verkäufer</li></ul><ul id="d7c08703-5d78-439e-b824-8b4e57cd299c" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Frachtpapiere</strong></span> → Lieferung erfolgt durch einen Frachtführer (z.B.: Bahnversand)</li></ul><ul id="4fa82a62-b54b-44cd-93fe-d6ead261e53a" class="bulleted-list"><li style="list-style-type:disc">Weitere:<ul id="cdb0be23-816f-40d5-9f28-d433d53d8f38" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Zollerklärung</strong></span></li></ul><ul id="aeb28dab-30b4-43e6-ad97-df731a7397eb" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Devisenerklärung</strong></span></li></ul><ul id="e2f16c9c-29db-46ad-8954-320d2378c2ae" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>ausländische Einfuhrbewilligung</strong></span></li></ul><ul id="676f8ac7-960f-40de-afe5-f7b6e0a57164" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong>Ursprungszeugnis</strong></span></li></ul></li></ul><p id="462bcacf-3f99-4d3d-8fdd-2435ca79663b" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Käufer erfüllt nicht seine Pflichten</summary><div class="indented"><figure id="9b77e66f-8b04-45eb-b5ad-4a544df068da" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%203.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Untitled%203.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Arten von Mängel</summary><div class="indented"><figure id="653a992d-ed17-4a9b-ba0c-00ee073ff944" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.43.26.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.43.26.png"/></a></figure><ul id="8b15e31e-cb70-422d-afdb-d07dd1dc4ded" class="bulleted-list"><li style="list-style-type:disc"><strong>Offene Mängel:</strong> Mit freiem Auge erkennbar</li></ul><ul id="4e4b5048-4524-414f-8e82-2776a20153f2" class="bulleted-list"><li style="list-style-type:disc"><strong>Verdeckte Mängel:</strong> sind nicht sofort erkennbar: T-Shirt verfärbt sich beim Waschen.</li></ul><ul id="eef15b44-9129-4bf8-b689-4b2657c2f413" class="bulleted-list"><li style="list-style-type:disc"><strong>Arglistig verschwiegene Mängel:</strong> Verkäufer kennt Mangel verschweigt ihn aber dem Kunden.</li></ul><ul id="ee5b4fa9-1d5c-47ed-aa71-2c6466530b7f" class="bulleted-list"><li style="list-style-type:disc"><strong>Wesentliche nicht geringfügige Schäden:</strong> bekomme grünes iPhone obwohl rotes bestellt</li></ul><ul id="790b473a-b908-49eb-bd8c-f9ce13224ca7" class="bulleted-list"><li style="list-style-type:disc"><strong>Geringfüge Mängel:</strong> hindert nicht am Gebrauch: Lackschaden am Auto.</li></ul><ul id="7d47afe1-131f-41e9-b8c5-3efe2a5bcc85" class="bulleted-list"><li style="list-style-type:disc"><strong>Behebbare Mängel:</strong> liegt vor, wenn Ware repariert werden kann</li></ul><ul id="556392d9-b853-40d0-8b03-dbcd9a25c55d" class="bulleted-list"><li style="list-style-type:disc"><strong>Unbehebbarer Mangel:</strong> kann nicht beseitigt werden</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Gewährleistung</summary><div class="indented"><p id="0c595784-87fd-4946-b211-c50c64df8917" class="">Verkäufer haftet für Mängel, die bereits bestanden, als die Ware übergeben wurde.</p><p id="d78b2313-bfd6-4e9a-8059-ddbc9d408623" class=""><strong>Gewährleistungspflichten</strong>:</p><ul id="4bab0cbb-d1f8-42d7-a2c4-534673aaf1ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Gewährleistung bei bewegl. Sachen: </strong>Laut ABGB 2 Jahre (Handy)</li></ul><ul id="5f9642bb-4c94-4ca7-b576-2c9af80dc19b" class="bulleted-list"><li style="list-style-type:disc"><strong>Gewährleistung bei unbewegl.</strong> <strong>Sachen: </strong>Laut ABGB 3 Jahre ab Übergabe (Bauten)</li></ul><ul id="1641fa2e-c66a-4c9a-a37e-68e2ab36162d" class="bulleted-list"><li style="list-style-type:disc"><strong>Beweislastumkehr: </strong>Tritt ein Mangel innerhalb von 6 Monaten auf (Neu: B2B → 6 Monate, B2C → 12 Monate), muss der Verkäufer beweisen, dass der Mangel bei der Übergabe noch nicht bestanden hat. Danach muss der Käufer beweisen, dass er bereits bestanden hat</li></ul><ul id="38345a85-1e54-461a-ac94-e07e59464fbd" class="bulleted-list"><li style="list-style-type:disc"><strong>Gewährleistung bei Montagefehlern</strong></li></ul><ul id="38bf45d0-bea7-46b1-adfd-b2d07ca9f9b8" class="bulleted-list"><li style="list-style-type:disc"><strong>Gewährleistung für Werbeaussagen</strong></li></ul><ul id="53d6e14d-4978-4101-bb05-4627af29c5c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Arglistig verschwiegene Mängel: </strong>Hier beträgt die Gewährleistungsfrist 30 Jahre</li></ul><p id="32bf1d13-16ac-4400-82e1-7d815945e615" class="">Sollte die Gewährleistung eintreten sieht das Gesetz diese Möglichkeiten vor:</p><ul id="d4d2620f-f54a-4f01-adc9-85d8f2104a0f" class="bulleted-list"><li style="list-style-type:disc">Verbesserung, Nachlieferung, Reparatur, Austausch</li></ul><ul id="b3f2c37d-5112-4038-ad26-decb397fef73" class="bulleted-list"><li style="list-style-type:disc">Preisminderung</li></ul><ul id="7c308876-ad67-42b2-926e-9739954ea3c2" class="bulleted-list"><li style="list-style-type:disc">Wandlung</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Produkthaftung</summary><div class="indented"><p id="eed23217-6a3f-418c-976c-0221cda25ee2" class="">Maximal 10 Jahre.</p><p id="7748ed27-90da-4cdc-a394-61ba9537928e" class="">Die Produkthaftung ist in einem eigenen Gesetz geregelt. Sie bedeutet, dass der Hersteller für Schäden haftet, die durch ein Fehlerhaftes Produkt an Personen oder Sachen (ab 500 Euro) entstehen.</p><p id="26aa5a29-1f86-49c9-9cc2-cf38fdb0b05e" class="">Auch der Verkäufer und Importeur haften.</p><p id="8f8f12ce-a52d-4f7a-af7f-896672b7132c" class="">Für das Produkt selbst nicht.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lieferverzug</summary><div class="indented"><figure id="d4deda3e-8942-4f57-a09f-56d0f5f249f2" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.50.37.png"><img style="width:384px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.50.37.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Annahmeverzug</summary><div class="indented"><ul id="93b5b66c-2333-4a7a-9f3c-dc3e0d4cefc5" class="bulleted-list"><li style="list-style-type:disc">Annahmeverzug liegt vor, wenn der Verkäufer vertragsgerecht liefert, der Käufer die Ware aber nicht annimmt.</li></ul><ul id="370d9697-68c5-4f64-8b0a-80cdf9c46f4c" class="bulleted-list"><li style="list-style-type:disc">Oft wird die Annahme verweigert, weil die Ware nicht vertragsgerecht geliefert wurde.</li></ul><p id="94839675-365f-4fa9-88d7-87fa777884c7" class=""><strong>Möglichkeiten des Verkäufers:</strong></p><ul id="4f694bb5-c186-47de-a2c6-bdea823fbab1" class="bulleted-list"><li style="list-style-type:disc"><strong>Hinterlegung:</strong> Ist der Käufer Unternehmer, kann der VK die Ware z.B.: in einem Lagerhaus hinterlegen.</li></ul><ul id="2f59d19e-6803-41a7-b5f2-fd40ed05b149" class="bulleted-list"><li style="list-style-type:disc"><strong>Selbsthilfeverkauf:</strong> Der Käufer kann dem Verkäufer eine Nachfrist setzen und eine Versteigerung androhen. Sollte der Erlös geringer sein kann der VK Schadensersatz fordern</li></ul><ul id="4c7cc8cd-a084-452a-83ea-d6d9e3ec5968" class="bulleted-list"><li style="list-style-type:disc"><strong>Rücktrittsrecht:</strong> Der VK kann vom Vertrag zurücktreten.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Zahlungsverzug</summary><div class="indented"><p id="fb86331e-2082-4575-a2d3-8fb0a0b9aea5" class="">In den AGBs und der Rechnung sollten eindeutige Formulierungen verwendet werden, um Streitigkeiten zu vermeiden.</p><figure id="ebe0c562-5070-4dd6-8968-df1d25c8a317" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.57.50.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.57.50.png"/></a></figure><h3 id="c5c323f3-b1bd-4a26-9ae9-444f0a121468" class="">Mahnplan</h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="c11f608b-65b7-4577-8a22-f073fe43f5ba"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Der Mahnplan enthält Regeln wann und wie oft gemahnt werden soll, bis rechtl. Schritte unternommen werden. </div></figure><figure id="d4d7a488-b921-4567-aa08-346023b7f685" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.59.49.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-05_um_23.59.49.png"/></a></figure><h3 id="a9279c86-2ffb-48f2-a6b5-07ae81b433b6" class="">Gerichtliches Mahnverfahren</h3><p id="ebd64559-ce53-4d5e-8162-d0bd5829cc9c" class="">Die gerichtliche Mahnung soll dazu dienen, bei kleineren Beträgen Geld und Zeit für Zivilprozesse zu sparen.</p><p id="efacb442-81fa-4b22-aa77-7701d46c4f47" class=""><strong>Voraussetzungen</strong>:</p><ul id="102a3047-a78b-4384-bb0b-fc7e10a08a30" class="bulleted-list"><li style="list-style-type:disc">Die Forderung bezieht sich auf Geld</li></ul><ul id="8ed05a37-6d2d-4329-9145-b6c61d33fc22" class="bulleted-list"><li style="list-style-type:disc">Der Betrag übersteigt nicht 75.000 €</li></ul><p id="ff70668b-324d-4076-b140-f0c30f191729" class=""><strong>Optionen für Verkäufer:</strong></p><ul id="30877014-57d5-475e-8f71-2657b48e4368" class="bulleted-list"><li style="list-style-type:disc"><strong>Mahnklage:</strong> Der Gläubiger beantragt, dass ein Zahlungsbefehl gegen den Schuldner erlassen wird.</li></ul><ul id="d9e88433-b7e5-4cc2-92d6-3ce82695a28b" class="bulleted-list"><li style="list-style-type:disc"><strong>Zahlungsbefehl:</strong> Das Gericht erlässt ohne Anhörung einen bedingten Zahlungsbefehl. Im Anhang sind die Zinsen und Kosten</li></ul><figure id="eb0a1ff0-606f-4090-a3e7-3816bafd3cd4" class="image"><a href="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-06_um_00.02.10.png"><img style="width:432px" src="ZF%20Band%201,%202%20&amp;%205%200f320499b5394bdc8faae991256fa709/Bildschirmfoto_2022-10-06_um_00.02.10.png"/></a></figure></div></details><p id="d237b376-897b-4267-bfb8-8702c0b17861" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

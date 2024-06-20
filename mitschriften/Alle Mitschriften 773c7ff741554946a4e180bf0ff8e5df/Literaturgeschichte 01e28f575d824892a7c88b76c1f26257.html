@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Literaturgeschichte</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="01e28f57-5d82-4892-a7c8-8b76c1f26257" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📖</span></div><h1 class="page-title">Literaturgeschichte</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px"/></span>Fach</th><td><span class="selected-value select-value-color-blue">Deutsch</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/info-alternate_gray.svg" style="width:14px;height:14px"/></span>Themen</th><td>TEXTwärts</td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>Erstellt</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/library_gray.svg" style="width:14px;height:14px"/></span>Klasse</th><td><span class="selected-value select-value-color-blue">1. Semester</span><span class="selected-value select-value-color-purple">5CHK</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Zuletzt bearbeitet</th><td><time>@18. Dezember 2023 21:18</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/kind_gray.svg" style="width:14px;height:14px"/></span>Art</th><td><span class="selected-value select-value-color-green">Mitschrift</span></td></tr></tbody></table></header><div class="page-body"><h2 id="7260c8b7-43b0-490e-936c-854efadb2a9a" class="">Seite 98</h2><p id="e62a0c78-0ed0-41ea-b5bf-fabd7e531a65" class="">1804 ist wichtig</p><p id="5e23fba7-ea55-445e-91f8-ccd7987a619b" class="">letzter Kaiser von Österreich: Kaiser Karl I.<div class="indented"><p id="e3f7a675-ed54-40af-8991-ac719e06f99e" class="">Mussten Österreich verlassen → Madeira</p><p id="e4946fe2-7c4e-4375-8fcb-f4c3e1cd7ace" class="">1980: Sie durfte Österreich zum ersten mal wieder betreten und hat in der Schweiz gelebt</p></div></p><p id="9875edba-a4a9-4b08-9ff4-70bffe9ad04b" class="">Habichtsburg: </p><p id="427ee4ad-9cc3-4d99-9971-a256b7a56203" class="">Adelsaufhebungsgesetzt 1918: Adel wurde verboten </p><h3 id="a82a1825-d3e6-443f-a542-0d38cb1b8251" class="">Napoleon</h3><p id="769559a2-e255-44f5-80aa-9f6c3a792cee" class="">Zwei mal im Exil: Elba (zurückgeschwommen) und nach St. Helena</p><h3 id="befc6c1b-6126-4220-a671-db814728a9f5" class="">Wiener Kongress</h3><p id="e14828d0-7662-48c6-9d0f-a184c11342c0" class="">Neuordnung Europas → Grenzen Europas neu gezogen</p><h3 id="bc03fc1f-7208-4a19-ab32-3286a9ed1cf2" class="">Bildende Kunst</h3><p id="f11e6470-c0ee-4a9a-8d6d-47a24d1b5116" class="">Wilian Turner, Eugene Delacroix und Caspar Friedrich</p><h3 id="9e221b29-bdc4-4915-97fa-9db90d9b627a" class="">Musik</h3><p id="e8102416-8907-4436-89f1-14acb7c51454" class="">Fanny Mendelssohn <br/>Franz Schubert → Forelle<br/></p><hr id="807b3962-af9d-41a7-8d90-a20f67966b4e"/><h2 id="c1f1ac69-2d39-4e72-a8d8-7a418fa97350" class="">Seite 99</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="079f85f8-9351-4bbe-8151-ff9e12774fe8"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Carl Friedrich Gauß und Alexander von Humboldt waren <span style="border-bottom:0.05em solid">Naturwissenschaftler</span> </div></figure><p id="27fd0a8a-0c36-4cc1-98bf-d260b3a5ef57" class="">Georg Simon Ohm: Eisenbahn Entwicklung (Industrielle Revolution → von England ausgehend)</p><p id="c8977fc9-6a8e-4854-bea3-9750e08b592d" class=""><span style="border-bottom:0.05em solid">Tand, tand</span> ist das … → Gemination</p><hr id="d7baf127-5b8f-4a17-88a7-ffff28ef8800"/><h2 id="30a295ff-1573-49f7-8a88-f36058002b34" class="">Seite 100 und 101</h2><p id="70262811-ba8a-4b5c-a4d3-e781ae603eff" class=""><strong>Trivialität</strong>: etwas Alltägliches, Unbedeutendes </p><p id="294b91c7-8fe3-4eba-b467-b7bc78aea2f1" class="">Krimi → Trivialliteratur</p><figure id="b40c4915-3908-47b6-b8b0-3a4622e09dca" class="image" style="text-align:left"><a href="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Bildschirmfoto_2022-11-24_um_09.46.07.png"><img style="width:480px" src="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Bildschirmfoto_2022-11-24_um_09.46.07.png"/></a><figcaption>in der <span style="border-bottom:0.05em solid">Fraktur-Schrift</span></figcaption></figure><p id="8e9537f5-7995-44b2-88b9-c2e266df2ae3" class="">„Das Fräulein von Scuderi” → erster Kriminalroman</p><p id="a7e966d6-55bf-46e4-b526-9f1b9d57a62f" class="">Tantalidenfluch: Morde innerhalb der Familie</p><h3 id="ceb756fb-7b59-4773-b4d8-bf60166c359e" class="">Warum interessiert die Leute Mord und Verbrechen? </h3><p id="c463ecc4-1d9a-43ec-a853-61b87d5930f0" class="">Konträrfaszination → Hoffentlich passiert mir das nicht.</p><h3 id="48d311d2-eba3-4842-b955-251dd587ee58" class="">Detektivroman</h3><p id="8e7e9deb-9aaf-4b18-8fc5-0f8b31032abf" class=""><strong>aristokratisches Milieu</strong> war der <span style="border-bottom:0.05em solid">Adel</span></p><h3 id="7c00091f-1b20-4eef-88d5-5370e95e934c" class=""><del>Thriller</del></h3><h3 id="4eafd211-160b-4c0a-8198-c8b23bc81fca" class=""><del>Märchen</del></h3><hr id="55af6d50-ec92-4b1b-97ea-d660f64884d6"/><h2 id="1707800e-4c18-4901-8ae5-7de8add65a1d" class="">Seite 105</h2><h3 id="e08ba977-5450-44cf-b496-628959d642f8" class="">Verklärung des Mittelalters</h3><p id="1283047b-affa-4169-b3a9-f248a8ae06fc" class="">Das Mittelalter wurde als schöne Zeit präsentiert. Die Realität war ganz anders.<br/>z.B.: nur die Kemenate waren beheizt (Frauengemacht)<br/></p><hr id="89bd6a6a-f41d-46ca-9d13-d0eeb6c1b233"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Gendern</summary><div class="indented"><p id="496b6601-4025-41c0-ba88-4c4b17169afd" class="">Lehrkörper: alle Lehrer</p><p id="71488e12-0a39-452a-983a-f272e77f9e7e" class="">Binnen-I sollten verwendet werden</p><figure id="75816b93-60a5-4535-9e66-bbf850be7627" class="image"><a href="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Untitled.png"><img style="width:384px" src="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Untitled.png"/></a></figure><figure id="18af5112-0ab4-4f88-97c6-47ea24fa1a14" class="image" style="text-align:left"><a href="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Untitled%201.png"><img style="width:384px" src="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Untitled%201.png"/></a></figure></div></details><hr id="bece2bb4-97c6-4154-84d8-6145afd40da2"/><h1 id="93d0b3f2-ab3f-4c97-8152-fc2d603d0d73" class="">Baustein 6</h1><h2 id="92bd9da2-9ee0-45f9-bdfc-d8cb55e1bb78" class="">Seite 106 &amp; 109</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="30419b05-6bab-4a04-a40d-b652cb01f5ca"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Alle 14 der 8.000er Berg sind in Asien: Nepal, China, Pakistan und Indien </div></figure><p id="2e630d61-a651-4f21-a072-3ce7a86e08e5" class=""><strong>Âventiure</strong>: Wort Abenteuer</p><p id="c8de849f-211d-46c9-952c-119745a47a2f" class=""><strong>Nibelungenlied</strong>: in 39 Âventiuren eingeteilt </p><p id="409cc1d9-1b18-4cb9-a2af-8d89dac73e1b" class=""><strong>Etymologie</strong>: Lehre der Wortherkunft</p><p id="362bd5cf-a188-49e6-8fe6-2a7288d83574" class="">
+</p><figure id="4900eacd-510f-4237-bb7a-6fee33ac70cd" class="image" style="text-align:left"><a href="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Bildschirmfoto_2022-11-24_um_10.30.03.png"><img style="width:288px" src="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Bildschirmfoto_2022-11-24_um_10.30.03.png"/></a></figure><p id="6bac7af6-3d49-4e8f-b4b3-42c9b0e71fd3" class=""><strong>grammatische Geschlecht: </strong>n (<span style="border-bottom:0.05em solid">neutral</span> = sächlich) früher f (<span style="border-bottom:0.05em solid">feminin</span> = weiblich) </p><hr id="0ff4fe34-8684-4a9d-985f-a32fbab19293"/><h2 id="55dc63c9-3164-4377-9eb8-23a74aec255d" class="">Seite 110</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="8537d54b-35d3-439f-abd7-7cd6cb56e94a"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/info-alternate_gray.svg"/></div><div style="width:100%">Carl Friedrich Gauß und Alexander von Humboldt waren <span style="border-bottom:0.05em solid">Naturwissenschaftler</span> </div></figure><hr id="61602512-b583-4bc3-aec7-451a50b34261"/><h2 id="cbdebb02-f380-4535-8cf1-e59d35bb1515" class=""><del>Seite 111</del></h2><hr id="cec4e907-d2bd-4b74-851f-f7e3ce74c185"/><h2 id="73065556-f44f-4062-ae01-a54021db4f2f" class="">Seite 112</h2><p id="f84fe830-9b23-46a2-84f9-56c381ebd7da" class="">Karl May → Bücher sollen nicht mehr politisch korrekt sein. (Indianer → rot)</p><p id="614077df-2701-426e-8d41-c1f76f429fbc" class="">Ein Buch darf 70 Jahre nach dem Tod des Autors umgeschrieben werden.</p><p id="30edede8-2d92-4d43-85fe-ec3dc416ca77" class="">Winnetou hat man in Kroatien gefilmt.</p><hr id="3364d3a4-c016-4b27-98cc-d2792d855868"/><h2 id="66f31ee9-cee9-43aa-ba78-ad121a6b0b9f" class="">Seite 115</h2><p id="75ded8d2-edde-4794-b6cf-c9f7e2a750a1" class="">post mortal: nach dem Tod</p><p id="ad39e876-b3d1-4175-85b9-59b007251f52" class="">Heinrich Heine: Weberlied<div class="indented"><p id="7219d92d-9a29-4449-b3d2-9be2dc9d3c2c" class="">Sisi war der größte Fan</p></div></p><p id="32dfb2cd-2325-4a15-9531-55a777c11fcf" class="">Sisi hat selbst Gedichte geschrieben.</p><p id="5a8dfc25-1251-4e22-8340-a113980c9285" class="">Nach dem Tod von Thronfolger Rudolf (Selbstmord) nur noch schwarz getragen → negative Gedichte<div class="indented"><p id="d9fab8d5-39fb-4501-bcd5-dd4df6d7cf32" class="">Franz Ferdinand → enger Verwandter (Attentat von Sarajevo)</p></div></p><p id="2565ce00-c07c-49f5-8b0b-076337ff3b83" class="">pathetische Sprache: Gefühle werden übertrieben dargestellt</p><hr id="012b12b5-3766-4bab-97ee-aab8a50558e2"/><h2 id="0df8235f-11a0-4b7c-9f5e-88db7e89429f" class="">Seite 116</h2><p id="d9467d4d-246a-46e3-bd31-c9350827ef77" class="">Deutsch Nationalhymne war einmal die Österreich Kaiserhymne</p><p id="ae1cb089-cf0a-4207-9cd8-b3b161e78195" class="">Richard Löwenherz: Englischer König in Wien gefangen genommen und kaserniert (eingesperrt)</p><p id="f0261746-39fa-450c-bd0a-b22df2eeab6e" class="">Josefina Vilsmaier: produziert Filme, die vor langer Zeit spielen</p><p id="352e56b5-c166-4601-bda4-bd0fb0a8cb08" class="">Annette von Droste-Hülshoff: Die Judenbuche</p><hr id="4aaaa78f-ef64-461d-86b9-42d27d3b957f"/><h2 id="33f98cd0-ec2a-4e3c-97fc-0255c2011fbc" class="">Seite 117</h2><p id="049ec7ac-fd84-4af1-81f8-578617ed9e63" class="">Schlesischer Weberaufstand: Heinrich Haine</p><p id="1cea287e-2be1-4eb3-bcb1-aa0b187c1282" class="">Absolutismus: Alle 3 Staatsgewalten werden vereint</p><hr id="508d65c6-b7d7-40c5-bc68-2e13748efb73"/><h2 id="8671c003-aaf2-47f8-95dc-a1a62c1930a4" class="">Seite 118</h2><p id="aa87b0fe-e990-46a2-b7a9-5cd9edc4f262" class="">Wichtigstes Morsezeichen: SOS</p><hr id="fd9eb4e8-b3a9-4449-8df5-56ae7ad54ba5"/><h2 id="62e78b00-4439-425e-b560-47eb984ab591" class="">Seite 119</h2><p id="b7bf6063-21d7-4ccf-83ab-7bacdc3002e0" class="">Arthur Schopenhauer </p><p id="fc098b02-d261-490b-8ae5-061b94e56d43" class="">Nihilismus: gesellschaftliche Ordnung wird nicht akzeptiert</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="87eb880a-33e3-4f07-b009-0a1038a4c51d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">bei sowohl als auch darf man keinen setzen </div></figure><hr id="30f87e00-0f2d-4e8b-816d-d3f6ef950cee"/><h2 id="7ffc9777-2f3a-4caf-9d72-0998fa6c0ebc" class="">Seite 120 + 121</h2><p id="09127169-ee83-4380-9b33-a6c9bbd1c483" class=""><strong>Kavaliersdelikt</strong>: keine schlimme Straftat</p><h3 id="49ea7aa9-d4fd-41e3-a48d-698703144a9f" class="">Zensur</h3><ul id="a6a400c4-f561-49d4-9e9e-80005aee950f" class="bulleted-list"><li style="list-style-type:disc">Biedermeierzeit</li></ul><ul id="bb1ab1c7-b85d-477d-a546-09e50e9758a0" class="bulleted-list"><li style="list-style-type:disc">Nazis: Bücher von jüdischen Autoren</li></ul><p id="1ad02437-c506-4f36-8f14-3752aa088da9" class=""><strong>Salzburg Bücherverbrennung</strong>: 30. April 1938 (einzige in Österreich)</p><p id="2097c899-b813-49e9-a8c6-f1fd6d9fa4fe" class="">Wiener Couplet → umgeben der <span style="border-bottom:0.05em solid">Zensur</span> (Intermezzi)</p><p id="b9540e96-b941-4c74-b339-76060c34962d" class="">Bis 1960er Jahre im Vatikan: Strafe war die Exkommunikation</p><figure id="ccb3076a-1cd1-4a6e-829d-a63ddb209d94" class="image" style="text-align:left"><a href="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Bildschirmfoto_2022-12-15_um_10.11.47.png"><img style="width:432px" src="Literaturgeschichte%2001e28f575d824892a7c88b76c1f26257/Bildschirmfoto_2022-12-15_um_10.11.47.png"/></a></figure><p id="e90172ef-4303-43d3-be75-b5afbd577d42" class=""><strong>Sekularisierung</strong>: Trennung von Politik und Religion</p><hr id="ca14fe08-84bb-4501-bb18-b0a346a48466"/><p id="67323e14-ae5d-4113-83bf-95e7d2c0eca2" class="">Arthur Schnitzler → bekannter öster. Autor (Jüdische Abstammung)</p><p id="33e96605-ad22-4239-a117-2c93696159c0" class=""><strong>Reigentanz</strong> → Mittelalterlicher Tanz (jeder Tanz mit jedem)</p><h1 id="af0e71dc-c4c4-465f-8fb9-9e9d26532c3d" class="">Baustein 7</h1><h2 id="a5b5a622-e70b-483e-b234-8ad52fe016ef" class="">Seite 126</h2><p id="0b72010d-b3da-4094-9fbe-f1c4aabc04f3" class="">
+</p><h2 id="6d446dd8-ecbb-465d-a1db-39e465d031b2" class="">Leutnant Gustl</h2><p id="1fb4797f-9434-4f16-9e57-9d379d02f7fe" class="">
+</p><h2 id="46a32bed-f4f9-4191-a46b-84df76ed517f" class="">Jidisch</h2><p id="94af7cda-d7ab-4422-bc99-43025c15c2c7" class="">Mischung aus häbräisch und deutsch</p><p id="04c79773-e383-4900-94f3-71d019cfaabc" class="">Verballhornung der Sprache: Man hört etwas und es wird abgeändern</p><p id="306cf7ea-d6a4-48a5-9f33-fa63dad712c1" class="">
+</p><h2 id="06b7e80a-14e6-4279-8452-b0b6e930cbf7" class="">30-Jähriger Krieg</h2><p id="85678a89-5945-4b0b-8082-0d05bb84da36" class="">Katholiken gegen Protestanten</p><p id="c0091218-b7d6-468b-9049-e96650980f96" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

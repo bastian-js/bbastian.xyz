@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Recht</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8b57e1bd-c0a6-444a-872d-d02b45a36faa" class="page sans"><header><h1 class="page-title">Recht</h1><p class="page-description"></p></header><div class="page-body"><h3 id="7908d4db-2053-47e3-9bca-87a267d81848" class="">Landtagswahl in Salzburg</h3><p id="36f3b16f-0b96-485e-8641-705b44793967" class="">Bräuchte mindestens <span style="border-bottom:0.05em solid"><strong>6000 Stimmen</strong></span> um kandidieren zu können.</p><h2 id="40fab384-5ffd-4ee3-b70d-ef2bbff2c6c4" class="">Aktuelles </h2><p id="f6b33f5e-2e87-40f9-8a32-2ff85602dfcc" class="">Zugunglück in Griechenland → Menschlicher Fehler</p><p id="f9aaebb9-716a-464f-8080-9a2233e30a91" class="">Waffenlieferungen von den USA in die Tai</p><p id="a0e662d8-62be-4b31-9e85-d075c5ff13cf" class="">G20 Gipfel in Indien → </p><h2 id="1ab6cf7b-3d07-4eb8-9a86-fe29ff3782af" class="">Marokko - Österreich</h2><p id="7244529a-42ef-4eee-bd95-1e2137438452" class="">Über die Rückführung der Flüchtlinge geredet</p><p id="4c4807f8-1707-493a-8196-50291ada1c84" class="">Marokko ist ein <strong><span style="border-bottom:0.05em solid">Königreich</span></strong>.</p><h2 id="efc3ca96-002a-4272-88f0-2f7dc69ce351" class="">Arten von Delikten</h2><p id="c1894255-a818-41b5-8d06-6b5613ed2e99" class="">Offizialdelikte → Anklage erhebt der Staatsanwalt</p><p id="c4cc245e-ae8e-4a31-a360-84dabc50950f" class="">Ermächtigungsdelikt → Staatsanwalt braucht die Zustimmung des Opfers</p><h2 id="9e1941c6-8f27-4e16-b0f1-7d5f9bab10c8" class="">Van der Bellen</h2><p id="cb2a90c5-5557-4493-a3c6-58501fe92324" class="">Wollte ihm keine Aufmerksamkeit geben</p><h2 id="40bbff1a-e30b-4bd4-b7fe-184a375944a7" class="">Landtagswahlen in <span style="border-bottom:0.05em solid">Kärten</span> (05.03.2023)</h2><p id="1006945a-f216-49b6-b92e-c1de90c07bc4" class="">Wahlbeteiligung lag bei <span style="border-bottom:0.05em solid">72 %</span></p><figure id="9ec121b5-94d7-498a-abd3-fe8893f2f3a0" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-03-12_um_22.02.41.png"><img style="width:384px" src="Bildschirmfoto_2023-03-12_um_22.02.41.png"/></a></figure><p id="fcc7f1b1-5a46-4c61-992a-f4acf10c7769" class="">TK → Team Kärnten</p><p id="4f82a199-0e68-4341-a345-d508ccb91da7" class="">VÖ → Vision Österreich (Gründer war Landessprecher in der Partei MFG)</p><figure id="190b0346-3dac-4a8b-9c67-78a9b1699048" class="image" style="text-align:left"><a href="Bildschirmfoto_2023-03-12_um_22.02.55.png"><img style="width:240px" src="Bildschirmfoto_2023-03-12_um_22.02.55.png"/></a></figure><h3 id="8e9520b6-99ca-421f-b779-abe9f726639e" class="">Ökosoziale Steuerreform</h3><p id="679a4166-c877-4986-93da-addd7a9474b6" class="">Ziel: <span style="border-bottom:0.05em solid"><strong>CO2-Emissionen</strong></span> reduzieren</p><p id="a02d66fa-a220-4a60-a743-8c37163afe94" class="">Lohn- und Einkommensteuer<strong> </strong>von 35 Prozent auf 30 Prozent gesenkt</p><p id="cd27f4fc-dafd-4d44-97db-6cba49b37b15" class=""><strong>Niedrigen und mittleren Einkommende</strong>: Krankenversicherungsbeitrag reduziert</p><h3 id="6dffa4bc-32a2-490d-8ab3-1e5ff48ae6f0" class="">CO2-Steuer</h3><p id="c503293d-9aa9-4ebf-8a0d-ab5dc48105e9" class="">Keine direkte Steuer, sonder eine <span style="border-bottom:0.05em solid">Bepreisung</span></p><p id="b2dd11ed-1a6f-4dcf-a7b6-a6cffce53dde" class="">Unternehmen die Kraftstoffe verbrauchen müssen CO2 Steuer bezahlen.</p><p id="d2369b04-4af9-4b89-9224-a072b91bc3c3" class=""><span style="border-bottom:0.05em solid"><strong>Probleme</strong></span>: Emissionszertifikatenhandel</p><figure id="bc8a1671-f5ce-4a38-b57e-b367b6a21562" class="image" style="text-align:left"><a href="Untitled%201.png"><img style="width:336px" src="Untitled%201.png"/></a></figure><p id="bb1e618c-3dd0-4188-b7b8-c5a6c9ceab02" class=""><span style="border-bottom:0.05em solid"><strong>Ziel</strong></span> 2023 → auf 50 Euro</p><p id="7008b205-ed71-4ba0-8924-4d90e76b49a6" class="">Nebeneffekte: <strong><span style="border-bottom:0.05em solid">Treibstoffe steigen</span></strong>: Diesel 9 Cent, Benzin 10 Cent pro Liter</p><h2 id="a58ab907-9b2a-4874-8e6f-b8bc242ca176" class="">Nachrichten: 12.03.2023</h2><p id="a7ef843d-b5e8-4cb8-ad5a-54a971cadb2e" class=""><span style="border-bottom:0.05em solid"><strong>Silicon Valley Bank</strong></span>-Pleite → haben sich auf die Finanzierung junger Start-Ups konzentriert (größte Bankenpleite seit der Finanzkrise 2008) → Jahresboni und wachsende Zinsen</p><p id="84c665a8-250c-4529-a2ca-e56f54d60ad0" class="">Credite suiss: </p><h3 id="ace1b440-31bd-4f25-9bec-fbe5df55e8f9" class="">„Stop the boats”</h3><p id="3af2a64b-820a-4435-95db-997471a5ac8b" class="">Rishi Sunak hat seine neue Asylpolitik vorgeschlagen.</p><p id="839bc5d7-e1b9-404e-8643-56c2d382c41f" class="">Flüchtlinge (Albanien, Afghanistan und Iran), die durch den <span style="border-bottom:0.05em solid"><strong>Ärmelkanal</strong></span> (Frankreich/Großbritannien) einreisen, sollen zukunftig nach <span style="border-bottom:0.05em solid"><strong>Ruanda</strong></span> (Afrika) geschickt werden und dort auf ihr Asylverfahren abwarten</p><p id="c1c057c4-a765-41b9-a16d-155c650dba6a" class="">500 Mio. Pfund von Großbritanien für mehr Polizei Personal in Frankreich</p><h3 id="6ea16da4-95dc-4506-bcca-1b972d0babc2" class="">Nehammer Asylpolitik</h3><p id="12ea9bad-526d-40b1-8317-11c2e4472a0c" class="">Flüchtlinge bekommen nur dann <span style="border-bottom:0.05em solid"><strong>volle Sozialleistungen</strong></span>, wenn er ununterbrochen <strong><span style="border-bottom:0.05em solid">5 Jahre</span></strong> in Österreich gelebt hat. → sonst nur die Hälfte</p><p id="67936473-dc1f-4634-aba4-7d10426ee9ca" class="">Asylexperten → Würde Frauen in die Armut treiben; Von was sollen sie leben?</p><p id="f4c9eee8-3b63-4157-bde5-c037bd8911a2" class="">Könnte wahrscheinlich vor dem <span style="border-bottom:0.05em solid"><strong>Europäischen Gerichtshof</strong></span> nicht standhalten.</p><h3 id="f08e55b5-c623-4f08-b845-5ae6d2914480" class="">Umerziehungslager von Russland</h3><p id="72689602-1d59-4755-8036-292fc1e5ce81" class="">Bis zu 6000 ukraininische Kinder sollen verschleppt werden</p><p id="c747e7d6-1839-44e4-8dba-30af99ed2373" class="">Bevölkerungsmangel in Russland</p><h3 id="f4424965-018a-406d-8915-49192ec39916" class=""><strong>Diamanten-Export steht vor Sanktionierung</strong></h3><p id="714e7c03-aa9d-4e07-82bb-97c277d48226" class="">1/4 der Diamanten in Antwerpen (Belgien) sind aus Russland</p><p id="e7de4ac0-8549-452b-9324-74db6a829c8d" class="">Sanktionen sollen ausgeweitet werden. </p><p id="d095158a-ee63-4a90-be23-bee459ea8f24" class="">Belgien hatte sich bisher gewehrt → Russland würde sonst nach <span style="border-bottom:0.05em solid"><strong>Indien</strong></span> verkaufen</p><h3 id="d40ea7d3-9f0a-4270-981c-e05d70b0453c" class=""><strong>Gefangenenaustausch zwischen </strong><span style="border-bottom:0.05em solid"><strong>Belgien</strong></span><strong> und </strong><span style="border-bottom:0.05em solid"><strong>Iran</strong></span></h3><p id="7b641592-9695-47b7-b42a-d458f596cccd" class="">Iranischer verurteilten Terroristen gegen belgischen NGO-Mitarbeiter</p><p id="1e3b1a8d-f92d-4ad8-a566-424c37e20da0" class="">Ihm drohen 40 Jahre Gefängnis und 74 Peitschenhiebe.</p><h3 id="96b4de95-7c5f-4bd5-a0ca-f0e98ecd8a6d" class=""><span style="border-bottom:0.05em solid">Italien</span>: Trockener Winter</h3><p id="a2369db5-7829-40bb-97aa-3f1dc8208ddd" class="">Krisenjahr für die Landwirtschaft in Piemont</p><h3 id="775ec72f-d03a-47c9-96de-1507450e67c4" class="">Mike Pence Distanzierung</h3><p id="6066965c-be8e-49d8-95be-faf5390a4802" class=""><span style="border-bottom:0.05em solid"><strong>Mike Pence</strong></span> distanziert sich von Donald Trump für den Angriff auf das Kapitol</p><h2 id="71057319-e369-4087-8102-c0c6049751e3" class="">Schweiz Munition </h2><p id="495b68e3-b625-4e85-a469-47f82f9c3ad0" class="">Allerdings setzt dieser Schritt eine Verurteilung des russischen Überfalls in der Ukraine durch den UN-Sicherheitsrat voraus. Da Russland mit Kremlchef Wladimir Putin im UN-Sicherheitsrat ein Vetorecht hat, ist dieses Szenario ausgeschlossen.</p><h2 id="16f3a41c-70eb-467b-825e-afdb37eb26b3" class="">Israel</h2><p id="a52e226a-2f91-4f8a-92e4-289fa962d15e" class="">Justizreform → Gewaltentrennung weg → Demokratie - Diktatur</p><p id="c4f860d7-d487-4b7a-a145-6b05c9f50070" class="">Urteile des Höchstgerichts können mit einfacher Mehrheit a</p><p id="aacc12f2-8e74-49fe-9e92-130565408537" class="">
+</p><p id="172354cc-df27-4654-bb05-7aeccdceffbd" class="">Ehe für alle: Verfassungwidrig, da gleichheitswidrig → nur wenn das sachlich gerechtfertigt ist</p><p id="a6761210-b706-4c12-8667-9cc4f37051f5" class="">eingetragene Partnerschaft → wieder gleichheitswidrig</p><p id="8fbf499e-4707-403c-b01f-ed62d2c73946" class="">
+</p><p id="ce31358c-7825-4fdd-8d08-149b4a578b6c" class=""><strong>Pensionssplitting</strong>: Pensionsansprüche können freiwillig aufgeteilt werden ➔ per Gesetz verabschieden, um die Armutsgefährdung zu verringern (Weil wenn eine Mutter in Karenz geht fehlen ihr viele Jahre)  → Bezahltes Stillgeld<br/><br/><strong>Geteilte Karenz</strong></p><p id="03524faa-a00b-4c18-b4a4-3456730e9eb9" class="">
+</p><p id="44b5ec9a-be30-43ce-ba54-e62b13598ca9" class="">Christian Kern → ÖBB, Bundeskanzler, SPÖ-Vorgänger</p><p id="117bb824-643f-4c17-a653-d3bb13bd5e86" class="">
+</p><p id="30873a7b-3860-48b8-9532-51a8ac3194d2" class="">Gleichheitsgrundsatz</p><p id="da09c4f4-dc25-446c-984e-32f97ff04014" class="">WISS</p><p id="46107627-3695-4f72-808f-69459b2b9484" class="">Nottestament: 2 Zeugen → nicht über 18 (3 Monate)</p><p id="cd57c6ff-eaea-483f-8605-e452bb6fa77e" class="">faktisches und gesetzliches</p><p id="caab2137-6fdd-43d6-9956-a801043e7dc0" class="">Hospizkarenz → Angehörige liegen im sterben 3-6 Monate → keinen Endgeldanspruch</p><p id="91d30e79-1c61-44c9-a380-9828beaa5412" class="">Bildungskarenz → </p><p id="80bc989f-129b-4b2c-bc19-7a8e8ae238e9" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
