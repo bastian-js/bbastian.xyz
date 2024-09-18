@@ -19,14 +19,13 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
   margin-bottom: 15px;
   animation: animate-profile-picture 800ms 200ms backwards;
-  margin-top: 25px;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -75px;
+  margin-bottom: 1%;
 }
 
 .header_paragraph {
@@ -37,11 +36,6 @@ body {
   margin-bottom: 0%;
 }
 
-.projects_header {
-  color: white;
-  font-family: Montserrat;
-}
-
 .container {
   display: flex;
   color: #1a1a1d;
@@ -50,33 +44,34 @@ body {
   align-items: center;
 }
 
-.container-links,
-.container-links2 {
+.container-links {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
 }
 
-.socials,
-.contact {
-  width: 48%;
-}
-
-.button-social-header {
-  background-color: #0d1117;
-  border: 2px solid #0d1117;
-  border-color: #0d1117;
+.link-buttons {
+  background-color: rgb(51, 71, 86);
+  border: 2px solid rgb(51, 71, 86);
+  border-color: rgb(51, 71, 86);
   padding: 5px;
   font-size: 20px;
   border-radius: 20px;
   margin-top: 20px;
   width: 125px;
   height: 60px;
+  margin: 5px;
+  margin-bottom: 20%;
 }
 
-.button-social-header:hover {
+.link-buttons:hover {
   cursor: pointer;
-  color: rgb(68, 134, 239);
+  background-color: #0d1117;
+}
+
+.socials,
+.contact {
+  width: 48%;
 }
 
 .projects {

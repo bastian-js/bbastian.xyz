@@ -32,28 +32,60 @@
   </head>
   <body>
     <a href="./index.html">
-      <div
-        class="socials"
-        onmouseover="changeColor('right', true)"
-        onmouseout="changeColorBack()"
-      >
-        <button class="button-social-header" id="button-right-top">
-          <i id="arrow-right-top" class="fa-solid fa-arrow-left"></i> home
-        </button>
-      </div>
+      <button class="button-social-header">home</button>
     </a>
 
-    <div class="container">
-      <ul>
-        <li>
-          <h2 class="projects-heading">this website</h2>
-          <img
-            src="assets/website.png"
-            alt="image from the main page of the website"
-          />
-        </li>
-        <li></li>
-      </ul>
+    <div class="button-container">
+      <button
+        class="open-popup-btn"
+        data-title="this website"
+        data-img="./assets/website.png"
+        data-description="personal website for projects, socials & contact"
+        data-github="https://github.com/bastian-js/bbastian.xyz"
+      >
+        this website
+      </button>
+      <button
+        class="open-popup-btn"
+        data-title="anti-crash"
+        data-img="./assets/anti-crash.png"
+        data-description="basic anti-crash system for discord bots for discord.js v13 & v14"
+        data-github="https://github.com/bastian-js/discord-anticrash-v13v14"
+      >
+        anti-crash
+      </button>
+      <button
+        class="open-popup-btn"
+        data-title="giveaway bot"
+        data-img="./assets/giveaway_Bot.png"
+        data-description="open source discord.js v14 giveaway bot with slash commands (out of service)"
+        data-github="https://github.com/bastian-js/giveaway-bot"
+      >
+        giveaway bot
+      </button>
+      <button
+        class="open-popup-btn"
+        data-title="contact form"
+        data-img="./assets/contact-form.png"
+        data-description="basic contact form made in php and html, sending an email when someone wants to contact you"
+        data-github="https://github.com/bastian-js/php-contact-form"
+      >
+        php contact form
+      </button>
+    </div>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span id="close-popup-btn" class="close-btn">&times;</span>
+        <h2 id="popup-title"></h2>
+        <img id="popup-img" src="" alt="Project Photo" />
+        <p id="popup-description"></p>
+        <div class="github-link">
+          <a id="popup-github-link" href="" target="_blank">
+            <i class="fa-brands fa-github" id="github-link"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
