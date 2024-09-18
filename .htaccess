@@ -1,0 +1,4 @@
+AuthType Basic 
+AuthName "My Protected Folder" 
+AuthUserFile ./.hwpasswd
+require valid-user
