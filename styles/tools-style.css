@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+  padding: 0px;
+  font-family: Montserrat;
+  color: white;
+  align-items: center;
+}
+
+body {
+  background-color: #0d1117;
+  position: relative;
+}
+
+/*
+    Back Button
+*/
+
+.button-social-header {
+  background-color: rgb(51, 71, 86);
+  border: 2px solid rgb(51, 71, 86);
+  border-color: rgb(51, 71, 86);
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+
+  margin-right: 1%;
+  width: 125px;
+  height: 60px;
+  position: absolute; /* Positioning the button */
+  top: 0; /* Align to the top */
+  right: 0; /* Align to the right */
+}
+
+.header {
+  margin-top: 1%;
+}
+
+.button-social-header:hover {
+  cursor: pointer;
+  background-color: #0d1117;
+}
+
+.header-tools {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-tools {
+  display: flex;
+  flex-direction: row;
+}
+
+.tool-item-icon {
+  font-size: 128px;
+  margin: 20px;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center items horizontally */
+  margin: 10px; /* Space between tool items */
+  width: calc(33.333% - 20px); /* Ensure three items per row with margin */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-size: 20px;
+}
+
+.tool-item-p {
+  margin-top: -15px;
+}
