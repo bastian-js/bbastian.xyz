@@ -11,31 +11,6 @@ body {
   background-color: #0d1117;
 }
 
-.profile_pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
-  margin-bottom: 15px;
-  animation: animate-profile-picture 800ms 200ms backwards;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1%;
-}
-
-.header_paragraph {
-  margin-top: 0.1px;
-  color: white;
-  font-family: Montserrat;
-  font-size: 27px;
-  margin-bottom: 0%;
-}
-
 .container {
   display: flex;
   color: #1a1a1d;
@@ -44,36 +19,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 2.5%;
-}
-
-a {
-  text-decoration: none;
-}
-
-.button-social-header {
-  background-color: rgb(51, 71, 86);
-  border: 2px solid rgb(51, 71, 86);
-  border-color: rgb(51, 71, 86);
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 20px;
-  margin-top: 1%;
-  margin-right: 1%;
-  width: 125px;
-  height: 60px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.button-social-header:hover {
-  cursor: pointer;
-  background-color: #0d1117;
 }
 
 .buttons {

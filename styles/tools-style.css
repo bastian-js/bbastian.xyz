@@ -12,33 +12,8 @@ body {
   position: relative;
 }
 
-/*
-    Back Button
-*/
-
-.button-social-header {
-  background-color: rgb(51, 71, 86);
-  border: 2px solid rgb(51, 71, 86);
-  border-color: rgb(51, 71, 86);
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 20px;
-
-  margin-right: 1%;
-  width: 125px;
-  height: 60px;
-  position: absolute; /* Positioning the button */
-  top: 0; /* Align to the top */
-  right: 0; /* Align to the right */
-}
-
 .header {
   margin-top: 1%;
-}
-
-.button-social-header:hover {
-  cursor: pointer;
-  background-color: #0d1117;
 }
 
 .header-tools {
@@ -70,15 +45,4 @@ body {
 
 .tool-item-p {
   margin-top: -15px;
-}
-
-.copyright {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.copyright-p {
-  color: gray;
-  font-size: 18px;
 }

@@ -12,70 +12,6 @@ body {
   position: relative;
 }
 
-/*
-    Back Button
-*/
-
-.button-social-header {
-  background-color: rgb(51, 71, 86);
-  border: 2px solid rgb(51, 71, 86);
-  border-color: rgb(51, 71, 86);
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 20px;
-  margin-top: 1%;
-  margin-right: 1%;
-  width: 125px;
-  height: 60px;
-  position: absolute; /* Positioning the button */
-  top: 0; /* Align to the top */
-  right: 0; /* Align to the right */
-}
-
-.button-social-header:hover {
-  cursor: pointer;
-  background-color: #0d1117;
-}
-
-/*
-    Header
-*/
-
-.profile_pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
-  margin-bottom: 15px;
-  animation: animate-profile-picture 800ms 200ms backwards;
-  margin-top: 25px;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.header_paragraph {
-  margin-top: 0.1px;
-  color: white;
-  font-family: Montserrat;
-  font-size: 27px;
-  margin-bottom: 0%;
-}
-
-.projects_header {
-  color: white;
-  font-family: Montserrat;
-}
-
-/*
-    Socials
-*/
-
 .container-socials {
   display: flex;
   flex-direction: column;
@@ -95,24 +31,4 @@ body {
 .button-links:hover {
   background-color: rgb(34, 111, 235);
   cursor: pointer;
-}
-
-.icon {
-  font-size: 25px;
-}
-
-.copyright {
-  display: flex;
-  flex-direction: column;
-}
-
-.copyright-p {
-  color: gray;
-  font-size: 18px;
-}
-
-@media only screen and (max-width: 768px) {
-  .button-links {
-    width: 20rem;
-  }
 }
