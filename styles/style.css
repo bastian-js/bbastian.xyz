@@ -52,6 +52,11 @@ body {
   right: 0; /* Align to the right */
 }
 
+.button-home:hover {
+  cursor: pointer;
+  background-color: #0d1117;
+}
+
 .container {
   display: flex;
   color: #1a1a1d;
@@ -90,8 +95,8 @@ body {
   margin-top: 2.5%;
 }
 
-.links::hover {
-  fill: white;
+.copyright-p {
+  color: gray;
 }
 
 /* Images of index.html start */
