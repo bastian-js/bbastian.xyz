@@ -79,3 +79,14 @@ select {
 #timer {
   margin: 5px;
 }
+
+.copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.copyright-p {
+  color: gray;
+  font-size: 18px;
+}
