@@ -71,7 +71,7 @@ body {
   align-items: center;
 }
 
-.link-buttons {
+.button {
   background-color: rgb(51, 71, 86);
   border: 2px solid rgb(51, 71, 86);
   border-color: rgb(51, 71, 86);
@@ -85,20 +85,21 @@ body {
   margin-bottom: 20%;
 }
 
-.link-buttons:hover {
+.button:hover {
   cursor: pointer;
   background-color: #0d1117;
 }
 
+.copyright a,
+.copyright p,
 .copyright {
   text-align: center;
   margin-top: 2.5%;
 }
 
+.copyright-p a,
+.copyright-p p,
 .copyright-p {
   color: gray;
-}
-
-a {
   text-decoration: none;
 }

@@ -50,3 +50,87 @@ body {
 .icon:hover {
   color: #2b3a4f;
 }
+
+.timeline {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  max-width: 100%;
+  background-color: #0d1117;
+  border-radius: 6px;
+  position: relative;
+  margin-top: 7%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    rgba(52, 152, 219, 0),
+    #3498db,
+    rgba(52, 152, 219, 0)
+  );
+  z-index: 1;
+}
+
+.timeline-event {
+  position: relative;
+  background-color: #0d1117;
+  border-radius: 6px;
+  width: 200px;
+  height: 250px;
+  margin-right: 20px;
+  padding: 20px;
+  text-align: center;
+}
+.timeline-event::before {
+  content: attr(data-year);
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: #3498db;
+}
+.timeline-event::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #3498db;
+  border-radius: 50%;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.timeline-event h3 {
+  margin-top: 0;
+}
+.timeline-event p {
+  margin-bottom: 0;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact-heading {
+  margin-bottom: -1%;
+  margin-top: 4%;
+}
+
+.contact-icon {
+  font-size: 100px;
+}
+
+.contact-button {
+  width: 100%;
+}
