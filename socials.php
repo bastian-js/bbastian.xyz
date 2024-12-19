@@ -29,7 +29,7 @@
     <!-- discord embed end -->
 
     <!-- icon -->
-    <link rel="icon" href="./assets/pfp_neu_rund.png" />
+    <link rel="icon" href="assets/pfp_neu_rund.png" />
     <!-- icon end -->
 
     <!-- custom script -->
@@ -44,51 +44,48 @@
     </a>
 
     <header class="header">
-      <img class="profile_pic" src="./assets/pfp_neu_rund.png" alt="" />
+      <img class="profile_pic" src="assets/pfp_neu_rund.png" alt="" />
       <p class="header_paragraph">hey, i'm bastian :)</p>
     </header>
 
     <div class="container-socials">
-      <a
-        class="container-buttons"
-        href="https://twitch.tv/knuddelghg"
-        target="_blank"
-        ><button class="button-links">
-          <i class="fa-brands fa-twitch icon"></i> twitch
-        </button></a
-      >
-      <a
-        class="container-buttons"
-        href="https://youtube.com/@bastian42069"
-        target="_blank"
-        ><button class="button-links">
-          <i class="fa-brands fa-youtube icon"></i> youtube
-        </button></a
-      >
-      <a
-        class="container-buttons"
-        href="https://x.com/@_bbastiann_"
-        target="_blank"
-        ><button class="button-links">
-          <i class="fa-brands fa-twitter icon"></i> twitter
-        </button></a
-      >
-      <a
-        class="container-buttons"
-        href="https://www.instagram.com/bbastiann._/"
-        target="_blank"
-        ><button class="button-links">
-          <i class="fa-brands fa-instagram icon"></i> instagram
-        </button></a
-      >
-      <a
-        class="container-buttons"
-        href="https://www.github.com/bastian-js"
-        target="_blank"
-        ><button class="button-links">
-          <i class="fa-brands fa-github"></i> github
-        </button></a
-      >
+      <?php
+      $config = json_decode(file_get_contents('config.json'), true);
+
+      $host = $config['DB_SERVER'];
+      $user = $config['DB_USERNAME'];
+      $pass = $config['DB_PASSWORD'];
+      $db = $config['DB_NAME'];
+
+      // Create connection
+      $conn = new mysqli($host, $user, $pass, $db);
+
+      // Check connection
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+
+      // Fetch all social entries
+      $sql = "SELECT text, link, icon FROM Socials";
+      $result = $conn->query($sql);
+
+      // Check if there are any results
+      if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              echo '
+              <a href="' . htmlspecialchars($row['link']) . '" target="_blank" class="social-button">
+                <button class="button-links">
+                  <i class="' . htmlspecialchars($row['icon']) . ' icon"></i> 
+                  ' . htmlspecialchars($row['text']) . '
+                </button>
+              </a>';
+          }
+      } else {
+          echo '<p>No social links found.</p>';
+      }
+
+      $conn->close();
+      ?>
     </div>
 
     <div class="copyright">
