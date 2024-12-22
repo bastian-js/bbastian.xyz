@@ -6,8 +6,8 @@
     <title>bastian | socials</title>
 
     <!-- stylesheet -->
-    <link rel="stylesheet" href="./styles/socials-style.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="../styles/socials-style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <!--stylesheet end-->
 
     <!-- fontawesome for icons -->
