@@ -16,11 +16,23 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
     <link rel="icon" href="../assets/images/pfp_neu_rund.png" />
 
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
 </head>
 <body>
-    <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
-    <p>This is your dashboard.</p>
-    <a href="logout.php">Logout</a>
+
+    <div class="sidenav">
+        <h1>Dashboard</h1>
+        <a href="./dashboard.php" class="active">Home</a>
+        <a href="./dashboard-socials.php">Socials</a>
+    </div>
+
+    <div class="container">
+        <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+        <p>This is your dashboard.</p>
+
+        <a href="./dashboard-socials.php"><button class="button">Go to Socials Dashboard</button></a>
+        
+        <a href="logout.php" class="logout">Logout</a>
+    </div>
 </body>
 </html>

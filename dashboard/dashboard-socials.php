@@ -63,8 +63,26 @@ $conn->close();
 
     <link rel="stylesheet" href="../styles/dashboards.css">
     <link rel="stylesheet" href="../styles/style.css">
+
+    <script src="../scripts/dashboard.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/e0ab8e764a.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
 <body>
+    <div class="floating-icon">
+       <a onclick="openNav()"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+    </div>
+
+    <div id="mySidenav"  class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1>Dashboard</h1>
+        <a href="./dashboard.php" class="active">Home</a>
+        <a href="./dashboard-socials.php">Socials</a>
+    </div>
+
     <div class="buttons">
         <button class="button" onclick="openPopup('add')">Add</button>
         <button class="button" onclick="openPopup('edit')">Edit</button>
