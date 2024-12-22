@@ -1,5 +1,5 @@
 <?php
-$config = json_decode(file_get_contents('config.json'), true);
+$config = json_decode(file_get_contents('../config.json'), true);
 
 $host = $config['DB_SERVER'];
 $user = $config['DB_USERNAME'];
@@ -61,107 +61,14 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
+    <link rel="stylesheet" href="../styles/dashboards.css">
     <link rel="stylesheet" href="../styles/style.css">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .dashboard-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #2563eb;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            z-index: 1000;
-        }
-        .popup.active {
-            display: block;
-        }
-        .popup-header {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .popup form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .popup form input, .popup form select {
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .popup form button {
-            padding: 10px;
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .popup form button:hover {
-            background-color: #2563eb;
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-        .overlay.active {
-            display: block;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #3b82f6;
-            color: white;
-        }
-    </style>
 </head>
 <body>
-    <div class="dashboard-buttons">
-        <button onclick="openPopup('add')">Add</button>
-        <button onclick="openPopup('edit')">Edit</button>
-        <button onclick="openPopup('delete')">Delete</button>
+    <div class="buttons">
+        <button class="button" onclick="openPopup('add')">Add</button>
+        <button class="button" onclick="openPopup('edit')">Edit</button>
+        <button class="button" onclick="openPopup('delete')">Delete</button>
     </div>
 
     <!-- Display Entries -->

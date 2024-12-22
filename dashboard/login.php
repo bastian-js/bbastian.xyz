@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="../../styles/login.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="post" action="../scripts/dashboard.php">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Login</button>
-    </form>
+    <div class="container">
+        <h1 class="heading">Login</h1>
+        <form class="form" method="post" action="../scripts/dashboard.php">
+            <label for="username" class="username">Username</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password" class="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="submit button">Login</button>
+        </form>
+    </div>
     <?php session_start(); if (isset($_SESSION['error'])) { echo "<p style='color: red;'>" . htmlspecialchars($_SESSION['error']) . "</p>"; unset($_SESSION['error']); } ?>
 </body>
 </html>
