@@ -3,7 +3,7 @@ session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: login.php");
+    header("Location: /dashboard/login.php");
     exit;
 }
 ?>
@@ -13,6 +13,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+
+    <link rel="icon" href="../assets/images/pfp_neu_rund.png" />
 
     <link rel="stylesheet" href="../styles/style.css">
 </head>
