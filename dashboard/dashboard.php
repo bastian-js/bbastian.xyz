@@ -20,11 +20,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 </head>
 <body>
 
-    <div class="sidenav">
-        <h1>Dashboard</h1>
-        <a href="./dashboard.php" class="active">Home</a>
-        <a href="./dashboard-socials.php">Socials</a>
-    </div>
+    <?php include("./dashboard-navigation.php") ?>
 
     <div class="container">
         <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>

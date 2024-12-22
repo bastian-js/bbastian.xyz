@@ -76,12 +76,7 @@ $conn->close();
        <a onclick="openNav()"><i class="fa-solid fa-ellipsis-vertical"></i></a>
     </div>
 
-    <div id="mySidenav"  class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h1>Dashboard</h1>
-        <a href="./dashboard.php" class="active">Home</a>
-        <a href="./dashboard-socials.php">Socials</a>
-    </div>
+    <?php include("./dashboard-navigation.php") ?>
 
     <div class="buttons">
         <button class="button" onclick="openPopup('add')">Add</button>

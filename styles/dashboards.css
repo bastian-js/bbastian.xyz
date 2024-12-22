@@ -169,3 +169,7 @@ th {
   color: #ffffff;
   cursor: pointer;
 }
+
+.sidenav .active {
+  color: #f1f1f1;
+}
