@@ -1,0 +1,16 @@
+.waving-hand {
+    display: inline-block;
+    font-size: 3rem; /* Adjust size as needed */
+    animation: wave 1.5s ease-in-out 2; /* Play 2 times and stop */
+    transform-origin: 70% 70%; /* Set the origin to mimic a natural wave */
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(15deg); }
+    30% { transform: rotate(-15deg); }
+    45% { transform: rotate(10deg); }
+    60% { transform: rotate(-10deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
