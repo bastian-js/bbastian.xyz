@@ -19,6 +19,15 @@ body {
   border: 2px solid white;
 }
 
+.modal {
+  background-color: rgba(0, 0, 0, 0.53);
+  color: black;
+}
+
+.modal-content {
+  background-color: white;
+}
+
 .footer-text {
   color: gray !important;
 }
