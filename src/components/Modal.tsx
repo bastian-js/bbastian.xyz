@@ -11,7 +11,6 @@ interface Props {
 const Modal = ({
   show,
   title,
-  description,
   long_description,
   img_src,
   img_alt,

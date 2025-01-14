@@ -1,12 +1,12 @@
 import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
-import { Links } from "react-router-dom";
+import Socials from "./pages/Socials.tsx";
 
 const routes = [
   {
     path: "/",
-    element: <Home />, // Using the Home component
+    element: <Home />,
   },
   {
     path: "/contact",
@@ -14,7 +14,7 @@ const routes = [
   },
   {
     path: "/socials",
-    element: <Links />,
+    element: <Socials />,
   },
   {
     path: "*",

@@ -49,3 +49,19 @@ body {
   align-content: center;
   margin: auto;
 }
+
+.social-button {
+  border-radius: 20px !important;
+  color: white !important;
+  background-color: rgb(68, 134, 239);
+  font-size: 20px !important;
+}
+
+.social-button:hover {
+  background-color: rgb(34, 111, 235);
+  cursor: pointer;
+}
+
+.social-icon {
+  font-size: 30px !important;
+}
