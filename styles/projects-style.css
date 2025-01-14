@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+  padding: 0px;
+  font-family: Montserrat;
+  color: white;
+  align-items: center;
+}
+
+body {
+  background-color: #0d1117;
+  position: relative;
+}
+
+/* Popup container */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Popup content */
+.popup-content {
+  background-color: #0d1117;
+  padding: 20px;
+  border: 1px solid #0d1117;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 600px; /* Maximum width */
+  border-radius: 15px; /* Add rounded corners */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center contents horizontally */
+  text-align: center; /* Center text */
+}
+
+/* Close button */
+.close-btn {
+  color: #aaa;
+  align-self: flex-end; /* Align close button to the right */
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* Button styles */
+.open-popup-btn {
+  background-color: rgb(68, 134, 239);
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 20px;
+  border-color: rgb(68, 134, 239);
+  margin-top: 20px;
+  width: 600px;
+  height: 80px;
+  display: block; /* Ensure buttons are block-level elements */
+}
+
+.open-popup-btn:hover {
+  background-color: rgb(34, 111, 235);
+  cursor: pointer;
+}
+
+.popup-img {
+  width: 50px;
+}
+
+/* Container for buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center buttons horizontally */
+}
+
+.github-link {
+  color: white;
+  text-decoration: none;
+  font-size: 36px;
+}

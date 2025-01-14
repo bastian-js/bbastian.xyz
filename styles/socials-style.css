@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+  padding: 0px;
+  font-family: Montserrat;
+  color: white;
+  align-items: center;
+}
+
+body {
+  background-color: #0d1117;
+  position: relative;
+}
+
+.container-socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-links {
+  background-color: rgb(68, 134, 239);
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 20px;
+  border-color: rgb(68, 134, 239);
+  margin-top: 20px;
+  width: 600px;
+  height: 80px;
+}
+
+.button-links:hover {
+  background-color: rgb(34, 111, 235);
+  cursor: pointer;
+}
